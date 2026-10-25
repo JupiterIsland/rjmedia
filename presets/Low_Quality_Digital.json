@@ -1,0 +1,58 @@
+{
+  "preset_name": "Low-Quality Digital (360p-480p Web Rips)",
+  "description": "For heavily compressed, blocky MPEG-2/H.264 footage with DCT macroblocking and chroma starvation.",
+  "use_case": "Early 2000s web rips, 360p/480p DivX, low-bitrate digital archives",
+  "model": "Iris MQ",
+  "scale_factor": "2x (stop at 720p or 1080p max)",
+  "parameters": {
+    "revert_compression": {
+      "value": 70,
+      "range": "55-70",
+      "tooltip": "Smooths DCT block boundaries. Above 85 wipes out fabric texture."
+    },
+    "improve_detail": {
+      "value": 20,
+      "range": "15-25",
+      "tooltip": "Volatile in Iris; exceed 30 causes bright edge ringing."
+    },
+    "sharpen": {
+      "value": 10,
+      "range": "10-20",
+      "tooltip": "Keep low on Iris; rely on Recover Original Detail instead."
+    },
+    "reduce_noise": {
+      "value": 25,
+      "range": "15-25",
+      "tooltip": "Targets high-frequency luminance chatter. Over 50 creates waxy skin."
+    },
+    "dehalo": {
+      "value": 20,
+      "range": "15-30",
+      "tooltip": "Strips over-sharpening halos baked into old transcodes."
+    },
+    "anti_alias_deblur": {
+      "value": -15,
+      "range": "-20 to -10",
+      "tooltip": "Negative = anti-aliasing. Bipolar slider."
+    },
+    "recover_original_detail": {
+      "value": 40,
+      "range": "35-50",
+      "tooltip": "Blends original high-frequency luma back. Kills plastic look."
+    },
+    "focus_fix": "Off"
+  },
+  "ffmpeg_cli": "ffmpeg -i input_sd.mp4 -filter_complex \"tvai_up=model=iris-2:scale=2:preblur=-0.15:noise=0.25:details=0.20:halo=0.20:blur=0.10:compression=0.70:blend=0.40\" -c:v hevc_nvenc output_720p.mp4",
+  "common_mistakes": [
+    "Going above 2x in a single pass on degraded SD",
+    "Setting Improve Detail above 30 (causes ringing)",
+    "Forgetting to disable Focus Fix",
+    "Over-sharpening (adds artifacts, not clarity)"
+  ],
+  "expected_output": "720p or 1080p, reduced macroblocking, preserved fabric/foliage texture, no plastic skin",
+  "gpu_settings": {
+    "max_memory": "85%",
+    "max_processes": 1,
+    "grain_cpu": "OFF (use prenoise instead)"
+  }
+}

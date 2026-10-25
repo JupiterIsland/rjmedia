@@ -1,0 +1,60 @@
+{
+  "preset_name": "VHS Restoration - Stage 1: Artifact Stripping (Iris LQ)",
+  "description": "First pass: Clean up VHS artifacts, ringing, and noise at native resolution. Do NOT upscale yet.",
+  "use_case": "1990s analog VHS tapes, Video8, Hi8, DV camcorder footage",
+  "model": "Iris LQ (iris-3)",
+  "scale_factor": "1x (native resolution, e.g., 720x480 → 720x480)",
+  "stage": "Stage 1 of 2-Stage VHS Restoration",
+  "preprocessing": {
+    "required": true,
+    "method_external": "QTGMC deinterlacing (VapourSynth/Avisynth) with EZDenoise=0.0, SourceMatch=2",
+    "method_topaz": "Enable 'Interlaced' input mode, set Field Order carefully (BFF or TFF), use 2x Deinterlace (Bob)",
+    "note": "Never feed interlaced VHS directly into Topaz. Deinterlace first."
+  },
+  "parameters": {
+    "revert_compression": {
+      "value": 70,
+      "range": "65-75",
+      "tooltip": "Strip DCT blocks from old tape encoding."
+    },
+    "improve_detail": {
+      "value": 10,
+      "range": "5-15",
+      "tooltip": "Minimal—VHS has low native detail. Over-improving causes artifacts."
+    },
+    "sharpen": {
+      "value": 0,
+      "range": "0",
+      "tooltip": "Keep at 0. Never sharpen in Pass 1."
+    },
+    "reduce_noise": {
+      "value": 40,
+      "range": "35-50",
+      "tooltip": "Aggressive noise reduction. VHS is very noisy."
+    },
+    "dehalo": {
+      "value": 50,
+      "range": "45-55",
+      "tooltip": "CRITICAL. VHS has heavy analog edge enhancement halos. Iris LQ is tuned for this."
+    },
+    "anti_alias_deblur": {
+      "value": 20,
+      "range": "15-25",
+      "tooltip": "Positive = deblur. Counter VHS softness and interlacing blur."
+    },
+    "recover_original_detail": {
+      "value": 15,
+      "range": "10-20",
+      "tooltip": "Low blend—mostly AI cleaning in Stage 1."
+    }
+  },
+  "why_iris_lq": "Iris LQ is specifically trained on low-resolution interlaced video. Proteus would hallucinate plastic skin. Iris strips noise uniformly without adding texture.",
+  "expected_output_stage_1": "720x480 (NTSC) or 720x576 (PAL), deinterlaced to 59.94fps or 50fps, cleaned of VHS artifacts but still low-res",
+  "next_step": "Export this Stage 1 output, then feed into Stage 2 (Proteus v4 upscaling)",
+  "common_mistakes": [
+    "Upscaling directly from interlaced VHS to 4K (causes ghosting + hallucinations)",
+    "Using Proteus or Nyx in Stage 1 (designed for higher quality input)",
+    "Setting Dehalo below 40 (VHS ringing won't be removed)",
+    "Trying to recover detail (VHS has none; just clean what exists)"
+  ]
+}

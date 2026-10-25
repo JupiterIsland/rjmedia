@@ -1,0 +1,89 @@
+{
+  "preset_name": "VHS Restoration - Stage 2: Upscaling & Re-Texturing (Proteus v4)",
+  "description": "Second pass: Upscale cleaned Stage 1 output 2x and add film grain to mask AI smoothness.",
+  "use_case": "Upscale VHS from 720x480 → 1440x1080 (or 960x720 for poor quality tape)",
+  "model": "Proteus v4 (prob-4)",
+  "scale_factor": "2x (720x480 → 1440x1080)",
+  "stage": "Stage 2 of 2-Stage VHS Restoration",
+  "input": "Stage 1 cleaned output (from Iris LQ pass)",
+  "parameters": {
+    "revert_compression": {
+      "value": 15,
+      "range": "10-20",
+      "tooltip": "Cleaning is done. Keep low to preserve Stage 1 work."
+    },
+    "improve_detail": {
+      "value": 40,
+      "range": "35-50",
+      "tooltip": "Moderate detail injection for upscale."
+    },
+    "sharpen": {
+      "value": 35,
+      "range": "30-40",
+      "tooltip": "Push sharpening to define edges in 1440x1080."
+    },
+    "reduce_noise": {
+      "value": 5,
+      "range": "0-10",
+      "tooltip": "Light—Stage 1 already cleaned. Avoid over-processing."
+    },
+    "dehalo": {
+      "value": 15,
+      "range": "10-20",
+      "tooltip": "Minor halo cleanup. Iris already handled most of it."
+    },
+    "anti_alias_deblur": {
+      "value": -10,
+      "range": "-15 to -5",
+      "tooltip": "Negative = anti-aliasing. Lock down newly upscaled edges."
+    },
+    "recover_original_detail": {
+      "value": 30,
+      "range": "25-35",
+      "tooltip": "Blend back Stage 1's original texture."
+    },
+    "add_noise_grain_amount": {
+      "value": 4,
+      "range": "3-5",
+      "tooltip": "CRITICAL. VHS has no true detail. Grain tricks eye into perceiving sharpness."
+    },
+    "add_noise_grain_size": {
+      "value": 2,
+      "range": "1-2",
+      "tooltip": "16mm-style film grain size."
+    }
+  },
+  "why_grain_is_essential": "VHS original has almost zero high-frequency detail. Drenching the upscaled frame in 16mm-style fine grain masks smooth AI transitions and makes the image feel more organic. Without grain, VHS upscales look plastic.",
+  "output_resolution_choice": {
+    "1440x1080": "For SP 2-hour mode tape. Standard quality VHS.",
+    "960x720": "For EP/SLP 6-hour mode tape. Very poor quality, lots of degradation.",
+    "avoid_higher": "Never upscale VHS beyond 1440x1080. You'll invent pores and fake eyelashes."
+  },
+  "why_not_4x": "1x stage → 4x is 4x upscale total. That's too aggressive. Go 1x → 2x (moderate), not 1x → 4x (hallucination).",
+  "performance": {
+    "estimated_fps": "3-8 FPS on RTX 4070",
+    "render_time_30min": "~3 hours",
+    "output_bitrate": "15-25 Mbps H.265"
+  },
+  "ffmpeg_cli_two_pass": "ffmpeg -i vhs_qtgmc_59.94p.mkv -filter_complex \"crop=720:468:0:2,pad=720:480:0:6,tvai_up=model=iris-3:scale=1:preblur=0.20:noise=0.40:details=0.10:halo=0.50:compression=0.70:blend=0.15,tvai_up=model=prob-4:scale=2:w=1440:h=1080:preblur=-0.10:noise=0.05:details=0.40:halo=0.15:blur=0.35:compression=0.15:prenoise=0.004:blend=0.30\" -c:v hevc_nvenc -b:v 20M output_1080p60.mkv",
+  "common_mistakes": [
+    "Skipping Stage 1 (trying to upscale dirty VHS directly—hallucinations)",
+    "Disabling grain (output looks plastic and synthetic)",
+    "Upscaling more than 2x (invents fake details)",
+    "Setting Sharpen above 40 (creates ringing and artifacts)",
+    "Over-recovery of detail (VHS has none; don't force it)"
+  ],
+  "testing": {
+    "step_1": "Render 10 seconds on RTX 4070 (should take ~2 min)",
+    "step_2": "Check output resolution (1440x1080?)",
+    "step_3": "Play in VLC—look for grain texture",
+    "step_4": "If output looks plastic, increase grain to 5",
+    "step_5": "If output looks muddy, lower grain to 3"
+  },
+  "expected_output": "1440x1080 @ 60fps, visible 16mm film grain, sharp edges, no plastic skin, organic feel, no hallucinated details",
+  "post_processing": {
+    "optional": "Add slight vignette or color grading to enhance 'archival' aesthetic",
+    "audio": "Separately restore audio (remove tape hiss, level out dynamics)",
+    "delivery": "Output as H.265 HEVC 10-bit for archival and streaming"
+  }
+}

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  rjmedia-channel-hub:
+    build: .
+    container_name: rjmedia-channel-hub
+    ports:
+      - "8501:8501"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_LOGGER_LEVEL=info
+      - TZ=UTC
+    volumes:
+      - ./app.py:/app/app.py
+      - ./data_manager.py:/app/data_manager.py
+      - ./presets:/app/presets
+      - ./output:/app/output
+      - streamlit-cache:/root/.streamlit
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - rjmedia
+
+volumes:
+  streamlit-cache:
+
+networks:
+  rjmedia:
+    driver: bridge

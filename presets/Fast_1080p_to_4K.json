@@ -1,0 +1,91 @@
+{
+  "preset_name": "Fast 1080p → 4K Upscaling",
+  "description": "Native 2x scaling for maximum FPS. Use Proteus v4 (never Rhea for 1080p→4K).",
+  "use_case": "Quick upscales from 1080p video to 4K with maximum throughput and minimal latency",
+  "model": "Proteus v4 (prob-4)",
+  "scale_factor": "2x native (1920x1080 → 3840x2160)",
+  "performance": {
+    "expected_fps": "15-45 FPS on RTX 4070-4080",
+    "render_time_90min": "~4 hours on RTX 4080",
+    "vram_required": "8-10 GB",
+    "output_bitrate": "25-80 Mbps H.265 HEVC"
+  },
+  "parameters": {
+    "revert_compression": {
+      "value": 25,
+      "range": "20-30",
+      "tooltip": "Minimal—input is clean 1080p. Don't over-clean."
+    },
+    "improve_detail": {
+      "value": 35,
+      "range": "30-40",
+      "tooltip": "Moderate detail injection. Proteus is conservative."
+    },
+    "sharpen": {
+      "value": 30,
+      "range": "25-35",
+      "tooltip": "Push this on clean footage to prevent soft upscale."
+    },
+    "reduce_noise": {
+      "value": 10,
+      "range": "5-15",
+      "tooltip": "Light touch—preserve original noise texture."
+    },
+    "dehalo": {
+      "value": 5,
+      "range": "0-10",
+      "tooltip": "Minimal—1080p isn't heavily halo'd."
+    },
+    "anti_alias_deblur": {
+      "value": -15,
+      "range": "-20 to -10",
+      "tooltip": "Negative = anti-aliasing. Tighten 1080p aliasing before 4K scaling."
+    },
+    "recover_original_detail": {
+      "value": 50,
+      "range": "40-60",
+      "tooltip": "High blend—preserve 1080p micro-contrast and film grain."
+    },
+    "add_noise_amount": {
+      "value": 2,
+      "range": "0-5",
+      "tooltip": "Add 16mm-style grain to break up AI smoothness."
+    },
+    "add_noise_size": {
+      "value": 1,
+      "range": "1-2",
+      "tooltip": "Fine grain size (1 pixel)."
+    }
+  },
+  "gpu_optimization": {
+    "max_memory": "85%",
+    "max_processes": 1,
+    "grain_cpu": "OFF",
+    "note": "CPU Grain is a bottleneck. Use prenoise (GPU) instead."
+  },
+  "encoder_settings": {
+    "codec": "HEVC (H.265)",
+    "profile": "Main 10",
+    "bit_depth": "10-bit (HDR-ready)",
+    "encoder": "NVENC (hardware acceleration)",
+    "bitrate": "40-80 Mbps for 4K (adaptive)",
+    "preset": "Fast or Balanced"
+  },
+  "ffmpeg_cli": "ffmpeg -hide_banner -i \"input_1080p.mp4\" -sws_flags spline+accurate_rnd+full_chroma_int -filter_complex \"tvai_up=model=prob-4:scale=2:preblur=-0.15:noise=0.10:details=0.35:halo=0.05:blur=0.30:compression=0.25:prenoise=0.002:blend=0.50:device=0:vram=0.85:instances=1\" -c:v hevc_nvenc -profile:v main10 -pix_fmt p010le -rc constqp -qp 16 -preset p6 -c:a copy \"output_4k.mp4\"",
+  "why_not_rhea": "Rhea has only a native 4x model. When you ask it to upscale 1080p→4K (2x), Topaz internally upscales to 8K then downscales to 4K. This tanks FPS to 2-4 and wastes VRAM.",
+  "why_focus_fix_off": "Focus Fix forces an internal downscale+4x upscale penalty. For clean 1080p, it's unnecessary overhead.",
+  "common_mistakes": [
+    "Using Rhea instead of Proteus (causes terrible FPS)",
+    "Enabling Focus Fix (adds 18% latency for no benefit)",
+    "Enabling CPU Grain (massive bottleneck)",
+    "Setting Max Memory to 100% (CUDA OOM crash)",
+    "Running 2+ parallel processes on 1 job (PCIe thrash)"
+  ],
+  "expected_output": "Crisp 4K (3840x2160) @ 60fps, sharp details, no plastic skin, preserved film grain, no artifacts",
+  "testing": {
+    "step_1": "Render 30 seconds on a fast GPU (RTX 4070+)",
+    "step_2": "Check FPS in Topaz UI (should be 15+ FPS)",
+    "step_3": "Play output in VLC—look for aliasing, banding, or hallucinations",
+    "step_4": "If you see 'plastic skin' or 'swimming' textures, lower Improve Detail to 30"
+  }
+}
