@@ -1,0 +1,18 @@
+title: RJMedia
+name: RJMedia
+description: >-
+  Live music, rare performances, and band documentaries preserved by RJMedia.
+baseurl: ""
+url: "https://jupiterisland.github.io/rjmedia-liner-notes"
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - .gitignore
+  - .jekyll-cache/
+  - .sass-cache/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
