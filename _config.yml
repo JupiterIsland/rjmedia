@@ -2,8 +2,8 @@ title: RJMedia
 name: RJMedia
 description: >-
   Live music, rare performances, and band documentaries preserved by RJMedia.
-baseurl: ""
-url: "https://jupiterisland.github.io/rjmedia-liner-notes"
+baseurl: "/rjmedia-liner-notes"
+url: "https://jupiterisland.github.io"
 markdown: kramdown
 permalink: pretty
 plugins:
