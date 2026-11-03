@@ -1,715 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RJMedia Archive — 25 Years of Music Preservation</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
-            color: #c9d1d9;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(13, 17, 23, 0.95);
-            border-bottom: 2px solid #ff1493;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ff1493;
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #00ffff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff1493;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 20, 147, 0.1) 0%, rgba(0, 255, 255, 0.05) 100%);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: #ff1493;
-            text-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
-        }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
-            color: #00ffff;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .stat-box {
-            background: rgba(22, 27, 34, 0.8);
-            border: 2px solid #00ffff;
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            color: #ffaa00;
-            font-weight: bold;
-        }
-
-        .stat-label {
-            color: #00ffff;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        /* CTA Buttons */
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ff1493 0%, #ff0080 100%);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: rgba(0, 255, 255, 0.1);
-            color: #00ffff;
-            border: 2px solid #00ffff;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(0, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Story Section */
-        .story {
-            padding: 4rem 2rem;
-            background: rgba(22, 27, 34, 0.5);
-        }
-
-        .story h2 {
-            font-size: 2.5rem;
-            color: #ff1493;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .timeline-item {
-            background: rgba(13, 17, 23, 0.8);
-            border-left: 4px solid #ff1493;
-            padding: 1.5rem;
-            border-radius: 4px;
-        }
-
-        .timeline-year {
-            color: #ffaa00;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-text {
-            color: #c9d1d9;
-        }
-
-        /* Features Section */
-        .features {
-            padding: 4rem 2rem;
-        }
-
-        .features h2 {
-            font-size: 2.5rem;
-            color: #ff1493;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: rgba(22, 27, 34, 0.8);
-            border: 2px solid #00ffff;
-            border-radius: 8px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            border-color: #ff1493;
-            box-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-title {
-            font-size: 1.3rem;
-            color: #00ffff;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .feature-description {
-            color: #8b949e;
-            font-size: 0.95rem;
-        }
-
-        /* Archive Preview */
-        .archive-preview {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(255, 20, 147, 0.05) 0%, rgba(0, 255, 255, 0.05) 100%);
-        }
-
-        .archive-preview h2 {
-            font-size: 2.5rem;
-            color: #ff1493;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .video-card {
-            background: rgba(22, 27, 34, 0.9);
-            border: 1px solid #00ffff;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .video-card:hover {
-            border-color: #ff1493;
-            box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
-            transform: scale(1.02);
-        }
-
-        .video-thumbnail {
-            background: linear-gradient(135deg, #ff1493 0%, #00ffff 100%);
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .video-info {
-            padding: 1.5rem;
-        }
-
-        .video-title {
-            color: #00ffff;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .video-stats {
-            color: #8b949e;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Money Section */
-        .money {
-            padding: 4rem 2rem;
-            background: rgba(22, 27, 34, 0.5);
-        }
-
-        .money h2 {
-            font-size: 2.5rem;
-            color: #ffaa00;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .money-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .money-text h3 {
-            color: #00ffff;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .money-text p {
-            color: #c9d1d9;
-            margin-bottom: 1rem;
-        }
-
-        .money-box {
-            background: rgba(13, 17, 23, 0.8);
-            border-left: 4px solid #ffaa00;
-            padding: 1.5rem;
-            border-radius: 4px;
-            margin: 1rem 0;
-        }
-
-        .money-number {
-            font-size: 1.8rem;
-            color: #ffaa00;
-            font-weight: bold;
-        }
-
-        /* Donation Section */
-        .donate {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(255, 170, 0, 0.1) 0%, rgba(255, 20, 147, 0.1) 100%);
-            text-align: center;
-        }
-
-        .donate h2 {
-            font-size: 2.5rem;
-            color: #ffaa00;
-            margin-bottom: 2rem;
-        }
-
-        .donate p {
-            font-size: 1.1rem;
-            color: #c9d1d9;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .donate-highlight {
-            background: rgba(22, 27, 34, 0.8);
-            border: 2px solid #ffaa00;
-            border-radius: 8px;
-            padding: 2rem;
-            margin: 2rem 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .donate-highlight p {
-            font-size: 1.3rem;
-            color: #ffaa00;
-            margin: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(13, 17, 23, 0.95);
-            border-top: 2px solid #ff1493;
-            padding: 2rem;
-            text-align: center;
-            color: #8b949e;
-        }
-
-        footer p {
-            margin-bottom: 1rem;
-        }
-
-        footer a {
-            color: #00ffff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #ff1493;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .money-content {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .hero .stats {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101016">
+  <meta name="description" content="RJMedia preserves live music, rare performances and band documentaries. Watch on YouTube and support the archive if you wish.">
+  <title>RJMedia — Live Music &amp; Band Documentaries</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101016;
+      --panel: #191922;
+      --text: #f5f2f7;
+      --muted: #b6b0bd;
+      --pink: #ff4fa3;
+      --cyan: #83f3ed;
+      --gold: #ffc96b;
+      --line: rgba(255,255,255,.12);
+      --width: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 50% -15%, #332039 0, var(--bg) 48rem);
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--cyan); text-underline-offset: .2em; }
+    a:hover { color: var(--pink); }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .wrap { width: min(var(--width), calc(100% - 2rem)); margin-inline: auto; }
+    header { position: sticky; top: 0; z-index: 5; background: rgba(16,16,22,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { color: var(--text); font-weight: 850; font-size: 1.15rem; text-decoration: none; letter-spacing: .02em; }
+    .brand span { color: var(--pink); }
+    nav ul { display: flex; align-items: center; gap: 1.25rem; list-style: none; padding: 0; margin: 0; }
+    nav a { text-decoration: none; font-size: .94rem; }
+    .hero { padding: clamp(4rem, 10vw, 7.5rem) 0 4rem; text-align: center; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 750; }
+    h1 { max-width: 800px; margin: .5rem auto 1rem; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.06; letter-spacing: -.045em; }
+    h1 span { color: var(--pink); }
+    .intro { max-width: 680px; margin: 0 auto; color: var(--muted); font-size: clamp(1.05rem, 2.5vw, 1.25rem); }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .85rem; margin-top: 1.8rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .7rem 1.15rem; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; font-weight: 750; transition: transform .18s ease, box-shadow .18s ease; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+    .primary { color: #1b1018; background: var(--pink); border-color: var(--pink); }
+    .primary:hover { color: #1b1018; }
+    .coffee { color: #20170d; background: var(--gold); border-color: var(--gold); }
+    .coffee:hover { color: #20170d; }
+    .outline { color: var(--cyan); }
+    section { padding: 3.5rem 0; }
+    .section-heading { margin: 0 0 .45rem; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; }
+    .section-lead { color: var(--muted); margin: 0 0 1.6rem; }
+    .featured { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr); gap: 1.5rem; align-items: stretch; }
+    .video-frame { position: relative; overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--line); border-radius: 16px; background: #08080c; box-shadow: 0 18px 60px rgba(0,0,0,.3); }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .card { padding: clamp(1.25rem, 3vw, 2rem); background: linear-gradient(145deg, rgba(255,79,163,.08), rgba(131,243,237,.035)), var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+    .card h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
+    .card p { color: var(--muted); }
+    .tag { display: inline-block; color: var(--gold); font-size: .8rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .about-grid .card { padding: 1.3rem; }
+    .about-grid h3 { color: var(--cyan); font-size: 1.05rem; }
+    .about-grid p { margin-bottom: 0; }
+    .support { text-align: center; padding: clamp(2rem, 6vw, 4rem); border: 1px solid rgba(255,201,107,.4); border-radius: 20px; background: radial-gradient(ellipse at top, rgba(255,201,107,.13), transparent 70%), var(--panel); }
+    .support h2 { color: var(--gold); }
+    .support p { max-width: 650px; margin: .5rem auto 1.25rem; color: var(--muted); }
+    footer { padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); text-align: center; }
+    footer p { margin: .4rem 0; }
+    .social { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.2rem; }
+    @media (max-width: 700px) {
+      .nav { align-items: flex-start; padding: .9rem 0; flex-direction: column; }
+      nav { width: 100%; overflow-x: auto; }
+      nav ul { gap: 1rem; white-space: nowrap; }
+      .featured, .about-grid { grid-template-columns: 1fr; }
+      section { padding: 2.6rem 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">🎸 RJMedia</a>
-            <ul>
-                <li><a href="#story">Story</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#archive">Archive</a></li>
-                <li><a href="#donate">Support</a></li>
-            </ul>
-        </div>
-    </nav>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="RJMedia home">🎸 <span>RJ</span>Media</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="https://www.youtube.com/@LiveMusicBandDocumentaries" target="_blank" rel="noopener noreferrer">YouTube ↗</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
+  <main id="home">
     <section class="hero">
-        <div class="container">
-            <h1>Music Archive Platform</h1>
-            <p class="subtitle">25 Years of Community Trust • AI-Powered Preservation • Forever Free</p>
-            
-            <div class="stats">
-                <div class="stat-box">
-                    <div class="stat-number">967K</div>
-                    <div class="stat-label">Total Views</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">7.76y</div>
-                    <div class="stat-label">Watch Time</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">35+</div>
-                    <div class="stat-label">Videos</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">25</div>
-                    <div class="stat-label">Years</div>
-                </div>
-            </div>
-
-            <div class="cta-buttons">
-                <button class="btn btn-primary">🔍 Search Archive</button>
-                <button class="btn btn-secondary">📖 Read Our Story</button>
-            </div>
+      <div class="wrap">
+        <div class="eyebrow">Live music · Band documentaries · Music preservation</div>
+        <h1>Good music deserves to be <span>remembered.</span></h1>
+        <p class="intro">Welcome to RJMedia: a home for live performances, band documentaries and the stories behind the music. Explore the videos on YouTube and help keep this independent archive going if you’d like.</p>
+        <div class="actions">
+          <a class="button primary" href="https://www.youtube.com/@LiveMusicBandDocumentaries" target="_blank" rel="noopener noreferrer">▶ Explore the YouTube channel</a>
+          <a class="button coffee" href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
         </div>
+      </div>
     </section>
 
-    <!-- Story Section -->
-    <section class="story" id="story">
-        <div class="container">
-            <h2>25 Years of Music History</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">1999</div>
-                    <div class="timeline-text">Started Yahoo Group for Paul Draper fans. Pure mission, zero charge.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2007</div>
-                    <div class="timeline-text">Migrated to Invision Board. Community follows. Still free.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-text">YouTube uploads. 967K views. 25 years of trust grows.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-text">AI Archive Platform. Same mission. Now with better tools.</div>
-                </div>
-            </div>
-
-            <p style="text-align: center; margin-top: 2rem; color: #00ffff; font-size: 1.1rem;">
-                <strong>Never charged a penny. Never will.</strong> Music culture deserves to be preserved.
-            </p>
+    <section id="videos">
+      <div class="wrap">
+        <div class="eyebrow">From the archive</div>
+        <h2 class="section-heading">Featured video</h2>
+        <p class="section-lead">Watch here, or open the video on YouTube. Find more performances and documentaries on the channel.</p>
+        <div class="featured">
+          <div class="video-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/WLU74h889VI" title="The Smiths — live Rockabilly 1984, RJMedia remaster" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <article class="card">
+            <span class="tag">Featured remaster</span>
+            <h3>The Smiths — “How Soon Is Now?”</h3>
+            <p>A live 1984 performance, remastered by RJMedia. The embedded player and link below use the known video on the RJMedia channel.</p>
+            <a href="https://www.youtube.com/watch?v=WLU74h889VI" target="_blank" rel="noopener noreferrer">Watch this video on YouTube ↗</a>
+            <p><a href="https://www.youtube.com/@LiveMusicBandDocumentaries" target="_blank" rel="noopener noreferrer">Browse all videos on the channel ↗</a></p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2>What We Do</h2>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎬</div>
-                    <div class="feature-title">Searchable Archive</div>
-                    <div class="feature-description">25 years of music history organized and searchable. Find any performance, interview, or rare footage instantly.</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <div class="feature-title">AI-Powered Liner Notes</div>
-                    <div class="feature-description">Gemini 2.5 watches every video. Auto-generates liner notes with context, history, and meaning.</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🎚️</div>
-                    <div class="feature-title">Topaz Presets</div>
-                    <div class="feature-description">Learn video restoration. Download battle-tested Topaz presets. Teach others how music gets preserved.</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">💾</div>
-                    <div class="feature-title">Forever Preserved</div>
-                    <div class="feature-description">Open-source on GitHub. Community-owned. Even if we disappear, your archive stays alive.</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <div class="feature-title">Community-Driven</div>
-                    <div class="feature-description">Fork it. Preserve your culture. Build archives for YOUR music. No lock-in. No paywalls.</div>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <div class="feature-title">Transparent Donations</div>
-                    <div class="feature-description">Optional. Small amounts. See exactly where your support goes. Everything stays free.</div>
-                </div>
-            </div>
+    <section id="about">
+      <div class="wrap">
+        <div class="eyebrow">The project</div>
+        <h2 class="section-heading">Music, memories, and the people behind them.</h2>
+        <p class="section-lead">RJMedia shares and preserves live music and band documentaries for fans.</p>
+        <div class="about-grid">
+          <article class="card"><h3>🎬 Live performances</h3><p>Discover concert footage, remasters and memorable moments from across the music scene.</p></article>
+          <article class="card"><h3>📚 Band stories</h3><p>Documentaries and interviews add context to the artists and music fans care about.</p></article>
+          <article class="card"><h3>💜 Always optional</h3><p>Videos are free to watch. If you enjoy the work, you can optionally support future uploads.</p></article>
         </div>
+      </div>
     </section>
 
-    <!-- Archive Preview -->
-    <section class="archive-preview" id="archive">
-        <div class="container">
-            <h2>Featured Remasters</h2>
-            
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">🎸</div>
-                    <div class="video-info">
-                        <div class="video-title">The Smiths - Rockpalast 1984</div>
-                        <div class="video-stats">
-                            <span>79.5K views</span>
-                            <span>14.9K hours</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">🎙️</div>
-                    <div class="video-info">
-                        <div class="video-title">Peter Green Documentary 1997</div>
-                        <div class="video-stats">
-                            <span>179K views</span>
-                            <span>23.1K hours</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">🎵</div>
-                    <div class="video-info">
-                        <div class="video-title">The Buzzcocks - What Do I Get</div>
-                        <div class="video-stats">
-                            <span>225K views</span>
-                            <span>9.3K hours</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">🎤</div>
-                    <div class="video-info">
-                        <div class="video-title">Mansun - Glastonbury 1998</div>
-                        <div class="video-stats">
-                            <span>21.8K views</span>
-                            <span>6.9K hours</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">🎧</div>
-                    <div class="video-info">
-                        <div class="video-title">Kasabian - L.S.F. Live</div>
-                        <div class="video-stats">
-                            <span>28.4K views</span>
-                            <span>1.0K hours</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-thumbnail">📽️</div>
-                    <div class="video-info">
-                        <div class="video-title">Jesus & Mary Chain - Live 2024</div>
-                        <div class="video-stats">
-                            <span>5.3K views</span>
-                            <span>161 hours</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="support">
+      <div class="wrap support">
+        <div class="eyebrow">Support the archive</div>
+        <h2 class="section-heading">Enjoying the videos?</h2>
+        <p>Your visit and view are already appreciated. If you’d like to help with future uploads and preservation, you can leave an optional tip through Buy Me a Coffee. No pressure—thank you for watching.</p>
+        <a class="button coffee" href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">☕ Support RJMedia on Buy Me a Coffee ↗</a>
+      </div>
     </section>
+  </main>
 
-    <!-- Money Section -->
-    <section class="money">
-        <div class="container">
-            <h2>How This Stays Alive</h2>
-            
-            <div class="money-content">
-                <div>
-                    <h3>The Real Math</h3>
-                    <p>967K people have watched your archive. YouTube pays £0 (publishers own rights).</p>
-                    <p>But 1-2% of engaged viewers donate £2-3 to keep the mission going.</p>
-                    
-                    <div class="money-box">
-                        <div class="money-number">£1-5K/month</div>
-                        <p style="margin: 0.5rem 0 0 0; color: #c9d1d9;">Realistic from existing views</p>
-                    </div>
-
-                    <div class="money-box">
-                        <div class="money-number">£30/month</div>
-                        <p style="margin: 0.5rem 0 0 0; color: #c9d1d9;">Server hosting cost</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h3>Where Your Support Goes</h3>
-                    
-                    <div class="money-box">
-                        <strong style="color: #00ffff;">Server Hosting</strong>
-                        <p style="margin: 0.5rem 0 0 0;">£15-30/month keeps the archive online forever</p>
-                    </div>
-
-                    <div class="money-box">
-                        <strong style="color: #00ffff;">Gemini API</strong>
-                        <p style="margin: 0.5rem 0 0 0;">£100/month powers AI video analysis</p>
-                    </div>
-
-                    <div class="money-box">
-                        <strong style="color: #00ffff;">Your Time</strong>
-                        <p style="margin: 0.5rem 0 0 0;">Curating, uploading, preserving 200+ videos</p>
-                    </div>
-
-                    <div class="money-box">
-                        <strong style="color: #00ffff;">Next Upload</strong>
-                        <p style="margin: 0.5rem 0 0 0;">Restoration software, research, restoration work</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Donation Section -->
-    <section class="donate" id="donate">
-        <div class="container">
-            <h2>Help Keep This Archive Alive</h2>
-            
-            <p>For 25 years, we've never charged. We're not starting now.</p>
-            <p>But servers cost money. If you value this archive, help us keep the lights on.</p>
-            
-            <div class="donate-highlight">
-                <p>Even £1/month means we can keep preserving music culture forever.</p>
-            </div>
-
-            <div class="cta-buttons">
-                <button class="btn btn-primary">☕ Buy Me a Coffee</button>
-                <button class="btn btn-secondary">💳 PayPal Tip</button>
-            </div>
-
-            <p style="margin-top: 2rem; color: #8b949e; font-size: 0.9rem;">
-                No pressure. No pressure. Everything stays free. This is just asking for help keeping it alive.
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>
-                🎸 <strong>RJMedia</strong> — Live Music & Band Documentaries
-            </p>
-            <p>
-                <a href="https://www.youtube.com/@LiveMusicBandDocumentaries">📺 YouTube</a> • 
-                <a href="https://discord.gg/rjmedia">💬 Discord</a> • 
-                <a href="https://github.com/rjmedia">💻 GitHub</a> • 
-                <a href="https://buymeacoffee.com/rjmedia">☕ Support</a>
-            </p>
-            <p>
-                25 Years of Community Trust. Forever Free. Built with ❤️
-            </p>
-        </div>
-    </footer>
+  <footer>
+    <div class="wrap">
+      <p><strong>RJMedia</strong> — Live Music &amp; Band Documentaries</p>
+      <p class="social">
+        <a href="https://www.youtube.com/@LiveMusicBandDocumentaries" target="_blank" rel="noopener noreferrer">YouTube channel</a>
+        <a href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
+        <a href="https://github.com/JupiterIsland/rjmedia-liner-notes">Website source on GitHub</a>
+      </p>
+      <p>Thanks for being here. Keep music history alive. 🎸</p>
+    </div>
+  </footer>
 </body>
 </html>
