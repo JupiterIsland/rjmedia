@@ -37,6 +37,12 @@ ENV/
 env/
 .venv
 
+# Jekyll / GitHub Pages
+_site/
+.jekyll-cache/
+.sass-cache/
+vendor/
+
 # IDE
 .vscode/
 .idea/
