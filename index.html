@@ -3,79 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101016">
+  <meta name="theme-color" content="#000000">
   <meta name="description" content="RJMedia preserves live music, rare performances and band documentaries. Watch on YouTube and support the archive if you wish.">
   <title>RJMedia — Live Music &amp; Band Documentaries</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #101016;
-      --panel: #191922;
-      --text: #f5f2f7;
-      --muted: #b6b0bd;
-      --pink: #ff4fa3;
-      --cyan: #83f3ed;
-      --gold: #ffc96b;
-      --line: rgba(255,255,255,.12);
+      --bg: #000;
+      --surface: #0a0a0a;
+      --text: #fff;
+      --muted: #c8c8c8;
+      --line: #444;
       --width: 1080px;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
     body {
       margin: 0;
-      background: radial-gradient(ellipse at 50% -15%, #332039 0, var(--bg) 48rem);
+      background: var(--bg);
       color: var(--text);
-      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font: 16px/1.65 Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
-    a { color: var(--cyan); text-underline-offset: .2em; }
-    a:hover { color: var(--pink); }
-    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
-    .wrap { width: min(var(--width), calc(100% - 2rem)); margin-inline: auto; }
-    header { position: sticky; top: 0; z-index: 5; background: rgba(16,16,22,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    a { color: var(--text); text-decoration-thickness: 1px; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--text); outline-offset: 5px; }
+    .wrap { width: min(var(--width), calc(100% - 2.5rem)); margin-inline: auto; }
+    header { position: sticky; top: 0; z-index: 5; background: rgba(0,0,0,.96); border-bottom: 1px solid var(--line); }
     .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .brand { color: var(--text); font-weight: 850; font-size: 1.15rem; text-decoration: none; letter-spacing: .02em; }
-    .brand span { color: var(--pink); }
-    nav ul { display: flex; align-items: center; gap: 1.25rem; list-style: none; padding: 0; margin: 0; }
+    .brand { color: var(--text); font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: .04em; }
+    nav ul { display: flex; align-items: center; gap: 1.4rem; list-style: none; padding: 0; margin: 0; }
     nav a { text-decoration: none; font-size: .94rem; }
-    .hero { padding: clamp(4rem, 10vw, 7.5rem) 0 4rem; text-align: center; }
-    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 750; }
-    h1 { max-width: 800px; margin: .5rem auto 1rem; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.06; letter-spacing: -.045em; }
-    h1 span { color: var(--pink); }
+    .hero { padding: clamp(5rem, 12vw, 9rem) 0 5rem; text-align: center; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .18em; font-size: .75rem; font-weight: 700; }
+    h1 { max-width: 850px; margin: .8rem auto 1.2rem; font-size: clamp(2.8rem, 8vw, 6rem); line-height: .98; letter-spacing: -.055em; }
     .intro { max-width: 680px; margin: 0 auto; color: var(--muted); font-size: clamp(1.05rem, 2.5vw, 1.25rem); }
-    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .85rem; margin-top: 1.8rem; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .7rem 1.15rem; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; font-weight: 750; transition: transform .18s ease, box-shadow .18s ease; }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.25); }
-    .primary { color: #1b1018; background: var(--pink); border-color: var(--pink); }
-    .primary:hover { color: #1b1018; }
-    .coffee { color: #20170d; background: var(--gold); border-color: var(--gold); }
-    .coffee:hover { color: #20170d; }
-    .outline { color: var(--cyan); }
-    section { padding: 3.5rem 0; }
-    .section-heading { margin: 0 0 .45rem; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; }
-    .section-lead { color: var(--muted); margin: 0 0 1.6rem; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 2rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .7rem 1.15rem; border: 1px solid var(--text); color: var(--text); background: transparent; font-weight: 700; text-decoration: none; transition: background .15s ease, color .15s ease; }
+    .button:hover { color: var(--bg); background: var(--text); }
+    section { padding: 4.5rem 0; }
+    .section-heading { margin: 0 0 .45rem; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.12; letter-spacing: -.035em; }
+    .section-lead { color: var(--muted); margin: 0 0 1.7rem; }
     .featured { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(250px, .75fr); gap: 1.5rem; align-items: stretch; }
-    .video-frame { position: relative; overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--line); border-radius: 16px; background: #08080c; box-shadow: 0 18px 60px rgba(0,0,0,.3); }
+    .video-frame { position: relative; overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--line); background: var(--surface); }
     .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .card { padding: clamp(1.25rem, 3vw, 2rem); background: linear-gradient(145deg, rgba(255,79,163,.08), rgba(131,243,237,.035)), var(--panel); border: 1px solid var(--line); border-radius: 16px; }
-    .card h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
+    .card { padding: clamp(1.3rem, 3vw, 2rem); background: var(--surface); border: 1px solid var(--line); }
+    .card h3 { margin: 0 0 .5rem; font-size: 1.35rem; line-height: 1.25; }
     .card p { color: var(--muted); }
-    .tag { display: inline-block; color: var(--gold); font-size: .8rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    .tag { display: inline-block; margin-bottom: .7rem; color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
     .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .about-grid .card { padding: 1.3rem; }
-    .about-grid h3 { color: var(--cyan); font-size: 1.05rem; }
-    .about-grid p { margin-bottom: 0; }
-    .support { text-align: center; padding: clamp(2rem, 6vw, 4rem); border: 1px solid rgba(255,201,107,.4); border-radius: 20px; background: radial-gradient(ellipse at top, rgba(255,201,107,.13), transparent 70%), var(--panel); }
-    .support h2 { color: var(--gold); }
-    .support p { max-width: 650px; margin: .5rem auto 1.25rem; color: var(--muted); }
+    .about-grid .card { padding: 1.4rem; }
+    .about-grid h3 { margin-top: 0; font-size: 1.05rem; }
+    .about-grid p { margin-bottom: 0; color: var(--muted); }
+    .support { text-align: center; padding: clamp(2.5rem, 7vw, 5rem); border: 1px solid var(--line); background: var(--surface); }
+    .support h2 { margin-top: .6rem; }
+    .support p { max-width: 650px; margin: .6rem auto 1.5rem; color: var(--muted); }
     footer { padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); text-align: center; }
     footer p { margin: .4rem 0; }
+    footer strong { color: var(--text); }
     .social { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.2rem; }
     @media (max-width: 700px) {
       .nav { align-items: flex-start; padding: .9rem 0; flex-direction: column; }
       nav { width: 100%; overflow-x: auto; }
       nav ul { gap: 1rem; white-space: nowrap; }
       .featured, .about-grid { grid-template-columns: 1fr; }
-      section { padding: 2.6rem 0; }
+      section { padding: 3rem 0; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
@@ -83,7 +76,7 @@
 <body>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="RJMedia home">🎸 <span>RJ</span>Media</a>
+      <a class="brand" href="#home" aria-label="RJMedia home">RJMEDIA</a>
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="#videos">Videos</a></li>
@@ -99,11 +92,11 @@
     <section class="hero">
       <div class="wrap">
         <div class="eyebrow">Live music · Band documentaries · Music preservation</div>
-        <h1>Good music deserves to be <span>remembered.</span></h1>
-        <p class="intro">Welcome to RJMedia: a home for live performances, band documentaries and the stories behind the music. Explore the videos on YouTube and help keep this independent archive going if you’d like.</p>
+        <h1>Good music deserves to be remembered.</h1>
+        <p class="intro">Welcome to RJMedia: a home for live performances, band documentaries and the stories behind the music. Explore the videos on YouTube and help keep this independent archive alive.</p>
         <div class="actions">
-          <a class="button primary" href="https://www.youtube.com/@LiveMusicBandDocumentaries" target="_blank" rel="noopener noreferrer">▶ Explore the YouTube channel</a>
-          <a class="button coffee" href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+          <a class="button" href="https://www.youtube.com/@LiveMusicBandDocumentaries" target="_blank" rel="noopener noreferrer">Explore the YouTube channel</a>
+          <a class="button" href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">Support the archive</a>
         </div>
       </div>
     </section>
@@ -134,9 +127,9 @@
         <h2 class="section-heading">Music, memories, and the people behind them.</h2>
         <p class="section-lead">RJMedia shares and preserves live music and band documentaries for fans.</p>
         <div class="about-grid">
-          <article class="card"><h3>🎬 Live performances</h3><p>Discover concert footage, remasters and memorable moments from across the music scene.</p></article>
-          <article class="card"><h3>📚 Band stories</h3><p>Documentaries and interviews add context to the artists and music fans care about.</p></article>
-          <article class="card"><h3>💜 Always optional</h3><p>Videos are free to watch. If you enjoy the work, you can optionally support future uploads.</p></article>
+          <article class="card"><h3>Live performances</h3><p>Discover concert footage, remasters and memorable moments from across the music scene.</p></article>
+          <article class="card"><h3>Band stories</h3><p>Documentaries and interviews add context to the artists and music fans care about.</p></article>
+          <article class="card"><h3>Always optional</h3><p>Videos are free to watch. If you enjoy the work, you can optionally support future uploads.</p></article>
         </div>
       </div>
     </section>
@@ -146,7 +139,7 @@
         <div class="eyebrow">Support the archive</div>
         <h2 class="section-heading">Enjoying the videos?</h2>
         <p>Your visit and view are already appreciated. If you’d like to help with future uploads and preservation, you can leave an optional tip through Buy Me a Coffee. No pressure—thank you for watching.</p>
-        <a class="button coffee" href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">☕ Support RJMedia on Buy Me a Coffee ↗</a>
+        <a class="button" href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">Support RJMedia on Buy Me a Coffee ↗</a>
       </div>
     </section>
   </main>
@@ -159,7 +152,7 @@
         <a href="https://buymeacoffee.com/rjmedia" target="_blank" rel="noopener noreferrer">Buy Me a Coffee</a>
         <a href="https://github.com/JupiterIsland/rjmedia-liner-notes">Website source on GitHub</a>
       </p>
-      <p>Thanks for being here. Keep music history alive. 🎸</p>
+      <p>Thanks for being here. Keep music history alive.</p>
     </div>
   </footer>
 </body>
