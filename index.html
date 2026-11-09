@@ -4,240 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="RJMedia Community — Helping People Stay Connected through archive preservation, stories and practical support.">
+  <meta name="description" content="RJMedia Community — stories, practical resources, and discussion connected to the Digital Archive.">
   <title>RJMedia Community — Helping People Stay Connected</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --paper: #000000;
-      --panel: #080808;
-      --ink: #ffffff;
-      --muted: #b7b7b7;
-      --line: #2a2a2a;
-      --width: 1180px;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font: 16px/1.6 "Segoe UI", Arial, Helvetica, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
-    a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-    .wrap { width: min(var(--width), calc(100% - 2rem)); margin-inline: auto; }
-    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(0,0,0,.94); border-bottom: 1px solid var(--line); }
-    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .brand { display: inline-flex; align-items: center; gap: .7rem; font-size: .84rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
-    .brand-mark { width: 10px; height: 10px; display: inline-block; background: var(--ink); transform: rotate(45deg); }
-    .nav-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .65rem 1.15rem; }
-    .nav-links a { color: var(--muted); font-size: .73rem; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
-    .nav-links a:hover { color: var(--ink); }
-    .hero { padding: clamp(4rem, 9vw, 7.5rem) 0 3.2rem; border-bottom: 1px solid var(--line); }
-    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: end; }
-    .eyebrow, .label { margin: 0 0 .75rem; color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
-    h1 { margin: 0; max-width: 850px; font-size: clamp(3rem, 9vw, 7rem); line-height: .9; letter-spacing: -.08em; font-weight: 1000; text-transform: uppercase; }
-    .tagline { margin: 1rem 0 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
-    .hero-lines { margin: 1.8rem 0 0; display: flex; flex-wrap: wrap; gap: .55rem 1.2rem; font-size: clamp(.85rem, 1.7vw, 1rem); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .hero-side { border: 1px solid var(--line); background: var(--panel); padding: 1.2rem; }
-    .meta-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-    .meta-label { margin-bottom: .2rem; color: var(--muted); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; }
-    .meta-value { font-size: clamp(1.15rem, 3vw, 1.55rem); font-weight: 800; line-height: 1.1; }
-    .meta-note { grid-column: 1 / -1; margin: .25rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line); font-size: .76rem; letter-spacing: .15em; font-weight: 700; text-transform: uppercase; }
-    .section { padding: clamp(3.2rem, 7vw, 5rem) 0; border-bottom: 1px solid var(--line); }
-    .section-head { margin-bottom: 1.5rem; display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
-    .section-title { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: .98; letter-spacing: -.06em; text-transform: uppercase; }
-    .section-intro { max-width: 650px; margin: 0; color: var(--muted); }
-    .two-col, .impact-grid, .story-grid, .pillars, .qr-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    .card { border: 1px solid var(--line); background: var(--panel); padding: clamp(1.2rem, 3vw, 1.6rem); }
-    .card h3 { margin: 0 0 .8rem; font-size: clamp(1.25rem, 2.7vw, 1.8rem); line-height: 1.05; letter-spacing: -.04em; text-transform: uppercase; }
-    .card p { margin: 0 0 .9rem; color: var(--muted); }
-    .card p:last-child { margin-bottom: 0; }
-    .contact-card { display: flex; flex-direction: column; align-items: flex-start; }
-    .email { margin: .2rem 0 1.1rem; overflow-wrap: anywhere; }
-    .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: .7rem 1.1rem; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-size: .8rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .15s ease, color .15s ease; }
-    .button:hover { background: transparent; color: var(--ink); }
-    .button.secondary { background: transparent; color: var(--ink); }
-    .button.secondary:hover { background: var(--ink); color: var(--paper); }
-    .small-note { margin-top: 1rem !important; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
-    .impact-card { min-height: 140px; display: flex; flex-direction: column; justify-content: space-between; }
-    .impact-value { margin: 0; font-size: clamp(1.2rem, 2.7vw, 1.65rem); line-height: 1.1; font-weight: 800; text-transform: uppercase; }
-    .impact-number { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.06em; }
-    .story-card { min-height: 110px; display: flex; align-items: end; }
-    .story-card h3 { margin: 0; }
-    .story-action { margin-top: 1.2rem; }
-    .pillar-card { min-height: 260px; display: flex; flex-direction: column; }
-    .pillar-era { margin: 0 0 .7rem; color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .18em; }
-    .pillar-card h3 { margin-bottom: 1rem; }
-    .pillar-card ul { margin: auto 0 0; padding: 0; list-style: none; color: var(--muted); }
-    .pillar-card li { padding: .35rem 0; border-top: 1px solid var(--line); text-transform: uppercase; font-size: .82rem; letter-spacing: .08em; }
-    .privacy-card { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    .privacy-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr; gap: .6rem 1rem; }
-    .privacy-list li { padding: .6rem 0; border-bottom: 1px solid var(--line); color: var(--muted); }
-    .qr-card { text-align: center; }
-    .qr-card img { width: 150px; height: 150px; display: block; margin: 0 auto 1rem; border: 1px solid var(--line); background: #fff; image-rendering: pixelated; }
-    .qr-card h3 { font-size: 1.1rem; }
-    .qr-card p { margin-bottom: .5rem; overflow-wrap: anywhere; font-size: .85rem; }
-    footer { padding: 2rem 0 3rem; }
-    .footer-manifesto { margin: 0; padding-top: 1.3rem; border-top: 1px solid var(--line); font-size: clamp(1.2rem, 3vw, 2rem); line-height: 1.35; letter-spacing: .1em; font-weight: 900; text-transform: uppercase; }
-    .footer-manifesto span { display: block; }
-    @media (min-width: 640px) {
-      .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .impact-grid, .story-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .pillars, .qr-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .privacy-card { grid-template-columns: .9fr 1.1fr; align-items: start; }
-      .privacy-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (min-width: 900px) {
-      .hero-grid { grid-template-columns: 1.25fr .75fr; }
-      .impact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .story-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-    }
-    @media (max-width: 760px) {
-      .nav { align-items: flex-start; flex-direction: column; padding: .85rem 0; }
-      .nav-links { justify-content: flex-start; }
-    }
-    @media (max-width: 420px) {
-      .meta-row { grid-template-columns: 1fr; }
-      .meta-note { grid-column: auto; }
-      .nav-links { gap: .55rem .85rem; }
-      .nav-links a { font-size: .68rem; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+    :root{color-scheme:dark;--paper:#000;--panel:#080808;--ink:#fff;--muted:#b7b7b7;--line:#2a2a2a;--width:1180px}
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "Segoe UI",Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}a:hover{text-decoration-thickness:2px}a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}.wrap{width:min(var(--width),calc(100% - 2rem));margin-inline:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.96);border-bottom:1px solid var(--line)}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{display:inline-flex;align-items:center;gap:.7rem;font-size:.84rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;white-space:nowrap}.brand-mark{width:10px;height:10px;display:inline-block;background:var(--ink);transform:rotate(45deg)}.nav-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:.55rem}.nav-links a{padding:.55rem .7rem;border:1px solid transparent;color:var(--muted);font-size:.73rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}.nav-links a:hover,.nav-links a[aria-current=page]{border-color:var(--line);color:var(--ink)}.nav-links a.ecosystem-link{border-color:#666;color:var(--ink)}
+    .hero{padding:clamp(4rem,9vw,7.5rem) 0 3.2rem;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:end}.eyebrow,.label{margin:0 0 .75rem;color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}h1{margin:0;max-width:850px;font-size:clamp(3rem,9vw,7rem);line-height:.9;letter-spacing:-.08em;font-weight:1000;text-transform:uppercase}.tagline{margin:1rem 0 0;color:var(--muted);font-size:clamp(1.05rem,2vw,1.3rem)}.hero-lines{margin:1.8rem 0 0;display:flex;flex-wrap:wrap;gap:.55rem 1.2rem;font-size:clamp(.85rem,1.7vw,1rem);font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hero-side{border:1px solid var(--line);background:var(--panel);padding:1.2rem}.meta-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.meta-label{margin-bottom:.2rem;color:var(--muted);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}.meta-value{font-size:clamp(1.15rem,3vw,1.55rem);font-weight:800;line-height:1.1}.meta-note{grid-column:1/-1;margin:.25rem 0 0;padding-top:.8rem;border-top:1px solid var(--line);font-size:.76rem;letter-spacing:.15em;font-weight:700;text-transform:uppercase}
+    .section{padding:clamp(3.2rem,7vw,5rem) 0;border-bottom:1px solid var(--line)}.section-head{margin-bottom:1.5rem;display:flex;align-items:end;justify-content:space-between;gap:1rem}.section-title{margin:0;font-size:clamp(2rem,4vw,3.25rem);line-height:.98;letter-spacing:-.06em;text-transform:uppercase}.section-intro{max-width:650px;margin:.6rem 0 0;color:var(--muted)}.two-col,.impact-grid,.story-grid,.pillars,.qr-grid{display:grid;grid-template-columns:1fr;gap:1rem}.card{border:1px solid var(--line);background:var(--panel);padding:clamp(1.2rem,3vw,1.6rem)}.card h3{margin:0 0 .8rem;font-size:clamp(1.25rem,2.7vw,1.8rem);line-height:1.05;letter-spacing:-.04em;text-transform:uppercase}.card p{margin:0 0 .9rem;color:var(--muted)}.card p:last-child{margin-bottom:0}.contact-card{display:flex;flex-direction:column;align-items:flex-start}.email{margin:.2rem 0 1.1rem;overflow-wrap:anywhere}.button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:.7rem 1.1rem;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}.button:hover{background:transparent;color:var(--ink)}.button.secondary{background:transparent;color:var(--ink)}.button.secondary:hover{background:var(--ink);color:var(--paper)}.small-note{margin-top:1rem!important;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}.impact-card{min-height:140px;display:flex;flex-direction:column;justify-content:space-between}.impact-value{margin:0;font-size:clamp(1.2rem,2.7vw,1.65rem);line-height:1.1;font-weight:800;text-transform:uppercase}.impact-number{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.06em}.story-card{min-height:140px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between}.story-card h3{margin:0}.launching{margin-top:1rem!important;font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.pillar-card{min-height:260px;display:flex;flex-direction:column}.pillar-era{margin:0 0 .7rem;color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.18em}.pillar-card h3{margin-bottom:1rem}.pillar-card ul{margin:auto 0 0;padding:0;list-style:none;color:var(--muted)}.pillar-card li{padding:.35rem 0;border-top:1px solid var(--line);text-transform:uppercase;font-size:.82rem;letter-spacing:.08em}.privacy-card{display:grid;grid-template-columns:1fr;gap:1rem}.privacy-list{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr;gap:.6rem 1rem}.privacy-list li{padding:.6rem 0;border-bottom:1px solid var(--line);color:var(--muted)}.qr-card{text-align:center}.qr-card img{width:150px;height:150px;display:block;margin:0 auto 1rem;border:1px solid var(--line);background:#fff;image-rendering:pixelated}.qr-card h3{font-size:1.1rem}.qr-card p{margin-bottom:.5rem;overflow-wrap:anywhere;font-size:.85rem}.feature-card{display:flex;min-height:220px;flex-direction:column;align-items:flex-start;justify-content:space-between}.feature-card h3{margin:.5rem 0}.feature-card .label{margin:0}.preview-banner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}.preview-banner p{max-width:680px;margin:.75rem 0 0;color:var(--muted)}footer{padding:2rem 0 3rem}.footer-manifesto{margin:0;padding-top:1.3rem;border-top:1px solid var(--line);font-size:clamp(1.2rem,3vw,2rem);line-height:1.35;letter-spacing:.1em;font-weight:900;text-transform:uppercase}.footer-manifesto span{display:block}
+    @media(min-width:640px){.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}.impact-grid,.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pillars,.qr-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.privacy-card{grid-template-columns:.9fr 1.1fr;align-items:start}.privacy-list{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:900px){.hero-grid{grid-template-columns:1.25fr .75fr}.impact-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.story-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column;padding:.85rem 0}.nav-links{justify-content:flex-start}}@media(max-width:420px){.meta-row{grid-template-columns:1fr}.meta-note{grid-column:auto}.nav-links{gap:.25rem}.nav-links a{padding:.45rem;font-size:.64rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="RJMedia Community home"><span class="brand-mark" aria-hidden="true"></span><span>RJMedia Community</span></a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="https://jupiterisland.github.io/rjmedia-liner-notes/">Archive</a>
-        <a href="#community">Community</a>
-        <a href="#forum">Forum</a>
-        <a href="#stories">Stories</a>
-        <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener noreferrer">Jupiter Island</a>
-        <a href="#partners">Partners</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+  <header class="topbar"><div class="wrap nav"><a class="brand" href="#home" aria-label="RJMedia Community home"><span class="brand-mark" aria-hidden="true"></span><span>RJMedia Community</span></a><nav class="nav-links" aria-label="Ecosystem navigation"><a class="ecosystem-link" href="archive.html">Archive</a><a class="ecosystem-link" href="#home" aria-current="page">Community</a><a class="ecosystem-link" href="https://github.com/JupiterIsland" target="_blank" rel="noopener noreferrer">Jupiter Island</a><a href="#community">About</a><a href="#forum">Forum</a><a href="#stories">Stories</a><a href="#contact">Need Help?</a></nav></div></header>
   <main id="home">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">Digital Archivist • Creator • AI Builder</p>
-          <h1 id="hero-title">Richard John Murray</h1>
-          <p class="tagline">RJMedia Community — Helping People Stay Connected</p>
-          <div class="hero-lines" aria-label="Community focus"><span>Preserving Cultural History</span><span>Building Community</span><span>Staying Connected</span></div>
-        </div>
-        <aside class="hero-side" aria-label="RJMedia archive statistics">
-          <div class="meta-row">
-            <div><div class="meta-label">Lifetime Views</div><div class="meta-value">999,852</div></div>
-            <div><div class="meta-label">Watch Hours</div><div class="meta-value">72,199</div></div>
-            <p class="meta-note">Approaching One Million Views</p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="community" class="section">
-      <div class="wrap two-col">
-        <article class="card">
-          <p class="label">Community</p>
-          <h2 class="section-title" style="font-size:clamp(1.7rem,3vw,2.4rem); margin-bottom:1rem">Why Staying Connected Matters</h2>
-          <p>RJMedia has been built through years of archive preservation, technical experimentation and community engagement.</p>
-          <p>Like many people across the UK, I experienced housing instability while continuing to maintain archive projects and online resources.</p>
-          <p>AI helped me remain organised, document information and continue building.</p>
-          <p>The audience, archive and community only exist while I remain connected.</p>
-          <p>Every archive update, every community discussion, every project release and every response to someone asking for help depends on reliable technology.</p>
-          <p>Reliable connectivity is not a luxury. It is the infrastructure that allows the work to continue.</p>
-        </article>
-        <article class="card contact-card" id="contact">
-          <p class="label">Get in touch</p>
-          <h2>Need Help?</h2>
-          <p>If you are experiencing housing difficulties, digital exclusion, connectivity problems or simply need help organising information, you are welcome to get in touch.</p>
-          <p>I cannot provide legal advice and cannot guarantee outcomes.</p>
-          <p>I will do my best to share practical lessons, useful resources and information that may help.</p>
-          <a class="email" href="mailto:richardmurray2022@gmail.com">richardmurray2022@gmail.com</a>
-          <a class="button" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Community%20Contact">Contact Options</a>
-          <p class="small-note">Community Resources Launching Soon</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="impact-title">
-      <div class="wrap">
-        <div class="section-head"><h2 id="impact-title" class="section-title">Community Impact</h2></div>
-        <div class="impact-grid">
-          <article class="card impact-card"><p class="label">Archive</p><p class="impact-value"><span class="impact-number">999,852</span><br>Archive Views</p></article>
-          <article class="card impact-card"><p class="label">Archive</p><p class="impact-value"><span class="impact-number">72,199</span><br>Watch Hours</p></article>
-          <article class="card impact-card"><p class="label">Coming soon</p><p class="impact-value">Community Stories Launching Soon</p></article>
-          <article class="card impact-card" id="forum"><p class="label">Coming soon</p><p class="impact-value">Forum Members Launching Soon</p></article>
-          <article class="card impact-card"><p class="label">Coming soon</p><p class="impact-value">Support Requests Launching Soon</p></article>
-          <article class="card impact-card" id="partners"><p class="label">Coming soon</p><p class="impact-value">Community Supporters Launching Soon</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="stories" class="section">
-      <div class="wrap">
-        <div class="section-head"><div><h2 class="section-title">Community Stories</h2><p class="section-intro">Behind every statistic is a person.</p></div></div>
-        <p class="section-intro">This section is being developed to collect experiences, lessons learned and practical knowledge from real people facing real challenges.</p>
-        <div class="story-grid">
-          <article class="card story-card"><h3>Housing Stories</h3></article>
-          <article class="card story-card"><h3>Staying Connected</h3></article>
-          <article class="card story-card"><h3>Digital Inclusion</h3></article>
-          <article class="card story-card"><h3>Practical AI</h3></article>
-          <article class="card story-card"><h3>Creator Journeys</h3></article>
-        </div>
-        <div class="story-action"><span class="button secondary" aria-disabled="true">Coming Soon</span></div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="ecosystem-title">
-      <div class="wrap">
-        <div class="section-head"><h2 id="ecosystem-title" class="section-title">The Ecosystem</h2></div>
-        <div class="pillars">
-          <article class="card pillar-card"><p class="pillar-era">01 / Past</p><h3>RJMedia Digital Archive</h3><ul><li>Music</li><li>Documentaries</li><li>Research</li><li>Preservation</li></ul></article>
-          <article class="card pillar-card"><p class="pillar-era">02 / Present</p><h3>RJMedia Community</h3><ul><li>Stories</li><li>Forum</li><li>Discussion</li><li>Resources</li></ul></article>
-          <article class="card pillar-card"><p class="pillar-era">03 / Future</p><h3>Jupiter Island</h3><ul><li>AI</li><li>Automation</li><li>Metadata</li><li>Open Source</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="privacy-title">
-      <div class="wrap card privacy-card">
-        <div><p class="label">Privacy &amp; Consent</p><h2 id="privacy-title" class="section-title" style="font-size:clamp(1.8rem,3.8vw,2.8rem)">Your Story.<br>Your Data.<br>Your Choice.</h2></div>
-        <ul class="privacy-list">
-          <li>Stories remain private by default.</li>
-          <li>Contributors control publication.</li>
-          <li>No personal information is published without permission.</li>
-          <li>Stories may be anonymised.</li>
-          <li>Submissions can be removed on request.</li>
-          <li>Participation is voluntary.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" aria-label="RJMedia links">
-      <div class="wrap">
-        <div class="section-head"><h2 class="section-title">Explore RJMedia</h2></div>
-        <div class="qr-grid">
-          <article class="card qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https%3A%2F%2Fwww.youtube.com%2F%40RJMmedia-uk" alt="QR code linking to the RJMedia YouTube channel" loading="lazy"><h3>Visit Channel</h3><p><a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener noreferrer">YouTube</a></p></article>
-          <article class="card qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https%3A%2F%2Fgithub.com%2FJupiterIsland" alt="QR code linking to Jupiter Island projects on GitHub" loading="lazy"><h3>View Projects</h3><p><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener noreferrer">GitHub</a></p></article>
-          <article class="card qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https%3A%2F%2Fjupiterisland.github.io%2Frjmedia-liner-notes%2F" alt="QR code linking to the RJMedia Digital Archive" loading="lazy"><h3>Explore Archive</h3><p><a href="https://jupiterisland.github.io/rjmedia-liner-notes/" target="_blank" rel="noopener noreferrer">RJMedia Digital Archive</a></p></article>
-        </div>
-      </div>
-    </section>
+    <section class="hero" aria-labelledby="hero-title"><div class="wrap hero-grid"><div><p class="eyebrow">Digital Archivist • Creator • AI Builder</p><h1 id="hero-title">Richard John Murray</h1><p class="tagline">RJMedia Community — Helping People Stay Connected</p><div class="hero-lines" aria-label="Community focus"><span>Preserving Cultural History</span><span>Building Community</span><span>Staying Connected</span></div></div><aside class="hero-side" aria-label="RJMedia archive statistics"><div class="meta-row"><div><div class="meta-label">Lifetime Views</div><div class="meta-value">999,852</div></div><div><div class="meta-label">Watch Hours</div><div class="meta-value">72,199</div></div><p class="meta-note">Approaching One Million Views</p></div></aside></div></section>
+    <section class="section" aria-labelledby="ecosystem-title"><div class="wrap"><div class="section-head"><div><p class="label">Past • Present • Future</p><h2 id="ecosystem-title" class="section-title">One Connected Ecosystem</h2></div></div><div class="pillars"><article class="card pillar-card"><p class="pillar-era">PAST</p><h3>RJMedia Digital Archive</h3><ul><li>Music</li><li>Documentaries</li><li>Research</li><li>Preservation</li></ul><p style="margin-top:1rem"><a class="button secondary" href="archive.html">Explore the Archive</a></p></article><article class="card pillar-card"><p class="pillar-era">PRESENT</p><h3>RJMedia Community</h3><ul><li>Stories</li><li>Forum</li><li>Discussion</li><li>Resources</li></ul></article><article class="card pillar-card"><p class="pillar-era">FUTURE</p><h3>Jupiter Island</h3><ul><li>AI</li><li>Automation</li><li>Metadata</li><li>Open Source</li></ul><p style="margin-top:1rem"><a class="button secondary" href="https://github.com/JupiterIsland" target="_blank" rel="noopener noreferrer">Explore Projects</a></p></article></div></div></section>
+    <section id="community" class="section"><div class="wrap two-col"><article class="card"><p class="label">Community</p><h2 class="section-title" style="font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:1rem">Why Staying Connected Matters</h2><p>RJMedia has been built through years of archive preservation, technical experimentation and community engagement.</p><p>Like many people across the UK, I experienced housing instability while continuing to maintain archive projects and online resources.</p><p>AI helped me remain organised, document information and continue building.</p><p>The audience, archive and community only exist while I remain connected.</p><p>Every archive update, every community discussion, every project release and every response to someone asking for help depends on reliable technology.</p><p>Reliable connectivity is not a luxury. It is the infrastructure that allows the work to continue.</p></article><article class="card contact-card" id="contact"><p class="label">Get in touch</p><h2>Need Help?</h2><p>If you are experiencing housing difficulties, digital exclusion, connectivity problems or simply need help organising information, you are welcome to get in touch.</p><p>I cannot provide legal advice and cannot guarantee outcomes. I will do my best to share practical lessons, useful resources and information that may help.</p><a class="email" href="mailto:richardmurray2022@gmail.com">richardmurray2022@gmail.com</a><a class="button" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Community%20Contact">Contact Options</a><p class="small-note">Community Resources Launching Soon</p></article></div></section>
+    <section class="section" aria-labelledby="impact-title"><div class="wrap"><div class="section-head"><h2 id="impact-title" class="section-title">Community Impact</h2></div><div class="impact-grid"><article class="card impact-card"><p class="label">Archive</p><p class="impact-value"><span class="impact-number">999,852</span><br>Archive Views</p></article><article class="card impact-card"><p class="label">Archive</p><p class="impact-value"><span class="impact-number">72,199</span><br>Watch Hours</p></article><article class="card impact-card"><p class="label">Coming soon</p><p class="impact-value">Community Stories Launching Soon</p></article><article class="card impact-card" id="forum"><p class="label">Coming soon</p><p class="impact-value">Forum Launching Soon</p></article><article class="card impact-card"><p class="label">Coming soon</p><p class="impact-value">Support Requests Launching Soon</p></article><article class="card impact-card" id="partners"><p class="label">Coming soon</p><p class="impact-value">Community Supporters Launching Soon</p></article></div></div></section>
+    <section id="stories" class="section"><div class="wrap"><div class="section-head"><div><h2 class="section-title">Community Stories</h2><p class="section-intro">Behind every statistic is a person. Experiences, lessons and practical knowledge, shared with care.</p></div></div><div class="story-grid"><article class="card story-card"><h3>Housing Stories</h3><p class="launching">Launching Soon</p></article><article class="card story-card"><h3>Staying Connected</h3><p class="launching">Launching Soon</p></article><article class="card story-card"><h3>Digital Inclusion</h3><p class="launching">Launching Soon</p></article><article class="card story-card"><h3>Practical AI</h3><p class="launching">Launching Soon</p></article><article class="card story-card"><h3>Creator Journeys</h3><p class="launching">Launching Soon</p></article></div></div></section>
+    <section class="section" aria-labelledby="archive-preview-title"><div class="wrap"><div class="section-head"><div><p class="label">Past • Preservation • Music</p><h2 id="archive-preview-title" class="section-title">Explore the Archive</h2><p class="section-intro">Discover featured performances, documentaries and archive entries from RJMedia Digital Archive.</p></div></div><div class="story-grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))"><article class="card feature-card"><p class="label">Featured performance</p><h3>The Smiths — How Soon Is Now?</h3><a href="https://www.youtube.com/watch?v=WLU74h889VI" target="_blank" rel="noopener noreferrer">Watch performance</a></article><article class="card feature-card"><p class="label">Featured documentary</p><h3>Live Music &amp; Band Documentaries</h3><a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener noreferrer">Explore documentaries</a></article><article class="card feature-card"><p class="label">Featured archive entry</p><h3>The Paul Draper Text Archive</h3><a href="draper.html">Read archive entry</a></article></div><p style="margin-top:1.5rem"><a class="button" href="archive.html">Visit RJMedia Digital Archive</a></p></div></section>
+    <section class="section" aria-labelledby="privacy-title"><div class="wrap card privacy-card"><div><p class="label">Privacy &amp; Consent</p><h2 id="privacy-title" class="section-title" style="font-size:clamp(1.8rem,3.8vw,2.8rem)">Your Story.<br>Your Data.<br>Your Choice.</h2></div><ul class="privacy-list"><li>Stories remain private by default.</li><li>Contributors control publication.</li><li>No personal information is published without permission.</li><li>Stories may be anonymised.</li><li>Submissions can be removed on request.</li><li>Participation is voluntary.</li></ul></div></section>
+    <section class="section" aria-label="RJMedia links"><div class="wrap"><div class="section-head"><h2 class="section-title">Explore RJMedia</h2></div><div class="qr-grid"><article class="card qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https%3A%2F%2Fwww.youtube.com%2F%40RJMmedia-uk" alt="QR code linking to the RJMedia YouTube channel" loading="lazy"><h3>Visit Channel</h3><p><a href="https://www.youtube.com/@RJMmedia-uk">YouTube</a></p></article><article class="card qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https%3A%2F%2Fgithub.com%2FJupiterIsland" alt="QR code linking to Jupiter Island projects" loading="lazy"><h3>View Projects</h3><p><a href="https://github.com/JupiterIsland">GitHub</a></p></article><article class="card qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;data=https%3A%2F%2Fjupiterisland.github.io%2Frjmedia-liner-notes%2F" alt="QR code linking to the RJMedia Digital Archive" loading="lazy"><h3>Explore Archive</h3><p><a href="archive.html">RJMedia Digital Archive</a></p></article></div></div></section>
   </main>
-
-  <footer>
-    <div class="wrap"><p class="footer-manifesto"><span>One person.</span><span>One archive.</span><span>Nearly one million views.</span><span>Still building.</span><span>Still connected.</span><span>Still here.</span></p></div>
-  </footer>
+  <footer><div class="wrap"><p class="footer-manifesto"><span>One person.</span><span>One archive.</span><span>Nearly one million views.</span><span>Still building.</span><span>Still connected.</span></p></div></footer>
 </body>
 </html>
