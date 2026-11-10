@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta name="description" content="Paul Draper & Mansun Magazine Spreads — High-resolution scans from Melody Maker, Select, Rock Sound, and Uncut with immersive full-screen page reader.">
+  <title>Magazine Spreads & Press Scans | Paul Draper Archive</title>
+  <link rel="stylesheet" href="../assets/css/archive.css">
+  <style>
+    .press-reader {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .press-article {
+      padding: 2rem;
+      border: 1px solid var(--rule);
+      background: var(--white);
+    }
+    .press-article h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+    .press-meta {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .press-pages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .press-page {
+      border: 1px solid var(--rule);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .press-page:hover {
+      transform: scale(1.02);
+    }
+    .press-page img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .fullscreen-viewer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 100;
+      padding: 2rem;
+    }
+    .fullscreen-viewer.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fullscreen-viewer img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .fullscreen-controls {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      gap: 1rem;
+      z-index: 101;
+    }
+    .fullscreen-controls button {
+      padding: 0.5rem 1rem;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid white;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="archive-status-bar">
+    <div class="wrap archive-status-inner">
+      <span>RJMEDIA DIGITAL ARCHIVE • PAUL DRAPER &amp; MANSUN COLLECTION</span>
+      <span>16 NEWS LOGS • 11 PRESS SCANS • 52 STREAM &amp; MP3 TRACKS</span>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="wrap nav">
+      <a class="brand" href="./index.html"><span class="mark" aria-hidden="true"></span> RJMedia / Paul Draper Archive</a>
+      <nav class="nav-links" aria-label="Paul Draper Archive Navigation">
+        <a href="../index.html" style="text-decoration: underline; color: var(--muted);">← Back to RJMedia Hub</a>
+        <a href="./index.html">Archive Hub</a>
+        <a href="./draper-news.html">News (16)</a>
+        <a href="./draper-articles.html">Articles (4)</a>
+        <a href="./press-layout.html" class="active">Press Spreads</a>
+        <a href="./mansun-mp3-vault.html">MP3 &amp; Stream Vault (52)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Original Magazine Scans / Interviews / Press Cuttings (1996 — 2006)</p>
+        <h1>Press &amp;<br/>Articles Vault.</h1>
+        <p class="intro">High-resolution magazine scans and recovered music press features from Melody Maker, Select, Rock Sound, and Uncut. Click any scan page to open the full-screen reader.</p>
+      </div>
+    </section>
+
+    <!-- PRESS READER -->
+    <section class="press-reader">
+      
+      <!-- Feature 1: Melody Maker Sept 1996 -->
+      <article class="press-article" id="mm1996">
+        <h3>28 SEPTEMBER 1996 • MELODY MAKER (PAGES 10–11)</h3>
+        <div class="press-meta">
+          <span><strong>"Glam Bam Thank You Man!"</strong></span>
+          <span>—</span>
+          <span>Mansun's Nineties Glamour</span>
+        </div>
+        <p style="color: var(--muted); margin: 0 0 1.5rem;">
+          <strong>Words:</strong> Ben Stud · <strong>Photos:</strong> Tom Sheehan · <strong>Era:</strong> Stripper Vicar / Pre-Attack of the Grey Lantern
+        </p>
+        <blockquote style="margin: 1rem 0 1.5rem; padding: 1rem; border-left: 3px solid var(--rule); color: var(--muted); font-style: italic;">
+          "It comes down to the songs. If they're no good, it doesn't matter how fabulous you look, or how brilliantly you speak." — Paul Draper
+        </blockquote>
+        <div class="press-pages">
+          <div class="press-page" onclick="openFullscreen('../assets/images/glam_1_big.jpg', 'Melody Maker (Sept 28, 1996) — Page 10')">
+            <img src="../assets/images/glam_1_big.jpg" alt="Melody Maker page 10 - cover spread">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Page 10 — Cover Spread</p>
+          </div>
+          <div class="press-page" onclick="openFullscreen('../assets/images/glam_2_big.jpg', 'Melody Maker (Sept 28, 1996) — Page 11')">
+            <img src="../assets/images/glam_2_big.jpg" alt="Melody Maker page 11 - full interview">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Page 11 — Full Interview</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 2: Select / NME June 1996 -->
+      <article class="press-article" id="select1996">
+        <h3>JUNE 1996 • SELECT / NME FEATURE</h3>
+        <div class="press-meta">
+          <span><strong>"Taxi! The A.A.!"</strong></span>
+          <span>—</span>
+          <span>Mansun AKA Bad Boys Inc</span>
+        </div>
+        <p style="color: var(--muted); margin: 0 0 1.5rem;">
+          Supporting Cast at the Kentish Town Forum (24 March 1996), armed police roadblock on the Westway, early Liverpool gigs, and the release of Take It Easy Chicken / Mansun EP2.
+        </p>
+        <blockquote style="margin: 1rem 0 1.5rem; padding: 1rem; border-left: 3px solid var(--rule); color: var(--muted); font-style: italic;">
+          "These girls were waiting for Rick Witter and when I appeared they all took two steps back. They said, 'Oh, you scare us, you're mad.' That's good." — Paul Draper
+        </blockquote>
+        <div class="press-pages">
+          <div class="press-page" onclick="openFullscreen('../assets/images/taxi_small.jpg', 'Select/NME (June 1996) — Opening Title')">
+            <img src="../assets/images/taxi_small.jpg" alt="Select NME opening title page">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Opening Title Page</p>
+          </div>
+          <div class="press-page" onclick="openFullscreen('../assets/images/taxi_1_big.jpg', 'Select/NME (June 1996) — Spread Part 1')">
+            <img src="../assets/images/taxi_1_big.jpg" alt="Select NME spread part 1">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Spread Part 1</p>
+          </div>
+          <div class="press-page" onclick="openFullscreen('../assets/images/taxi_2_big.jpg', 'Select/NME (June 1996) — Spread Part 2')">
+            <img src="../assets/images/taxi_2_big.jpg" alt="Select NME spread part 2">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Spread Part 2</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 3: Rock Sound Summer 2000 -->
+      <article class="press-article" id="rs2000">
+        <h3>SUMMER 2000 • ROCK SOUND (PAGES 34–37)</h3>
+        <div class="press-meta">
+          <span><strong>"Mansun: Just For Kix"</strong></span>
+          <span>—</span>
+          <span>4-Page Feature</span>
+        </div>
+        <p style="color: var(--muted); margin: 0 0 1.5rem;">
+          <strong>Words:</strong> Iain Moffat · <strong>Photos:</strong> Anton Corbijn · <strong>Era:</strong> Little Kix / I Can Only Disappoint U
+        </p>
+        <blockquote style="margin: 1rem 0 1.5rem; padding: 1rem; border-left: 3px solid var(--rule); color: var(--muted); font-style: italic;">
+          "We put fucking everything into those records — the whole five years is in every word, every part, every gig, everything." — Paul Draper
+        </blockquote>
+        <div class="press-pages">
+          <div class="press-page" onclick="openFullscreen('../assets/images/rocksound2000.jpg', 'Rock Sound (Summer 2000) — Page 34 Opening')">
+            <img src="../assets/images/rocksound2000.jpg" alt="Rock Sound page 34">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Page 34 — Opening</p>
+          </div>
+          <div class="press-page" onclick="openFullscreen('../assets/images/rocksound2000_1.jpg', 'Rock Sound (Summer 2000) — Page 35 Interview Pt. 1')">
+            <img src="../assets/images/rocksound2000_1.jpg" alt="Rock Sound page 35">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Page 35 — Interview Pt. 1</p>
+          </div>
+          <div class="press-page" onclick="openFullscreen('../assets/images/rocksound2000_2.jpg', 'Rock Sound (Summer 2000) — Page 36 Interview Pt. 2')">
+            <img src="../assets/images/rocksound2000_2.jpg" alt="Rock Sound page 36">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Page 36 — Interview Pt. 2</p>
+          </div>
+          <div class="press-page" onclick="openFullscreen('../assets/images/rocksound2000_3.jpg', 'Rock Sound (Summer 2000) — Page 37 Finale')">
+            <img src="../assets/images/rocksound2000_3.jpg" alt="Rock Sound page 37">
+            <p style="padding: 0.5rem; background: var(--white); margin: 0; font-size: 0.8rem; color: var(--muted);">Page 37 — Finale</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 4: Uncut December 2006 -->
+      <article class="press-article" id="uncut2006">
+        <h3>DECEMBER 2006 • UNCUT MAGAZINE</h3>
+        <div class="press-meta">
+          <span><strong>Paul Draper On The Break-Up Of Mansun &amp; Solo Recovery</strong></span>
+        </div>
+        <p style="color: var(--muted); margin: 0 0 1.5rem;">
+          The final sessions of Kleptomania, Paul's illness and recovery, and building his own studio path.
+        </p>
+        <blockquote style="margin: 1rem 0 1.5rem; padding: 1rem; border-left: 3px solid var(--rule); color: var(--muted); font-style: italic;">
+          "One night it all kicked off. We broke into the wine cellar, picked out the best bottle of champagne and got twatted. There was a lot of shouting and aggro. Chad punched his hand into a brick wall and ended up in hospital on a morphine drip. People were saying that I was a paranoid schizophrenic. In fact with all the stress I got a malignant tumour and had to have a course of radiation therapy before having it cut out." — Paul Draper
+        </blockquote>
+        <p style="color: var(--muted); margin-top: 1.5rem; font-size: 0.9rem;">
+          <em>High-resolution scan coming soon. Check back for the full Uncut feature.</em>
+        </p>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>RJMedia / Paul Draper &amp; Mansun Master Archive Hub</div>
+      <div>
+        <a href="../index.html">← Back to RJMedia Hub</a> ·
+        <a href="./index.html">Archive Hub</a> ·
+        <a href="./draper-news.html">News</a> ·
+        <a href="./draper-articles.html">Articles</a> ·
+        <a href="./mansun-mp3-vault.html">MP3 Vault</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Fullscreen Viewer Modal -->
+  <div class="fullscreen-viewer" id="fullscreenViewer" onclick="closeFullscreen(event)">
+    <img id="fullscreenImg" src="" alt="">
+  </div>
+  <div class="fullscreen-controls" id="fullscreenControls" style="display: none;">
+    <button onclick="closeFullscreen()">Close [ESC]</button>
+  </div>
+
+  <script>
+    function openFullscreen(src, caption) {
+      document.getElementById('fullscreenImg').src = src;
+      document.getElementById('fullscreenImg').alt = caption;
+      document.getElementById('fullscreenViewer').classList.add('active');
+      document.getElementById('fullscreenControls').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeFullscreen(event) {
+      if (event && event.target.id !== 'fullscreenViewer') return;
+      document.getElementById('fullscreenViewer').classList.remove('active');
+      document.getElementById('fullscreenControls').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeFullscreen();
+    });
+  </script>
+</body>
+</html>
