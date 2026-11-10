@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="RJMedia Digital Archive — music, documentaries, research and preservation. Remember the sound.">
+  <title>RJMedia Digital Archive — Remember the Sound</title>
+  <style>
+    :root {
+      --paper: #f5f3ee;
+      --paper-deep: #ebe6dc;
+      --ink: #171713;
+      --ink-soft: #55544d;
+      --line: rgba(23, 23, 19, .82);
+      --line-soft: rgba(23, 23, 19, .18);
+      --panel: rgba(255, 255, 255, .48);
+      --accent: #766b53;
+      --width: 1180px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 "Segoe UI", Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .2em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+    .wrap { width: min(var(--width), calc(100% - 2rem)); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(245, 243, 238, .96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-soft); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; gap: .75rem; font-size: .82rem; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+    .brand-mark { width: 10px; height: 10px; display: inline-block; background: var(--ink); transform: rotate(45deg); }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .4rem; }
+    .nav-links a { padding: .55rem .7rem; border: 1px solid transparent; color: var(--ink-soft); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { border-color: var(--line-soft); color: var(--ink); }
+    .nav-links .ecosystem-link { border-color: var(--line); color: var(--ink); }
+    .hero { padding: clamp(3.6rem, 8vw, 6.7rem) 0 2.4rem; border-bottom: 1px solid var(--line-soft); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(290px, .85fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: end; }
+    .eyebrow, .label { margin: 0 0 .75rem; color: var(--accent); font-size: .7rem; font-weight: 800; letter-spacing: .19em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 760px; font-size: clamp(3.25rem, 8vw, 7rem); line-height: .88; letter-spacing: -.085em; font-weight: 1000; text-transform: uppercase; }
+    .hero-copy { max-width: 700px; margin: 1.3rem 0 0; color: var(--ink-soft); font-size: clamp(1.02rem, 2vw, 1.2rem); }
+    .byline { margin: .85rem 0 0; font-size: .82rem; font-weight: 800; letter-spacing: .05em; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+    .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: .72rem 1rem; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .15s ease, color .15s ease, transform .15s ease; }
+    .button:hover { background: transparent; color: var(--ink); transform: translateY(-1px); }
+    .button.secondary { background: transparent; color: var(--ink); }
+    .button.secondary:hover { background: var(--ink); color: var(--paper); }
+    .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+    .metric { min-height: 105px; padding: 1rem; border: 1px solid var(--line-soft); background: var(--panel); }
+    .metric-label { margin-bottom: .35rem; color: var(--ink-soft); font-size: .65rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .metric-value { font-size: clamp(1.25rem, 2.8vw, 1.8rem); font-weight: 900; line-height: 1.05; letter-spacing: -.04em; }
+    .section { padding: clamp(3.2rem, 7vw, 5rem) 0; border-bottom: 1px solid var(--line-soft); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+    .section-title { margin: 0; font-size: clamp(2rem, 4vw, 3.3rem); line-height: .97; letter-spacing: -.065em; text-transform: uppercase; }
+    .section-intro { max-width: 700px; margin: .65rem 0 0; color: var(--ink-soft); }
+    .ecosystem { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+    .ecosystem-card { min-height: 230px; display: flex; flex-direction: column; padding: clamp(1.2rem, 3vw, 1.6rem); border: 1px solid var(--line); background: var(--panel); }
+    .era { margin: 0 0 .75rem; color: var(--accent); font-size: .68rem; font-weight: 900; letter-spacing: .2em; }
+    .ecosystem-card h3, .preview-card h3 { margin: 0 0 .75rem; font-size: clamp(1.25rem, 2.4vw, 1.8rem); line-height: 1; letter-spacing: -.045em; text-transform: uppercase; }
+    .ecosystem-card p { margin: 0; color: var(--ink-soft); }
+    .ecosystem-card .card-link { margin-top: auto; padding-top: 1.2rem; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .featured-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(250px, .8fr); gap: 1rem; align-items: stretch; }
+    .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); background: #171713; box-shadow: 0 18px 40px rgba(0, 0, 0, .1); }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .preview-card { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(1.3rem, 3vw, 2rem); border: 1px solid var(--line); background: var(--paper-deep); }
+    .preview-card p { color: var(--ink-soft); }
+    .archive-entries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .entry { min-height: 160px; padding: 1.2rem; border: 1px solid var(--line-soft); background: var(--panel); }
+    .entry p { margin: .5rem 0 0; color: var(--ink-soft); }
+    .entry h3 { margin: .3rem 0; font-size: 1.1rem; line-height: 1.1; text-transform: uppercase; }
+    .notes-panel { padding: clamp(1.3rem, 3vw, 2rem); border: 1px solid var(--line); background: var(--panel); }
+    .notes-panel h3 { margin: 0 0 .6rem; font-size: 1.35rem; text-transform: uppercase; }
+    .notes-panel p { margin: 0; color: var(--ink-soft); }
+    .community-cta { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1.5rem; padding: clamp(1.4rem, 4vw, 2.2rem); border: 1px solid var(--line); background: var(--paper-deep); }
+    .community-cta h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: .98; letter-spacing: -.06em; text-transform: uppercase; }
+    .community-cta p { max-width: 700px; margin: .75rem 0 0; color: var(--ink-soft); }
+    footer { padding: 2rem 0 3rem; color: var(--ink-soft); font-size: .8rem; }
+    .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line-soft); padding-top: 1.2rem; align-items: center; }
+    @media (max-width: 800px) { .hero-grid, .featured-layout { grid-template-columns: 1fr; } .ecosystem { grid-template-columns: 1fr; } .ecosystem-card { min-height: 190px; } .archive-entries { grid-template-columns: 1fr; } }
+    @media (max-width: 760px) { .nav { align-items: flex-start; flex-direction: column; padding: .85rem 0; } .nav-links { justify-content: flex-start; } }
+    @media (max-width: 520px) { .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } .metric { min-height: 88px; padding: .8rem; } .community-cta { grid-template-columns: 1fr; } .hero-actions .button { width: 100%; } .nav-links { gap: .2rem; } .nav-links a { padding: .45rem; font-size: .64rem; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="RJMedia Digital Archive home"><span class="brand-mark" aria-hidden="true"></span><span>RJMedia Digital Archive</span></a>
+      <nav class="nav-links" aria-label="Ecosystem navigation">
+        <a class="ecosystem-link" href="#home" aria-current="page">Archive</a>
+        <a class="ecosystem-link" href="index.html">Community</a>
+        <a class="ecosystem-link" href="https://github.com/JupiterIsland" target="_blank" rel="noopener noreferrer">Jupiter Island</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#featured">Featured</a>
+        <a href="#notes">Archive Intelligence Notes</a>
+      </nav>
+    </div>
+  </header>
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">PAST / Digital liner notes / live music preservation</p>
+          <h1 id="hero-title">Remember the sound.</h1>
+          <p class="hero-copy">RJMedia Digital Archive preserves rare live performances, music documentaries, research and the stories behind the sound. An editorial home for cultural history, built to keep the archive visible and accessible.</p>
+          <p class="byline">Built by Richard John Murray</p>
+          <div class="hero-actions"><a class="button" href="#featured">Explore the archive</a><a class="button secondary" href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener noreferrer">Watch the channel</a></div>
+        </div>
+        <aside aria-label="RJMedia Digital Archive metrics">
+          <div class="metrics">
+            <div class="metric"><div class="metric-label">Views</div><div class="metric-value">999,852</div></div>
+            <div class="metric"><div class="metric-label">Watch Hours</div><div class="metric-value">72,199</div></div>
+            <div class="metric"><div class="metric-label">Subscribers</div><div class="metric-value">1,939</div></div>
+            <div class="metric"><div class="metric-label">Impressions</div><div class="metric-value">14.3 Million</div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section id="ecosystem" class="section" aria-labelledby="ecosystem-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="label">A shared home for preservation, people and technology</p><h2 class="section-title" id="ecosystem-title">Past. Present. Future.</h2></div></div>
+        <div class="ecosystem">
+          <article class="ecosystem-card"><p class="era">PAST</p><h3>RJMedia Digital Archive</h3><p>Music Documentaries Research Preservation</p><a class="card-link" href="#home">Explore the archive ↑</a></article>
+          <article class="ecosystem-card"><p class="era">PRESENT</p><h3>RJMedia Community</h3><p>Stories Forum Discussion Resources</p><a class="card-link" href="index.html">Visit RJMedia Community →</a></article>
+          <article class="ecosystem-card"><p class="era">FUTURE</p><h3>Jupiter Island</h3><p>AI Automation Metadata Open Source</p><a class="card-link" href="https://github.com/JupiterIsland" target="_blank" rel="noopener noreferrer">Explore Jupiter Island →</a></article>
+        </div>
+      </div>
+    </section>
+    <section id="featured" class="section" aria-labelledby="featured-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="label">Music • Documentary • History</p><h2 class="section-title" id="featured-title">Featured from the Archive</h2><p class="section-intro">Watch a featured live performance, then explore documentary work and preserved research from the archive.</p></div></div>
+        <div class="featured-layout">
+          <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/WLU74h889VI?rel=0&amp;modestbranding=1" title="The Smiths — How Soon Is Now? featured RJMedia archive performance" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+          <article class="preview-card"><p class="label">Featured performance</p><h3>The Smiths — How Soon Is Now?</h3><p>A live performance from the RJMedia music archive, preserved and presented with context.</p><a class="button" href="https://www.youtube.com/watch?v=WLU74h889VI" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></article>
+        </div>
+        <div class="archive-entries">
+          <article class="entry"><p class="label">Featured documentary</p><h3>Live Music &amp; Band Documentaries</h3><p>Stories and footage that keep music history in view.</p></article>
+          <article class="entry"><p class="label">Featured archive entry</p><h3>The Paul Draper Text Archive</h3><p>Recovered interviews, fan Q&amp;As, production notes and discography, preserved as a research resource.</p><p><a href="draper.html">Read archive entry →</a></p></article>
+          <article class="entry"><p class="label">Preservation</p><h3>Music Worth Preserving</h3><p>Research, restoration and archive metadata support long-term access to cultural history.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="notes" class="section" aria-labelledby="notes-title">
+      <div class="wrap">
+        <div class="section-head"><div><p class="label">AI-assisted cataloguing • Archive first</p><h2 class="section-title" id="notes-title">Archive Intelligence Notes</h2><p class="section-intro">Research notes and metadata support the work of documenting, restoring and preserving music. AI is a tool in service of the archive.</p></div></div>
+        <article class="notes-panel"><h3>Preservation with context</h3><p>Archive entries can bring together performance details, documentary context, restoration notes and research references—helping future listeners understand not only what they hear, but why it matters.</p></article>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="community-title">
+      <div class="wrap community-cta"><div><p class="label">PRESENT • RJMedia Community</p><h2 id="community-title">Join the Community</h2><p>Behind every archive entry is a person.<br>Community stories, practical resources and discussion are available through RJMedia Community.</p></div><a class="button" href="index.html">Visit RJMedia Community</a></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><span>RJMedia Digital Archive • Built by Richard John Murray</span><nav aria-label="Footer ecosystem navigation"><a href="#home">Archive</a> · <a href="index.html">Community</a> · <a href="https://github.com/JupiterIsland">Jupiter Island</a></nav></div></footer>
+</body>
+</html>

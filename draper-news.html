@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta name="description" content="A living Paul Draper and Mansun news archive: recovered updates, photographs, and the years still to be restored.">
+  <title>Paul Draper — News & Image Archive | RJMedia</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f4f1;
+      --white: #fff;
+      --ink: #111;
+      --muted: #555;
+      --rule: rgba(17, 17, 17, .22);
+      --black: #111;
+      --max: 1120px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
+    .masthead { position: sticky; top: 0; z-index: 5; background: rgba(244,244,241,.96); border-bottom: 1px solid var(--rule); }
+    .nav { min-height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .7rem; font-size: .78rem; font-weight: 900; letter-spacing: .16em; text-decoration: none; text-transform: uppercase; }
+    .mark { width: 10px; height: 10px; background: var(--ink); transform: rotate(45deg); }
+    .nav a:last-child { font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .hero { padding: clamp(3.2rem, 8vw, 6.5rem) 0 3rem; border-bottom: 1px solid var(--rule); }
+    .eyebrow, .kicker { margin: 0 0 .8rem; font-size: .7rem; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 900px; margin: 0; font-size: clamp(3.2rem, 10vw, 8.5rem); font-weight: 1000; letter-spacing: -.09em; line-height: .82; text-transform: uppercase; }
+    .intro { max-width: 700px; margin: 1.6rem 0 0; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); }
+    .feature { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(270px, .8fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; padding: clamp(2.5rem, 6vw, 5rem) 0; border-bottom: 1px solid var(--rule); }
+    figure { margin: 0; background: var(--black); }
+    figure img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; filter: grayscale(1); }
+    figcaption { padding: .8rem 1rem; color: var(--white); font-size: .72rem; letter-spacing: .04em; }
+    .story { padding: clamp(1.4rem, 3vw, 2.4rem); background: var(--white); border: 1px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+    .story h2, .section-title { margin: 0; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 950; letter-spacing: -.065em; line-height: .98; text-transform: uppercase; }
+    .date { display: inline-block; margin: 1.3rem 0 .4rem; font-family: monospace; font-size: .85rem; font-weight: 700; }
+    .story p { color: var(--muted); }
+    .story .button { display: inline-block; padding: .75rem 1rem; background: var(--black); color: var(--white); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .section { padding: clamp(2.8rem, 7vw, 5.2rem) 0; border-bottom: 1px solid var(--rule); }
+    .section-head { max-width: 720px; margin-bottom: 1.5rem; }
+    .section-head p:last-child { color: var(--muted); }
+    .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+    .year-card { min-height: 170px; padding: 1.2rem; background: var(--white); border: 1px solid var(--rule); }
+    .year-card strong { display: block; margin-bottom: .6rem; font-size: 1.35rem; letter-spacing: -.04em; }
+    .year-card p { margin: 0; color: var(--muted); }
+    .year-card.gap { background: transparent; border-style: dashed; }
+    .plan { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; counter-reset: step; }
+    .plan article { padding: 1.25rem; border-top: 3px solid var(--ink); background: var(--white); }
+    .plan article::before { counter-increment: step; content: "0" counter(step); display: block; margin-bottom: 1rem; font-family: monospace; font-weight: 900; }
+    .plan h3 { margin: 0 0 .5rem; font-size: 1.05rem; text-transform: uppercase; }
+    .plan p { margin: 0; color: var(--muted); }
+    .note { margin-top: 1.5rem; padding: 1rem 1.2rem; border-left: 4px solid var(--ink); background: #e8e8e4; color: var(--muted); }
+    footer { padding: 1.6rem 0 2.5rem; color: var(--muted); font-size: .75rem; }
+    @media (max-width: 760px) { .feature { grid-template-columns: 1fr; } .timeline, .plan { grid-template-columns: 1fr; } .year-card { min-height: auto; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap nav">
+      <a class="brand" href="draper.html"><span class="mark" aria-hidden="true"></span> RJMedia / Paul Draper Archive</a>
+      <a href="draper.html">Back to the text archive ↗</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Recovered news / photographs / the years between</p>
+        <h1>The story<br>continues.</h1>
+        <p class="intro">A growing record of Paul Draper and Mansun: the updates that survive, the photographs worth keeping, and the missing years we’re working to bring back into view.</p>
+      </div>
+    </section>
+
+    <section class="wrap feature" aria-labelledby="latest-title">
+      <figure>
+        <img src="https://web.archive.org/web/20120530033526im_/http://pauldraper-music.co.uk/images/drapernews.jpg" alt="Archival Paul Draper news photograph from the pauldraper-music.co.uk archive" loading="lazy">
+        <figcaption>Photograph preserved from the archived pauldraper-music.co.uk news page. Source and capture linked below.</figcaption>
+      </figure>
+      <article class="story">
+        <p class="kicker">Latest recovered update in this snapshot</p>
+        <h2 id="latest-title">The Culture Show</h2>
+        <span class="date">20 APRIL 2012</span>
+        <p>The archived news page announced a Paul Draper appearance on BBC Two’s <em>The Culture Show</em>, with a feature looking back at Mansun, the band’s legacy and its cult following.</p>
+        <p>This is the latest dated item identified in the May 2012 capture checked for this page—not a claim that the original site stopped updating then.</p>
+        <a class="button" href="https://web.archive.org/web/20120530033526/http://pauldraper-music.co.uk/news.html" target="_blank" rel="noopener noreferrer">Open the archived news page</a>
+      </article>
+    </section>
+
+    <section class="section" aria-labelledby="timeline-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">A living chronology</p>
+          <h2 class="section-title" id="timeline-title">Keep the gaps visible.</h2>
+          <p>The archive will grow year by year. A blank space means material has not yet been recovered or verified—it does not mean nothing happened.</p>
+        </div>
+        <div class="timeline">
+          <article class="year-card"><strong>1990s–2000s</strong><p>Mansun history, interviews, discography and press material already represented in the text archive.</p></article>
+          <article class="year-card"><strong>2012 / recovered</strong><p>The surviving May 2012 snapshot includes the 20 April Culture Show announcement and its news-page image.</p></article>
+          <article class="year-card gap"><strong>Missing years / in progress</strong><p>News posts, photographs and links still need to be located, checked and placed in date order.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="rebuild-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Restoration, not guesswork</p>
+          <h2 class="section-title" id="rebuild-title">How the archive comes back.</h2>
+          <p>The goal is to restore the news and images across the missing years while keeping provenance clear and making corrections possible.</p>
+        </div>
+        <div class="plan">
+          <article><h3>Recover</h3><p>Use dated Wayback captures and surviving copies to find original pages, photographs and their publication dates.</p></article>
+          <article><h3>Verify</h3><p>Compare captures and sources before describing an item. Mark uncertain dates, missing images and incomplete pages honestly.</p></article>
+          <article><h3>Rebuild</h3><p>Add verified material to the timeline in sequence, preserve source links, and keep recovered images with their captions and context.</p></article>
+        </div>
+        <p class="note"><strong>Archive note:</strong> this page is an editorial reconstruction, not the original pauldraper-music.co.uk website. The linked Wayback capture is the source for the 2012 update and is preserved for provenance.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">RJMedia Paul Draper Archive · Sources linked on each recovered entry · <a href="draper.html">Return to the text archive</a></div></footer>
+</body>
+</html>

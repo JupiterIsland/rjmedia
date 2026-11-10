@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RJMedia Sponsorship</title>
+  <style>
+    :root {
+      --bg: #f4f4f2;
+      --paper: #ffffff;
+      --ink: #101820;
+      --muted: #4d5862;
+      --line: #d9d9d4;
+      --header: #0f172a;
+      --header-soft: #142033;
+      --card: #f7f7f5;
+      --accent: #b3c5d7;
+      --shadow: rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 36px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px var(--shadow);
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--header), var(--header-soft));
+      color: white;
+      padding: 26px 32px 18px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.08;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      font-weight: 700;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 16px 18px;
+    }
+
+    .stat-value {
+      font-size: clamp(1.4rem, 2vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin: 0 0 6px;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.8);
+      margin: 0;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 18px;
+      padding: 26px 32px 10px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 20px 20px 18px;
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .panel p {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-size: 0.98rem;
+    }
+
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+    }
+
+    .project-list li {
+      margin: 0 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-list a,
+    .foot a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+
+    .highlight {
+      background: #eef2f4;
+      border-left: 4px solid #0f172a;
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .need {
+      background: #f8f8f7;
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      font-size: 0.94rem;
+    }
+
+    .need strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .bottom {
+      padding: 10px 32px 32px;
+    }
+
+    .scan-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .scan-item {
+      text-align: center;
+    }
+
+    .scan-item img {
+      width: 122px;
+      height: 122px;
+      display: block;
+      margin: 0 auto 8px;
+      background: white;
+      border: 1px solid var(--line);
+      padding: 6px;
+    }
+
+    .scan-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 4px;
+    }
+
+    .scan-link {
+      font-size: 0.8rem;
+      color: var(--ink);
+      word-break: break-word;
+    }
+
+    .foot {
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+      padding-top: 18px;
+      font-size: 0.9rem;
+    }
+
+    .foot strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .content { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .page { margin: 16px; }
+      .header, .content, .bottom { padding-left: 18px; padding-right: 18px; }
+      .stats { grid-template-columns: 1fr; }
+      .support-grid, .scan-wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="subtitle">Independent Creator • Digital Archivist • AI Builder</div>
+      <h1>Richard John Murray</h1>
+      <div class="stats">
+        <div class="stat">
+          <p class="stat-value">999,852</p>
+          <p class="stat-label">Lifetime Views</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">72,199</p>
+          <p class="stat-label">Watch Hours</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">1,939</p>
+          <p class="stat-label">Subscribers</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value">14.3M</p>
+          <p class="stat-label">Impressions</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="panel">
+        <h2>About</h2>
+        <p>
+          I run RJMedia, an independent archive of live music and band documentaries. I also build and maintain practical AI and media workflows from Carlisle, England.
+        </p>
+        <p>
+          The work includes digital preservation, media restoration, documentation systems, and public-facing archive infrastructure.
+        </p>
+
+        <div class="highlight">
+          <strong>Why support matters</strong>
+          Reliable technology directly affects whether archive work, media restoration, and public-facing digital projects can continue in difficult circumstances.
+        </div>
+
+        <ul class="project-list">
+          <li><strong>RJMedia Archive Vault:</strong> <a href="https://jupiterisland.github.io/rjmedia-liner-notes/" target="_blank" rel="noopener">https://jupiterisland.github.io/rjmedia-liner-notes/</a></li>
+          <li><strong>Live Music &amp; Band Documentaries:</strong> <a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">https://www.youtube.com/@RJMmedia-uk</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">https://github.com/JupiterIsland</a></li>
+        </ul>
+      </section>
+
+      <aside class="panel">
+        <h2>Support requested</h2>
+        <div class="support-grid">
+          <div class="need"><strong>Hardware</strong>Workstation laptop</div>
+          <div class="need"><strong>Hardware</strong>Replacement phone</div>
+          <div class="need"><strong>Connectivity</strong>Mobile data support</div>
+          <div class="need"><strong>Tools</strong>AI / cloud credits</div>
+          <div class="need"><strong>Tools</strong>Developer subscriptions</div>
+          <div class="need"><strong>Work</strong>Media restoration</div>
+        </div>
+
+        <p style="margin-top: 18px;">
+          I’m open to discussing a realistic partnership, sponsor acknowledgement, or clearly disclosed product feedback if the fit is appropriate.
+        </p>
+      </aside>
+    </main>
+
+    <div class="bottom">
+      <div class="foot">
+        <strong>Contact</strong>
+        Richard John Murray<br>
+        Founder | RJMedia Archive<br>
+        Creator | Live Music &amp; Band Documentaries<br>
+        Independent AI Builder<br>
+        Digital Archivist<br>
+        Carlisle, Cumbria, United Kingdom<br><br>
+        Email: <a href="mailto:richardmurray2022@gmail.com">richardmurray2022@gmail.com</a><br>
+        YouTube: <a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">https://www.youtube.com/@RJMmedia-uk</a><br>
+        GitHub: <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">https://github.com/JupiterIsland</a><br>
+        Archive Vault: <a href="https://jupiterisland.github.io/rjmedia-liner-notes/" target="_blank" rel="noopener">https://jupiterisland.github.io/rjmedia-liner-notes/</a>
+      </div>
+
+      <div class="scan-wrap">
+        <div class="scan-item">
+          <div class="scan-label">YouTube</div>
+          <img alt="YouTube QR" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.youtube.com%2F%40RJMmedia-uk" />
+          <div class="scan-link"><a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">Open YouTube</a></div>
+        </div>
+        <div class="scan-item">
+          <div class="scan-label">GitHub</div>
+          <img alt="GitHub QR" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fgithub.com%2FJupiterIsland" />
+          <div class="scan-link"><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">Open GitHub</a></div>
+        </div>
+        <div class="scan-item">
+          <div class="scan-label">Archive Vault</div>
+          <img alt="Archive Vault QR" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fjupiterisland.github.io%2Frjmedia-liner-notes%2F" />
+          <div class="scan-link"><a href="https://jupiterisland.github.io/rjmedia-liner-notes/" target="_blank" rel="noopener">Open Archive</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta name="description" content="Paul Draper & Mansun News Archive — searchable historical updates, studio logs, photographs, and press links.">
+  <title>Paul Draper — News & Photo Archive | RJMedia Digital Archive</title>
+  <link rel="stylesheet" href="../assets/css/archive.css">
+</head>
+<body>
+  <div class="archive-status-bar">
+    <div class="wrap archive-status-inner">
+      <span>RJMEDIA DIGITAL ARCHIVE • PAUL DRAPER &amp; MANSUN COLLECTION</span>
+      <span>16 NEWS LOGS • 11 PRESS SCANS • 52 STREAM &amp; MP3 TRACKS</span>
+    </div>
+  </div>
+  <header class="masthead">
+    <div class="wrap nav">
+      <a class="brand" href="./index.html"><span class="mark" aria-hidden="true"></span> RJMedia / Paul Draper Archive</a>
+      <nav class="nav-links" aria-label="Paul Draper Archive Navigation">
+        <a href="./index.html" class="">Archive Hub</a>
+        <a href="./draper-news.html" class="active">News (16)</a>
+        <a href="./draper-articles.html" class="">Articles (4)</a>
+        <a href="./press-layout.html" class="">Press Spreads</a>
+        <a href="./mansun-mp3-vault.html" class="">MP3 &amp; Stream Vault (52)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Recovered News / Photographs / Studio Logs (2006 — 2012)</p>
+        <h1>Paul Draper<br>News Archive.</h1>
+        <p class="intro">Every surviving update from the original <em>pauldraper-music.co.uk</em> fan archive—searchable by keyword, year, track title, or collaborator, paired with recovered studio and press photography.</p>
+      </div>
+      <div class="corner-sketch" title="Paul Draper portrait sketch from the original archive">
+        <img src="../assets/images/paulcorner4.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper archival sketch portrait" onclick="openLightbox('../assets/images/paulcorner4.jpg', 'Paul Draper — Original site portrait sketch (paulcorner4.jpg)')">
+      </div>
+    </section>
+
+    <!-- VISIBLE PHOTOGRAPHY STRIP -->
+    <section aria-label="Featured Archive Photographs">
+      <div class="photo-strip">
+        <article class="photo-card">
+          <img src="../assets/images/indexpic.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper performing live in studio session" onclick="openLightbox('../assets/images/indexpic.jpg', 'Paul Draper — Live studio session photograph (indexpic.jpg)')">
+          <div class="cap">
+            <strong>Studio &amp; Live Session</strong>
+            Paul Draper on guitar and vocals (indexpic.jpg). Click to enlarge.
+          </div>
+        </article>
+        <article class="photo-card">
+          <img src="../assets/images/glam_1_big.jpg" onerror="this.classList.add('img-missing')" alt="Melody Maker 1996 Stripper Vicar cover shoot" onclick="openLightbox('../assets/images/glam_1_big.jpg', 'Melody Maker (28 Sept 1996) — Glam Bam Thank You Man!')">
+          <div class="cap">
+            <strong>Melody Maker • Sept 1996</strong>
+            "Glam Bam Thank You Man!" feature by Tom Sheehan &amp; Ben Stud.
+          </div>
+        </article>
+        <article class="photo-card">
+          <img src="../assets/images/taxi_small.jpg" onerror="this.classList.add('img-missing')" alt="Mansun Taxi The A.A. feature" onclick="openLightbox('../assets/images/taxi_small.jpg', 'Mansun — Taxi! The A.A.! feature cover')">
+          <div class="cap">
+            <strong>'Taxi! The A.A.!' • 1996</strong>
+            Stove, Paul, and Chad on the road during the early 1996 tour madness.
+          </div>
+        </article>
+        <article class="photo-card">
+          <img src="../assets/images/rocksound2000.jpg" onerror="this.classList.add('img-missing')" alt="Rock Sound 2000 Mansun Just For Kix" onclick="openLightbox('../assets/images/rocksound2000.jpg', 'Rock Sound (2000) — Mansun: Just For Kix (Photos: Anton Corbijn)')">
+          <div class="cap">
+            <strong>Rock Sound • 2000</strong>
+            "Just For Kix" — Anton Corbijn shoot &amp; Iain Moffat interview.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- INSTANT SEARCH & YEAR FILTER -->
+    <section aria-label="Search and filter news archive">
+      <div class="toolbar">
+        <div class="search-box">
+          <input type="search" id="newsSearch" class="search-input" placeholder="Search news (e.g. Draposound, Wayne Riches, Paradiso, Six, Painted Hall, Uncut)..." aria-label="Search news entries">
+        </div>
+        <div class="filter-pills" role="group" aria-label="Filter by year">
+          <button type="button" class="pill active" data-year="all">All (16)</button>
+          <button type="button" class="pill" data-year="2012">2012</button>
+          <button type="button" class="pill" data-year="2008">2008</button>
+          <button type="button" class="pill" data-year="2007">2007</button>
+          <button type="button" class="pill" data-year="2006">2006</button>
+        </div>
+      </div>
+      <div class="result-meta" id="resultCount">Showing all 16 recovered archive dispatches</div>
+    </section>
+
+    <!-- COMPLETE SEARCHABLE NEWS FEED -->
+    <section class="news-feed" id="newsFeed">
+
+      <!-- Item 1: 16/05/2012 -->
+      <article class="news-item with-thumb" data-year="2012">
+        <div>
+          <span class="news-date">16/05/2012</span>
+          <h2 class="news-title">Wayne Riches On Working With Paul</h2>
+          <div class="news-body">
+            <p>Hello all a little update to share which may interest some, (well it did me) after having a chat with Skin's drummer between (2003/2008) Wayne Riches, he was very kind to let the site know a little, about the already very little we know of Paul's solo work, i basically asked him how much work together they did, and if the album was shelved, and how it sounded...</p>
+            <blockquote>"Hi Richard, Yes i did do a fair amount of work with Paul - initially on the Skin album &amp; subsequently on Paul's solo work. I haven't seen Paul for a year or 2 now but it was great fun working with him &amp; he's a top guy!"</blockquote>
+            <blockquote>"I don't really know whether it was shelved or not, I did a fair amount of stuff with him then it kinda stopped!? I'm sure he's busy doing something!"</blockquote>
+            <blockquote>"Its hard to tell because it was a while ago &amp; it really was just a collection of rough grooves &amp; vibes when I left it. It was a bit of both if I remember, kinda guitary but with a bit of a dancy feel - certainly for a few of them.. Can't remember how many tunes we did, was a lot of jamming out riff's &amp; idea's with Paul recording it all to then chop up &amp; arrange at a later date, he's an amazing artist &amp; writer!"</blockquote>
+            <p>Big thanks to Wayne for sharing this with us, lets hope its developed further and this year we maybe hear something.</p>
+            <p><a href="http://www.wayneriches.com/" target="_blank" rel="noopener">http://www.wayneriches.com/</a></p>
+          </div>
+        </div>
+        <div class="news-thumb">
+          <img src="../assets/images/indexpic.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper performing in studio" onclick="openLightbox('../assets/images/indexpic.jpg', 'Paul Draper — Studio session photograph')">
+          <span>STUDIO ARCHIVE PHOTO</span>
+        </div>
+      </article>
+
+      <!-- Item 2: 20/04/2012 -->
+      <article class="news-item" data-year="2012">
+        <span class="news-date">20/04/2012</span>
+        <h2 class="news-title">BBC Two — The Culture Show Appearance</h2>
+        <div class="news-body">
+          <p>Paul Draper appearance on BBC Two's <em>The Culture Show</em>, featuring a segment looking back at Mansun, the band's legacy, and its enduring cult following.</p>
+          <p><a href="https://web.archive.org/web/20120530033526/http://pauldraper-music.co.uk/news.html" target="_blank" rel="noopener">View May 2012 Wayback Capture ↗</a></p>
+        </div>
+      </article>
+
+      <!-- Item 3: 17/04/2012 -->
+      <article class="news-item" data-year="2012">
+        <span class="news-date">17/04/2012</span>
+        <h2 class="news-title">Mansun Mailing List Update</h2>
+        <div class="news-body">
+          <p>Please sign up to the Mansun mailing list at this new address:</p>
+          <p><a href="http://mansunofficial.com/" target="_blank" rel="noopener">http://mansunofficial.com/</a></p>
+        </div>
+      </article>
+
+      <!-- Item 4: 16/04/2012 -->
+      <article class="news-item with-thumb" data-year="2012">
+        <div>
+          <span class="news-date">16/04/2012</span>
+          <h2 class="news-title">Mansun, Amsterdam Paradiso, Holland, 9th November 1998 (Download)</h2>
+          <div class="news-body">
+            <p><strong>MANSUN — 9 November 1998, Amsterdam Paradiso (Supporting Manic Street Preachers)</strong></p>
+            <ol style="margin: 0 0 1rem; padding-left: 1.2rem; color: var(--muted);">
+              <li>Stripper Vicar</li>
+              <li>Being a Girl</li>
+              <li>Negative</li>
+              <li>Wide Open Space</li>
+              <li>She Makes My Nose Bleed</li>
+              <li>Everyone Must Win</li>
+              <li>Take It Easy Chicken</li>
+              <li>Taxloss</li>
+            </ol>
+            <p><strong>Runtime:</strong> (35:27) — Right click and save target as... Enjoy!!</p>
+            <p>Any questions or requests for more media, email me at <a href="mailto:webmaster@pauldraper-music.co.uk">webmaster@pauldraper-music.co.uk</a></p>
+            <p><a class="btn" href="./mansun-mp3-vault.html#paradiso-1998">Open in MP3 Vault →</a></p>
+          </div>
+        </div>
+        <div class="news-thumb">
+          <img src="../assets/images/glam_2_big.jpg" onerror="this.classList.add('img-missing')" alt="Mansun band portrait" onclick="openLightbox('../assets/images/glam_2_big.jpg', 'Mansun — Stove, Paul and Chad (Melody Maker 1996)')">
+          <span>PARADISO '98 ARCHIVE</span>
+        </div>
+      </article>
+
+      <!-- Item 5: 03/02/2012 -->
+      <article class="news-item" data-year="2012">
+        <span class="news-date">03/02/2012</span>
+        <h2 class="news-title">South Of The Painted Hall (MP3 &amp; Lyrics)</h2>
+        <div class="news-body">
+          <p>Here is an MP3 of the unreleased track from <em>Legacy: The Best of Mansun</em>.</p>
+          <p><a class="btn" href="./mansun-mp3-vault.html#painted-hall">Listen / Download in MP3 Vault →</a></p>
+          <details style="margin-top: 1rem; border: 1px solid var(--rule); padding: 0.9rem 1.1rem; background: var(--paper);">
+            <summary style="font-weight: 800; cursor: pointer; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.08em;">: Lyrics to South Of The Painted Hall : (Click to expand)</summary>
+            <pre style="margin-top: 0.8rem; border: none; padding: 0;">Infinite moments of calm in our life
+What a waste
+Our defining moments fade away
+It was easy to navigate the wind
+When everything was cool
+I'll know I'm drunk when the truth's spurting out
+And our truth is disguised as a joke
+Like the one about the dying ember
+(Where the looks are worth a thousand rumours)
+
+My voice can be disguised
+But my face can't lie
+There's no antidote to save me
+When I'm drunk
+
+My failures lie, not in falling down
+but not getting up
+All our great achievements put to better use
+Like the wise man mistaken
+But the fool, he can often be right
+I know I'm drunk when the truth's spurting out
+And our truth is disguised as a joke
+Like the one about the dying ember
+(Where the looks are worth a thousand rumours)
+
+My voice can be disguised
+But my face can't lie
+There's no antidote to save me
+When i'm drunk
+
+Yeah, my voice can be disguised
+I'll break off all contact
+No signals, so I hope I don't offend you
+
+Even in summer the days are like winter so bland
+Thoughts do not fear to abandon their
+People they differ in life not in death
+So the higher you climb
+The longer you fall
+
+My voice can be disguised
+But my face can't lie
+There's no signal I can find
+Infinite moments of calm in our life
+What a waste
+Our defining moments fade away
+It was easy to navigate the wind
+When everything was cool
+I'll know I'm drunk when the truth's spurting out
+And our truth is disguised as a joke
+Like the one about the dying ember
+(Where the looks are worth a thousand rumours)
+
+My voice can be disguised
+But my face can't lie
+There's no antidote to save me
+When I'm drunk
+
+My failures lie, not in falling down
+but not getting up
+All our great achievements put to better use
+Like the wise man mistaken
+But the fool, he can often be right
+I know I'm drunk when the truth's spurting out
+And our truth is disguised as a joke
+Like the one about the dying ember
+(Where the looks are worth a thousand rumours)
+
+My voice can be disguised
+But my face can't lie
+There's no antidote to save me
+When i'm drunk
+
+Yeah, my voice can be disguised
+I'll break off all contact
+No signals, so I hope I don't offend you
+
+Even in summer the days are like winter so bland
+Thoughts do not fear to abandon their
+People they differ in life not in death
+So the higher you climb
+The longer you fall
+
+My voice can be disguised
+But my face can't lie
+There's no signal I can find</pre>
+          </details>
+        </div>
+      </article>
+
+      <!-- Item 6: 24/01/2012 -->
+      <article class="news-item" data-year="2012">
+        <span class="news-date">24/01/2012</span>
+        <h2 class="news-title">Grind Videos &amp; MP3s</h2>
+        <div class="news-body">
+          <p>After 3 years or so an update blimey!! Well there has been quite a lot of interest on Paul's work with first band <strong>Grind</strong> on the Paul Draper facebook group, people have been asking to see more clips and mp'3s so i had a sniff about and found the full and original videos posted some time ago by Steve Heaton (the one with the amazing hair) Paul's former band mate, all the MP3's and videos are available to download now in the media section, but i'll put up the best here, which include <em>Epic</em> (8mins of Draper's underrated guitar skills) and <em>Lantern</em> where you can watch Paul dancing!! (not sure he'll like that one mind) any questions or requests for more media email me at <a href="mailto:webmaster@pauldraper-music.co.uk">webmaster@pauldraper-music.co.uk</a> and i'll try my best, enjoy..</p>
+          <p><em>These videos are best viewed using Quicktime or VLC player..</em></p>
+          <p><a class="btn" href="./mansun-mp3-vault.html#grind-era">Open Grind Sessions in MP3 Vault →</a></p>
+        </div>
+      </article>
+
+      <!-- Item 7: 03/09/2008 -->
+      <article class="news-item" data-year="2008">
+        <span class="news-date">03/09/2008 (Update 17/02/12)</span>
+        <h2 class="news-title">Six Anniversary</h2>
+        <div class="news-body">
+          <p>Paul has written a blog recently to mark the 10th anniversary of the Mansun album <em>Six</em>, it will go out this Sunday 7th Sep. If you want to receive it, sign up at the official mailing list. To go along with the blog, Paul will be doing a live Q&amp;A at 6pm (same day) on the official forum, answering your questions about the album.</p>
+          <p>Now removed again, as of the date i posted the links: <strong>Part One</strong> | <strong>Part Two</strong></p>
+        </div>
+      </article>
+
+      <!-- Item 8: 12/03/2008 -->
+      <article class="news-item with-thumb" data-year="2008">
+        <div>
+          <span class="news-date">12/03/2008</span>
+          <h2 class="news-title">Paul Update &amp; New Work In Progress Track Titles</h2>
+          <div class="news-body">
+            <p>Hello again, Paul has been in touch lately and has given us some info on what he has been working on. He's also give us some track titles although these are subject to change..</p>
+            <blockquote>"I took a break from my project after i realized to do what i wanted to do, i.e. do it all myself without a band as such id have to re-equip my studio 'Draposound' and I've done some production work to road test it. I did some stuff with Catherine Anne Davies, check her site or myspace and she's got a track called 'Unravel' we worked on."</blockquote>
+            <p>Paul also went on to reveal some work in progress tracks he has recently been working on, some interesting titles namely <em>Being A Girl Part 3</em> and <em>Cancer Part II</em>.</p>
+            <blockquote>"Song titles I've been working on but will probably change are.... Can U Ever Trust Another, Feel Like I Wanna Stay, Friend, Sex With Strangers, Can't Get Fairer Than That, Annie, Being A Girl Part 3, Sociopath, Wont Get Hurt By A Woman Again, Borderline Nymphomaniac, Life Turns On Inconsequential Moments, Synth Pop Hero, Monkeys On A Rock, Say What Everyone Else Thinks And They'll Say Ya Fuckin Mad, cancer pt II."</blockquote>
+            <p>More info on Paul coming soon, also see the Gallery page on this site for new Draper photos.</p>
+          </div>
+        </div>
+        <div class="news-thumb">
+          <img src="../assets/images/paulcorner4.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper sketch" onclick="openLightbox('../assets/images/paulcorner4.jpg', 'Paul Draper — Archival sketch')">
+          <span>DRAPOSOUND WIP LOG</span>
+        </div>
+      </article>
+
+      <!-- Item 9: 16/12/2007 -->
+      <article class="news-item" data-year="2007">
+        <span class="news-date">16/12/2007</span>
+        <h2 class="news-title">Mansun Return!?!? (Surely Not)</h2>
+        <div class="news-body">
+          <p>Rumours are being put about lately of the possibility of a Mansun return (no, I'm not cracking up) its said that Paul is now working with Andie, and they aren't ruling out the possibility of touring and releasing as Mansun. These rumours were first brought about by a post on the official forum, although the post has since been deleted, it suggested that all was not over for Mansun as a band.</p>
+          <p>This has also been intensified by a statement from a management company called Dirty Music who have announced that they are managing Paul Draper/Mansun saying "the future is bright" I guess you all might want to add yourself to the official Mansun myspace page.</p>
+        </div>
+      </article>
+
+      <!-- Item 10: 12/12/2007 -->
+      <article class="news-item" data-year="2007">
+        <span class="news-date">12/12/2007</span>
+        <h2 class="news-title">Paul Draper Solo Update</h2>
+        <div class="news-body">
+          <p>Well after a quite a long time without anything happening, things now seem on the go, of late Paul has spent a lot of time (as we know) producing other artists, the latest Catherine Anne Davies, has added a couples of demo's from their sessions on her myspace page, which you can hear now...</p>
+          <p>More importantly, the news we all want is on his own solo work. And at last now things are moving on in a big way, an exclusive interview with Paul for a Chinese Fanzine will be released around Christmas, this will contain some (very interesting information). Also expect a brand new diary entry and his official website up very soon!!</p>
+          <p>There is also the Paul Draper E-team running from the official forum this is for anyone who wishes to contribute any ideas to help promote Paul online, if interested please send an email to <a href="mailto:admin@pauldraper.net">admin@pauldraper.net</a></p>
+        </div>
+      </article>
+
+      <!-- Item 11: 27/07/2007 -->
+      <article class="news-item" data-year="2007">
+        <span class="news-date">27/07/2007</span>
+        <h2 class="news-title">More Photos Yet Still No Music</h2>
+        <div class="news-body">
+          <p>Just a quick update showing the latest photos (courtesy of Suzi) see gallery page, as it stands Paul is 'still' busy working on his solo album whilst also working with Catherine Anne Davies on her album, keep checking back here and his official myspace page where a demo is said to be online later this year.</p>
+        </div>
+      </article>
+
+      <!-- Item 12: 08/05/2007 -->
+      <article class="news-item" data-year="2007">
+        <span class="news-date">08/05/2007</span>
+        <h2 class="news-title">New Draper Photos</h2>
+        <div class="news-body">
+          <p>Here are the latest photographs of Paul which were taken during the period of January to March this year. There are more to come along with a lot more Mansun content coming soon via Paul's new YouTube media page.</p>
+        </div>
+      </article>
+
+      <!-- Item 13: 22/02/2007 -->
+      <article class="news-item" data-year="2007">
+        <span class="news-date">22/02/2007</span>
+        <h2 class="news-title">General Update</h2>
+        <div class="news-body">
+          <p>Newsflash!!! Only joking! :) Here is a bit of a late PD-Music news update.. Online now is a very nice in depth Q&amp;A that Paul has done with the Draperview website..</p>
+          <blockquote>"I've no idea, I'm just doing my own stuff for my own pleasure. I'll never fall into the trap of making a record for a record company ever again. I'll make music on my own terms from now on and ill keep going. Whenever I fancy writing and releasing, I will!"</blockquote>
+          <p>Read the Q&amp;A in its entirety here. There is a new Official Draper Myspace page aimed towards the various fansites online, it will feature bootlegs, session tracks, and also polls where you can determine whats played on the player! you can find it by clicking here or use the quick link at the top of this page.</p>
+          <p>Also keep an eye out for news, and brand new pictures of Paul coming to the fansites very soon.</p>
+        </div>
+      </article>
+
+      <!-- Item 14: 17/01/2007 -->
+      <article class="news-item" data-year="2007">
+        <span class="news-date">17/01/2007</span>
+        <h2 class="news-title">Paul's New Music Online Soon</h2>
+        <div class="news-body">
+          <p>In a MySpace bulletin Paul has announced that "loads" of new material will be on show over the next few weeks.</p>
+          <blockquote>"Bulletin all your myspace friends and ask em to add them selves as my myspace friend then they too can get first listen to loads of new material coming on my myspace page over the next few weeks."</blockquote>
+          <p>Also his official site <a href="http://www.pauldraper.info" target="_blank" rel="noopener">www.pauldraper.info</a> will be launched in the next week or so.</p>
+        </div>
+      </article>
+
+      <!-- Item 15: 10/11/2006 -->
+      <article class="news-item with-thumb" data-year="2006">
+        <div>
+          <span class="news-date">10/11/2006</span>
+          <h2 class="news-title">Read Paul In Uncut Magazine</h2>
+          <div class="news-body">
+            <p>Decembers issue of <em>Uncut</em> features Paul talking about the break up of his former band Mansun and his new solo project..</p>
+            <blockquote>"One night it all kicked off. We broke into the wine cellar, picked out the best bottle of champagne and got twatted. There was a lot of shouting and aggro. Chad punched his hand into a brick wall and ended up in hospital on a morphine drip. People were saying that I was a paranoid schizophrenic In fact with all the stress I got a malignant tumour and had to have a course of radiation therapy before having it cut out."</blockquote>
+            <p><a class="btn" href="./draper-articles.html">Browse Magazine Scans &amp; Articles →</a></p>
+          </div>
+        </div>
+        <div class="news-thumb">
+          <img src="../assets/images/rocksound2000_2.jpg" onerror="this.classList.add('img-missing')" alt="Mansun band press scan" onclick="openLightbox('../assets/images/rocksound2000_2.jpg', 'Rock Sound 2000 — Mansun Press Feature')">
+          <span>PRESS ARCHIVE SCAN</span>
+        </div>
+      </article>
+
+      <!-- Item 16: 22/09/2006 -->
+      <article class="news-item" data-year="2006">
+        <span class="news-date">22/09/2006</span>
+        <h2 class="news-title">Paul Appears On Steve Lamacq Show</h2>
+        <div class="news-body">
+          <p>Paul Draper was a guest on Steve Lamacq's Roundtable show reviewing the latest tracks doing the rounds alongside Guy Chambers and Mojo's journalist Keith Cameron. After producing a band called Komakino, Paul said at the start of the show:</p>
+          <blockquote>"that's definitely the direction I'll be going down in the future, writing, producing, or a bit of both".</blockquote>
+          <p>You can download an mp3 in the <a href="./mansun-mp3-vault.html#lamacq-2006">MP3 Vault</a> or listen again via the BBC 6 Music archive.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>RJMedia / Paul Draper Archive · Recovered News &amp; Photographs (2006–2012)</div>
+      <div>
+        <a href="./draper-articles.html">Press &amp; Articles</a> ·
+        <a href="./mansun-mp3-vault.html">MP3 Vault</a> ·
+        <a href="https://jupiterisland.github.io/rjmedia-liner-notes/">RJMedia Digital Archive</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-bar">
+        <span id="lightboxCap"></span>
+        <button type="button" class="lightbox-close" onclick="closeLightbox(event, true)">Close [ESC]</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('newsSearch');
+    const pills = document.querySelectorAll('.pill');
+    const items = document.querySelectorAll('.news-item');
+    const resultCount = document.getElementById('resultCount');
+    let activeYear = 'all';
+
+    function filterNews() {
+      const q = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      items.forEach(item => {
+        const yearMatch = (activeYear === 'all') || (item.dataset.year === activeYear);
+        const textMatch = !q || item.innerText.toLowerCase().includes(q);
+        if (yearMatch && textMatch) {
+          item.style.display = '';
+          visible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      resultCount.textContent = 'Showing ' + visible + ' of ' + items.length + ' archive dispatches' + (activeYear !== 'all' ? ' in ' + activeYear : '') + (q ? ' matching "' + searchInput.value.trim() + '"' : '');
+    }
+
+    searchInput.addEventListener('input', filterNews);
+    pills.forEach(btn => {
+      btn.addEventListener('click', () => {
+        pills.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeYear = btn.dataset.year;
+        filterNews();
+      });
+    });
+
+    function openLightbox(src, caption) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCap').textContent = caption || src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox(e, force) {
+      if (force || e.target.id === 'lightbox') {
+        document.getElementById('lightbox').classList.remove('open');
+      }
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox(e, true);
+    });
+  </script>
+</body>
+</html>
