@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Stories | RJMedia Community</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --paper: #070707;
+      --ink: #ffffff;
+      --muted: #a0a0a0;
+      --line: #262626;
+      --header: #000000;
+      --header-soft: #0d0d0d;
+      --card: #0e0e0e;
+      --accent: #FF813F;
+      --shadow: rgba(0, 0, 0, 0.85);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 36px auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px var(--shadow);
+    }
+
+    /* Ecosystem Mirror Navigation */
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: #000000;
+      border-bottom: 1px solid var(--line);
+      padding: 12px 32px;
+      gap: 12px;
+    }
+
+    .nav-brand {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .site-nav nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .site-nav nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .site-nav nav a:hover,
+    .site-nav nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .site-nav nav a.mirror-switch {
+      background: #ffffff;
+      color: #000000;
+      padding: 4px 10px;
+      border: 1px solid #ffffff;
+    }
+
+    .site-nav nav a.mirror-switch:hover {
+      background: var(--accent);
+      color: #000000;
+      border-color: var(--accent);
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--header), var(--header-soft));
+      color: var(--ink);
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .subtitle {
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .hero-banner {
+      margin-top: 14px;
+      display: inline-block;
+      background: rgba(255, 129, 63, 0.12);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 16px 14px;
+      transition: border-color 0.2s ease;
+    }
+
+    .stat:hover {
+      border-color: var(--accent);
+    }
+
+    .stat-value {
+      font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+
+    .stat-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 18px;
+      padding: 26px 32px 10px;
+    }
+
+    .full-section {
+      padding: 10px 32px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 22px 22px 20px;
+    }
+
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    .panel p {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-size: 0.96rem;
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .statement-list {
+      margin: 12px 0;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .statement-list p {
+      margin: 4px 0;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .highlight {
+      background: #121212;
+      border-left: 4px solid var(--accent);
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .topic-tag {
+      background: #050505;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.2s ease;
+    }
+
+    .topic-tag:hover {
+      border-color: var(--accent);
+    }
+
+    .topic-tag span {
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .need {
+      background: #050505;
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: border-color 0.2s ease;
+    }
+
+    .need:hover {
+      border-color: var(--accent);
+    }
+
+    .need strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+    }
+
+    .project-list li {
+      margin: 0 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.92rem;
+    }
+
+    .project-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-list a,
+    .foot a,
+    .scan-link a,
+    .inline-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .project-list a:hover,
+    .foot a:hover,
+    .scan-link a:hover,
+    .inline-link:hover {
+      color: #ffffff;
+    }
+
+    .interactive-box {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #000000;
+      border: none;
+      padding: 9px 16px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .bottom {
+      padding: 10px 32px 32px;
+    }
+
+    .scan-wrap {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .scan-item {
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+
+    .scan-item img {
+      width: 122px;
+      height: 122px;
+      display: block;
+      margin: 0 auto 10px;
+      background: #000000;
+      border: 1px solid var(--line);
+      padding: 4px;
+    }
+
+    .scan-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 6px;
+      font-weight: 700;
+    }
+
+    .scan-link {
+      font-size: 0.8rem;
+      color: var(--ink);
+      word-break: break-word;
+    }
+
+    .foot {
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+      padding-top: 18px;
+      font-size: 0.9rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .foot strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+    }
+
+    .credo-bar {
+      margin-top: 24px;
+      padding: 18px 20px;
+      background: #000000;
+      border: 1px solid var(--line);
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .credo-bar span {
+      color: var(--accent);
+      margin: 0 6px;
+    }
+
+    @media (max-width: 960px) {
+      .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .content { grid-template-columns: 1fr; }
+      .foot { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .page { margin: 12px; }
+      .site-nav, .header, .content, .full-section, .bottom { padding-left: 18px; padding-right: 18px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .support-grid, .topic-grid, .scan-wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body id="home">
+  <div class="page">
+    <!-- Shared Ecosystem Navigation -->
+    <div class="site-nav">
+      <a href="/rjmedia-community/" class="nav-brand">RJMedia • Community Mirror</a>
+      <nav aria-label="Primary Navigation">
+        <a href="https://jupiterisland.github.io/rjmedia-liner-notes/" class="mirror-switch">Archive</a>
+        <a href="/rjmedia-community/">Community</a>
+        <a href="/rjmedia-community/forum.html">Forum</a>
+        <a href="/rjmedia-community/stories.html" class="active">Stories</a>
+        <a href="/rjmedia-community/partners.html">Partners</a>
+        <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">Jupiter Island</a>
+      </nav>
+    </div>
+
+    <!-- Community Hero & Community Impact Counter -->
+    <header class="header">
+      <div class="subtitle">Digital Archivist • Creator • AI Builder</div>
+      <h1>Richard John Murray</h1>
+      <div class="hero-banner">999,852 Lifetime Views • 72,199 Watch Hours • Approaching One Million Views</div>
+
+      <div class="stats" id="impact-counter" aria-label="Community Impact Counter">
+        <div class="stat">
+          <p class="stat-value" id="count-views">999,852</p>
+          <p class="stat-label">Archive Views</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value" id="count-hours">72,199</p>
+          <p class="stat-label">Watch Hours</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value" id="count-stories">0</p>
+          <p class="stat-label">Community Stories</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value" id="count-members">0</p>
+          <p class="stat-label">Forum Members</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value" id="count-support">0</p>
+          <p class="stat-label">Support Requests</p>
+        </div>
+        <div class="stat">
+          <p class="stat-value" id="count-signatures">0</p>
+          <p class="stat-label">Community Signatures</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Primary Mirror Grid: Why Staying Connected Matters + Looking For Partners -->
+    <main class="content">
+      <section class="panel" id="connected">
+        <h2>Why Staying Connected Matters</h2>
+        <p><strong>RJMedia exists because I stayed online.</strong></p>
+
+        <div class="statement-list">
+          <p>Every archive update.</p>
+          <p>Every video upload.</p>
+          <p>Every piece of documentation.</p>
+          <p>Every community response.</p>
+        </div>
+
+        <p>All of it depends on reliable technology.</p>
+        <p>
+          Like many people across the UK, I experienced housing instability and found myself living in temporary accommodation while continuing to maintain archive projects and community resources.
+        </p>
+        <p>
+          AI helped me stay organised, document information and continue building.
+        </p>
+        <p>
+          Today I am still here, still building and still preserving material because technology enabled me to remain connected.
+        </p>
+
+        <div class="highlight" id="privacy">
+          <strong>Your Story. Your Data. Your Choice.</strong>
+          <ul class="project-list" style="margin-top: 8px;">
+            <li>Stories remain private by default.</li>
+            <li>No personal information is published without consent.</li>
+            <li>Community submissions may be anonymised.</li>
+            <li>Contributors may request removal at any time.</li>
+            <li>Participation is entirely voluntary.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="panel" id="partners">
+        <h2>Looking For Partners</h2>
+        <p>
+          Strategic support keeps the RJMedia Archive Vault, community documentation, and open-source tools online and scaling.
+        </p>
+        <div class="support-grid">
+          <div class="need"><strong>Hardware</strong>Laptop</div>
+          <div class="need"><strong>Hardware</strong>Phone</div>
+          <div class="need"><strong>Network</strong>Connectivity</div>
+          <div class="need"><strong>Infrastructure</strong>Cloud Credits</div>
+          <div class="need"><strong>Intelligence</strong>AI Services</div>
+          <div class="need"><strong>Stack</strong>Developer Tools</div>
+          <div class="need" style="grid-column: span 2;"><strong>Ecosystem</strong>Creator Programmes</div>
+        </div>
+
+        <div class="highlight" id="getting-help" style="margin-top: 20px;">
+          <strong>Need Help?</strong>
+          <p style="font-size: 0.9rem; margin-bottom: 10px;">
+            If you are experiencing housing difficulties, digital exclusion, connectivity problems, or simply need help organising information, you are welcome to contact me.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">
+            I cannot offer legal advice and cannot guarantee outcomes. I will do my best to share practical lessons, resources and information that may help.
+          </p>
+          <p style="font-size: 0.9rem; margin: 0;">
+            Email: <a href="mailto:richardmurray2022@gmail.com" class="inline-link">richardmurray2022@gmail.com</a>
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Secondary Mirror Grid: Discussion Forum + Community Stories -->
+    <div class="content" style="padding-top: 8px;">
+      <section class="panel" id="forum">
+        <h2>Discussion Forum</h2>
+        <p>Core community channels for practical problem-solving, archival research, and technical workflows:</p>
+        <div class="topic-grid">
+          <div class="topic-tag">Housing <span>→</span></div>
+          <div class="topic-tag">Homelessness <span>→</span></div>
+          <div class="topic-tag">Connectivity <span>→</span></div>
+          <div class="topic-tag">AI <span>→</span></div>
+          <div class="topic-tag">ADHD <span>→</span></div>
+          <div class="topic-tag">Digital Inclusion <span>→</span></div>
+          <div class="topic-tag">Music Preservation <span>→</span></div>
+          <div class="topic-tag">Creator Workflows <span>→</span></div>
+          <div class="topic-tag">Open Source Projects <span>→</span></div>
+          <div class="topic-tag">Jupiter Island <span>→</span></div>
+        </div>
+        <div class="interactive-box">
+          <a href="/rjmedia-community/forum.html" class="btn">Enter Discussion Forum</a>
+          <button type="button" class="btn btn-outline" onclick="incrementCounter('count-members')">Join Forum (+1)</button>
+        </div>
+      </section>
+
+      <aside class="panel" id="stories">
+        <h2>Community Stories</h2>
+        <p>A public-interest space built around three clear goals:</p>
+        <ul class="project-list">
+          <li><strong>01. Share experiences</strong> — Document real-world challenges and practical turning points.</li>
+          <li><strong>02. Learn from others</strong> — Exchange tested workflows for staying organised and connected.</li>
+          <li><strong>03. Build a public knowledge base</strong> — Preserve lessons that help the next person in line.</li>
+        </ul>
+        <div class="interactive-box">
+          <a href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Community%20Story" class="btn">Submit a Story</a>
+          <button type="button" class="btn btn-outline" onclick="incrementCounter('count-signatures')">Sign Community Ledger (+1)</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Bottom Links, QR Codes & Footer -->
+    <div class="bottom" id="contact">
+      <div class="scan-wrap">
+        <div class="scan-item">
+          <div class="scan-label">Archive Vault</div>
+          <img alt="Archive Vault QR" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjEyMiI+CiAgICAgIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgICA8IS0tIENvcm5lciBmaW5kZXIgcGF0dGVybnMgLS0+CiAgICAgIDxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNCIvPgogICAgICA8cmVjdCB4PSIxOCIgeT0iMTgiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0iI0ZGODEzRiIvPgogICAgICA8cmVjdCB4PSI4MiIgeT0iMTAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjQiLz4KICAgICAgPHJlY3QgeD0iOTAiIHk9IjE4IiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTAiIHk9IjgyIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgICAgIDxyZWN0IHg9IjE4IiB5PSI5MCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDwhLS0gRGF0YSBtYXRyaXggZ3JpZCBhZXN0aGV0aWMgLS0+CiAgICAgIDxyZWN0IHg9IjQ2IiB5PSIxNCIgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI1OCIgeT0iMTQiIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjI2IiB3aWR0aD0iMTgiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI3MCIgeT0iMjAiIHdpZHRoPSI2IiBoZWlnaHQ9IjEyIiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9IjE0IiB5PSI0NiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMzQiIHk9IjQ2IiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI2NiIgeT0iNDYiIHdpZHRoPSI2IiBoZWlnaHQ9IjE4IiBmaWxsPSIjRkY4MTNGIi8+CiAgICAgIDxyZWN0IHg9IjgyIiB5PSI0NiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTAwIiB5PSI1MiIgd2lkdGg9IjYiIGhlaWdodD0iMTgiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjU4IiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTQiIHk9IjY0IiB3aWR0aD0iMTgiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI0NiIgeT0iNzYiIHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9Ijc2IiB5PSI3MCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjkwIiB3aWR0aD0iNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI1OCIgeT0iODgiIHdpZHRoPSIxOCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9Ijg0IiB5PSI4NCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRjgxM0YiIHN0cm9rZS13aWR0aD0iMyIvPgogICAgICA8cmVjdCB4PSI5MiIgeT0iOTIiIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHRleHQgeD0iNjAiIHk9IjExNiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI3IiBmaWxsPSIjODg4ODg4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BUkNISVZFPC90ZXh0PgogICAgPC9zdmc+">
+          <div class="scan-link"><a href="https://jupiterisland.github.io/rjmedia-liner-notes/" target="_blank" rel="noopener">https://jupiterisland.github.io/rjmedia-liner-notes/</a></div>
+        </div>
+        <div class="scan-item">
+          <div class="scan-label">YouTube</div>
+          <img alt="YouTube QR" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjEyMiI+CiAgICAgIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgICA8IS0tIENvcm5lciBmaW5kZXIgcGF0dGVybnMgLS0+CiAgICAgIDxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNCIvPgogICAgICA8cmVjdCB4PSIxOCIgeT0iMTgiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0iI0ZGODEzRiIvPgogICAgICA8cmVjdCB4PSI4MiIgeT0iMTAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjQiLz4KICAgICAgPHJlY3QgeD0iOTAiIHk9IjE4IiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTAiIHk9IjgyIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgICAgIDxyZWN0IHg9IjE4IiB5PSI5MCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDwhLS0gRGF0YSBtYXRyaXggZ3JpZCBhZXN0aGV0aWMgLS0+CiAgICAgIDxyZWN0IHg9IjQ2IiB5PSIxNCIgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI1OCIgeT0iMTQiIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjI2IiB3aWR0aD0iMTgiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI3MCIgeT0iMjAiIHdpZHRoPSI2IiBoZWlnaHQ9IjEyIiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9IjE0IiB5PSI0NiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMzQiIHk9IjQ2IiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI2NiIgeT0iNDYiIHdpZHRoPSI2IiBoZWlnaHQ9IjE4IiBmaWxsPSIjRkY4MTNGIi8+CiAgICAgIDxyZWN0IHg9IjgyIiB5PSI0NiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTAwIiB5PSI1MiIgd2lkdGg9IjYiIGhlaWdodD0iMTgiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjU4IiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTQiIHk9IjY0IiB3aWR0aD0iMTgiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI0NiIgeT0iNzYiIHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9Ijc2IiB5PSI3MCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjkwIiB3aWR0aD0iNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI1OCIgeT0iODgiIHdpZHRoPSIxOCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9Ijg0IiB5PSI4NCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRjgxM0YiIHN0cm9rZS13aWR0aD0iMyIvPgogICAgICA8cmVjdCB4PSI5MiIgeT0iOTIiIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHRleHQgeD0iNjAiIHk9IjExNiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI3IiBmaWxsPSIjODg4ODg4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5ZT1VUVUJFPC90ZXh0PgogICAgPC9zdmc+">
+          <div class="scan-link"><a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">https://www.youtube.com/@RJMmedia-uk</a></div>
+        </div>
+        <div class="scan-item">
+          <div class="scan-label">GitHub</div>
+          <img alt="GitHub QR" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjEyMiI+CiAgICAgIDxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDAwMDAwIiBzdHJva2U9IiMzMzMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgICA8IS0tIENvcm5lciBmaW5kZXIgcGF0dGVybnMgLS0+CiAgICAgIDxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iNCIvPgogICAgICA8cmVjdCB4PSIxOCIgeT0iMTgiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0iI0ZGODEzRiIvPgogICAgICA8cmVjdCB4PSI4MiIgeT0iMTAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjQiLz4KICAgICAgPHJlY3QgeD0iOTAiIHk9IjE4IiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTAiIHk9IjgyIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgICAgIDxyZWN0IHg9IjE4IiB5PSI5MCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDwhLS0gRGF0YSBtYXRyaXggZ3JpZCBhZXN0aGV0aWMgLS0+CiAgICAgIDxyZWN0IHg9IjQ2IiB5PSIxNCIgd2lkdGg9IjYiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI1OCIgeT0iMTQiIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjI2IiB3aWR0aD0iMTgiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI3MCIgeT0iMjAiIHdpZHRoPSI2IiBoZWlnaHQ9IjEyIiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9IjE0IiB5PSI0NiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMzQiIHk9IjQ2IiB3aWR0aD0iMjQiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI2NiIgeT0iNDYiIHdpZHRoPSI2IiBoZWlnaHQ9IjE4IiBmaWxsPSIjRkY4MTNGIi8+CiAgICAgIDxyZWN0IHg9IjgyIiB5PSI0NiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTAwIiB5PSI1MiIgd2lkdGg9IjYiIGhlaWdodD0iMTgiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjU4IiB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iMTQiIHk9IjY0IiB3aWR0aD0iMTgiIGhlaWdodD0iNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI0NiIgeT0iNzYiIHdpZHRoPSIyNCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9Ijc2IiB5PSI3MCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHJlY3QgeD0iNDYiIHk9IjkwIiB3aWR0aD0iNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZmZmZiIvPgogICAgICA8cmVjdCB4PSI1OCIgeT0iODgiIHdpZHRoPSIxOCIgaGVpZ2h0PSI2IiBmaWxsPSIjZmZmZmZmIi8+CiAgICAgIDxyZWN0IHg9Ijg0IiB5PSI4NCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRjgxM0YiIHN0cm9rZS13aWR0aD0iMyIvPgogICAgICA8cmVjdCB4PSI5MiIgeT0iOTIiIHdpZHRoPSI2IiBoZWlnaHQ9IjYiIGZpbGw9IiNmZmZmZmYiLz4KICAgICAgPHRleHQgeD0iNjAiIHk9IjExNiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI3IiBmaWxsPSIjODg4ODg4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5HSVRIVUI8L3RleHQ+CiAgICA8L3N2Zz4=">
+          <div class="scan-link"><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">https://github.com/JupiterIsland</a></div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <div>
+          <strong>Contact</strong>
+          Richard John Murray<br>
+          Digital Archivist • Creator • AI Builder<br>
+          Carlisle, Cumbria, United Kingdom<br><br>
+          Email: <a href="mailto:richardmurray2022@gmail.com">richardmurray2022@gmail.com</a>
+        </div>
+        <div>
+          <strong>Ecosystem Links</strong>
+          Archive Vault: <a href="https://jupiterisland.github.io/rjmedia-liner-notes/" target="_blank" rel="noopener">jupiterisland.github.io/rjmedia-liner-notes/</a><br>
+          YouTube: <a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">youtube.com/@RJMmedia-uk</a><br>
+          GitHub: <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">github.com/JupiterIsland</a>
+        </div>
+      </div>
+
+      <div class="credo-bar">
+        One Person. <span>•</span> One Archive. <span>•</span> Nearly One Million Views. <span>•</span> Still Building. <span>•</span> Still Connected. <span>•</span> Still Here.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Lightweight local counter persistence for community engagement preview
+    function incrementCounter(id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var current = parseInt(el.textContent.replace(/,/g, ''), 10) || 0;
+      current += 1;
+      el.textContent = current.toLocaleString();
+      try {
+        localStorage.setItem('rjmedia_' + id, current);
+      } catch (e) {}
+    }
+
+    (function loadCounters() {
+      ['count-stories', 'count-members', 'count-support', 'count-signatures'].forEach(function(id) {
+        try {
+          var saved = localStorage.getItem('rjmedia_' + id);
+          if (saved !== null && document.getElementById(id)) {
+            document.getElementById(id).textContent = parseInt(saved, 10).toLocaleString();
+          }
+        } catch (e) {}
+      });
+    })();
+  </script>
+</body>
+</html>

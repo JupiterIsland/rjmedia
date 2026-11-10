@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://widgets.wp.com/likes/master.html?ver=20261109#ver=20261109 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script type="text/html" id="post-likes">
+	<div class="sd-content wpl-likebox">
+		<% if ( canReblog && canUserReblog ) { %>
+		<div class="wpl-button reblog">
+			<a href="#" title='<%- reblog_feedback_no_html %>' class='<%- reblog_css_state %> sd-button' rel='nofollow'>
+				<span><%= reblog_label %></span>
+			</a>
+		</div>
+		<% } %>
+		<% if ( canLike ) { %>
+		<div class="wpl-button <%- css_state %>">
+			<a href="#" title='<%- feedback_no_html %>' class='<%- css_state %> sd-button' rel='nofollow'>
+				<span><%= label %></span>
+			</a>
+		</div>
+
+		<% if ( hasLikes ) { %>
+		<ul class="wpl-avatars sd-like-gravatars">
+			<% likers.forEach( function( item, key ) { var likerUrl = ! item.default_avatar ? item.profile_URL : ( 0 === ( item.site_URL || "" ).indexOf( "http" ) ? item.site_URL : "" ); %>
+				<li class='<%- item.css_class %>' data-liker-id="<%- item.ID %>"><a<% if ( likerUrl ) { %> href="<%- likerUrl %>"<% } %> title="<%- item.name %>" class="wpl-liker" rel="nofollow" target="_parent">
+					<img src='<%= item.avatar_URL %>' class='avatar avatar-30' alt='<%- item.name %>' width='30' height='30' />
+				</a></li>
+			<% }); %>
+		</ul>
+		<% } %>
+		<div class="wpl-count sd-like-count">
+			<%= feedback %>
+		</div>
+		<% } %>
+	</div>
+</script>
+
+<script type="text/html" id="slim-likes">
+	<div class="sd-content wpl-likebox wpl-slim-likebox">
+		<div class="wpl-button <%- css_state %>">
+			<a href="#" title='<%- feedback_no_html %>' class='<%- css_state %> sd-button' rel='nofollow'>
+				<span><%= label %></span>
+			</a>
+		</div>
+
+		<div class="wpl-count sd-like-count">
+			<%= feedback %>
+		</div>
+	</div>
+</script>
+
+<script type="text/html" id="comment-likes">
+	<div class="wpl-likebox wpl-comment-likebox">
+		<div class="comment-likes <%- css_state %>">
+			<a href="#" class="comment-like-link" rel="nofollow"><%= label %></a>
+		</div>
+		<div class="wpl-count sd-like-count">
+			<%= feedback %>
+		</div>
+	</div>
+</script>
+
+<script type="text/javascript" src="./rlt-proxy.js.download"></script>
+<script type="text/javascript" src="./saved_resource"></script>
+
+<script type="text/javascript">
+	// Keep the token in this iframe's own (partitioned) storage, and never pass it up to the embedding page.
+	// The storage calls live here and not in rlt-proxy.js: Safari Private Browsing ignores localStorage
+	// calls made while a script from s0.wp.com is on the stack.
+	// Only tokens from the login popup are saved. A token posted by the embedding page stays in memory,
+	// so a page can't leave one behind for other sites that share this storage partition.
+	( function() {
+		var RLT_KEY = 'jetpack:wpcomRLT';
+		var token = null;
+
+		try {
+			token = window.localStorage.getItem( RLT_KEY );
+		} catch ( e ) {}
+
+		window.addEventListener( 'message', function( e ) {
+			var message = e && e.data;
+			if ( typeof message === 'string' ) {
+				try {
+					message = JSON.parse( message );
+				} catch ( err ) {
+					return;
+				}
+			}
+
+			var data = message && message.data;
+			if ( ! data || ! data.token ) {
+				return;
+			}
+
+			try {
+				if ( message.type === 'loginMessage' && data.type === 'rlt' && e.origin === 'https://r-login.wordpress.com' ) {
+					window.localStorage.setItem( RLT_KEY, data.token );
+				}
+				if ( message.type === 'rltMessage' && data.event === 'invalidate' && window.localStorage.getItem( RLT_KEY ) === data.token ) {
+					window.localStorage.removeItem( RLT_KEY );
+				}
+			} catch ( err ) {}
+		} );
+
+		rltInitialize( { token: token, iframeOrigins: ['https://public-api.wordpress.com'] } );
+	} )();
+</script>
+</head>
+<body>
+
+<iframe src="./saved_resource.html" style="display: none;"></iframe></body></html>
