@@ -1,0 +1,71 @@
+.unnamed1 {
+	font: normal xx-small Tahoma;
+	text-transform: capitalize;
+	color: #000066;
+	border: opx none #000066;
+}
+.unnamed1Copy {
+
+	font: normal xx-small Tahoma;
+	text-transform: capitalize;
+	color: #000066;
+	border: 0px none #FFFFFF;
+}
+span,p {
+	font: xx-small Tahoma;
+	color: #000066;
+	text-decoration: none;
+	border: 0px none;
+}
+A:hover {
+	COLOR: #cc3300
+}
+A {
+	TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: bold; COLOR: #000008; TEXT-DECORATION: underline none
+}
+BODY {
+
+;color: #000000;
+	font: xx-small Tahoma;
+}
+table, td {
+color: #000000;
+	font: xx-small Tahoma;
+}
+.option {
+	color: #000080;
+	font: xx-small Tahoma;
+	border: 0px none #000066;
+}
+
+
+h2 {
+	color: #000066;
+	font: x-small Tahoma;
+}
+.style2 {font-size: medium}
+.input {
+	font: normal xx-small Tahoma;
+	color: #000099;
+	text-decoration: underline;
+	background: #FFFFFF;
+	border: thin solid #333333;
+}
+/*
+     FILE ARCHIVED ON 01:46:04 Mar 06, 2012 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:15:48 Nov 10, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 25.145
+  load_resource: 93.439
+  PetaboxLoader3.resolve: 43.052
+  PetaboxLoader3.datanode: 24.419
+*/

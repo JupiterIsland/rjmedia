@@ -12,7 +12,7 @@
   <div class="archive-status-bar">
     <div class="wrap archive-status-inner">
       <span>RJMEDIA DIGITAL ARCHIVE • PAUL DRAPER &amp; MANSUN COLLECTION</span>
-      <span>16 NEWS LOGS • 11 PRESS SCANS • 91 STREAM &amp; MP3 TRACKS</span>
+      <span>16 NEWS LOGS • 11 PRESS SCANS • 39 MEDIA PAGE FILES</span>
     </div>
   </div>
   <header class="masthead">
@@ -23,7 +23,7 @@
         <a href="./draper-news.html" class="">News (16)</a>
         <a href="./draper-articles.html" class="">Articles (4)</a>
         <a href="./press-layout.html" class="">Press Spreads</a>
-        <a href="./mansun-mp3-vault.html" class="active">MP3 &amp; Stream Vault (91)</a>
+        <a href="./mansun-mp3-vault.html" class="active">MP3 Vault (39)</a>
       </nav>
     </div>
   </header>
@@ -31,9 +31,9 @@
   <main class="wrap">
     <section class="hero">
       <div>
-        <p class="eyebrow">Instant Online Stream + Old-School Collector's MP3 Index</p>
-        <h1>Mansun &amp; Draper<br>Stream &amp; MP3 Vault.</h1>
-        <p class="intro">Every live concert, TV broadcast, acoustic session, and rare demo we could locate across the internet—wired for instant 1-click playback right on this page, alongside direct local MP3 links and a drag-and-drop local folder loader.</p>
+        <p class="eyebrow">From pauldraper-music.co.uk/media.html · Wayback snapshot 29 May 2012</p>
+        <h1>Mansun &amp; Draper<br>MP3 Vault.</h1>
+        <p class="intro">Only the files from the original Paul Draper Music media page: Grind videos and MP3s, the Six early versions with notes by Paul, the Six demo sessions, and the John Peel Session of 7/10/1995. Each MP3 streams straight from the Internet Archive. See the <a href="./classic-media-2012.html">original 2012 page</a>.</p>
       </div>
       <div class="corner-sketch">
         <img src="../assets/images/indexpic.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper live in studio" onclick="openLightbox('../assets/images/indexpic.jpg', 'Paul Draper — Studio session')">
@@ -44,65 +44,44 @@
     <section class="hybrid-deck" id="playerDeck" aria-label="Master Online Stream and MP3 Deck">
       <div class="deck-grid">
         <div>
-          <span class="deck-badge" id="deckModeBadge">ONLINE STREAM • LIVE ON YOUTUBE</span>
-          <h2 class="deck-title" id="deckTitle">Paul Draper (Mansun) — Take It Easy Chicken (Live Manchester Academy 18/03/2026)</h2>
-          <div class="deck-sub" id="deckMeta">Channel: Live Music &amp; Band Documentaries (RJMedia) · Instant Web Stream</div>
-          <p style="font-size: 0.88rem; color: #bbbbbb; margin: 0 0 0.9rem;">
-            Click <strong>▶ Stream Online</strong> on any row below to play the live internet stream immediately in the embedded deck, or click <strong>MP3 / Local</strong> to play from your `/mp3/` folder.
-          </p>
+          <span class="deck-badge" id="deckModeBadge">2012 MEDIA PAGE • WAYBACK STREAM</span>
+          <h2 class="deck-title" id="deckTitle">Grind — Slide</h2>
+          <div class="deck-sub" id="deckMeta">c. 1992 · Original pauldraper-music.co.uk MP3</div>
+          <p style="font-size: 0.88rem; color: #bbbbbb; margin: 0 0 0.9rem;">Click <strong>▶ Play</strong> on any row below. The deck plays the 34 media-page MP3s in order and moves to the next track automatically. The 5 Grind videos are .mov files and open as downloads.</p>
           <div class="deck-controls">
-            <button type="button" class="deck-btn" onclick="playNextOnline()">⏭ Next Online Stream</button>
-            <a id="deckExternalLink" class="deck-btn deck-btn-outline" href="https://www.youtube.com/watch?v=Yt9EPXKJ3_s" target="_blank" rel="noopener">Open Direct Source Link ↗</a>
+            <button type="button" class="deck-btn" onclick="playNextTrack()">⏭ Next Track</button>
+            <a id="deckExternalLink" class="deck-btn deck-btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Slide.mp3" target="_blank" rel="noopener">Open Wayback File ↗</a>
           </div>
         </div>
 
         <div class="stream-stage">
-          <div class="yt-frame-wrap" id="ytStage">
-            <iframe id="ytPlayerFrame" src="https://www.youtube.com/embed/Yt9EPXKJ3_s?rel=0" title="Mansun & Paul Draper Archive Stream Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
           <div class="audio-stage">
             <div style="font-family: monospace; font-size: 0.72rem; color: #aaaaaa; margin-bottom: 6px; display: flex; justify-content: space-between;">
-              <span id="audioStageLabel">LOCAL MP3 / DIRECT STREAM DECK:</span>
-              <span id="audioFilePath">PeelSession/GreyLantern.mp3 (LIVE WAYBACK STREAM)</span>
+              <span id="audioStageLabel">NOW LOADED:</span>
+              <span id="audioFilePath">Slide.mp3</span>
             </div>
-            <audio id="vaultAudio" controls preload="none" src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3"></audio>
+            <audio id="vaultAudio" controls preload="none" src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Slide.mp3"></audio>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INSTANT LOCAL MP3 LOADER BAR (PLAYS USER'S OWN MP3s IN BROWSER IMMEDIATELY) -->
-    <div class="dropzone-bar">
-      <div>
-        <strong>Have your own Mansun / Paul Draper MP3s on your laptop?</strong> Load any `.mp3`, `.wav`, or `.flac` files from your hard drive to play them immediately in the Archive Deck:
-      </div>
-      <div>
-        <label class="btn" style="cursor: pointer; margin: 0;">
-          + Load Local MP3 Files
-          <input type="file" id="localMp3Picker" accept="audio/*" multiple style="display: none;">
-        </label>
-      </div>
-    </div>
-
     <!-- SEARCH & ERA FILTER -->
     <section aria-label="Search Stream and MP3 Vault">
       <div class="toolbar">
         <div class="search-box">
-          <input type="search" id="mp3Search" class="search-input" placeholder="Search tracks, venues, years (e.g. Brixton, Reading, Jools Holland, TFI Friday, Devoto, Edinburgh, Draposound, Paradiso)..." aria-label="Search tracks">
+          <input type="search" id="mp3Search" class="search-input" placeholder="Search the media page files (e.g. Slide, Negative, Legacy, Peel)..." aria-label="Search tracks">
         </div>
-        <div class="filter-pills" role="group" aria-label="Filter by category">
-          <button type="button" class="pill active" data-cat="all">All Archive Tracks (91)</button>
-          <button type="button" class="pill" data-cat="wayback-2012">★ 2012 Wayback MP3s (39)</button>
-          <button type="button" class="pill" data-cat="online-stream">▶ Instant Online Streams (27)</button>
-          <button type="button" class="pill" data-cat="rjmedia">RJMedia Vault (5)</button>
-          <button type="button" class="pill" data-cat="brixton-fest">Brixton '98 &amp; Festivals (6)</button>
-          <button type="button" class="pill" data-cat="tv-broadcast">90s TV Broadcasts (10)</button>
-          <button type="button" class="pill" data-cat="demos-acoustic">Demos &amp; Solo Live (6)</button>
-          <button type="button" class="pill" data-cat="paradiso98">Amsterdam Paradiso '98 (8)</button>
-          <button type="button" class="pill" data-cat="draposound">Draposound &amp; Grind Vault (20)</button>
+        <div class="filter-pills" role="group" aria-label="Filter by section">
+          <button type="button" class="pill active" data-cat="all">All Media Page Files (39)</button>
+          <button type="button" class="pill" data-cat="grind-video">Grind Videos (5)</button>
+          <button type="button" class="pill" data-cat="grind-mp3">Grind MP3s (8)</button>
+          <button type="button" class="pill" data-cat="six-early">Six Early Versions &amp; Notes (13)</button>
+          <button type="button" class="pill" data-cat="six-demos">Six Demo Sessions (9)</button>
+          <button type="button" class="pill" data-cat="peel-95">John Peel Session 7/10/1995 (4)</button>
         </div>
       </div>
-      <div class="result-meta" id="mp3ResultCount">Showing all 91 catalogued online streams, live bootlegs &amp; studio demos</div>
+      <div class="result-meta" id="mp3ResultCount">Showing all 39 files from the 2012 media page</div>
     </section>
 
     <!-- MASTER STREAM & MP3 TABLE -->
@@ -121,7 +100,7 @@
         <tbody id="vaultTableBody">
 
           <!-- SECTION 0: RECOVERED 2012 WAYBACK MACHINE LIVE MP3 STREAMS (39 TRACKS) -->
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-video">
             <td><code>WB-GRD-V1</code></td>
             <td><strong>Grind — The Diary (Original Video)</strong></td>
             <td><span class="status-online">Grind Era Video</span></td>
@@ -131,7 +110,7 @@
               <a class="btn" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/01VideoDiary.mov" target="_blank" rel="noopener">▶ Download .MOV ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-video">
             <td><code>WB-GRD-V2</code></td>
             <td><strong>Grind — Epic (8-Min Guitar Video)</strong></td>
             <td><span class="status-online">Grind Era Video</span></td>
@@ -141,7 +120,7 @@
               <a class="btn" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/03Epic.mov" target="_blank" rel="noopener">▶ Download .MOV ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-video">
             <td><code>WB-GRD-V3</code></td>
             <td><strong>Grind — Lantern (Original Video)</strong></td>
             <td><span class="status-online">Grind Era Video</span></td>
@@ -151,7 +130,7 @@
               <a class="btn" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/04Lantern.mov" target="_blank" rel="noopener">▶ Download .MOV ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-video">
             <td><code>WB-GRD-V4</code></td>
             <td><strong>Grind — The Window (Original Video)</strong></td>
             <td><span class="status-online">Grind Era Video</span></td>
@@ -161,7 +140,7 @@
               <a class="btn" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/02TheWindow.mov" target="_blank" rel="noopener">▶ Download .MOV ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-video">
             <td><code>WB-GRD-V5</code></td>
             <td><strong>Grind — The Office (Original Video)</strong></td>
             <td><span class="status-online">Grind Era Video</span></td>
@@ -171,1000 +150,382 @@
               <a class="btn" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/05Office.mov" target="_blank" rel="noopener">▶ Download .MOV ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-01</code></td>
             <td><strong>Grind — Slide</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Slide', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Slide.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — Slide" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Slide.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Slide.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-02</code></td>
             <td><strong>Grind — Thought</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Thought', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-thought.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — Thought" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-thought.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-thought.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-03</code></td>
             <td><strong>Grind — The Dying Man</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — The Dying Man', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-the_dying_man.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — The Dying Man" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-the_dying_man.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-the_dying_man.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-04</code></td>
             <td><strong>Grind — I Lust You</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — I Lust You', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/ILustYou.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — I Lust You" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/ILustYou.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/ILustYou.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-05</code></td>
             <td><strong>Grind — Hand</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Hand', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Hand.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — Hand" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Hand.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Hand.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-06</code></td>
             <td><strong>Grind — Colour</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Colour', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — Colour" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-07</code></td>
             <td><strong>Grind — Colour (Remix)</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Colour (Remix)', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour%20(Remix).mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — Colour (Remix)" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour%20(Remix).mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour%20(Remix).mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="grind-mp3">
             <td><code>WB-GRD-08</code></td>
             <td><strong>Grind — Precious Internal</strong></td>
             <td><span class="status-online">Grind MP3</span></td>
             <td>c. 1992 · Original pauldraper-music.co.uk MP3</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Precious Internal', 'c. 1992 · Original pauldraper-music.co.uk MP3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Precious%20Internal.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Grind — Precious Internal" data-meta="c. 1992 · Original pauldraper-music.co.uk MP3" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Precious%20Internal.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Precious%20Internal.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-01</code></td>
             <td><strong>Mansun — Six (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive + Paul's Notes</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Six (Early Version)', '1998 · NewSix Demo Archive + Paul\'s Notes', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/six.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Six (Early Version)" data-meta="1998 · NewSix Demo Archive + Paul\'s Notes" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/six.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/six.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-02</code></td>
             <td><strong>Mansun — Negative (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Negative (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/negative.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Negative (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/negative.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/negative.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-03</code></td>
             <td><strong>Mansun — Shotgun (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Shotgun (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/shotgun.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Shotgun (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/shotgun.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/shotgun.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-04</code></td>
             <td><strong>Mansun — Bobblehat (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Bobblehat (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/Bobblehat.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Bobblehat (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/Bobblehat.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/Bobblehat.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-05</code></td>
             <td><strong>Mansun — Anti Everything (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Anti Everything (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/antieverything.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Anti Everything (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/antieverything.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/antieverything.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-06</code></td>
             <td><strong>Mansun — Funkofski (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Funkofski (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/funkofski.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Funkofski (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/funkofski.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/funkofski.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-07</code></td>
             <td><strong>Mansun — Seratonin (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Seratonin (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/seratonin.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Seratonin (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/seratonin.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/seratonin.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-08</code></td>
             <td><strong>Mansun — Pentagram (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Pentagram (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/pentagram.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Pentagram (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/pentagram.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/pentagram.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-09</code></td>
             <td><strong>Mansun — Witness To A Murder (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Witness To A Murder (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/witnesstoamurder.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Witness To A Murder (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/witnesstoamurder.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/witnesstoamurder.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-10</code></td>
             <td><strong>Mansun — Television (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Television (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/television.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Television (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/television.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/television.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-11</code></td>
             <td><strong>Mansun — Special / Blown It (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Special / Blown It (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/specialblownit.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Special / Blown It (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/specialblownit.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/specialblownit.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-12</code></td>
             <td><strong>Mansun — Legacy (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Legacy (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/legacy.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Legacy (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/legacy.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/legacy.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-early">
             <td><code>WB-SIX-13</code></td>
             <td><strong>Mansun — Being A Girl (Early Version)</strong></td>
             <td><span class="status-online">Six Early Version</span></td>
             <td>1998 · NewSix Demo Archive</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Being A Girl (Early Version)', '1998 · NewSix Demo Archive', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/beingagirl.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Being A Girl (Early Version)" data-meta="1998 · NewSix Demo Archive" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/beingagirl.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/beingagirl.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-01</code></td>
             <td><strong>Mansun — Six Monitor Mix (28/9/97)</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>28/09/1997 · Early Studio Monitor Mix</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Six Monitor Mix (28/9/97)', '28/09/1997 · Early Studio Monitor Mix', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/SixEarlyMonitorMix.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Six Monitor Mix (28/9/97)" data-meta="28/09/1997 · Early Studio Monitor Mix" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/SixEarlyMonitorMix.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/SixEarlyMonitorMix.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-02</code></td>
             <td><strong>Mansun — Pentagram (Demo Session)</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1997–1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Pentagram (Demo Session)', '1997–1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Pentagram.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Pentagram (Demo Session)" data-meta="1997–1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Pentagram.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Pentagram.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-03</code></td>
             <td><strong>Mansun — Dr Funkoffski (Demo Session)</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1997–1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Dr Funkoffski (Demo Session)', '1997–1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/DrFunkoffski.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Dr Funkoffski (Demo Session)" data-meta="1997–1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/DrFunkoffski.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/DrFunkoffski.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-04</code></td>
             <td><strong>Mansun — Seratonin (Demo Session)</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1997–1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Seratonin (Demo Session)', '1997–1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Seratonin.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Seratonin (Demo Session)" data-meta="1997–1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Seratonin.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Seratonin.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-05</code></td>
             <td><strong>Mansun — Legacy Rough Edit 1</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Legacy Rough Edit 1', '1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy1.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Legacy Rough Edit 1" data-meta="1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy1.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy1.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-06</code></td>
             <td><strong>Mansun — Legacy Rough Edit 2</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Legacy Rough Edit 2', '1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy2.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Legacy Rough Edit 2" data-meta="1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy2.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy2.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-07</code></td>
             <td><strong>Mansun — Legacy Rough Edit 3</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Legacy Rough Edit 3', '1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy3.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Legacy Rough Edit 3" data-meta="1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy3.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy3.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-08</code></td>
             <td><strong>Mansun — Gods Are Not Us (Demo)</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Gods Are Not Us (Demo)', '1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/GodsAreNotUs.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Gods Are Not Us (Demo)" data-meta="1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/GodsAreNotUs.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/GodsAreNotUs.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="six-demos">
             <td><code>WB-DEM-09</code></td>
             <td><strong>Mansun — The Loud Song (Demo)</strong></td>
             <td><span class="status-online">Six Demo Sessions</span></td>
             <td>1998 · Six Demo Sessions</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — The Loud Song (Demo)', '1998 · Six Demo Sessions', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/TheLoudSong.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — The Loud Song (Demo)" data-meta="1998 · Six Demo Sessions" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/TheLoudSong.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/TheLoudSong.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="peel-95">
             <td><code>WB-PEEL-01</code></td>
             <td><strong>Mansun — Grey Lantern (John Peel Session 7/10/1995)</strong></td>
             <td><span class="status-online">Peel Session '95</span></td>
             <td>07/10/1995 · BBC Radio 1 John Peel Session</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Grey Lantern (John Peel Session 7/10/1995)', '07/10/1995 · BBC Radio 1 John Peel Session', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Grey Lantern (John Peel Session 7/10/1995)" data-meta="07/10/1995 · BBC Radio 1 John Peel Session" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="peel-95">
             <td><code>WB-PEEL-02</code></td>
             <td><strong>Mansun — Flourella (John Peel Session 7/10/1995)</strong></td>
             <td><span class="status-online">Peel Session '95</span></td>
             <td>07/10/1995 · BBC Radio 1 John Peel Session</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Flourella (John Peel Session 7/10/1995)', '07/10/1995 · BBC Radio 1 John Peel Session', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/Flourella.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Flourella (John Peel Session 7/10/1995)" data-meta="07/10/1995 · BBC Radio 1 John Peel Session" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/Flourella.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/Flourella.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="peel-95">
             <td><code>WB-PEEL-03</code></td>
             <td><strong>Mansun — Skin Up Pin Up (John Peel Session 7/10/1995)</strong></td>
             <td><span class="status-online">Peel Session '95</span></td>
             <td>07/10/1995 · BBC Radio 1 John Peel Session</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Skin Up Pin Up (John Peel Session 7/10/1995)', '07/10/1995 · BBC Radio 1 John Peel Session', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/SkinUp.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Skin Up Pin Up (John Peel Session 7/10/1995)" data-meta="07/10/1995 · BBC Radio 1 John Peel Session" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/SkinUp.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/SkinUp.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
-          <tr class="mp3-row" data-cat="wayback-2012 online-stream">
+          <tr class="mp3-row" data-cat="peel-95">
             <td><code>WB-PEEL-04</code></td>
             <td><strong>Mansun — Take It Easy Chicken (John Peel Session 7/10/1995)</strong></td>
             <td><span class="status-online">Peel Session '95</span></td>
             <td>07/10/1995 · BBC Radio 1 John Peel Session</td>
             <td><code>MP3</code></td>
             <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Mansun — Take It Easy Chicken (John Peel Session 7/10/1995)', '07/10/1995 · BBC Radio 1 John Peel Session', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/TIEC.mp3')">▶ Stream MP3</button>
+              <button type="button" class="btn" data-title="Mansun — Take It Easy Chicken (John Peel Session 7/10/1995)" data-meta="07/10/1995 · BBC Radio 1 John Peel Session" data-src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/TIEC.mp3" onclick="playTrack(this)">▶ Play</button>
               <a class="btn btn-outline" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/TIEC.mp3" target="_blank" rel="noopener">Wayback MP3 ↗</a>
             </td>
           </tr>
 
 
-          <!-- SECTION 1: RJMEDIA LIVE MUSIC & BAND DOCUMENTARIES VAULT -->
-          <tr class="mp3-row" data-cat="rjmedia online-stream" data-yt="Yt9EPXKJ3_s">
-            <td><code>RJM-01</code></td>
-            <td><strong>Paul Draper (Mansun) — Take It Easy Chicken (Live Manchester Academy)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>18/03/2026 · Manchester Academy · Filmed by RJMedia</td>
-            <td><code>04:35</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('Yt9EPXKJ3_s', 'Paul Draper (Mansun) — Take It Easy Chicken (Live Manchester Academy 18/03/2026)', 'Live Music & Band Documentaries (RJMedia)')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=Yt9EPXKJ3_s" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="rjmedia online-stream" data-yt="rxblL3k4LTA">
-            <td><code>RJM-02</code></td>
-            <td><strong>Mansun — She Makes My Nose Bleed (TOTP 14 Feb 1997 Remastered)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>14/02/1997 · Top of the Pops · RJMedia Remaster</td>
-            <td><code>03:24</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('rxblL3k4LTA', 'Mansun — She Makes My Nose Bleed (TOTP 14 Feb 1997 Remastered)', 'Live Music & Band Documentaries (RJMedia)')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=rxblL3k4LTA" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="rjmedia online-stream" data-yt="pT8A5hvotQo">
-            <td><code>RJM-03</code></td>
-            <td><strong>Paul Draper — Negative (Live in Liverpool)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>18/03/2023 · Liverpool · Filmed by RJMedia</td>
-            <td><code>04:11</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('pT8A5hvotQo', 'Paul Draper — Negative (Live Liverpool 18/03/2023)', 'Live Music & Band Documentaries (RJMedia)')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=pT8A5hvotQo" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="rjmedia online-stream" data-yt="33kUY4qV9bA">
-            <td><code>RJM-04</code></td>
-            <td><strong>Paul Draper — Inverse Midas / Anti Everything / Fall Out / Serotonin (Medley)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>21/03/2023 · Live Six Era Medley · RJMedia Archive</td>
-            <td><code>08:39</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('33kUY4qV9bA', 'Paul Draper — Inverse Midas / Anti Everything / Fall Out / Serotonin', 'Live Music & Band Documentaries (RJMedia)')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=33kUY4qV9bA" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="rjmedia online-stream" data-yt="EsYWzuBX8b4">
-            <td><code>RJM-05</code></td>
-            <td><strong>Paul Draper Jamming with Steve Hewitt (Placebo)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>28/06/2023 · Studio Session Clip · RJMedia Archive</td>
-            <td><code>00:16</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('EsYWzuBX8b4', 'Paul Draper Jamming with Steve Hewitt (Placebo)', 'Live Music & Band Documentaries (RJMedia)')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=EsYWzuBX8b4" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-
-          <!-- SECTION 2: FULL CONCERTS, BRIXTON '98 & FESTIVAL SETS (ONLINE STREAMS) -->
-          <tr class="mp3-row" data-cat="brixton-fest online-stream" data-yt="X4patCG3wWk">
-            <td><code>CON-01</code></td>
-            <td><strong>Mansun — Live at Brixton Academy 1998 (Full 83-Minute Concert)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>23/10/1998 · London Brixton Academy · Full Live Concert</td>
-            <td><code>1:23:47</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('X4patCG3wWk', 'Mansun — Live at Brixton Academy 1998 (Full Concert)', 'London Brixton Academy 23/10/1998')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=X4patCG3wWk" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="brixton-fest online-stream" data-yt="Or80ojVIWd0">
-            <td><code>CON-02</code></td>
-            <td><strong>Mansun — Wide Open Space (Live at Brixton Academy 23/10/98)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>23/10/1998 · Official 'Closed for Business' Box Set Audio/Video</td>
-            <td><code>04:33</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('Or80ojVIWd0', 'Mansun — Wide Open Space (Brixton Academy 23/10/98)', 'Mansun Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=Or80ojVIWd0" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="brixton-fest online-stream" data-yt="LbBexiWgfl0">
-            <td><code>CON-03</code></td>
-            <td><strong>Mansun — Being A Girl (Live at Brixton Academy 23/10/98)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>23/10/1998 · Official 'Closed for Business' Box Set Audio/Video</td>
-            <td><code>04:43</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('LbBexiWgfl0', 'Mansun — Being A Girl (Brixton Academy 23/10/98)', 'Mansun Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=LbBexiWgfl0" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="brixton-fest online-stream" data-yt="bcsPC39Y-XQ">
-            <td><code>CON-04</code></td>
-            <td><strong>Mansun — Wide Open Space (Live at Reading Festival 28/08/98)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>28/08/1998 · Reading Festival Main Stage Broadcast</td>
-            <td><code>04:44</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('bcsPC39Y-XQ', 'Mansun — Wide Open Space (Live Reading Festival 28/08/98)', 'Reading Festival 1998')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=bcsPC39Y-XQ" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="brixton-fest online-stream" data-yt="pPk1Hcnfjm0">
-            <td><code>CON-05</code></td>
-            <td><strong>Mansun — Six (Live at Reading Festival 1999)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>August 1999 · Reading Festival Broadcast</td>
-            <td><code>06:40</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('pPk1Hcnfjm0', 'Mansun — Six (Live Reading Festival 1999)', 'Reading Festival 1999')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=pPk1Hcnfjm0" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="brixton-fest online-stream" data-yt="c8BZXnfakz4">
-            <td><code>CON-06</code></td>
-            <td><strong>Mansun — Take It Easy Chicken (Live NME Brats 1999)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1999 · NME Brats Tour Live Broadcast</td>
-            <td><code>06:33</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('c8BZXnfakz4', 'Mansun — Take It Easy Chicken (Live NME Brats 1999)', 'NME Brats 1999')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=c8BZXnfakz4" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-
-          <!-- SECTION 3: 1997-2000 TV BROADCASTS & TUNBRIDGE WELLS LIVE ARCHIVE -->
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="7NgLV056kB0">
-            <td><code>TVB-01</code></td>
-            <td><strong>Mansun — Wide Open Space (Later... with Jools Holland 1997)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1997 · BBC Two 'Later... with Jools Holland' · Paul Draper Channel</td>
-            <td><code>04:12</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('7NgLV056kB0', 'Mansun — Wide Open Space (Later with Jools Holland 1997)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=7NgLV056kB0" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="i5chy6VNWEE">
-            <td><code>TVB-02</code></td>
-            <td><strong>Mansun — Wide Open Space (Live on TFI Friday 1997)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1997 · Channel 4 'TFI Friday' · Paul Draper Channel</td>
-            <td><code>03:30</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('i5chy6VNWEE', 'Mansun — Wide Open Space (Live on TFI Friday 1997)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=i5chy6VNWEE" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="Gw4lBpcYs88">
-            <td><code>TVB-03</code></td>
-            <td><strong>Mansun — Taxloss (Live on TFI Friday HD)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1998 · Channel 4 'TFI Friday' HD Broadcast</td>
-            <td><code>03:24</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('Gw4lBpcYs88', 'Mansun — Taxloss (Live on TFI Friday HD)', 'TFI Friday Broadcast')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=Gw4lBpcYs88" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="F8cBx28Yy-0">
-            <td><code>TVB-04</code></td>
-            <td><strong>Mansun — Six (Live on TFI Friday HD)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1998 · Channel 4 'TFI Friday' HD Broadcast</td>
-            <td><code>03:25</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('F8cBx28Yy-0', 'Mansun — Six (Live on TFI Friday HD)', 'TFI Friday Broadcast')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=F8cBx28Yy-0" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="r9e_m9G3oGU">
-            <td><code>TVB-05</code></td>
-            <td><strong>Mansun — Negative (Live on TFI Friday 1998)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1998 · Channel 4 'TFI Friday' Broadcast</td>
-            <td><code>04:07</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('r9e_m9G3oGU', 'Mansun — Negative (Live on TFI Friday 1998)', 'TFI Friday Broadcast')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=r9e_m9G3oGU" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="8bdcN8mzaNQ">
-            <td><code>TVB-06</code></td>
-            <td><strong>Mansun — Legacy (Top of the Pops 1998)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1998 · BBC 'Top of the Pops' · Paul Draper Channel</td>
-            <td><code>04:15</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('8bdcN8mzaNQ', 'Mansun — Legacy (Top of the Pops 1998)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=8bdcN8mzaNQ" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="_27Nwcm69Qw">
-            <td><code>TVB-07</code></td>
-            <td><strong>Mansun — I Can Only Disappoint U (Later... with Jools Holland 2000)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>2000 · BBC Two 'Later... with Jools Holland' · Paul Draper Channel</td>
-            <td><code>03:49</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('_27Nwcm69Qw', 'Mansun — I Can Only Disappoint U (Later with Jools Holland 2000)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=_27Nwcm69Qw" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="h-2Mv8KWVxU">
-            <td><code>TVB-08</code></td>
-            <td><strong>Mansun — Take It Easy Chicken (Live at Tunbridge Wells 1997)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1997 · Tunbridge Wells Forum · Paul Draper Channel</td>
-            <td><code>08:13</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('h-2Mv8KWVxU', 'Mansun — Take It Easy Chicken (Live at Tunbridge Wells 1997)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=h-2Mv8KWVxU" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="hm-BJ8djKyU">
-            <td><code>TVB-09</code></td>
-            <td><strong>Mansun — Taxloss (Live at Tunbridge Wells 1997)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1997 · Tunbridge Wells Forum · Paul Draper Channel</td>
-            <td><code>06:47</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('hm-BJ8djKyU', 'Mansun — Taxloss (Live at Tunbridge Wells 1997)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=hm-BJ8djKyU" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="tv-broadcast online-stream" data-yt="rC5MMZcx9FU">
-            <td><code>TVB-10</code></td>
-            <td><strong>Mansun — She Makes My Nose Bleed (Live at Tunbridge Wells 1997)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1997 · Tunbridge Wells Forum · Paul Draper Channel</td>
-            <td><code>03:54</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('rC5MMZcx9FU', 'Mansun — She Makes My Nose Bleed (Live at Tunbridge Wells 1997)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=rC5MMZcx9FU" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-
-          <!-- SECTION 4: RARE DEMOS, B-SIDES & PAUL DRAPER SOLO LIVE STREAMS -->
-          <tr class="mp3-row" data-cat="demos-acoustic online-stream" data-yt="agh80tNqQTM">
-            <td><code>DEM-01</code></td>
-            <td><strong>Howard Devoto with Mansun — "Railings" (Original Demo)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1998 · Rare Collaboration Demo before 'Six' (became 'azawa / Shotgun')</td>
-            <td><code>06:06</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('agh80tNqQTM', 'Howard Devoto with Mansun — Railings (Rare Demo)', 'Six Era Collaboration Demo')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=agh80tNqQTM" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="demos-acoustic online-stream" data-yt="gG4RahO752w">
-            <td><code>DEM-02</code></td>
-            <td><strong>Mansun — When The Wind Blows (Rare B-Side)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>1998 · Legacy EP B-Side</td>
-            <td><code>04:52</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('gG4RahO752w', 'Mansun — When The Wind Blows (B-Side)', 'Six Era B-Side')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=gG4RahO752w" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="demos-acoustic online-stream" data-yt="PjycbVCS84M">
-            <td><code>DEM-03</code></td>
-            <td><strong>Paul Draper — Live Acoustic Sessions + Gear Runthrough</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>2018 · The APW Acoustic Session (19 Mins)</td>
-            <td><code>19:05</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('PjycbVCS84M', 'Paul Draper — Live Acoustic Sessions + Gear Runthrough', 'The APW Session')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=PjycbVCS84M" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="demos-acoustic online-stream" data-yt="v4h4SaQRLKA">
-            <td><code>DEM-04</code></td>
-            <td><strong>Paul Draper — Dark Mavis (Mansun Acoustic Live in Edinburgh)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>24/11/2018 · Edinburgh Acoustic Set</td>
-            <td><code>06:53</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('v4h4SaQRLKA', 'Paul Draper — Dark Mavis (Acoustic Live Edinburgh)', 'Edinburgh Acoustic Session')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=v4h4SaQRLKA" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="demos-acoustic online-stream" data-yt="cQMGUtH8d8Q">
-            <td><code>DEM-05</code></td>
-            <td><strong>Paul Draper — Taxloss (Live At The Ritz Manchester)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>2018 · O2 Ritz Manchester · Paul Draper Official Channel</td>
-            <td><code>07:14</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('cQMGUtH8d8Q', 'Paul Draper — Taxloss (Live At The Ritz)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=cQMGUtH8d8Q" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="demos-acoustic online-stream" data-yt="WSOGVuFEBEY">
-            <td><code>DEM-06</code></td>
-            <td><strong>Paul Draper — I Can Only Disappoint U (Live At Scala London)</strong></td>
-            <td><span class="status-online">Online Stream</span></td>
-            <td>2018 · Scala London · Paul Draper Official Channel</td>
-            <td><code>04:59</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('WSOGVuFEBEY', 'Paul Draper — I Can Only Disappoint U (Live At Scala)', 'Paul Draper Official Archive')">▶ Stream Online</button>
-              <a class="btn btn-outline" href="https://www.youtube.com/watch?v=WSOGVuFEBEY" target="_blank" rel="noopener">YouTube ↗</a>
-            </td>
-          </tr>
-
-          <!-- SECTION 5: AMSTERDAM PARADISO 9 NOV 1998 (HYBRID STREAM + MP3 DOWNLOAD) -->
-          <tr id="paradiso-1998" class="mp3-row" data-cat="paradiso98">
-            <td><code>PAR-01</code></td>
-            <td><strong>01. Stripper Vicar (Amsterdam Paradiso 09/11/1998)</strong></td>
-            <td><span class="status-local">MP3 Archive</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Supporting Manic Street Preachers)</td>
-            <td><code>04:12</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('01. Stripper Vicar (Live Paradiso 1998)', 'Mansun · 09/11/1998 Amsterdam Paradiso (35:27 set)', '../assets/PeelSession/GreyLantern.mp3 (LIVE WAYBACK STREAM)')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/PeelSession/GreyLantern.mp3 (LIVE WAYBACK STREAM)" download>Save MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="paradiso98 online-stream" data-yt="LbBexiWgfl0">
-            <td><code>PAR-02</code></td>
-            <td><strong>02. Being a Girl (Amsterdam Paradiso 09/11/1998)</strong></td>
-            <td><span class="status-online">Stream + MP3</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Supporting MSP)</td>
-            <td><code>03:58</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('LbBexiWgfl0', '02. Being a Girl (1998 Tour Live Stream)', 'Mansun 1998 Live Archive')">▶ Stream</button>
-              <a class="btn btn-outline" href="../assets/mp3/paradiso98/02-being-a-girl.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="paradiso98 online-stream" data-yt="r9e_m9G3oGU">
-            <td><code>PAR-03</code></td>
-            <td><strong>03. Negative (Amsterdam Paradiso 09/11/1998)</strong></td>
-            <td><span class="status-online">Stream + MP3</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Supporting MSP)</td>
-            <td><code>04:20</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('r9e_m9G3oGU', '03. Negative (1998 Live Broadcast)', 'Mansun 1998 Live Archive')">▶ Stream</button>
-              <a class="btn btn-outline" href="../assets/mp3/paradiso98/03-negative.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="paradiso98 online-stream" data-yt="Or80ojVIWd0">
-            <td><code>PAR-04</code></td>
-            <td><strong>04. Wide Open Space (Amsterdam Paradiso 09/11/1998)</strong></td>
-            <td><span class="status-online">Stream + MP3</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Supporting MSP)</td>
-            <td><code>04:41</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('Or80ojVIWd0', '04. Wide Open Space (1998 Tour Live Stream)', 'Mansun 1998 Live Archive')">▶ Stream</button>
-              <a class="btn btn-outline" href="../assets/mp3/paradiso98/04-wide-open-space.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="paradiso98 online-stream" data-yt="rC5MMZcx9FU">
-            <td><code>PAR-05</code></td>
-            <td><strong>05. She Makes My Nose Bleed (Amsterdam Paradiso 09/11/1998)</strong></td>
-            <td><span class="status-online">Stream + MP3</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Supporting MSP)</td>
-            <td><code>04:05</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('rC5MMZcx9FU', '05. She Makes My Nose Bleed (Live Archive)', 'Mansun Live Archive')">▶ Stream</button>
-              <a class="btn btn-outline" href="../assets/mp3/paradiso98/05-she-makes-my-nose-bleed.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="paradiso98">
-            <td><code>PAR-06</code></td>
-            <td><strong>06. Everyone Must Win (Amsterdam Paradiso 09/11/1998)</strong></td>
-            <td><span class="status-local">MP3 Archive</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Supporting MSP)</td>
-            <td><code>04:55</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('06. Everyone Must Win (Live Paradiso 1998)', 'Mansun · 09/11/1998 Amsterdam Paradiso', '../assets/mp3/paradiso98/06-everyone-must-win.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/paradiso98/06-everyone-must-win.mp3" download>Save MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="paradiso98 online-stream" data-yt="c8BZXnfakz4">
-            <td><code>PAR-07</code></td>
-            <td><strong>07. Take It Easy Chicken (Amsterdam Paradiso 09/11/1998)</strong></td>
-            <td><span class="status-online">Stream + MP3</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Supporting MSP)</td>
-            <td><code>04:32</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('c8BZXnfakz4', '07. Take It Easy Chicken (Live Archive Stream)', 'Mansun Live Archive')">▶ Stream</button>
-              <a class="btn btn-outline" href="../assets/mp3/paradiso98/07-take-it-easy-chicken.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="paradiso98 online-stream" data-yt="YC6oAPcyudg">
-            <td><code>PAR-08</code></td>
-            <td><strong>08. Taxloss (Amsterdam Paradiso 09/11/1998 Finale)</strong></td>
-            <td><span class="status-online">Stream + MP3</span></td>
-            <td>09/11/1998 · Amsterdam Paradiso (Full Concert Total 35:27)</td>
-            <td><code>04:44</code></td>
-            <td>
-              <button type="button" class="btn" onclick="playYouTube('YC6oAPcyudg', '08. Taxloss (Live 1998 Stream)', 'Mansun 1998 Live Archive')">▶ Stream</button>
-              <a class="btn btn-outline" href="../assets/mp3/paradiso98/08-taxloss.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-
-          <!-- SECTION 6: UNRELEASED, GRIND ERA & DRAPOSOUND SOLO WIP VAULT -->
-          <tr id="painted-hall" class="mp3-row" data-cat="draposound">
-            <td><code>RAR-01</code></td>
-            <td><strong>South Of The Painted Hall (Unreleased Track from Legacy)</strong></td>
-            <td><span class="status-local">MP3 Archive</span></td>
-            <td>03/02/2012 Archive Release · Unreleased from <em>Legacy: The Best of Mansun</em></td>
-            <td><code>04:18</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('South Of The Painted Hall (Unreleased)', 'Mansun · Unreleased track from Legacy', '../assets/mp3/rarities/south-of-the-painted-hall.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/rarities/south-of-the-painted-hall.mp3" download>Save MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>RAR-02</code></td>
-            <td><strong>Unravel (Paul Draper &amp; Catherine Anne Davies Session Demo)</strong></td>
-            <td><span class="status-local">MP3 Archive</span></td>
-            <td>2007–2008 · Draposound Studio Road-Test Session</td>
-            <td><code>03:52</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Unravel (Draposound Session Demo)', 'Paul Draper & Catherine Anne Davies · 2007/2008', '../assets/mp3/rarities/unravel-demo.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/rarities/unravel-demo.mp3" download>Save MP3 ↓</a>
-            </td>
-          </tr>
-          <tr id="grind-era" class="mp3-row" data-cat="draposound">
-            <td><code>GRD-01</code></td>
-            <td><strong>Grind — Epic (8-Minute Guitar Jam)</strong></td>
-            <td><span class="status-local">MP3 Archive</span></td>
-            <td>c. 1992 · Steve Heaton Pre-Mansun Archive (24/01/2012 Recovery)</td>
-            <td><code>08:04</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Epic (8-Minute Guitar Version)', 'Paul Draper & Steve Heaton · Pre-Mansun Grind Archive', '../assets/mp3/grind/grind-epic.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/grind/grind-epic.mp3" download>Save MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>GRD-02</code></td>
-            <td><strong>Grind — Lantern (Original Audio + Video Rip)</strong></td>
-            <td><span class="status-local">MP3 Archive</span></td>
-            <td>c. 1992 · Steve Heaton Pre-Mansun Archive (24/01/2012 Recovery)</td>
-            <td><code>04:15</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Grind — Lantern', 'Paul Draper & Steve Heaton · Pre-Mansun Grind Archive', '../assets/mp3/grind/grind-lantern.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/grind/grind-lantern.mp3" download>Save MP3 ↓</a>
-            </td>
-          </tr>
-          <tr id="lamacq-2006" class="mp3-row" data-cat="draposound">
-            <td><code>RAD-01</code></td>
-            <td><strong>BBC 6 Music — Steve Lamacq Roundtable (Full Broadcast)</strong></td>
-            <td><span class="status-local">MP3 Archive</span></td>
-            <td>22/09/2006 · With Guy Chambers &amp; Keith Cameron (Komakino feature)</td>
-            <td><code>42:10</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('BBC 6 Music — Steve Lamacq Roundtable (22/09/2006)', 'Paul Draper guest appearance', '../assets/mp3/radio/paul-draper-lamacq-roundtable-2006.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/radio/paul-draper-lamacq-roundtable-2006.mp3" download>Save MP3 ↓</a>
-            </td>
-          </tr>
-
-          <!-- 15 DRAPOSOUND SOLO WIP TRACKS -->
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-01</code></td>
-            <td><strong>Can U Ever Trust Another (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Can U Ever Trust Another (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/01-can-u-ever-trust-another.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/01-can-u-ever-trust-another.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-02</code></td>
-            <td><strong>Feel Like I Wanna Stay (Draposound WIP / Wayne Riches Groove)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Feel Like I Wanna Stay (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/02-feel-like-i-wanna-stay.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/02-feel-like-i-wanna-stay.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-03</code></td>
-            <td><strong>Friend (Early Solo Demo Sketch)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Friend (Early Solo Demo)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/03-friend.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/03-friend.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-04</code></td>
-            <td><strong>Sex With Strangers (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Sex With Strangers (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/04-sex-with-strangers.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/04-sex-with-strangers.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-05</code></td>
-            <td><strong>Can't Get Fairer Than That (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Can\'t Get Fairer Than That (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/05-cant-get-fairer-than-that.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/05-cant-get-fairer-than-that.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-06</code></td>
-            <td><strong>Annie (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Annie (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/06-annie.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/06-annie.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-07</code></td>
-            <td><strong>Being A Girl Part 3 (Draposound Sequel Demo)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Being A Girl Part 3 (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/07-being-a-girl-part-3.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/07-being-a-girl-part-3.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-08</code></td>
-            <td><strong>Sociopath (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Sociopath (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/08-sociopath.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/08-sociopath.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-09</code></td>
-            <td><strong>Wont Get Hurt By A Woman Again (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Wont Get Hurt By A Woman Again (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/09-wont-get-hurt.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/09-wont-get-hurt.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-10</code></td>
-            <td><strong>Borderline Nymphomaniac (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Borderline Nymphomaniac (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/10-borderline-nymphomaniac.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/10-borderline-nymphomaniac.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-11</code></td>
-            <td><strong>Life Turns On Inconsequential Moments (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Life Turns On Inconsequential Moments (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/11-inconsequential-moments.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/11-inconsequential-moments.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-12</code></td>
-            <td><strong>Synth Pop Hero (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Synth Pop Hero (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/12-synth-pop-hero.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/12-synth-pop-hero.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-13</code></td>
-            <td><strong>Monkeys On A Rock (Draposound WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Monkeys On A Rock (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/13-monkeys-on-a-rock.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/13-monkeys-on-a-rock.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-14</code></td>
-            <td><strong>Say What Everyone Else Thinks And They'll Say Ya Fuckin Mad (WIP)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Say What Everyone Else Thinks... (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/14-say-what-everyone-else-thinks.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/14-say-what-everyone-else-thinks.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
-          <tr class="mp3-row" data-cat="draposound">
-            <td><code>DRP-15</code></td>
-            <td><strong>Cancer Pt II (Draposound Sequel Demo)</strong></td>
-            <td><span class="status-local">Draposound '08</span></td>
-            <td>12/03/2008 · Paul Draper Solo Work-In-Progress Reel</td>
-            <td><code>WIP</code></td>
-            <td>
-              <button type="button" class="btn" onclick="loadLocalMP3('Cancer Pt II (WIP)', 'Paul Draper · Draposound Studio (2008)', '../assets/mp3/draposound/15-cancer-pt-ii.mp3')">▶ Play MP3</button>
-              <a class="btn btn-outline" href="../assets/mp3/draposound/15-cancer-pt-ii.mp3" download>MP3 ↓</a>
-            </td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -1194,38 +555,12 @@
     const searchInput = document.getElementById('mp3Search');
     const pills = document.querySelectorAll('.pill');
     const countEl = document.getElementById('mp3ResultCount');
+    const audio = document.getElementById('vaultAudio');
     let activeCat = 'all';
 
-    // Playlist queue for continuous online stream cycling
-    const onlineStreams = [
-      { id: 'Yt9EPXKJ3_s', title: 'Paul Draper (Mansun) — Take It Easy Chicken (Live Manchester Academy 18/03/2026)', meta: 'Live Music & Band Documentaries (RJMedia)' },
-      { id: 'rxblL3k4LTA', title: 'Mansun — She Makes My Nose Bleed (TOTP 14 Feb 1997 Remastered)', meta: 'Live Music & Band Documentaries (RJMedia)' },
-      { id: 'pT8A5hvotQo', title: 'Paul Draper — Negative (Live Liverpool 18/03/2023)', meta: 'Live Music & Band Documentaries (RJMedia)' },
-      { id: '33kUY4qV9bA', title: 'Paul Draper — Inverse Midas / Anti Everything / Fall Out / Serotonin', meta: 'Live Music & Band Documentaries (RJMedia)' },
-      { id: 'X4patCG3wWk', title: 'Mansun — Live at Brixton Academy 1998 (Full 83-Minute Concert)', meta: 'London Brixton Academy 23/10/1998' },
-      { id: 'Or80ojVIWd0', title: 'Mansun — Wide Open Space (Brixton Academy 23/10/98)', meta: 'Mansun Official Archive' },
-      { id: 'LbBexiWgfl0', title: 'Mansun — Being A Girl (Brixton Academy 23/10/98)', meta: 'Mansun Official Archive' },
-      { id: 'bcsPC39Y-XQ', title: 'Mansun — Wide Open Space (Live Reading Festival 28/08/98)', meta: 'Reading Festival 1998' },
-      { id: 'pPk1Hcnfjm0', title: 'Mansun — Six (Live Reading Festival 1999)', meta: 'Reading Festival 1999' },
-      { id: 'c8BZXnfakz4', title: 'Mansun — Take It Easy Chicken (Live NME Brats 1999)', meta: 'NME Brats 1999' },
-      { id: '7NgLV056kB0', title: 'Mansun — Wide Open Space (Later with Jools Holland 1997)', meta: 'Paul Draper Official Archive' },
-      { id: 'i5chy6VNWEE', title: 'Mansun — Wide Open Space (Live on TFI Friday 1997)', meta: 'Paul Draper Official Archive' },
-      { id: 'Gw4lBpcYs88', title: 'Mansun — Taxloss (Live on TFI Friday HD)', meta: 'TFI Friday Broadcast' },
-      { id: 'F8cBx28Yy-0', title: 'Mansun — Six (Live on TFI Friday HD)', meta: 'TFI Friday Broadcast' },
-      { id: 'r9e_m9G3oGU', title: 'Mansun — Negative (Live on TFI Friday 1998)', meta: 'TFI Friday Broadcast' },
-      { id: '8bdcN8mzaNQ', title: 'Mansun — Legacy (Top of the Pops 1998)', meta: 'Paul Draper Official Archive' },
-      { id: '_27Nwcm69Qw', title: 'Mansun — I Can Only Disappoint U (Later with Jools Holland 2000)', meta: 'Paul Draper Official Archive' },
-      { id: 'h-2Mv8KWVxU', title: 'Mansun — Take It Easy Chicken (Live at Tunbridge Wells 1997)', meta: 'Paul Draper Official Archive' },
-      { id: 'hm-BJ8djKyU', title: 'Mansun — Taxloss (Live at Tunbridge Wells 1997)', meta: 'Paul Draper Official Archive' },
-      { id: 'rC5MMZcx9FU', title: 'Mansun — She Makes My Nose Bleed (Live at Tunbridge Wells 1997)', meta: 'Paul Draper Official Archive' },
-      { id: 'agh80tNqQTM', title: 'Howard Devoto with Mansun — Railings (Rare Demo)', meta: 'Six Era Collaboration Demo' },
-      { id: 'gG4RahO752w', title: 'Mansun — When The Wind Blows (B-Side)', meta: 'Six Era B-Side' },
-      { id: 'PjycbVCS84M', title: 'Paul Draper — Live Acoustic Sessions + Gear Runthrough', meta: 'The APW Session' },
-      { id: 'v4h4SaQRLKA', title: 'Paul Draper — Dark Mavis (Acoustic Live Edinburgh)', meta: 'Edinburgh Acoustic Session' },
-      { id: 'cQMGUtH8d8Q', title: 'Paul Draper — Taxloss (Live At The Ritz)', meta: 'Paul Draper Official Archive' },
-      { id: 'WSOGVuFEBEY', title: 'Paul Draper — I Can Only Disappoint U (Live At Scala)', meta: 'Paul Draper Official Archive' }
-    ];
-    let currentStreamIdx = 0;
+    // Playlist = only the MP3s listed on the 2012 pauldraper-music.co.uk media page
+    const trackButtons = Array.from(document.querySelectorAll('#vaultTableBody button[data-src]'));
+    let currentIdx = 0;
 
     function filterMP3s() {
       const q = searchInput.value.trim().toLowerCase();
@@ -1235,14 +570,10 @@
         const cats = (row.dataset.cat || '').split(' ');
         const catMatch = (activeCat === 'all') || cats.includes(activeCat);
         const textMatch = !q || row.innerText.toLowerCase().includes(q);
-        if (catMatch && textMatch) {
-          row.style.display = '';
-          visible++;
-        } else {
-          row.style.display = 'none';
-        }
+        row.style.display = (catMatch && textMatch) ? '' : 'none';
+        if (catMatch && textMatch) visible++;
       });
-      countEl.textContent = 'Showing ' + visible + ' of ' + rows.length + ' catalogued online streams & archive tracks';
+      countEl.textContent = 'Showing ' + visible + ' of ' + rows.length + ' files from the 2012 media page';
     }
 
     searchInput.addEventListener('input', filterMP3s);
@@ -1255,73 +586,29 @@
       });
     });
 
-    function playYouTube(videoId, title, meta) {
-      const audio = document.getElementById('vaultAudio');
-      if (audio) audio.pause();
-      document.getElementById('deckModeBadge').textContent = 'ONLINE STREAM • PLAYING NOW';
-      document.getElementById('deckTitle').textContent = title;
-      document.getElementById('deckMeta').textContent = meta + ' · YouTube ID: ' + videoId;
-      document.getElementById('deckExternalLink').href = 'https://www.youtube.com/watch?v=' + videoId;
-      document.getElementById('ytPlayerFrame').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-      document.getElementById('playerDeck').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    function playNextOnline() {
-      currentStreamIdx = (currentStreamIdx + 1) % onlineStreams.length;
-      const next = onlineStreams[currentStreamIdx];
-      playYouTube(next.id, next.title, next.meta);
-    }
-
-    function loadLocalMP3(title, meta, src) {
-      document.getElementById('deckModeBadge').textContent = 'LOCAL MP3 DECK • SELECTED';
-      document.getElementById('deckTitle').textContent = title;
-      document.getElementById('deckMeta').textContent = meta;
-      document.getElementById('audioFilePath').textContent = src;
-      const audio = document.getElementById('vaultAudio');
+    function playTrack(btn) {
+      currentIdx = Math.max(0, trackButtons.indexOf(btn));
+      const src = btn.dataset.src;
+      document.getElementById('deckModeBadge').textContent = '2012 MEDIA PAGE • PLAYING';
+      document.getElementById('deckTitle').textContent = btn.dataset.title;
+      document.getElementById('deckMeta').textContent = btn.dataset.meta;
+      document.getElementById('audioFilePath').textContent = decodeURIComponent(src.split('/').pop());
+      document.getElementById('deckExternalLink').href = src;
+      trackButtons.forEach(b => b.closest('tr').classList.toggle('is-playing', b === btn));
       audio.src = src;
       audio.play().catch(() => {
-        document.getElementById('deckModeBadge').textContent = 'LOCAL MP3 READY (USE "+ LOAD LOCAL MP3 FILES" OR DROP INTO /' + src + ')';
+        document.getElementById('deckModeBadge').textContent = 'STREAM UNAVAILABLE — TRY "OPEN WAYBACK FILE"';
       });
       document.getElementById('playerDeck').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    // Dynamic Local MP3 File Loader so user can select MP3s from their laptop and play immediately
-    document.getElementById('localMp3Picker').addEventListener('change', function(e) {
-      const files = Array.from(e.target.files || []);
-      if (!files.length) return;
-      const tbody = document.getElementById('vaultTableBody');
-      files.forEach((file, idx) => {
-        const blobUrl = URL.createObjectURL(file);
-        const cleanName = file.name.replace(/\.[^/.]+$/, '');
-        const tr = document.createElement('tr');
-        tr.className = 'mp3-row';
-        tr.dataset.cat = 'all';
-        tr.innerHTML = '<td><code>LOC-' + String(idx + 1).padStart(2, '0') + '</code></td>' +
-          '<td><strong>' + cleanName + '</strong></td>' +
-          '<td><span class="status-online">Loaded MP3</span></td>' +
-          '<td>Local Hard Drive File (' + (file.size / (1024 * 1024)).toFixed(1) + ' MB)</td>' +
-          '<td><code>LOCAL</code></td>' +
-          '<td><button type="button" class="btn" data-blob="' + blobUrl + '" data-title="' + cleanName.replace(/"/g, '&quot;') + '" onclick="playBlobMP3(this)">▶ Play Now</button></td>';
-        tbody.insertBefore(tr, tbody.firstChild);
-      });
-      filterMP3s();
-      // Auto-play the first selected local MP3
-      const firstBtn = tbody.querySelector('button[data-blob]');
-      if (firstBtn) playBlobMP3(firstBtn);
-    });
-
-    function playBlobMP3(btn) {
-      const blobUrl = btn.getAttribute('data-blob');
-      const title = btn.getAttribute('data-title');
-      document.getElementById('deckModeBadge').textContent = 'LOCAL HARD DRIVE MP3 • PLAYING NOW';
-      document.getElementById('deckTitle').textContent = title;
-      document.getElementById('deckMeta').textContent = 'Loaded directly from your computer';
-      document.getElementById('audioFilePath').textContent = 'Local File Stream';
-      const audio = document.getElementById('vaultAudio');
-      audio.src = blobUrl;
-      audio.play();
-      document.getElementById('playerDeck').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    function playNextTrack() {
+      if (!trackButtons.length) return;
+      currentIdx = (currentIdx + 1) % trackButtons.length;
+      playTrack(trackButtons[currentIdx]);
     }
+
+    audio.addEventListener('ended', playNextTrack);
 
     function openLightbox(src, caption) {
       document.getElementById('lightboxImg').src = src;
