@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#bdbdbd">
+  <meta name="description" content="RJMedia Historical Intelligence Platform v1 — Memory Trails, Memory Constellations, Echoes, Legacy Engine, Archive Graph, and Preservation Risk Engine.">
+  <title>Memory Trails™ &amp; Memory Constellations™ | RJMedia Historical Intelligence Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/memory-trails.css">
+  <style>
+    :root {
+      --bg: #bdbdbd;
+      --bg-grad: linear-gradient(180deg, #c8c8c8 0%, #bdbdbd 45%, #b0b0b0 100%);
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.88);
+      --ink: #0a0a0a;
+      --ink-secondary: #262626;
+      --ink-muted: #525252;
+      --card-border: rgba(0, 0, 0, 0.09);
+      --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.08);
+      --shadow-3d: 0 20px 40px -15px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.06);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --max-w: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      background-image: var(--bg-grad);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max-w), calc(100% - 3rem)); margin-inline: auto; }
+
+    /* TOP ECOSYSTEM BAR */
+    .ecosystem-bar {
+      background: #0a0a0a;
+      color: #a3a3a3;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #262626;
+    }
+    .ecosystem-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 38px;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .ecosystem-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .eco-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.25rem 0;
+      color: #a3a3a3;
+      font-weight: 700;
+    }
+    .eco-pill:hover { color: #ffffff; }
+    .eco-pill.active { color: #ffffff; border-bottom: 2px solid #ffffff; }
+    .eco-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: #525252; }
+    .eco-pill.active .dot { background: #ffffff; }
+
+    /* MASTHEAD */
+    .masthead {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(189, 189, 189, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+    .masthead-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 78px;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .brand-logo { display: inline-flex; flex-direction: column; gap: 0.2rem; }
+    .logo-mark { display: inline-flex; align-items: center; }
+    .logo-box {
+      background: #000000;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.55rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #000000;
+      line-height: 1;
+    }
+    .logo-text {
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: 0.16em;
+      color: #000000;
+      padding-left: 0.45rem;
+      line-height: 1;
+    }
+    .logo-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      color: #404040;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #404040;
+      flex-wrap: wrap;
+    }
+    .main-nav a:hover { color: #000000; }
+    .nav-btn {
+      padding: 0.6rem 1.15rem;
+      background: #000000;
+      color: #ffffff !important;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+    }
+
+    .section-block { padding: 3rem 0; }
+    .section-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #404040;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .section-title {
+      font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+      line-height: 1.05;
+    }
+
+    .btn-3d {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .btn-3d-primary {
+      background: #000000;
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+    }
+    .btn-3d-primary:hover { background: #262626; transform: translateY(-2px); }
+    .btn-3d-secondary {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+    }
+
+    .code-block {
+      background: #0d0f12;
+      color: #e5e5e5;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 1.5rem;
+      border-radius: 14px;
+      overflow-x: auto;
+      line-height: 1.55;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .heatmap-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      margin-bottom: 0.55rem;
+    }
+    .heatmap-bar {
+      height: 14px;
+      background: #000000;
+      border-radius: 4px;
+    }
+
+    .site-footer {
+      background: #0a0a0a;
+      color: #a3a3a3;
+      padding: 3.5rem 0 2.5rem;
+      margin-top: 3rem;
+      border-top: 1px solid #262626;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ECOSYSTEM BAR -->
+  <div class="ecosystem-bar">
+    <div class="wrap ecosystem-inner">
+      <div class="ecosystem-links">
+        <a class="eco-pill" href="./index.html"><span class="dot"></span> RJMedia Digital Archive</a>
+        <a class="eco-pill" href="./pages/index.html"><span class="dot"></span> Paul Draper Archive</a>
+        <a class="eco-pill active" href="./trail-builder.html"><span class="dot"></span> Historical Intelligence &amp; Trails</a>
+        <a class="eco-pill" href="./jupiter-island.html"><span class="dot"></span> Jupiter Island</a>
+      </div>
+      <div class="eco-pill" style="color:#737373;">
+        RJMedia Intelligence Architecture v1
+      </div>
+    </div>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand-logo" href="./index.html">
+        <div class="logo-mark">
+          <span class="logo-box">RJ</span><span class="logo-text">MEDIA</span>
+        </div>
+        <span class="logo-tagline">REMEMBER THE SOUND</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Intelligence Navigation">
+        <a href="#trail-builder">Trail Builder AI</a>
+        <a href="#memory-trails">Memory Trails™</a>
+        <a href="#constellations">Memory Constellations™</a>
+        <a href="#echoes">Echoes™</a>
+        <a href="#risk-engine">Risk Engine™</a>
+        <a href="#metadata-model">Metadata Model</a>
+        <a href="#roadmap">90-Day Roadmap</a>
+        <a class="nav-btn" href="./index.html">← Archive Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section class="section-block" style="padding-top: 3.5rem;">
+      <div class="trail-card" style="padding: clamp(2rem, 4vw, 3.5rem);">
+        <span class="section-kicker">HISTORICAL INTELLIGENCE PLATFORM • ARCHITECTURE v1</span>
+        <h1 class="section-title" style="font-size: clamp(2.2rem, 5vw, 4rem);">
+          EXPLORE CONNECTIONS<br>ACROSS MUSIC HISTORY.
+        </h1>
+        <p style="font-size: 1.12rem; color: #262626; max-width: 780px; margin-bottom: 1.75rem;">
+          Most archives store files in folders. RJMedia connects moments, broadcasts, studio notes, venues, and community memories across time — powered by <strong>Memory Trails™</strong>, <strong>Memory Constellations™</strong>, <strong>Echoes™</strong>, <strong>Legacy Engine™</strong>, and the <strong>Preservation Risk Engine™</strong>.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a class="btn-3d btn-3d-primary" href="#trail-builder">Launch Trail Builder AI ↓</a>
+          <a class="btn-3d btn-3d-secondary" href="#constellations">Explore Memory Constellations™ →</a>
+          <a class="btn-3d btn-3d-secondary" href="./assets/data/memory-trails.json" target="_blank">Inspect memory-trails.json ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. TRAIL BUILDER AI (/trail-builder) -->
+    <section class="section-block" id="trail-builder">
+      <div class="trail-builder-box">
+        <span class="section-kicker">SIGNATURE FEATURE • JOURNEY GENERATOR</span>
+        <h2 class="section-title">Trail Builder AI</h2>
+        <p style="color: #404040; max-width: 720px; margin-bottom: 1.5rem;">
+          Type an artist, band, album, or era below (e.g. <strong>Paul Draper</strong>, <strong>Mansun</strong>, <strong>Britpop</strong>, or <strong>Six</strong>). Instead of a flat list of search results, the system generates a chronological historical journey through the archive.
+        </p>
+
+        <div class="trail-search-bar">
+          <input type="text" id="trailSearchInput" class="trail-search-input" value="Paul Draper" placeholder="Type Paul Draper, Mansun, Britpop, or Six..." aria-label="Trail Builder Search Query">
+          <button type="button" id="trailSearchBtn" class="btn-3d btn-3d-primary">Generate Memory Trail →</button>
+        </div>
+
+        <div class="trail-preset-pills">
+          <button type="button" class="trail-preset-btn active" data-query="Paul Draper">Paul Draper</button>
+          <button type="button" class="trail-preset-btn" data-query="Mansun">Mansun</button>
+          <button type="button" class="trail-preset-btn" data-query="Britpop">Britpop</button>
+          <button type="button" class="trail-preset-btn" data-query="Six (1998)">Six (1998)</button>
+        </div>
+
+        <div id="trailBuilderOutput"></div>
+      </div>
+    </section>
+
+    <!-- 2. JSON-DRIVEN MEMORY TRAILS™ -->
+    <section class="section-block" id="memory-trails">
+      <span class="section-kicker">LAYER 1 • JSON-DRIVEN CURATED TIMELINES</span>
+      <h2 class="section-title">Memory Trails™</h2>
+      <p style="color: #262626; max-width: 740px; margin-bottom: 1rem;">
+        Loaded dynamically from <code>/assets/data/memory-trails.json</code> via <code>/assets/js/memory-trails.js</code>. Click any milestone node along a trail to jump directly into the preserved recording, interview, or dispatch.
+      </p>
+
+      <div id="memoryTrailContainer"></div>
+    </section>
+
+    <!-- 3. MEMORY CONSTELLATIONS™ PROTOTYPE -->
+    <section class="section-block" id="constellations">
+      <span class="section-kicker">SIGNATURE VISUAL NETWORK • LAYER 6</span>
+      <h2 class="section-title">Memory Constellations™ Prototype</h2>
+      <p style="color: #262626; max-width: 760px; margin-bottom: 1.5rem;">
+        Instead of folders or categories, Memory Constellations™ maps the relationships between artists, broadcasts, magazines, tours, venues, and community records. Hover over any star node to inspect its connections, or click to open that archive hub.
+      </p>
+
+      <div id="constellationCanvas">
+        <svg id="constellationSvg"></svg>
+        <div class="constellation-inspector">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:#a3a3a3; text-transform:uppercase; letter-spacing:0.14em;">
+              ACTIVE CONSTELLATION NODE INSPECTOR
+            </div>
+            <div id="constellationInspectorTitle" style="font-weight:900; font-size:1.1rem; margin-top:0.15rem;">
+              Mansun (BAND • CENTRE NODE)
+            </div>
+            <div id="constellationInspectorDesc" style="font-size:0.86rem; color:#d4d4d4;">
+              Hover over any star node in the constellation above to highlight its relationship edges, or click a node to open its archive page.
+            </div>
+          </div>
+          <a id="constellationInspectorLink" href="./pages/index.html" class="btn-3d" style="background:#ffffff; color:#000000; padding:0.65rem 1.15rem; font-size:0.75rem;">
+            Open Archive Node →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ECHOES™ & MEMORY SIGNALS™ -->
+    <section class="section-block" id="echoes">
+      <span class="section-kicker">LAYER 2 • CONSEQUENCES THROUGH TIME</span>
+      <h2 class="section-title">Echoes™ &amp; Memory Signals™</h2>
+      <p style="color: #262626; max-width: 760px; margin-bottom: 1.5rem;">
+        Not "Related Content" or "Similar Content" — <strong>Echoes™</strong> tracks how a specific recording, interview, or premiere influenced later albums, community discussions, and future live events across decades.
+      </p>
+
+      <div class="intel-grid-2">
+        <!-- Echo 1 -->
+        <div class="intel-card">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+              <span class="risk-badge risk-critical">ECHO ID: ECHO-001</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:800;">Echo Strength: 94/100</span>
+            </div>
+            <h3 style="font-size:1.3rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase;">
+              Source: 1998 Paul Draper BBC Interview &amp; 'Six' Notes
+            </h3>
+            <p style="font-size:0.92rem; color:#404040; margin-bottom:1.25rem;">
+              This recording echoes through four distinct eras of the archive:
+            </p>
+            <div style="display:flex; flex-direction:column; gap:0.65rem; margin-bottom:1.5rem;">
+              <a href="./pages/mansun-mp3-vault.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>2003 Solo Performance &amp; Grind Demos</strong> · Studio transition</span>
+                <span>→</span>
+              </a>
+              <a href="./pages/draper-qa.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>2006 Fan Community Q&amp;A</strong> · 38 direct answers</span>
+                <span>→</span>
+              </a>
+              <a href="./pages/mansun-albums.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>2017 Spooky Action Debut LP</strong> · UK Official Chart #19</span>
+                <span>→</span>
+              </a>
+              <a href="./pages/index.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>2026 Community Archive Thread</strong> · Complete digital restoration</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:#525252; border-top:1px solid rgba(0,0,0,0.08); padding-top:0.85rem;">
+            MEMORY SIGNAL™: Recorded 3 weeks prior to Brixton Academy '98 broadcast in the vault.
+          </div>
+        </div>
+
+        <!-- Echo 2 -->
+        <div class="intel-card">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+              <span class="risk-badge risk-critical">ECHO ID: ECHO-002</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:800;">Echo Strength: 91/100</span>
+            </div>
+            <h3 style="font-size:1.3rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase;">
+              Source: 2014 Chester Convention World Premiere
+            </h3>
+            <p style="font-size:0.92rem; color:#404040; margin-bottom:1.25rem;">
+              Filmed by Richard Murray at The Live Rooms Chester (23 Aug 2014), this moment echoes into:
+            </p>
+            <div style="display:flex; flex-direction:column; gap:0.65rem; margin-bottom:1.5rem;">
+              <a href="./pages/draper-news.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>Aug 2014 Press Wave</strong> · Louder Than War, Vanyaland &amp; The Guardian</span>
+                <span>→</span>
+              </a>
+              <a href="./pages/mansun-albums.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>2016 EP ONE &amp; EP TWO</strong> · Kscope physical &amp; digital launch</span>
+                <span>→</span>
+              </a>
+              <a href="./pages/mansun-albums.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>2022 Cult Leader Tactics &amp; Mansun Retold</strong> · Solo catalogue</span>
+                <span>→</span>
+              </a>
+              <a href="./pages/draper-news.html" class="gen-step-card" style="padding:0.75rem 1rem;">
+                <span><strong>1 May 2027 Indie By The Sea</strong> · Winter Gardens Blackpool</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:#525252; border-top:1px solid rgba(0,0,0,0.08); padding-top:0.85rem;">
+            MEMORY SIGNAL™: Directly connects fan community filming to official Kscope discography.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LEGACY ENGINE™, PRESERVATION RISK ENGINE™ & HEATMAP -->
+    <section class="section-block" id="risk-engine">
+      <span class="section-kicker">LAYERS 4 &amp; 5 • HISTORICAL RESURFACING &amp; RISK SCORING</span>
+      <h2 class="section-title">Legacy Engine™ &amp; Preservation Risk Engine™</h2>
+
+      <div class="intel-grid-3" style="margin-top: 1.5rem;">
+        <!-- Legacy Engine -->
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">LEGACY ENGINE™ • ON THIS DATE</span>
+            <h3 style="font-size:1.25rem; font-weight:900; margin:0.85rem 0 0.5rem; text-transform:uppercase;">
+              30 &amp; 28 Years Ago This Week
+            </h3>
+            <p style="font-size:0.88rem; color:#404040; margin-bottom:1rem;">
+              Automatically surfaces material matching <code>Current Date − X Years</code>:
+            </p>
+            <div style="border-left:3px solid #000; padding-left:0.9rem; margin-bottom:1rem;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; font-weight:800;">11 NOV 1996 • 30 YEARS AGO</div>
+              <div style="font-weight:800; font-size:0.95rem;">Stripper Vicar EP &amp; Melody Maker Shoot</div>
+              <div style="font-size:0.82rem; color:#525252;">Tom Sheehan portrait session preserved in high-res scan vault.</div>
+            </div>
+            <div style="border-left:3px solid #000; padding-left:0.9rem; margin-bottom:1rem;">
+              <div style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; font-weight:800;">NOV 1998 • 28 YEARS AGO</div>
+              <div style="font-weight:800; font-size:0.95rem;">Mansun 'Six' UK Arena &amp; Brixton Tour</div>
+              <div style="font-size:0.82rem; color:#525252;">Live broadcast &amp; handwritten lyric commentary.</div>
+            </div>
+          </div>
+          <a href="./pages/draper-gallery.html" class="btn-3d btn-3d-secondary" style="width:100%; justify-content:center;">Explore Anniversary Assets →</a>
+        </div>
+
+        <!-- Preservation Risk Engine -->
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">PRESERVATION RISK ENGINE™</span>
+            <h3 style="font-size:1.25rem; font-weight:900; margin:0.85rem 0 0.5rem; text-transform:uppercase;">
+              'Save This First' Priority Queue
+            </h3>
+            <p style="font-size:0.88rem; color:#404040; margin-bottom:1rem;">
+              Scored by known copies, physical media decay, and retired domain risk:
+            </p>
+
+            <div style="margin-bottom:0.9rem;">
+              <div style="display:flex; justify-content:space-between; font-size:0.82rem; font-weight:800;">
+                <span>1998 'Six' Soundmasters Ref CD</span>
+                <span>98/100 CRITICAL</span>
+              </div>
+              <div class="risk-bar-track"><div class="risk-bar-fill" style="width:98%;"></div></div>
+            </div>
+
+            <div style="margin-bottom:0.9rem;">
+              <div style="display:flex; justify-content:space-between; font-size:0.82rem; font-weight:800;">
+                <span>2006 3-Page Forum Q&amp;A Log</span>
+                <span>96/100 CRITICAL</span>
+              </div>
+              <div class="risk-bar-track"><div class="risk-bar-fill" style="width:96%;"></div></div>
+            </div>
+
+            <div style="margin-bottom:0.9rem;">
+              <div style="display:flex; justify-content:space-between; font-size:0.82rem; font-weight:800;">
+                <span>.:Grind Videos &amp; MP3s:. (2004)</span>
+                <span>91/100 CRITICAL</span>
+              </div>
+              <div class="risk-bar-track"><div class="risk-bar-fill" style="width:91%;"></div></div>
+            </div>
+          </div>
+          <a href="./pages/mansun-mp3-vault.html" class="btn-3d btn-3d-primary" style="width:100%; justify-content:center;">Open Critical Vault Items →</a>
+        </div>
+
+        <!-- Archive Heatmap & Lost Media Detector -->
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-high">ARCHIVE HEATMAP &amp; GAP DETECTOR</span>
+            <h3 style="font-size:1.25rem; font-weight:900; margin:0.85rem 0 0.5rem; text-transform:uppercase;">
+              Preservation Density by Year
+            </h3>
+            <p style="font-size:0.88rem; color:#404040; margin-bottom:1rem;">
+              Visualising archive density and identifying missing tour/broadcast dates:
+            </p>
+
+            <div class="heatmap-row"><span style="width:42px;">1995</span><div class="heatmap-bar" style="width:55%;"></div><span>Peel + EPs</span></div>
+            <div class="heatmap-row"><span style="width:42px;">1996</span><div class="heatmap-bar" style="width:75%;"></div><span>Press + Singles</span></div>
+            <div class="heatmap-row"><span style="width:42px;">1997</span><div class="heatmap-bar" style="width:95%;"></div><span>Grey Lantern #1</span></div>
+            <div class="heatmap-row"><span style="width:42px;">1998</span><div class="heatmap-bar" style="width:88%;"></div><span>Six + Demos</span></div>
+            <div class="heatmap-row"><span style="width:42px;">1999</span><div class="heatmap-bar" style="width:32%;"></div><span>⚠️ Gap Alert</span></div>
+            <div class="heatmap-row"><span style="width:42px;">2006</span><div class="heatmap-bar" style="width:82%;"></div><span>38 Q&amp;As + Logs</span></div>
+          </div>
+          <a href="./community.html#forum-discussion" class="btn-3d btn-3d-secondary" style="width:100%; justify-content:center;">Submit Missing 1999 Tape →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. UNIVERSAL METADATA MODEL (archive-object.json) -->
+    <section class="section-block" id="metadata-model">
+      <div class="trail-card">
+        <span class="section-kicker">UNIVERSAL ARCHIVE OBJECT SCHEMA</span>
+        <h2 class="section-title">Universal Metadata Model (<code>archive-object.json</code>)</h2>
+        <p style="color: #404040; max-width: 760px; margin-bottom: 1.25rem;">
+          Every recording, interview, photograph, magazine scan, and festival announcement in RJMedia is represented as a canonical <strong>Archive Object</strong> powering Memory Trails™, Echoes™, Archive Graph™, Legacy Engine™, and Preservation Risk scoring:
+        </p>
+        <pre class="code-block">{
+  "id": "pd-1998-bbc-001",
+  "title": "Paul Draper BBC Interview",
+  "type": "interview",
+  "date": "1998-05-10",
+  "people": ["Paul Draper"],
+  "bands": ["Mansun"],
+  "venues": ["BBC Studios"],
+  "media": ["Video", "Interview"],
+  "tags": ["BBC", "Britpop", "1998"],
+  "source": "BBC",
+  "importance": 92,
+  "preservationRisk": 84,
+  "trailIds": ["mansun-story"],
+  "echoIds": ["echo-001"],
+  "graphNodes": [
+    "person-paul-draper",
+    "band-mansun",
+    "organisation-bbc"
+  ]
+}</pre>
+        <div style="margin-top: 1.25rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a class="btn-3d btn-3d-primary" href="./assets/data/archive-object.json" target="_blank">Open Full archive-object.json ↗</a>
+          <a class="btn-3d btn-3d-secondary" href="./assets/data/constellation.json" target="_blank">Open constellation.json ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 90-DAY PHASED IMPLEMENTATION ROADMAP -->
+    <section class="section-block" id="roadmap">
+      <span class="section-kicker">PLATFORM ROLLOUT PLAN</span>
+      <h2 class="section-title">90-Day Phased Implementation Roadmap</h2>
+
+      <div class="intel-grid-3" style="margin-top: 1.5rem;">
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">MONTH 1 • FOUNDATION</span>
+            <h3 style="font-size:1.3rem; font-weight:900; margin:0.85rem 0;">Data Layer &amp; Trails</h3>
+            <ul style="list-style:none; padding:0; margin:0; line-height:2; font-weight:600; color:#262626;">
+              <li>✅ Universal Metadata Schema</li>
+              <li>✅ JSON Data Layer (<code>/assets/data/</code>)</li>
+              <li>✅ Memory Trails™ Engine</li>
+              <li>✅ Clickable Timeline Nodes</li>
+              <li>✅ Live Archive Statistics</li>
+            </ul>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:#000; font-weight:800; margin-top:1rem;">STATUS: DEPLOYED LIVE</div>
+        </div>
+
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">MONTH 2 • TEMPORAL LINKS</span>
+            <h3 style="font-size:1.3rem; font-weight:900; margin:0.85rem 0;">Echoes &amp; Legacy Engine</h3>
+            <ul style="list-style:none; padding:0; margin:0; line-height:2; font-weight:600; color:#262626;">
+              <li>✅ Echoes™ Influence Engine</li>
+              <li>✅ On This Day / Anniversary Widget</li>
+              <li>✅ Legacy Engine™ Resurfacing</li>
+              <li>✅ Relationship Metadata Tagging</li>
+              <li>✅ Memory Signals™ Hidden Links</li>
+            </ul>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:#000; font-weight:800; margin-top:1rem;">STATUS: ACTIVE PROTOTYPE</div>
+        </div>
+
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">MONTH 3 • GRAPH &amp; RISK</span>
+            <h3 style="font-size:1.3rem; font-weight:900; margin:0.85rem 0;">Constellations &amp; Risk</h3>
+            <ul style="list-style:none; padding:0; margin:0; line-height:2; font-weight:600; color:#262626;">
+              <li>✅ Archive Graph™ Node Network</li>
+              <li>✅ Memory Constellations™ Canvas</li>
+              <li>✅ Interactive Relationship Explorer</li>
+              <li>✅ Preservation Risk Scoring (0–100)</li>
+              <li>✅ 'Save This First' Priority Dashboard</li>
+            </ul>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:#000; font-weight:800; margin-top:1rem;">STATUS: PROTOTYPE LIVE</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-family:'JetBrains Mono',monospace; font-size:0.75rem;">
+      <div>© 2001–2026 RJMEDIA DIGITAL ARCHIVE • REMEMBER THE SOUND • HISTORICAL INTELLIGENCE PLATFORM v1</div>
+      <div>Created by RJM</div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/memory-trails.js"></script>
+</body>
+</html>

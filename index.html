@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/memory-trails.css">
   
   <style>
     :root {
@@ -827,6 +828,7 @@
       <div class="ecosystem-brands">
         <a class="eco-pill active" href="./index.html"><span class="dot"></span> RJMedia Digital Archive</a>
         <a class="eco-pill" href="./pages/index.html"><span class="dot"></span> Paul Draper Archive</a>
+        <a class="eco-pill" href="./trail-builder.html"><span class="dot"></span> Memory Trails &amp; Constellations</a>
         <a class="eco-pill" href="./jupiter-island.html"><span class="dot"></span> Jupiter Island</a>
       </div>
       <div class="eco-pill" style="color:#737373;">
@@ -848,12 +850,14 @@
       <nav class="main-nav" aria-label="Archive Platform Navigation">
         <a href="#about">About</a>
         <a href="#collections">Collections</a>
+        <a href="#memory-trails">Memory Trails™</a>
+        <a href="#constellations">Constellations™</a>
         <a href="#news">News &amp; Solo LPs</a>
         <a href="#vault">Archive Vault</a>
         <a href="#support">Support</a>
         <a href="#forum">Community</a>
         <a href="./jupiter-island.html">Jupiter Island</a>
-        <a class="nav-btn" href="#support">Support Archive</a>
+        <a class="nav-btn" href="./trail-builder.html">Trail Builder AI</a>
       </nav>
     </div>
   </header>
@@ -1130,6 +1134,94 @@
         </div>
       </div>
     </section>
+
+    <!-- SECTION: HISTORICAL INTELLIGENCE PLATFORM — MEMORY TRAILS™ & CONSTELLATIONS™ -->
+    <section class="section-block" id="memory-trails">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <span class="section-kicker">HISTORICAL INTELLIGENCE PLATFORM • JSON-DRIVEN DISCOVERY</span>
+          <h2 class="section-title" style="margin-bottom:0.35rem;">Memory Trails™</h2>
+          <p style="color:#404040; max-width:680px; margin:0; font-size:1.02rem;">
+            Instead of isolated search results, follow curated historical journeys loaded dynamically from <code>/assets/data/memory-trails.json</code>. Click any milestone node to jump directly into the archive.
+          </p>
+        </div>
+        <a class="btn-3d btn-3d-primary" href="./trail-builder.html">Launch Trail Builder AI →</a>
+      </div>
+
+      <!-- JSON-Driven Trails Container -->
+      <div id="memoryTrailContainer"></div>
+    </section>
+
+    <!-- SECTION: MEMORY CONSTELLATIONS™ INTERACTIVE PROTOTYPE -->
+    <section class="section-block" id="constellations">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
+        <div>
+          <span class="section-kicker">SIGNATURE VISUAL NETWORK • ARCHIVE GRAPH™</span>
+          <h2 class="section-title" style="margin-bottom:0.35rem;">Memory Constellations™</h2>
+          <p style="color:#404040; max-width:720px; margin:0; font-size:1.02rem;">
+            Visualising the relationships between artists, BBC sessions, magazine features, tours, venues, and 25 years of community preservation. Hover over any star node to inspect its connections or click to explore.
+          </p>
+        </div>
+        <a class="btn-3d btn-3d-secondary" href="./trail-builder.html#constellations">Full Intelligence Stack &amp; 90-Day Roadmap →</a>
+      </div>
+
+      <div id="constellationCanvas">
+        <svg id="constellationSvg"></svg>
+        <div class="constellation-inspector">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:#a3a3a3; text-transform:uppercase; letter-spacing:0.14em;">
+              ACTIVE CONSTELLATION NODE INSPECTOR
+            </div>
+            <div id="constellationInspectorTitle" style="font-weight:900; font-size:1.1rem; margin-top:0.15rem;">
+              Mansun (BAND • CENTRE NODE)
+            </div>
+            <div id="constellationInspectorDesc" style="font-size:0.86rem; color:#d4d4d4;">
+              Hover over any star node in the constellation above to highlight its relationship edges, or click a node to open its archive page.
+            </div>
+          </div>
+          <a id="constellationInspectorLink" href="./pages/index.html" class="btn-3d" style="background:#ffffff; color:#000000; padding:0.65rem 1.15rem; font-size:0.75rem;">
+            Open Archive Node →
+          </a>
+        </div>
+      </div>
+
+      <!-- 5-LAYER INTELLIGENCE HIGHLIGHTS -->
+      <div class="intel-grid-3" style="margin-top: 1.75rem;">
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">ECHOES™ • LAYER 2</span>
+            <h3 style="font-size:1.18rem; font-weight:900; margin:0.75rem 0 0.4rem; text-transform:uppercase;">Consequences Through Time</h3>
+            <p style="font-size:0.88rem; color:#404040; margin:0 0 1rem;">
+              Tracks how the 1998 BBC Interview &amp; 2014 Chester premiere echo through 2003 solo sessions, the 2006 fan Q&amp;A, Kscope albums, and Blackpool 2027.
+            </p>
+          </div>
+          <a class="col-cta" href="./trail-builder.html#echoes">Explore Echoes™ →</a>
+        </div>
+
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">LEGACY ENGINE™ • LAYER 4</span>
+            <h3 style="font-size:1.18rem; font-weight:900; margin:0.75rem 0 0.4rem; text-transform:uppercase;">30 &amp; 28 Years Ago This Week</h3>
+            <p style="font-size:0.88rem; color:#404040; margin:0 0 1rem;">
+              Automatically surfaces historical anniversaries: Nov 1996 Stripper Vicar Melody Maker shoot (30 yrs) &amp; Nov 1998 Six UK Tour (28 yrs).
+            </p>
+          </div>
+          <a class="col-cta" href="./trail-builder.html#risk-engine">Open Legacy Engine™ →</a>
+        </div>
+
+        <div class="intel-card">
+          <div>
+            <span class="risk-badge risk-critical">RISK ENGINE™ • LAYER 5</span>
+            <h3 style="font-size:1.18rem; font-weight:900; margin:0.75rem 0 0.4rem; text-transform:uppercase;">Save This First Queue (98/100)</h3>
+            <p style="font-size:0.88rem; color:#404040; margin:0 0 1rem;">
+              Prioritises single-copy reference CDs (1998 Soundmasters Ref: 98/100) and retired web captures (2006 Q&amp;A: 96/100) before they disappear.
+            </p>
+          </div>
+          <a class="col-cta" href="./trail-builder.html#risk-engine">View Risk Queue →</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section-block" id="vault">
       <div class="vault-preview-card">
         <div class="section-header">
@@ -1395,6 +1487,7 @@
         <div class="footer-col">
           <h5>Future Technology</h5>
           <ul>
+            <li><a href="./trail-builder.html">Memory Trails &amp; Constellations</a></li>
             <li><a href="./jupiter-island.html">Jupiter Island</a></li>
             <li><a href="https://github.com/JupiterIsland/memoryos" target="_blank" rel="noopener">MemoryOS</a></li>
             <li><a href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">Archive Signal</a></li>
@@ -1415,5 +1508,6 @@
     </div>
   </footer>
 
+  <script src="./assets/js/memory-trails.js"></script>
 </body>
 </html>

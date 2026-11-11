@@ -1,0 +1,141 @@
+{
+  "constellation": "Britpop & Mansun Historical Network",
+  "centreNode": "mansun",
+  "nodes": [
+    {
+      "id": "mansun",
+      "label": "Mansun",
+      "type": "band",
+      "x": 440,
+      "y": 260,
+      "xPct": 48,
+      "yPct": 48,
+      "url": "./pages/index.html",
+      "summary": "Chester art-rock quartet (1995–2003) • #1 LP Attack of the Grey Lantern & Six"
+    },
+    {
+      "id": "paul",
+      "label": "Paul Draper",
+      "type": "person",
+      "x": 210,
+      "y": 140,
+      "xPct": 22,
+      "yPct": 24,
+      "url": "./pages/mansun-albums.html",
+      "summary": "Songwriter, producer & solo artist (Spooky Action, Cult Leader Tactics, Mansun Retold)"
+    },
+    {
+      "id": "bbc",
+      "label": "BBC Sessions",
+      "type": "organisation",
+      "x": 670,
+      "y": 150,
+      "xPct": 74,
+      "yPct": 25,
+      "url": "./pages/mansun-mp3-vault.html",
+      "summary": "1995 John Peel Session (Grey Lantern, Flourella, Skin Up Pin Up, Take It Easy Chicken)"
+    },
+    {
+      "id": "nme",
+      "label": "NME & Melody Maker",
+      "type": "publication",
+      "x": 640,
+      "y": 390,
+      "xPct": 72,
+      "yPct": 72,
+      "url": "./pages/press-layout.html",
+      "summary": "1996–2000 Magazine Features, Student Guide '98 & Psychobabble Scans"
+    },
+    {
+      "id": "six-tour",
+      "label": "1998 Six Tour",
+      "type": "tour",
+      "x": 450,
+      "y": 90,
+      "xPct": 50,
+      "yPct": 15,
+      "url": "./youtube.html",
+      "summary": "Brixton Academy '98 Broadcast & Soundmasters Reference CD"
+    },
+    {
+      "id": "chester",
+      "label": "2014 Chester Premiere",
+      "type": "venue",
+      "x": 150,
+      "y": 340,
+      "xPct": 18,
+      "yPct": 62,
+      "url": "./pages/draper-news.html",
+      "summary": "World premiere of 'Feeling My Heart Run Slow' filmed by Richard Murray"
+    },
+    {
+      "id": "blackpool",
+      "label": "Blackpool May 2027",
+      "type": "venue",
+      "x": 280,
+      "y": 440,
+      "xPct": 34,
+      "yPct": 82,
+      "url": "./pages/draper-news.html",
+      "summary": "Indie By The Sea Festival at Winter Gardens Blackpool (Saturday 1 May 2027)"
+    },
+    {
+      "id": "community",
+      "label": "MML & 2006 Q&A",
+      "type": "community",
+      "x": 480,
+      "y": 450,
+      "xPct": 55,
+      "yPct": 84,
+      "url": "./pages/draper-qa.html",
+      "summary": "25-Year Community Archive (Dec 2001–2026) & 38 Forum Q&As"
+    }
+  ],
+  "edges": [
+    {
+      "from": "mansun",
+      "to": "paul",
+      "relationship": "founder_and_frontman"
+    },
+    {
+      "from": "mansun",
+      "to": "bbc",
+      "relationship": "recorded_sessions"
+    },
+    {
+      "from": "mansun",
+      "to": "nme",
+      "relationship": "featured_in"
+    },
+    {
+      "from": "mansun",
+      "to": "six-tour",
+      "relationship": "headlined"
+    },
+    {
+      "from": "paul",
+      "to": "chester",
+      "relationship": "premiered_solo_debut"
+    },
+    {
+      "from": "paul",
+      "to": "blackpool",
+      "relationship": "scheduled_2027_performance"
+    },
+    {
+      "from": "mansun",
+      "to": "community",
+      "relationship": "preserved_by"
+    },
+    {
+      "from": "paul",
+      "to": "six-tour",
+      "relationship": "wrote_and_produced"
+    },
+    {
+      "from": "chester",
+      "to": "blackpool",
+      "relationship": "solo_era_continuity"
+    }
+  ]
+}
