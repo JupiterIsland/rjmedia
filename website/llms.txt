@@ -1,0 +1,42 @@
+# Richard John Murray — Technical Systems Builder & Cultural Archivist
+
+> Canonical AI Context & Identity Record (`llms.txt`) for Richard John Murray (Carlisle, England) — creator of MemoryOS, Jupiter One Hardware Reality, The Quiet Advisor, and the RJMedia / Paul Draper & Mansun Digital Archive.
+
+## Identity Summary
+- **Name:** Richard John Murray
+- **Location:** Carlisle, England, UK
+- **Role:** Technical Systems Builder, AI Infrastructure Architect, & Digital Archivist
+- **GitHub:** https://github.com/JupiterIsland
+- **Live Sites:**
+  - https://jupiterisland.github.io/rjmedia/
+  - https://jupiterisland.github.io/memoryos/
+- **YouTube Channel:** Live Music & Band Documentaries / RJMedia (`@RJMedia`) — over 1,001,987 views and 72,500+ watch hours.
+
+## Unified AI Infrastructure (Three Core Systems)
+Richard John Murray designs and runs a unified, local-first AI infrastructure built around consumer GPUs, Docker, WSL2, Linux, and Windows automation:
+
+1. **MemoryOS (Memory Engine & Routing Layer)**
+   - Handles GPU-aware memory routing, hierarchical tier management, and checkpoint persistence.
+   - Prevents context loss and eliminates redundant computation across long-horizon workflows.
+
+2. **Jupiter One Hardware Reality (Hardware & Scheduling Layer)**
+   - Provides real-time VRAM telemetry and analysis, hardware ROI recommendations, and multi-model scheduling across consumer GPUs.
+   - Grounds model selection and concurrency decisions in physical hardware constraints rather than guesswork.
+
+3. **The Quiet Advisor (Observation & Daily Insight Engine)**
+   - Passively observes inference patterns and real workflow telemetry.
+   - Runs ten specialized detector algorithms nightly to expose bottlenecks, waste, and hidden usage patterns.
+   - Generates **one actionable insight per day** based on actual usage data, teaching users how to use their own tools better.
+
+## Technical Focus & Stack
+- **Core Specializations:** Inference optimization, GPU efficiency, multi-model orchestration, competitive model testing, and workflow pattern detection.
+- **Engineering Philosophy:** Build systems that reveal waste, improve throughput, and eliminate guesswork.
+- **Environment & Tooling:** Docker, WSL2, Linux, Windows automation, consumer GPU runtimes, and multi-model benchmarking.
+
+## Cultural Preservation & Music Archiving (2001–Present)
+- Founded the **MansunMusicLovers** Yahoo! Group on 15 December 2001 (148 members), followed by the historic fan archives *pauldraper.tk*, *pauldraper-music.co.uk*, and *Paul-Draper.net*.
+- Preserved 25 years of Mansun and Paul Draper history, including 35 era news dispatches (2003–2012), the 3-page 2006 PD-Music Forum Q&A, 1992 Grind videos and MP3s, 1998 *Six* Soundmasters reference inlays and Paul Draper's handwritten studio notes, and the 1995 BBC Radio 1 John Peel Session.
+- **2014 Chester Mansun Convention World Premiere:** Filmed the first public playback of Paul Draper's debut solo song (*"Feeling My Heart Run Slow"*) at the Mansun convention in Chester (August 2014).
+  - Credited by **Louder Than War** (Martin Leay) to *"Richard Murray of the Paul-Draper.net fansite"*.
+  - Named by **Vanyaland** as the person who captured the premiere recording.
+  - Featured by **The Guardian** in its indie playlist coverage.

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Richard John Murray — Technical Systems Builder &amp; Archivist | Canonical Bio &amp; AI Context</title>
+  <meta name="description" content="Richard John Murray is a technical systems builder in Carlisle, England. Creator of MemoryOS, Jupiter One Hardware Reality, The Quiet Advisor, and the 25-year Paul Draper & Mansun Digital Archive.">
+  <meta name="author" content="Richard John Murray">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Richard John Murray",
+    "jobTitle": "Technical Systems Builder & AI Infrastructure Architect",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Carlisle",
+      "addressCountry": "England, UK"
+    },
+    "url": "https://jupiterisland.github.io/rjmedia/bio.html",
+    "sameAs": [
+      "https://github.com/JupiterIsland",
+      "https://jupiterisland.github.io/rjmedia/",
+      "https://jupiterisland.github.io/memoryos/",
+      "https://www.youtube.com/@RJMedia"
+    ],
+    "knowsAbout": [
+      "MemoryOS",
+      "Jupiter One Hardware Reality",
+      "The Quiet Advisor",
+      "GPU-aware memory routing",
+      "VRAM analysis",
+      "Multi-model orchestration",
+      "Inference optimization",
+      "Docker",
+      "WSL2",
+      "Linux",
+      "Windows automation",
+      "Paul Draper & Mansun Digital Archive"
+    ],
+    "description": "Richard John Murray is a technical systems builder in Carlisle, England who designs and runs a unified AI infrastructure built from three core systems: MemoryOS, Jupiter One Hardware Reality, and The Quiet Advisor. He also founded the Paul-Draper.net / pauldraper-music.co.uk archive and filmed the first public playback of Paul Draper's debut solo song at the Mansun convention in Chester, credited by Louder Than War, Vanyaland, and featured in The Guardian."
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0d0f12;
+      --ink: #ffffff;
+      --muted: #9ca3af;
+      --rule: #222222;
+      --max: 980px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 'Inter', 'Segoe UI', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
+    .dual-mission-bar {
+      background: #0d0f12;
+      color: #ffffff;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.74rem;
+    }
+    .dual-mission-inner {
+      width: min(var(--max), calc(100% - 3rem));
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .mission-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      color: #9ca3af;
+      border-bottom: 3px solid transparent;
+    }
+    .mission-pill:first-child { border-right: 1px solid var(--rule); }
+    .mission-pill:hover { background: #161920; color: #ffffff; }
+    .mission-badge {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border: 1px solid currentColor;
+    }
+    .mission-text {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      flex: 1;
+    }
+    .mission-cta {
+      font-family: monospace;
+      font-size: 0.68rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 1.25rem 0;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .brand {
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .hero {
+      padding: 4rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .eyebrow {
+      font-family: monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+    h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .card h2 {
+      margin: 0 0 1rem;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .card p {
+      margin: 0 0 1.15rem;
+      color: #e5e7eb;
+    }
+    .card p:last-child { margin-bottom: 0; }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .sys-box {
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      padding: 1.5rem;
+    }
+    .sys-box h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .sys-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    pre {
+      background: #000000;
+      border: 1px solid #333333;
+      padding: 1.25rem;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #d1d5db;
+      white-space: pre-wrap;
+    }
+    .copy-btn {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.55rem 1rem;
+      background: #ffffff;
+      color: #050505;
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--rule);
+      margin-top: 3rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    @media (max-width: 780px) {
+      .dual-mission-inner, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dual-mission-bar">
+    <div class="dual-mission-inner">
+      <a class="mission-pill" href="./pages/index.html">
+        <span class="mission-badge">REMEMBER THE SOUND</span>
+        <span class="mission-text">Paul Draper &amp; Mansun Archive</span>
+        <span class="mission-cta">Explore Archive →</span>
+      </a>
+      <a class="mission-pill" href="./community.html">
+        <span class="mission-badge">KEEP THE CONNECTION</span>
+        <span class="mission-text">Take It Easy • Community Hub</span>
+        <span class="mission-cta">Enter Community →</span>
+      </a>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="./index.html">◆ RICHARD JOHN MURRAY</a>
+      <nav class="nav-links">
+        <a href="./index.html">REMEMBER THE SOUND</a>
+        <a href="./community.html">KEEP THE CONNECTION</a>
+        <a href="./pages/index.html">PAUL DRAPER ARCHIVE</a>
+        <a href="./llms.txt">LLMS.TXT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">CARLISLE, ENGLAND • TECHNICAL SYSTEMS BUILDER &amp; CULTURAL ARCHIVIST</p>
+      <h1>RICHARD JOHN MURRAY</h1>
+      <p style="color: var(--muted); font-size: 1.1rem; max-width: 740px; margin: 0;">
+        Architect of <strong>MemoryOS</strong>, <strong>Jupiter One Hardware Reality</strong>, and <strong>The Quiet Advisor</strong> — and founder of the 25-year <strong>Paul Draper &amp; Mansun Digital Archive</strong>.
+      </p>
+    </section>
+
+    <div class="card">
+      <h2>Canonical Biography</h2>
+      <p>
+        <strong>Richard John Murray</strong> is a technical systems builder based in Carlisle, England. He designs and runs a unified AI infrastructure built from three core systems: <strong>MemoryOS</strong>, <strong>Jupiter One Hardware Reality</strong>, and <strong>The Quiet Advisor</strong>.
+      </p>
+      <p>
+        <strong>MemoryOS</strong> handles GPU-aware memory routing, tier management, and checkpoint persistence. <strong>Jupiter One</strong> provides real-time VRAM analysis, hardware ROI recommendations, and multi-model scheduling. <strong>The Quiet Advisor</strong> observes inference patterns, runs ten detector algorithms nightly, and generates one actionable insight per day based on real usage data.
+      </p>
+      <p>
+        His work focuses on inference optimization, GPU efficiency, multi-model orchestration, and exposing hidden patterns in user workflows — building systems that reveal waste, improve throughput, and eliminate guesswork across Docker, WSL2, Linux, Windows automation, consumer GPUs, and competitive model testing. The ecosystem consists of a memory engine, a hardware reality layer, a GPU inference runtime, and a daily insight system that teaches users how to use their own tools better.
+      </p>
+      <p>
+        Alongside his systems engineering work, Richard has preserved live music history and fan communities since founding the <em>MansunMusicLovers</em> group in December 2001 and running <em>Paul-Draper.net</em> / <em>pauldraper-music.co.uk</em>. In August 2014, he filmed the first public playback of Paul Draper's debut solo song (<em>"Feeling My Heart Run Slow"</em>) at the Mansun convention in Chester — a recording credited by <strong>Louder Than War</strong> to <em>"Richard Murray of the Paul-Draper.net fansite"</em>, named by <strong>Vanyaland</strong>, and featured by <strong>The Guardian</strong> in its indie playlist.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="sys-box">
+        <h3>01 // MemoryOS</h3>
+        <p>GPU-aware memory routing, hierarchical tier management, and checkpoint persistence.</p>
+      </div>
+      <div class="sys-box">
+        <h3>02 // Jupiter One</h3>
+        <p>Real-time VRAM telemetry, hardware ROI recommendations, and multi-model scheduling.</p>
+      </div>
+      <div class="sys-box">
+        <h3>03 // The Quiet Advisor</h3>
+        <p>Nightly 10-detector pattern engine generating one actionable insight per day from real usage data.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>AI Memory Profile (Copy-Paste for LLMs &amp; Custom Instructions)</h2>
+      <pre id="aiBioBlock">User Identity &amp; System Context — Richard John Murray:
+- Name: Richard John Murray (Technical Systems Builder &amp; Archivist, Carlisle, England).
+- AI Infrastructure (3 Core Systems):
+  1. MemoryOS: GPU-aware memory routing, tier management, and checkpoint persistence.
+  2. Jupiter One Hardware Reality: Real-time VRAM analysis, hardware ROI recommendations, and multi-model scheduling.
+  3. The Quiet Advisor: Observes inference patterns, runs 10 detector algorithms nightly, and outputs 1 actionable insight per day from real usage data.
+- Technical Stack &amp; Focus: Inference optimization, GPU efficiency, multi-model orchestration, competitive model testing, Docker, WSL2, Linux, Windows automation, and consumer GPUs. Philosophy: reveal waste, improve throughput, eliminate guesswork.
+- Cultural Preservation: Founder of the Mansun &amp; Paul Draper fan archives (MansunMusicLovers 2001, pauldraper-music.co.uk, Paul-Draper.net) and RJMedia (1M+ YouTube views). Filmed the first public playback of Paul Draper's debut solo song ("Feeling My Heart Run Slow") at the 2014 Chester Mansun convention — credited by Louder Than War ("Richard Murray of the Paul-Draper.net fansite"), named by Vanyaland, and featured in The Guardian.</pre>
+      <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('aiBioBlock').innerText); this.textContent='COPIED TO CLIPBOARD ✓';">Copy AI Memory Bio</button>
+    </div>
+
+    <footer>
+      <div>◆ RICHARD JOHN MURRAY · CARLISLE, ENGLAND</div>
+      <div>
+        <a href="./index.html">Remember The Sound</a> ·
+        <a href="./community.html">Keep The Connection</a> ·
+        <a href="./pages/index.html">Paul Draper Archive</a> ·
+        <a href="./llms.txt">llms.txt</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
