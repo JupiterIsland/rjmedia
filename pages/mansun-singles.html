@@ -52,6 +52,27 @@
       </div>
     </section>
 
+    <section aria-label="Featured Singles and EP Sleeves" style="padding: 2rem 0 0;">
+      <div class="photo-strip" style="border-bottom: none; padding-bottom: 0;">
+        <article class="photo-card">
+          <img src="../assets/images/mansun-one-ep.jpg" alt="Mansun ONE EP (Egg Shaped Fred, May 1996)" onclick="openLightbox('../assets/images/mansun-one-ep.jpg', 'Mansun — ONE EP: Egg Shaped Fred / Ski Jump Nose / Lemonade Secret Drinker / Thievingitch (May 1996)')">
+          <div class="cap"><strong>ONE EP • May 1996</strong><em>Egg Shaped Fred</em> / <em>Ski Jump Nose</em> / <em>Lemonade Secret Drinker</em> / <em>Thievingitch</em>.</div>
+        </article>
+        <article class="photo-card">
+          <img src="../assets/images/taxloss-signed-promo.jpg" alt="Mansun Taxloss fully signed promo sleeve" onclick="openLightbox('../assets/images/taxloss-signed-promo.jpg', 'Mansun — Taxlo$$ Remixes Promo Sleeve signed by Paul Draper, Dominic Chad, Stove King & Andie Rathbone')">
+          <div class="cap"><strong>SIX EP • Taxlo$$ (Signed Promo)</strong>Autographed by Paul Draper, Dominic Chad, Stove &amp; Andie Rathbone.</div>
+        </article>
+        <article class="photo-card">
+          <img src="../assets/images/paul-draper-ep-one.jpg" alt="Paul Draper EP ONE (June 2016)" onclick="openLightbox('../assets/images/paul-draper-ep-one.jpg', 'Paul Draper — EP ONE (June 2016, featuring Feeling My Heart Run Slow)')">
+          <div class="cap"><strong>Paul Draper — EP ONE (Jun 2016)</strong>Debut solo EP featuring <em>Feeling My Heart Run Slow</em>.</div>
+        </article>
+        <article class="photo-card">
+          <img src="../assets/images/solo-ep-two.jpg" alt="Paul Draper EP TWO (November 2016)" onclick="openLightbox('../assets/images/solo-ep-two.jpg', 'Paul Draper — EP TWO (November 2016, featuring Friends Make The Worst Enemies)')">
+          <div class="cap"><strong>Paul Draper — EP TWO (Nov 2016)</strong>Continuing the numbered EP tradition.</div>
+        </article>
+      </div>
+    </section>
+
     <div class="vault-table-wrap" style="margin-top: 2.5rem;">
       <table class="vault-table">
         <thead>
@@ -202,5 +223,30 @@
       </div>
     </footer>
   </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-bar">
+        <span id="lightboxCap"></span>
+        <button type="button" class="lightbox-close" onclick="closeLightbox(event, true)">Close [ESC]</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openLightbox(src, caption) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCap').textContent = caption || src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox(e, force) {
+      if (force || e.target.id === 'lightbox') {
+        document.getElementById('lightbox').classList.remove('open');
+      }
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox(e, true);
+    });
+  </script>
 </body>
 </html>
