@@ -5,8 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mansun Singles &amp; Numbered EPs (1995–2004) | PaulDraper-Music.co.uk Archive</title>
   <link rel="stylesheet" href="../assets/css/archive.css">
+  <style>
+    .singles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .single-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: center;
+      cursor: pointer;
+    }
+    .single-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+    .single-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      background: #f8f8f8;
+    }
+    .single-card-cap {
+      padding: 0.6rem 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #111111;
+    }
+    .single-card-sub {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: #777777;
+      margin-top: 0.2rem;
+    }
+    .thumb-cell {
+      width: 65px;
+      text-align: center;
+    }
+    .thumb-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      transition: transform 0.2s ease;
+      background: #ffffff;
+    }
+    .thumb-img:hover {
+      transform: scale(1.15);
+    }
+  </style>
 </head>
 <body>
+  <!-- DUAL MISSION BAR -->
   <div class="dual-mission-bar" role="region" aria-label="Remember The Sound and Keep The Connection">
     <div class="dual-mission-inner">
       <a class="mission-pill active-mission" href="./index.html">
@@ -21,6 +85,7 @@
       </a>
     </div>
   </div>
+
   <header class="masthead">
     <div class="wrap nav">
       <a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span> RJMEDIA / PAUL DRAPER ARCHIVE</a>
@@ -43,41 +108,126 @@
   <main class="wrap">
     <section class="hero">
       <div>
-        <p class="eyebrow">RECOVERED FROM PAULDRAPER-MUSIC.CO.UK (SINGLES.HTML) • COMPLETE EP RUN</p>
+        <p class="eyebrow">RECOVERED FROM PAULDRAPER-MUSIC.CO.UK (SINGLES.HTML) • AUTHENTIC SLEEVE ARCHIVE</p>
         <h1>Mansun Singles<br>&amp; Numbered EPs.</h1>
-        <p class="intro">From the self-financed 1995 Sci-Fi Hi-Fi 7" vinyl of <em>Take It Easy Chicken</em> through all 14 numbered Parlophone EPs, 4 UK Top 10 singles, the Brixton fan-club 7", and 2004's <em>Slipping Away</em>.</p>
+        <p class="intro">
+          From the self-financed 1995 Sci-Fi Hi-Fi 7" vinyl of <em>Take It Easy Chicken</em> through all 14 numbered Parlophone EPs, 4 UK Top 10 hits, the Brixton fan-club 7", and 2004's <em>Slipping Away</em>. Complete with authentic sleeve scans from Richard Murray's archive.
+        </p>
       </div>
       <div class="corner-sketch">
         <img src="../assets/images/paulcorner.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper sketch">
       </div>
     </section>
 
-    <section aria-label="Featured Singles and EP Sleeves" style="padding: 2rem 0 0;">
-      <div class="photo-strip" style="border-bottom: none; padding-bottom: 0;">
-        <article class="photo-card">
-          <img src="../assets/images/mansun-one-ep.jpg" alt="Mansun ONE EP (Egg Shaped Fred, May 1996)" onclick="openLightbox('../assets/images/mansun-one-ep.jpg', 'Mansun — ONE EP: Egg Shaped Fred / Ski Jump Nose / Lemonade Secret Drinker / Thievingitch (May 1996)')">
-          <div class="cap"><strong>ONE EP • May 1996</strong><em>Egg Shaped Fred</em> / <em>Ski Jump Nose</em> / <em>Lemonade Secret Drinker</em> / <em>Thievingitch</em>.</div>
-        </article>
-        <article class="photo-card">
-          <img src="../assets/images/taxloss-signed-promo.jpg" alt="Mansun Taxloss fully signed promo sleeve" onclick="openLightbox('../assets/images/taxloss-signed-promo.jpg', 'Mansun — Taxlo$$ Remixes Promo Sleeve signed by Paul Draper, Dominic Chad, Stove King & Andie Rathbone')">
-          <div class="cap"><strong>SIX EP • Taxlo$$ (Signed Promo)</strong>Autographed by Paul Draper, Dominic Chad, Stove &amp; Andie Rathbone.</div>
-        </article>
-        <article class="photo-card">
-          <img src="../assets/images/paul-draper-ep-one.jpg" alt="Paul Draper EP ONE (June 2016)" onclick="openLightbox('../assets/images/paul-draper-ep-one.jpg', 'Paul Draper — EP ONE (June 2016, featuring Feeling My Heart Run Slow)')">
-          <div class="cap"><strong>Paul Draper — EP ONE (Jun 2016)</strong>Debut solo EP featuring <em>Feeling My Heart Run Slow</em>.</div>
-        </article>
-        <article class="photo-card">
-          <img src="../assets/images/solo-ep-two.jpg" alt="Paul Draper EP TWO (November 2016)" onclick="openLightbox('../assets/images/solo-ep-two.jpg', 'Paul Draper — EP TWO (November 2016, featuring Friends Make The Worst Enemies)')">
-          <div class="cap"><strong>Paul Draper — EP TWO (Nov 2016)</strong>Continuing the numbered EP tradition.</div>
-        </article>
+    <!-- SLEEVE GALLERY (CLICK TO ENLARGE) -->
+    <section aria-label="Featured Singles and EP Sleeves">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:2rem;">
+        <h3 style="font-size:1.15rem; font-weight:900; text-transform:uppercase; margin:0;">
+          Complete EP Sleeve Gallery (1995 — 2004)
+        </h3>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:#666;">Click any sleeve to inspect</span>
+      </div>
+
+      <div class="singles-grid">
+        <div class="single-card" onclick="openLightbox('../assets/images/tiec.jpg', 'Mansun — Take It Easy Chicken (Debut 7 Vinyl, Sci-Fi Hi-Fi Records SCI-001, Sep 1995)')">
+          <img src="../assets/images/tiec.jpg" alt="Take It Easy Chicken 7 inch">
+          <div class="single-card-cap">Debut 7"<span class="single-card-sub">Take It Easy Chicken</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/supu.jpg', 'Mansun — Skin Up Pin Up (Long Live The New Flesh, Fierce Panda Records, Nov 1995)')">
+          <img src="../assets/images/supu.jpg" alt="Skin Up Pin Up">
+          <div class="single-card-cap">Fierce Panda<span class="single-card-sub">Skin Up Pin Up</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/1ep.jpg', 'Mansun — ONE EP: Egg Shaped Fred (May 1996, UK #37)')">
+          <img src="../assets/images/1ep.jpg" alt="ONE EP: Egg Shaped Fred">
+          <div class="single-card-cap">ONE EP<span class="single-card-sub">Egg Shaped Fred</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/2ep.jpg', 'Mansun — TWO EP: Take It Easy Chicken (Jun 1996, UK #32)')">
+          <img src="../assets/images/2ep.jpg" alt="TWO EP: Take It Easy Chicken">
+          <div class="single-card-cap">TWO EP<span class="single-card-sub">Take It Easy Chicken</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/3ep.jpg', 'Mansun — THREE EP: Stripper Vicar (Sep 1996, UK #19)')">
+          <img src="../assets/images/3ep.jpg" alt="THREE EP: Stripper Vicar">
+          <div class="single-card-cap">THREE EP<span class="single-card-sub">Stripper Vicar</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/4ep.jpg', 'Mansun — FOUR EP: Wide Open Space (Nov 1996, UK #15)')">
+          <img src="../assets/images/4ep.jpg" alt="FOUR EP: Wide Open Space">
+          <div class="single-card-cap">FOUR EP<span class="single-card-sub">Wide Open Space</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/5ep.jpg', 'Mansun — FIVE EP: She Makes My Nose Bleed (Jan 1997, UK Top 10 #9)')">
+          <img src="../assets/images/5ep.jpg" alt="FIVE EP: She Makes My Nose Bleed">
+          <div class="single-card-cap">FIVE EP<span class="single-card-sub">She Makes My Nose Bleed</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/6ep.jpg', 'Mansun — SIX EP: Taxlo$$ (Apr 1997, UK #15)')">
+          <img src="../assets/images/6ep.jpg" alt="SIX EP: Taxloss">
+          <div class="single-card-cap">SIX EP<span class="single-card-sub">Taxlo$$</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/7ep.jpg', 'Mansun — SEVEN EP: Closed For Business (Oct 1997, UK Top 10 #10)')">
+          <img src="../assets/images/7ep.jpg" alt="SEVEN EP: Closed For Business">
+          <div class="single-card-cap">SEVEN EP<span class="single-card-sub">Closed For Business</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/8ep.jpg', 'Mansun — EIGHT EP: Legacy (Jul 1998, UK Top 10 #7)')">
+          <img src="../assets/images/8ep.jpg" alt="EIGHT EP: Legacy">
+          <div class="single-card-cap">EIGHT EP<span class="single-card-sub">Legacy (#7)</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/9ep.jpg', 'Mansun — NINE EP: Being A Girl (Part One) (Aug 1998, UK #13)')">
+          <img src="../assets/images/9ep.jpg" alt="NINE EP: Being A Girl">
+          <div class="single-card-cap">NINE EP<span class="single-card-sub">Being A Girl</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/10ep.jpg', 'Mansun — TEN EP: Negative (Oct 1998, UK #27)')">
+          <img src="../assets/images/10ep.jpg" alt="TEN EP: Negative">
+          <div class="single-card-cap">TEN EP<span class="single-card-sub">Negative</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/11ep.jpg', 'Mansun — ELEVEN EP: Six (Feb 1999, UK #16)')">
+          <img src="../assets/images/11ep.jpg" alt="ELEVEN EP: Six">
+          <div class="single-card-cap">ELEVEN EP<span class="single-card-sub">Six</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/12ep.jpg', 'Mansun — TWELVE EP: I Can Only Disappoint U (Jul 2000, UK Top 10 #8)')">
+          <img src="../assets/images/12ep.jpg" alt="TWELVE EP: I Can Only Disappoint U">
+          <div class="single-card-cap">TWELVE EP<span class="single-card-sub">I Can Only Disappoint U</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/13ep.jpg', 'Mansun — THIRTEEN EP: Electric Man (Nov 2000, UK #23)')">
+          <img src="../assets/images/13ep.jpg" alt="THIRTEEN EP: Electric Man">
+          <div class="single-card-cap">THIRTEEN EP<span class="single-card-sub">Electric Man</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/14ep.jpg', 'Mansun — FOURTEEN EP: Fool (Jan 2001, UK #28)')">
+          <img src="../assets/images/14ep.jpg" alt="FOURTEEN EP: Fool">
+          <div class="single-card-cap">FOURTEEN EP<span class="single-card-sub">Fool</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/sasingle.jpg', 'Mansun — Slipping Away (Sep 2004, UK #55)')">
+          <img src="../assets/images/sasingle.jpg" alt="Slipping Away Single">
+          <div class="single-card-cap">Final Single<span class="single-card-sub">Slipping Away</span></div>
+        </div>
+
+        <div class="single-card" onclick="openLightbox('../assets/images/taxloss-signed-promo.jpg', 'Mansun — Taxlo$$ Remixes Fully Signed Promo Sleeve')">
+          <img src="../assets/images/taxloss-signed-promo.jpg" alt="Taxloss Signed Promo">
+          <div class="single-card-cap">Signed Promo<span class="single-card-sub">Taxlo$$ Remixes</span></div>
+        </div>
       </div>
     </section>
 
-    <div class="vault-table-wrap" style="margin-top: 2.5rem;">
+    <!-- COMPREHENSIVE VAULT TABLE WITH THUMBNAILS -->
+    <div class="vault-table-wrap" style="margin-top: 2rem;">
       <table class="vault-table">
         <thead>
           <tr>
-            <th style="width: 95px;">EP / Cat #</th>
+            <th class="thumb-cell">Cover</th>
+            <th style="width: 100px;">EP / Cat #</th>
             <th>Single / EP Title</th>
             <th>Release Date</th>
             <th>UK Chart</th>
@@ -86,6 +236,7 @@
         </thead>
         <tbody>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/tiec.jpg" alt="Take It Easy Chicken" onclick="openLightbox('../assets/images/tiec.jpg', 'Take It Easy Chicken (Debut 7\')')"></td>
             <td><code>SCI-001</code></td>
             <td><strong>Take It Easy Chicken (Debut 7")</strong></td>
             <td>Sep 1995</td>
@@ -93,6 +244,15 @@
             <td><strong>Sci-Fi Hi-Fi Records (1,000 copies):</strong> Take It Easy Chicken · Astrid (early version of Flourella).</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/supu.jpg" alt="Skin Up Pin Up" onclick="openLightbox('../assets/images/supu.jpg', 'Skin Up Pin Up')"></td>
+            <td><code>NING 13</code></td>
+            <td><strong>Skin Up Pin Up (7" Vinyl)</strong></td>
+            <td>Nov 1995</td>
+            <td><code>Indie</code></td>
+            <td><strong>Fierce Panda Records (Long Live The New Flesh):</strong> Skin Up Pin Up · Flourella.</td>
+          </tr>
+          <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/1ep.jpg" alt="ONE EP" onclick="openLightbox('../assets/images/1ep.jpg', 'ONE EP: Egg Shaped Fred')"></td>
             <td><code>ONE EP</code></td>
             <td><strong>Egg Shaped Fred</strong></td>
             <td>May 1996</td>
@@ -100,6 +260,7 @@
             <td>Egg Shaped Fred · Ski Jump Nose · Lemonade Secret Drinker · Thievingitch.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/2ep.jpg" alt="TWO EP" onclick="openLightbox('../assets/images/2ep.jpg', 'TWO EP: Take It Easy Chicken')"></td>
             <td><code>TWO EP</code></td>
             <td><strong>Take It Easy Chicken</strong></td>
             <td>Jun 1996</td>
@@ -107,48 +268,55 @@
             <td>Take It Easy Chicken · Drastic Sturgeon · The Greatest Pain · Moronica · Rebel Without A Quilt.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/3ep.jpg" alt="THREE EP" onclick="openLightbox('../assets/images/3ep.jpg', 'THREE EP: Stripper Vicar')"></td>
             <td><code>THREE EP</code></td>
             <td><strong>Stripper Vicar</strong></td>
             <td>Sep 1996</td>
             <td><code>#19</code></td>
-            <td><strong>CD1:</strong> Stripper Vicar · The Edge · Duelling Banjos · <strong>CD2:</strong> Stripper Vicar ·The Most To Gain ·The Gods Himself ·No One Knows Us · <strong>Live EP:</strong> Live at The Leadmill Sheffield.</td>
+            <td><strong>CD1:</strong> Stripper Vicar · The Edge · Duelling Banjos · <strong>CD2:</strong> Stripper Vicar · The Most To Gain · The Gods Himself · No One Knows Us · <strong>Live EP:</strong> Live at The Leadmill Sheffield.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/4ep.jpg" alt="FOUR EP" onclick="openLightbox('../assets/images/4ep.jpg', 'FOUR EP: Wide Open Space')"></td>
             <td><code>FOUR EP</code></td>
             <td><strong>Wide Open Space</strong></td>
             <td>Nov 1996</td>
             <td><code>#15</code></td>
-            <td><strong>CD1:</strong> Wide Open Space · Rebel Without A Quilt · Skin Up Pin Up · <strong>CD2:</strong> Wide Open Space · Lemonade Secret Drinker · The Holy Blood And The Holy Grail · <strong>Paul Oakenfold Perfecto Remix</strong>.</td>
+            <td><strong>CD1:</strong> Wide Open Space · Rebel Without A Quilt · Skin Up Pin Up · <strong>CD2:</strong> Wide Open Space · Lemonade Secret Drinker · The Holy Blood And The Holy Grail · <strong>Remix:</strong> Paul Oakenfold Perfecto Mix.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/5ep.jpg" alt="FIVE EP" onclick="openLightbox('../assets/images/5ep.jpg', 'FIVE EP: She Makes My Nose Bleed')"></td>
             <td><code>FIVE EP</code></td>
             <td><strong>She Makes My Nose Bleed</strong></td>
             <td>Jan 1997</td>
             <td><code>#9 ★</code></td>
-            <td><strong>CD1:</strong> She Makes My Nose Bleed ·The Most To Gain ·The Chad Who Loved Me (Live) · <strong>CD2:</strong> She Makes My Nose Bleed · Flourella · Check Under The Bed · Wide Open Space (Acoustic).</td>
+            <td><strong>CD1:</strong> She Makes My Nose Bleed · The Most To Gain · The Chad Who Loved Me (Live) · <strong>CD2:</strong> She Makes My Nose Bleed · Flourella · Check Under The Bed · Wide Open Space (Acoustic).</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/6ep.jpg" alt="SIX EP" onclick="openLightbox('../assets/images/6ep.jpg', 'SIX EP: Taxlo$$')"></td>
             <td><code>SIX EP</code></td>
             <td><strong>Taxlo$$</strong></td>
             <td>Apr 1997</td>
             <td><code>#15</code></td>
-            <td><strong>CD1 (CDR6465):</strong> Taxlo$$ ·The World's Still Open ·Theimpendingcollapseofthemanor · <strong>CD2:</strong> Taxlo$$ (Gaudi Mix) · Ski Jump Nose (Live) · Wide Open Space (Acoustic) · Taxlo$$ ( Paul Oakenfold Remix).</td>
+            <td><strong>CD1 (CDR6465):</strong> Taxlo$$ · The World's Still Open · Theimpendingcollapseofthemanor · <strong>CD2:</strong> Taxlo$$ (Gaudi Mix) · Ski Jump Nose (Live) · Wide Open Space (Acoustic) · Taxlo$$ (Paul Oakenfold Mix).</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/7ep.jpg" alt="SEVEN EP" onclick="openLightbox('../assets/images/7ep.jpg', 'SEVEN EP: Closed For Business')"></td>
             <td><code>SEVEN EP</code></td>
             <td><strong>Closed For Business</strong></td>
             <td>Oct 1997</td>
             <td><code>#10 ★</code></td>
-            <td><strong>CD1:</strong> Closed For Business ·K.I.S.S.I.N.G. · Everyone Must Win · <strong>CD2:</strong> Closed For Business · The World's Still Open · Realising · Look At These Idiots.</td>
+            <td><strong>CD1:</strong> Closed For Business · K.I.S.S.I.N.G. · Everyone Must Win · <strong>CD2:</strong> Closed For Business · The World's Still Open · Realising · Look At These Idiots.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/8ep.jpg" alt="EIGHT EP" onclick="openLightbox('../assets/images/8ep.jpg', 'EIGHT EP: Legacy')"></td>
             <td><code>EIGHT EP</code></td>
             <td><strong>Legacy</strong></td>
             <td>Jul 1998</td>
             <td><code>#7 ★</code></td>
-            <td><strong>CD1:</strong> Legacy ·Can't Afford To Die · SpasmOfJudgement · <strong>CD2:</strong> Legacy · When The Wind Blows · Check Under The Bed · GSOH.</td>
+            <td><strong>CD1:</strong> Legacy · Can't Afford To Die · SpasmOfJudgement · <strong>CD2:</strong> Legacy · When The Wind Blows · Check Under The Bed · GSOH.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/9ep.jpg" alt="NINE EP" onclick="openLightbox('../assets/images/9ep.jpg', 'NINE EP: Being A Girl')"></td>
             <td><code>NINE EP</code></td>
             <td><strong>Being A Girl (Part One)</strong></td>
             <td>Aug 1998</td>
@@ -156,6 +324,7 @@
             <td><strong>CD1:</strong> Being A Girl (Pt 1) · I Care · Been Here Before · <strong>CD2:</strong> Being A Girl (Pt 1) · Hideout · What It's Like To Be Hated.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/10ep.jpg" alt="TEN EP" onclick="openLightbox('../assets/images/10ep.jpg', 'TEN EP: Negative')"></td>
             <td><code>TEN EP</code></td>
             <td><strong>Negative</strong></td>
             <td>Oct 1998</td>
@@ -163,6 +332,7 @@
             <td><strong>CD1 (CDRS6508):</strong> Negative · When The Wind Blows · King Of Beauty · <strong>CD2 (CDR6508):</strong> Negative · I Deserve What I Get · Take It Easy Chicken (Live).</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/6ep.jpg" alt="MANSUN001" onclick="openLightbox('../assets/images/6ep.jpg', 'Taxlo$$ Brixton \'98 Fan Club 7\'')"></td>
             <td><code>MANSUN001</code></td>
             <td><strong>Taxlo$$ (Live Brixton '98 Fan Club 7")</strong></td>
             <td>Dec 1998</td>
@@ -170,6 +340,7 @@
             <td>Injection-moulded 7" vinyl recorded live at London Brixton Academy (23/10/1998): Taxlo$$ (Live) · Everyone Must Win (Live).</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/11ep.jpg" alt="ELEVEN EP" onclick="openLightbox('../assets/images/11ep.jpg', 'ELEVEN EP: Six')"></td>
             <td><code>ELEVEN EP</code></td>
             <td><strong>Six</strong></td>
             <td>Feb 1999</td>
@@ -177,6 +348,7 @@
             <td><strong>CD1:</strong> Six (Single Version) · Church Of The Drive Thru Elvis · But The Trains Run On Time · <strong>CD2:</strong> Six · Fade Soon · The Unrest Cure.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/12ep.jpg" alt="TWELVE EP" onclick="openLightbox('../assets/images/12ep.jpg', 'TWELVE EP: I Can Only Disappoint U')"></td>
             <td><code>TWELVE EP</code></td>
             <td><strong>I Can Only Disappoint U</strong></td>
             <td>Jul 2000</td>
@@ -184,6 +356,7 @@
             <td><strong>CD1 (CDRS6544):</strong> I Can Only Disappoint U · Decisions, Decisions · Repair Man · <strong>CD2 (CDR6544):</strong> I Can Only Disappoint U · My Idea Of Fun · Golden Stone.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/13ep.jpg" alt="THIRTEEN EP" onclick="openLightbox('../assets/images/13ep.jpg', 'THIRTEEN EP: Electric Man')"></td>
             <td><code>THIRTEEN EP</code></td>
             <td><strong>Electric Man</strong></td>
             <td>Nov 2000</td>
@@ -191,13 +364,15 @@
             <td><strong>CD1:</strong> Electric Man · The Drifter · The Apartment · <strong>CD2:</strong> Electric Man · Here Comes Avoiding The Issue · Live Tracks at Trentham Gardens.</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/14ep.jpg" alt="FOURTEEN EP" onclick="openLightbox('../assets/images/14ep.jpg', 'FOURTEEN EP: Fool')"></td>
             <td><code>FOURTEEN EP</code></td>
             <td><strong>Fool</strong></td>
             <td>Jan 2001</td>
             <td><code>#28</code></td>
-            <td><strong>CD1 / Promo (CDRDJ6553):</strong> Fool · Welcome To The North · <strong>CD2:</strong> Fool · Poor Created Man · Love Is... (Instrumental).</td>
+            <td><strong>CD1 (CDRDJ6553):</strong> Fool · Welcome To The North · <strong>CD2:</strong> Fool · Poor Created Man · Love Is... (Instrumental).</td>
           </tr>
           <tr>
+            <td class="thumb-cell"><img class="thumb-img" src="../assets/images/sasingle.jpg" alt="Slipping Away" onclick="openLightbox('../assets/images/sasingle.jpg', 'Slipping Away (Kleptomania Single)')"></td>
             <td><code>KLEPTO-01</code></td>
             <td><strong>Slipping Away</strong></td>
             <td>Sep 2004</td>
@@ -210,15 +385,12 @@
 
     <footer>
       <div>◆ RJMEDIA / PAUL DRAPER &amp; MANSUN MASTER ARCHIVE (2001 — 2026)</div>
-      <div>
-        <a href="../index.html">Remember The Sound</a> ·
-        <a href="../community.html">Keep The Connection</a> ·
+      <div style="margin-top: 0.5rem;">
+        <a href="../index.html">RJMedia Main Archive</a> ·
+        <a href="./index.html">Paul Draper Hub</a> ·
+        <a href="./mansun-albums.html">Albums &amp; Bio</a> ·
         <a href="./draper-news.html">News (35)</a> ·
         <a href="./draper-qa.html">2006 Q&amp;A</a> ·
-        <a href="./mansun-albums.html">Albums</a> ·
-        <a href="./mansun-singles.html">Singles &amp; EPs</a> ·
-        <a href="./draper-collaborations.html">Collaborations</a> ·
-        <a href="./draper-gallery.html">Gallery</a> ·
         <a href="./mansun-mp3-vault.html">MP3 Vault (91)</a>
       </div>
     </footer>

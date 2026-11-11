@@ -3,37 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RJMedia Digital Archive — Remember The Sound | National Independent Music Preservation</title>
-  <meta name="description" content="RJMedia Digital Archive preserves rare music history, live recordings, broadcast archives, restored footage, and community memories. Over 1,000,000 views and 25 years of independent preservation.">
-  <meta name="theme-color" content="#bdbdbd">
+  <title>RJMedia Digital Archive — Remember The Sound | Music History, Documentaries &amp; Live Broadcasts</title>
+  <meta name="description" content="RJMedia Digital Archive preserves music history, live recordings, broadcast archives, band documentaries and rare festival footage. Over 1,000,000 views and 25 years of independent preservation.">
+  <meta name="theme-color" content="#070709">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/memory-trails.css">
   
   <style>
     :root {
-      --bg: #bdbdbd;
-      --bg-gradient: linear-gradient(180deg, #c7c7c7 0%, #b8b8b8 100%);
-      --surface: #ffffff;
-      --surface-glass: rgba(255, 255, 255, 0.88);
-      --surface-elevated: #ffffff;
-      --card-border: rgba(255, 255, 255, 0.65);
-      --card-border-subtle: rgba(0, 0, 0, 0.12);
-      --ink: #0a0a0a;
-      --ink-secondary: #262626;
-      --muted: #525252;
-      --rule: rgba(0, 0, 0, 0.14);
-      --max: 1180px;
+      --bg: #070709;
+      --bg-surface: #0d0e12;
+      --card-bg: linear-gradient(145deg, #181818, #0b0b0b);
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-border-hover: rgba(255, 255, 255, 0.18);
+      --ink: #ffffff;
+      --ink-secondary: #d4d4d8;
+      --muted: #8a8a8e;
+      --rule: rgba(255, 255, 255, 0.08);
+      --max: 1200px;
       
-      /* Premium 3D Shadows */
-      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08);
-      --shadow-md: 0 8px 20px -4px rgba(0, 0, 0, 0.12), 0 4px 8px -2px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 18px 36px -6px rgba(0, 0, 0, 0.16), 0 8px 16px -4px rgba(0, 0, 0, 0.1);
-      --shadow-3d: 0 20px 45px -10px rgba(0, 0, 0, 0.22), 0 10px 20px -5px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      /* High-End 3D Shadows & Sheen */
+      --shadow-3d: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 20px;
+      --radius-lg: 18px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -41,7 +38,10 @@
     body {
       margin: 0;
       background: var(--bg);
-      background-image: var(--bg-gradient);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+        radial-gradient(circle at 10% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
+        radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
       color: var(--ink);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
@@ -51,74 +51,26 @@
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
 
-    /* Top Tri-Property Navigation Bar */
-    .ecosystem-bar {
-      background: #000000;
-      color: #ffffff;
-      font-size: 0.72rem;
-      border-bottom: 1px solid #222222;
-    }
-    .ecosystem-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      min-height: 38px;
-    }
-    .ecosystem-brands {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .eco-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #a3a3a3;
-      padding: 0.25rem 0;
-      transition: color 0.15s ease;
-    }
-    .eco-pill:hover, .eco-pill.active {
-      color: #ffffff;
-    }
-    .eco-pill.active {
-      border-bottom: 2px solid #ffffff;
-    }
-    .eco-pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #737373;
-    }
-    .eco-pill.active .dot {
-      background: #ffffff;
-    }
-
-    /* Main Masthead */
+    /* Sticky Frosted Glass Masthead */
     .masthead {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--card-border-subtle);
+      background: rgba(8, 8, 10, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
     .masthead-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 80px;
+      height: 76px;
       gap: 1.5rem;
     }
     
-    /* Official Monochrome Logo: [ RJ ]MEDIA with REMEMBER THE SOUND beneath */
+    /* Official Monochrome Logo: [ RJ ]MEDIA */
     .brand-logo {
       display: flex;
       flex-direction: column;
@@ -131,100 +83,122 @@
       line-height: 1;
     }
     .logo-box {
-      background: #000000;
-      color: #ffffff;
-      padding: 0.22rem 0.5rem;
+      background: #ffffff;
+      color: #000000;
+      padding: 0.22rem 0.52rem;
       font-size: 0.98rem;
-      font-weight: 900;
+      font-weight: 950;
       letter-spacing: 0.06em;
-      border-radius: 3px;
-      display: inline-block;
+      border-radius: 4px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
     .logo-text {
       font-size: 1.25rem;
       font-weight: 950;
       letter-spacing: 0.12em;
-      margin-left: 0.4rem;
-      color: #000000;
+      margin-left: 0.45rem;
+      color: #ffffff;
     }
     .logo-tagline {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       font-weight: 800;
-      letter-spacing: 0.22em;
-      color: #404040;
+      letter-spacing: 0.24em;
+      color: var(--muted);
       text-transform: uppercase;
-      margin-top: 0.28rem;
+      margin-top: 0.25rem;
     }
 
     .main-nav {
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 1.5rem;
       font-size: 0.74rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #404040;
+      color: var(--ink-secondary);
     }
     .main-nav a {
-      transition: color 0.15s ease;
+      transition: color 0.2s ease;
       padding: 0.35rem 0;
     }
     .main-nav a:hover {
-      color: #000000;
+      color: #ffffff;
     }
-    .nav-btn {
-      padding: 0.6rem 1.15rem;
-      background: #000000;
+
+    /* Live YouTube Badge CTA */
+    .yt-live-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.15rem;
+      background: linear-gradient(145deg, #1f1f1f, #0d0d0d);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
       color: #ffffff !important;
-      border-radius: var(--radius-sm);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.08em;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.18);
-      transition: transform 0.15s ease, background 0.15s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .nav-btn:hover {
-      background: #262626;
-      transform: translateY(-1px);
+    .yt-live-btn:hover {
+      background: #ffffff;
+      color: #000000 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+    }
+    .yt-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 8px #ffffff;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+      100% { opacity: 0.4; transform: scale(0.9); }
     }
 
     /* SECTION 1: HERO */
     .hero-section {
-      padding: 5rem 0 4.5rem;
+      padding: 5.5rem 0 4.5rem;
       position: relative;
     }
     .hero-section::before {
       content: '';
       position: absolute;
-      top: -60px;
+      top: -40px;
       left: 50%;
       transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.45), transparent 70%);
-      filter: blur(60px);
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+      filter: blur(70px);
       pointer-events: none;
       z-index: 0;
     }
     .hero-card {
-      background: var(--surface-glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
       padding: clamp(2.5rem, 5vw, 4.5rem);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      box-shadow: var(--shadow-3d);
       position: relative;
       z-index: 1;
       overflow: hidden;
+      transition: all 0.3s ease;
     }
     .hero-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #000000 0%, #737373 50%, #000000 100%);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     }
     .hero-kicker {
       display: inline-flex;
@@ -235,142 +209,144 @@
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #404040;
-      background: rgba(0,0,0,0.05);
-      padding: 0.35rem 0.75rem;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.35rem 0.85rem;
       border-radius: 999px;
       margin-bottom: 1.5rem;
-      border: 1px solid rgba(0,0,0,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .hero-title {
-      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+      font-size: clamp(2.6rem, 6.5vw, 5.2rem);
       font-weight: 950;
       line-height: 0.95;
       letter-spacing: -0.04em;
       text-transform: uppercase;
       margin: 0 0 1rem;
-      color: #000000;
+      color: #ffffff;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
     }
     .hero-subtitle {
       font-family: 'JetBrains Mono', monospace;
       font-size: clamp(1rem, 2vw, 1.4rem);
       font-weight: 800;
-      letter-spacing: 0.16em;
-      color: #525252;
+      letter-spacing: 0.2em;
+      color: var(--muted);
       text-transform: uppercase;
       margin: 0 0 1.5rem;
     }
     .hero-desc {
       font-size: 1.15rem;
-      color: #262626;
-      max-width: 680px;
-      margin: 0 0 2.25rem;
-      line-height: 1.65;
-      font-weight: 500;
+      color: var(--ink-secondary);
+      max-width: 720px;
+      margin: 0 0 2.5rem;
+      line-height: 1.7;
+      font-weight: 450;
     }
     .hero-actions {
       display: flex;
       gap: 1.25rem;
       flex-wrap: wrap;
     }
+
+    /* 3D Modern Button Styles */
     .btn-3d {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
       padding: 0.95rem 1.85rem;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 900;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       border-radius: var(--radius-sm);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       border: none;
+      text-decoration: none;
     }
     .btn-3d-primary {
-      background: #000000;
-      color: #ffffff;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      background: #ffffff;
+      color: #000000;
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
     }
     .btn-3d-primary:hover {
-      background: #171717;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      background: #f0f0f0;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.4);
     }
     .btn-3d-secondary {
-      background: rgba(255, 255, 255, 0.9);
-      color: #000000;
-      border: 1px solid rgba(0, 0, 0, 0.18);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      color: #ffffff;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
     .btn-3d-secondary:hover {
-      background: #ffffff;
-      transform: translateY(-2px);
-      border-color: #000000;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
 
-    /* SECTION 2: LIVE STATISTICS */
+    /* SECTION 2: LIVE STATISTICS (Modern 3D Cards) */
     .stats-section {
-      padding: 1rem 0 4rem;
+      padding: 1.5rem 0 3.5rem;
     }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 1.1rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
     }
     .stat-card {
-      background: var(--surface-glass);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 1.5rem 1.25rem;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-3d);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     }
     .stat-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--glass-border-hover);
     }
     .stat-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      font-weight: 700;
+      font-size: 0.68rem;
+      font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 0.5rem;
+      display: block;
+      margin-bottom: 0.6rem;
     }
     .stat-num {
-      font-size: 1.85rem;
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
       font-weight: 950;
-      letter-spacing: -0.03em;
       line-height: 1;
-      color: #000000;
-      margin-bottom: 0.35rem;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      margin-bottom: 0.45rem;
     }
     .stat-sub {
-      font-size: 0.72rem;
-      color: #525252;
-      font-weight: 600;
+      font-size: 0.78rem;
+      color: var(--ink-secondary);
     }
 
-    /* SECTION 3: ABOUT RJMEDIA */
+    /* SECTION 3: ABOUT RJMEDIA (Glass Effect Panel) */
     .section-block {
-      padding: 4rem 0;
-    }
-    .about-card {
-      background: var(--surface-glass);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      padding: clamp(2.5rem, 4vw, 3.5rem);
-      box-shadow: var(--shadow-3d);
+      padding: 3.5rem 0;
     }
     .section-header {
       margin-bottom: 2rem;
@@ -379,327 +355,358 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #404040;
+      color: var(--muted);
       display: block;
       margin-bottom: 0.5rem;
     }
     .section-title {
-      font-size: clamp(2rem, 3.8vw, 2.8rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 950;
       letter-spacing: -0.03em;
       text-transform: uppercase;
+      color: #ffffff;
       margin: 0;
-      color: #000000;
-      line-height: 1.05;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2.5rem;
-      align-items: center;
-    }
-    .about-body p {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: #262626;
-      margin: 0 0 1.25rem;
-    }
-    .about-pillars {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .pillar-box {
-      background: #f5f5f5;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem 1.5rem;
-      box-shadow: var(--shadow-sm);
-    }
-    .pillar-box h4 {
-      margin: 0 0 0.35rem;
-      font-size: 0.95rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .pillar-box p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: #525252;
-      line-height: 1.5;
     }
 
-    /* SECTION 4: FEATURED COLLECTIONS (PREMIUM 3D CARDS) */
-    .collections-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-    }
-    .col-card-3d {
-      background: linear-gradient(145deg, #f5f5f5, #e5e5e5);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: 18px;
-      padding: 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.85);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 360px;
+    .about-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      box-shadow: var(--shadow-3d);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-body p {
+      font-size: 1.05rem;
+      color: var(--ink-secondary);
+      margin: 0 0 1.25rem;
+      line-height: 1.7;
+    }
+    .about-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .pillar-box {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      transition: all 0.25s ease;
+    }
+    .pillar-box:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateX(4px);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+    .pillar-box h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0 0 0.35rem;
+      color: #ffffff;
+    }
+    .pillar-box p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* SECTION 4: COMMUNITY FORUM PREVIEW */
+    .forum-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      box-shadow: var(--shadow-3d);
+      transition: all 0.3s ease;
+    }
+    .forum-categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .forum-cat-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .forum-cat-item:hover {
+      transform: translateY(-4px) scale(1.02);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    .forum-cat-name {
+      font-size: 0.92rem;
+      font-weight: 750;
+      color: #ffffff;
+    }
+    .forum-cat-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* SECTION 5: SUPPORT RJMEDIA & SPONSOR PROGRAMME */
+    .support-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      box-shadow: var(--shadow-3d);
+    }
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .sponsor-tier-box {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sponsor-tier-box:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .sponsor-tier-name {
+      font-size: 1.45rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin: 0.4rem 0 0.8rem;
+      color: #ffffff;
+    }
+    .sponsor-perks {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.9rem;
+      color: var(--ink-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .sponsor-perks li::before {
+      content: '— ';
+      color: var(--muted);
+      font-weight: 900;
+    }
+
+    /* SECTION 6: FEATURED COLLECTIONS (Better Archive Cards - Netflix Style) */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+    .col-card-3d {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-3d);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
     .col-card-3d:hover {
       transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 1);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--glass-border-hover);
     }
     .col-img-wrap {
       width: 100%;
-      height: 175px;
+      height: 220px;
       overflow: hidden;
-      background: #1b1b1b;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       position: relative;
+      background: #000000;
     }
     .col-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.4s ease;
       display: block;
-      filter: grayscale(100%) contrast(1.08);
-      transition: transform 0.4s ease, filter 0.4s ease;
     }
     .col-card-3d:hover .col-img-wrap img {
       transform: scale(1.06);
-      filter: grayscale(80%) contrast(1.12);
     }
     .col-body-wrap {
-      padding: 1.5rem 1.65rem 1.65rem;
+      padding: 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
     }
     .col-badge {
+      display: inline-block;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.68rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #737373;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
       margin-bottom: 0.75rem;
-      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .col-title {
-      font-size: 1.45rem;
-      font-weight: 950;
+      font-size: 1.35rem;
+      font-weight: 900;
       letter-spacing: -0.02em;
       text-transform: uppercase;
-      margin: 0 0 0.75rem;
-      color: #000000;
-      line-height: 1.15;
+      color: #ffffff;
+      margin: 0 0 0.6rem;
     }
     .col-desc {
-      font-size: 0.9rem;
-      color: #525252;
-      line-height: 1.55;
+      font-size: 0.92rem;
+      color: var(--muted);
       margin: 0 0 1.5rem;
+      line-height: 1.6;
     }
     .col-cta {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
+      gap: 0.4rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 800;
       text-transform: uppercase;
-      color: #000000;
-      border-bottom: 2px solid #000000;
-      padding-bottom: 2px;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      transition: gap 0.2s ease, color 0.2s ease;
       align-self: flex-start;
     }
+    .col-cta:hover {
+      gap: 0.7rem;
+      color: #ffffff;
+    }
 
-    /* SECTION 5: RJMEDIA ARCHIVE VAULT (YOUTUBE INTEGRATION) */
+    /* SECTION 7: RJMEDIA ARCHIVE VAULT (YOUTUBE MASTER STAGE) */
     .vault-preview-card {
-      background: var(--surface);
-      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
       border-radius: var(--radius-lg);
-      padding: 2.5rem;
+      padding: clamp(2rem, 4vw, 3.5rem);
       box-shadow: var(--shadow-3d);
     }
     .vault-layout {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.5rem;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 2rem;
       align-items: start;
+      margin-top: 2rem;
     }
     .video-stage-box {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       background: #000000;
       border-radius: var(--radius-md);
       overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.2);
-      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     }
     .video-stage-box iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       border: none;
+      display: block;
     }
     .vault-list {
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.85rem;
     }
     .vault-item {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      padding: 0.9rem 1.15rem;
-      background: #f8f8f8;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: var(--radius-sm);
-      transition: all 0.15s ease;
+      align-items: center;
+      padding: 1.15rem 1.25rem;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .vault-item:hover {
-      background: #ffffff;
-      transform: translateX(4px);
-      box-shadow: var(--shadow-sm);
-      border-color: #000000;
+      transform: translateY(-4px) scale(1.015);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     }
     .vault-item-title {
+      font-size: 0.95rem;
       font-weight: 800;
-      font-size: 0.88rem;
-      color: #000000;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
     }
     .vault-item-meta {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: #737373;
-    }
-
-    /* SECTION 6: SUPPORT & SPONSOR PROGRAMME */
-    .support-card {
-      background: var(--surface);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      padding: clamp(2.5rem, 5vw, 3.5rem);
-      box-shadow: var(--shadow-3d);
-    }
-    .sponsor-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .sponsor-tier-box {
-      background: #f8f8f8;
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: var(--radius-md);
-      padding: 2rem 1.5rem;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.2s ease;
-    }
-    .sponsor-tier-box:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      background: #ffffff;
-      border-color: #000000;
-    }
-    .sponsor-tier-name {
-      font-size: 1.2rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin: 0 0 0.5rem;
-    }
-    .sponsor-perks {
-      list-style: none;
-      padding: 0;
-      margin: 1.25rem 0 1.75rem;
-      font-size: 0.85rem;
-      color: #404040;
-    }
-    .sponsor-perks li {
-      padding: 0.35rem 0;
-      border-bottom: 1px dashed rgba(0,0,0,0.08);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .sponsor-perks li::before {
-      content: '✓';
-      font-weight: 900;
-      color: #000000;
-    }
-
-    /* SECTION 7: COMMUNITY FORUM */
-    .forum-card {
-      background: var(--surface);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      padding: clamp(2.5rem, 4vw, 3.5rem);
-      box-shadow: var(--shadow-3d);
-    }
-    .forum-categories-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin: 2rem 0;
-    }
-    .forum-cat-item {
-      background: #f8f8f8;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem 1.4rem;
-      transition: all 0.15s ease;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .forum-cat-item:hover {
-      background: #ffffff;
-      transform: translateY(-2px);
-      border-color: #000000;
-      box-shadow: var(--shadow-sm);
-    }
-    .forum-cat-name {
-      font-weight: 800;
-      font-size: 0.95rem;
-      color: #000000;
-    }
-    .forum-cat-badge {
-      font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
-      background: #000000;
-      color: #ffffff;
-      padding: 0.2rem 0.5rem;
-      border-radius: 999px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    /* SECTION 8: KEEP THE CONNECTION (BLACK THEME PROJECT SPACE) */
+    /* SECTION 8: KEEP THE CONNECTION (Community Space) */
     .connection-section {
-      padding: 4.5rem 0;
+      padding: 3rem 0;
     }
     .connection-card {
-      background: #050505;
-      color: #ffffff;
-      border: 1px solid #222222;
+      background: linear-gradient(180deg, #0c0d10 0%, #050608 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-lg);
-      padding: clamp(2.5rem, 5vw, 4rem);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+      padding: clamp(2.5rem, 5vw, 4.5rem);
+      box-shadow: var(--shadow-3d);
+      color: #ffffff;
       position: relative;
-      overflow: hidden;
     }
     .connection-kicker {
       font-family: 'JetBrains Mono', monospace;
@@ -707,39 +714,37 @@
       font-weight: 800;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #737373;
+      color: var(--muted);
       display: block;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
     .connection-title {
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 950;
       letter-spacing: -0.03em;
       text-transform: uppercase;
-      line-height: 1;
       margin: 0 0 1.5rem;
     }
     .connection-quote {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #d4d4d4;
-      max-width: 680px;
-      margin: 0 0 2rem;
-      border-left: 2px solid #525252;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      line-height: 1.7;
+      color: #e5e5e5;
+      border-left: 3px solid #ffffff;
       padding-left: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    /* SECTION 9: JUPITER ISLAND (DISCRETE DIVISION) */
+    /* SECTION 9: JUPITER ISLAND (Future Tech Division) */
     .jupiter-section {
-      padding: 2rem 0 5rem;
+      padding: 2rem 0 4rem;
     }
     .jupiter-card {
-      background: linear-gradient(145deg, #181818, #0b0b0b);
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 2.5rem 3rem;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+      background: linear-gradient(145deg, #121316, #070709);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      box-shadow: var(--shadow-3d);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -748,111 +753,117 @@
     }
     .jupiter-kicker {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #8a8a8a;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.4rem;
     }
     .jupiter-title {
-      font-size: 1.75rem;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 950;
       letter-spacing: -0.02em;
       text-transform: uppercase;
-      margin: 0.35rem 0 0.5rem;
+      margin: 0 0 0.5rem;
+      color: #ffffff;
     }
     .jupiter-desc {
-      color: #bebebe;
-      font-size: 0.95rem;
-      max-width: 580px;
-      margin: 0;
+      font-size: 1rem;
+      color: var(--ink-secondary);
+      max-width: 620px;
+      margin: 0 0 1.25rem;
+      line-height: 1.6;
     }
     .jupiter-pills {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.5rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
     }
     .j-pill {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.14);
-      padding: 0.25rem 0.65rem;
-      border-radius: 6px;
-      color: #e5e5e5;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* FOOTER */
+    /* INSTITUTIONAL FOOTER */
     footer {
-      background: #000000;
-      color: #ffffff;
-      padding: 4rem 0 3rem;
-      border-top: 1px solid #222222;
-      font-size: 0.8rem;
+      background: #040405;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-secondary);
+      padding: 4.5rem 0 2.5rem;
+      font-size: 0.88rem;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 2.5rem;
+      gap: 3rem;
       margin-bottom: 3rem;
     }
     .footer-col h5 {
-      font-size: 0.75rem;
-      font-weight: 900;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #ffffff;
-      margin: 0 0 1.25rem;
+      margin: 0 0 1.2rem;
     }
     .footer-col ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      font-size: 0.82rem;
-      color: #8c8c8c;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
     }
-    .footer-col li {
-      margin-bottom: 0.65rem;
+    .footer-col a {
+      color: var(--muted);
+      transition: color 0.15s ease;
     }
     .footer-col a:hover {
       color: #ffffff;
     }
     .footer-bottom {
-      border-top: 1px solid #1f1f1f;
+      border-top: 1px solid var(--rule);
       padding-top: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
-      color: #666666;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
     }
     .footer-rjm {
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: 0.08em;
-      color: #888888;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
     }
 
-    @media (max-width: 1024px) {
-      .stats-grid { grid-template-columns: repeat(3, 1fr); }
-      .collections-grid { grid-template-columns: repeat(2, 1fr); }
-      .sponsor-grid { grid-template-columns: 1fr; }
-      .forum-categories-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 900px) {
       .about-grid, .vault-layout { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .collections-grid, .forum-categories-grid, .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
       .main-nav { display: none; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- MAIN MASTHEAD (STANDALONE ROOM — NO GIANT ECOSYSTEM BANNER) -->
+  <!-- STICKY FROSTED GLASS MASTHEAD (INSTITUTIONAL NAVIGATION — NO DRAPER) -->
   <header class="masthead">
     <div class="wrap masthead-inner">
       <a class="brand-logo" href="./index.html">
@@ -863,15 +874,18 @@
       </a>
 
       <nav class="main-nav" aria-label="Primary Navigation">
-        <a href="#about">ARCHIVE</a>
-        <a href="#forum">COMMUNITY</a>
-        <a href="#support">SUPPORT</a>
+        <a href="#vault">VAULT</a>
         <a href="#collections">COLLECTIONS</a>
+        <a href="#documentaries">DOCUMENTARIES</a>
         <a href="#memory-trails">MEMORY TRAILS</a>
-        <a href="#vault">YOUTUBE</a>
-        <a href="./pages/index.html">PAUL DRAPER</a>
-        <a class="nav-btn" href="./trail-builder.html">TRAIL BUILDER</a>
+        <a href="./forum.html">COMMUNITY</a>
+        <a href="#support">SUPPORT</a>
       </nav>
+
+      <a class="yt-live-btn" href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">
+        <span class="yt-live-dot"></span>
+        <span>YOUTUBE @RJMmedia-uk ↗</span>
+      </a>
     </div>
   </header>
 
@@ -880,21 +894,21 @@
     <!-- SECTION 1: HERO -->
     <section class="hero-section">
       <div class="hero-card">
-        <span class="hero-kicker">INDEPENDENT DIGITAL ARCHIVE &amp; PUBLIC PLATFORM • EST. 2001</span>
+        <span class="hero-kicker">INDEPENDENT DIGITAL ARCHIVE &amp; BROADCAST PRESERVATION • EST. 2001</span>
         <h1 class="hero-title">RJMEDIA DIGITAL ARCHIVE</h1>
         <div class="hero-subtitle">REMEMBER THE SOUND</div>
         <p class="hero-desc">
-          Preserving music history, live recordings, broadcast recordings, archive footage and community memories.
+          Preserving music history, live recordings, broadcast archives, band documentaries and cultural film. Rescuing deteriorating physical tapes, rare concert performances and independent music archives for public discovery.
         </p>
         <div class="hero-actions">
-          <a class="btn-3d btn-3d-primary" href="#collections">Explore Archive ↓</a>
-          <a class="btn-3d btn-3d-secondary" href="#support">Support RJMedia →</a>
+          <a class="btn-3d btn-3d-primary" href="#vault">Watch YouTube Vault ↓</a>
+          <a class="btn-3d btn-3d-secondary" href="#collections">Explore Collections →</a>
           <a class="btn-3d btn-3d-secondary" href="./forum.html">Community Forum →</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: LIVE STATISTICS -->
+    <!-- SECTION 2: LIVE STATISTICS (Modern 3D Cards) -->
     <section class="stats-section" aria-label="Archive Statistics">
       <div class="stats-grid">
         <div class="stat-card">
@@ -938,12 +952,12 @@
             <span class="section-kicker">ABOUT RJMEDIA • PRESERVATION, DISCOVERY &amp; COMMUNITY</span>
             <h2 class="section-title">ARCHIVE MISSION</h2>
             <p>
-              RJMedia Digital Archive preserves music history, live recordings, broadcast recordings, archive footage, and community memories for public discovery.
+              RJMedia Digital Archive preserves music history, live recordings, broadcast tapes, archive footage, and community memories for open public discovery.
             </p>
             <p>
-              Built across 25 years of independent preservation (2001–2026), RJMedia rescues deteriorating physical tapes, broadcast transmissions, lost print features, and retired fan websites so musical and cultural history stays freely accessible.
+              Built across 25 years of independent preservation (2001–2026), RJMedia digitises deteriorating analog media, unreleased soundboard mixes, and broadcast transmissions so cultural and musical history is never lost to link-rot or discarded physical tape vaults.
             </p>
-            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #525252; text-transform: uppercase; letter-spacing: 0.1em;">
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #a3a3a3; text-transform: uppercase; letter-spacing: 0.12em;">
               Created by RJM
             </p>
           </div>
@@ -951,29 +965,29 @@
           <div class="about-pillars">
             <div class="pillar-box">
               <h4>01 // Preservation</h4>
-              <p>Digitising VHS, cassette, DAT, and broadcast sessions into enduring archival masters.</p>
+              <p>Digitising Betacam SP, VHS, cassette, DAT, and broadcast feeds into pristine archival masters.</p>
             </div>
             <div class="pillar-box">
               <h4>02 // Discovery</h4>
-              <p>Connecting recordings, broadcasts, and timelines through Memory Trails™ and open indexing.</p>
+              <p>Connecting recordings, broadcast timelines, and historical contexts through Memory Trails™ and open indexing.</p>
             </div>
             <div class="pillar-box">
               <h4>03 // Community</h4>
-              <p>Sustaining listener forums, lost media search requests, and shared historical memory.</p>
+              <p>Sustaining listener forums, lost media searches, tape transfers, and shared independent music history.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: COMMUNITY FORUM (COMMUNITY) -->
+    <!-- SECTION 4: COMMUNITY FORUM (COMMUNITY) -->
     <section class="section-block" id="forum">
       <div class="forum-card">
         <div class="section-header">
           <span class="section-kicker">PUBLIC BOARDS • 9 DEDICATED ARCHIVE CATEGORIES</span>
           <h2 class="section-title">Community Forum</h2>
         </div>
-        <p style="color: #404040; max-width: 740px; font-size: 1.05rem;">
+        <p style="color: var(--muted); max-width: 740px; font-size: 1.05rem;">
           Join archive discussions, submit broadcast requests, help track down lost recordings, and connect with listeners across nine dedicated boards:
         </p>
 
@@ -990,47 +1004,47 @@
             <span class="forum-cat-name">Lost Recordings</span>
             <span class="forum-cat-badge">Board 03</span>
           </a>
-          <a href="./forum.html#paul-draper-archive" class="forum-cat-item">
-            <span class="forum-cat-name">Paul Draper Archive</span>
-            <span class="forum-cat-badge">Board 04</span>
-          </a>
           <a href="./forum.html#live-music" class="forum-cat-item">
-            <span class="forum-cat-name">Live Music</span>
-            <span class="forum-cat-badge">Board 05</span>
+            <span class="forum-cat-name">Live Music &amp; Gigs</span>
+            <span class="forum-cat-badge">Board 04</span>
           </a>
           <a href="./forum.html#broadcast-history" class="forum-cat-item">
             <span class="forum-cat-name">Broadcast History</span>
-            <span class="forum-cat-badge">Board 06</span>
+            <span class="forum-cat-badge">Board 05</span>
           </a>
           <a href="./forum.html#community-support" class="forum-cat-item">
             <span class="forum-cat-name">Community Support</span>
-            <span class="forum-cat-badge">Board 07</span>
+            <span class="forum-cat-badge">Board 06</span>
           </a>
           <a href="./forum.html#technology-discussion" class="forum-cat-item">
             <span class="forum-cat-name">Technology Discussion</span>
-            <span class="forum-cat-badge">Board 08</span>
+            <span class="forum-cat-badge">Board 07</span>
           </a>
           <a href="./forum.html#announcements" class="forum-cat-item">
             <span class="forum-cat-name">Announcements</span>
+            <span class="forum-cat-badge">Board 08</span>
+          </a>
+          <a href="./forum.html#tape-restorations" class="forum-cat-item">
+            <span class="forum-cat-name">Tape Restorations</span>
             <span class="forum-cat-badge">Board 09</span>
           </a>
         </div>
 
         <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
           <a class="btn-3d btn-3d-primary" href="./forum.html">Open Community Forum Landing Page →</a>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #525252;">148+ Community Members · 25+ Years Connected</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--muted);">148+ Community Members · 25+ Years Connected</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: SUPPORT RJMEDIA & SPONSORSHIP PROGRAMME (SUPPORT) -->
+    <!-- SECTION 5: SUPPORT RJMEDIA & SPONSOR PROGRAMME (SUPPORT) -->
     <section class="section-block" id="support">
       <div class="support-card">
         <div class="section-header">
           <span class="section-kicker">INDEPENDENTLY OPERATED &amp; COMMUNITY SUPPORTED</span>
           <h2 class="section-title">Support RJMedia &amp; Sponsor Programme</h2>
         </div>
-        <p style="color: #404040; max-width: 780px; font-size: 1.05rem; margin-bottom: 2rem;">
+        <p style="color: var(--muted); max-width: 780px; font-size: 1.05rem; margin-bottom: 2rem;">
           RJMedia Digital Archive is independently run and community supported. Donations, sponsorships, equipment grants, and partnerships fund tape transfers, restoration pipelines, and open public access.
         </p>
 
@@ -1040,7 +1054,7 @@
             <div>
               <span class="col-badge">Direct Support</span>
               <h3 class="sponsor-tier-name">Support RJMedia</h3>
-              <p style="font-size: 0.88rem; color: #525252;">Five direct ways to sustain independent preservation:</p>
+              <p style="font-size: 0.88rem; color: var(--muted);">Five direct ways to sustain independent preservation:</p>
               <ul class="sponsor-perks">
                 <li><strong>Donate</strong> — fund daily archive operations</li>
                 <li><strong>Sponsor</strong> — underwrite specific collections</li>
@@ -1053,11 +1067,11 @@
           </div>
 
           <!-- Column 2: Sponsor Programme Visibility -->
-          <div class="sponsor-tier-box" style="border-color: #000000; background: #ffffff;">
+          <div class="sponsor-tier-box" style="border-color: rgba(255, 255, 255, 0.25); background: linear-gradient(145deg, #222222, #101010);">
             <div>
-              <span class="col-badge" style="color: #000000;">Sponsorship Programme</span>
+              <span class="col-badge" style="background:#ffffff; color:#000000;">Sponsorship Programme</span>
               <h3 class="sponsor-tier-name">Sponsor Benefits</h3>
-              <p style="font-size: 0.88rem; color: #525252;">Archive sponsors receive visible, institutional recognition across the platform:</p>
+              <p style="font-size: 0.88rem; color: var(--muted);">Archive sponsors receive visible, institutional recognition across the platform:</p>
               <ul class="sponsor-perks">
                 <li>Homepage recognition</li>
                 <li>Sponsor directory listings</li>
@@ -1075,7 +1089,7 @@
             <div>
               <span class="col-badge">Partners &amp; Patrons</span>
               <h3 class="sponsor-tier-name">Partner With RJMedia</h3>
-              <p style="font-size: 0.88rem; color: #525252;">Ideal for record labels, studios, audio hardware makers, and cultural foundations:</p>
+              <p style="font-size: 0.88rem; color: var(--muted);">Ideal for record labels, studios, audio hardware makers, and cultural foundations:</p>
               <ul class="sponsor-perks">
                 <li>Sponsor Directory profile page</li>
                 <li>YouTube documentary end-card mentions (1M+ views)</li>
@@ -1089,110 +1103,110 @@
       </div>
     </section>
 
-    <!-- SECTION 5: FEATURED COLLECTIONS (COLLECTIONS) -->
+    <!-- SECTION 6: FEATURED COLLECTIONS (YOUTUBE & ARCHIVE FOCUS — ZERO DRAPER) -->
     <section class="section-block" id="collections">
       <div class="section-header">
-        <span class="section-kicker">CURATED ARCHIVE CATALOGUE</span>
+        <span class="section-kicker">CURATED ARCHIVE CATALOGUE • 6 CORE DIVISIONS</span>
         <h2 class="section-title">Featured Collections</h2>
       </div>
 
       <div class="collections-grid">
-        <!-- 1. Paul Draper Archive -->
+        <!-- 1. Live Music & Festival Vault -->
         <article class="col-card-3d">
           <div class="col-img-wrap">
-            <img src="./assets/images/indexpic.jpg" alt="Paul Draper Archive">
+            <img src="./assets/images/paul-live-lespaul.jpg" alt="Live Music &amp; Festival Vault">
           </div>
           <div class="col-body-wrap">
             <div>
-              <span class="col-badge">2003 — 2027 · Dedicated Collection</span>
-              <h3 class="col-title">Paul Draper Archive</h3>
+              <span class="col-badge">1984 — 2026 · Soundboards &amp; Concerts</span>
+              <h3 class="col-title">Live Music &amp; Festivals</h3>
               <p class="col-desc">
-                12-page collection: 35 news logs (2003–2012), 38 fan forum Q&amp;As, solo discography, and the 1 May 2027 Blackpool Winter Gardens announcement.
+                Full concert captures, restored soundboard audio, and festival reels: The Smiths Rockpalast '84, Brixton Academy '98, Glastonbury, and Reading Festival.
               </p>
             </div>
-            <a class="col-cta" href="./pages/index.html">View Archive →</a>
+            <a class="col-cta" href="./youtube.html">View Vault →</a>
           </div>
         </article>
 
-        <!-- 2. Mansun Archive -->
-        <article class="col-card-3d">
-          <div class="col-img-wrap">
-            <img src="./assets/images/glam_1_big.jpg" alt="Mansun Archive">
-          </div>
-          <div class="col-body-wrap">
-            <div>
-              <span class="col-badge">1995 — 2003 · Catalogue &amp; Rarities</span>
-              <h3 class="col-title">Mansun Archive</h3>
-              <p class="col-desc">
-                Numbered EPs, singles chart history, studio reference CDs, John Peel sessions, Anton Corbijn shoots, and complete album liner notes.
-              </p>
-            </div>
-            <a class="col-cta" href="./pages/mansun-albums.html">View Archive →</a>
-          </div>
-        </article>
-
-        <!-- 3. Live Music Archive -->
-        <article class="col-card-3d">
-          <div class="col-img-wrap">
-            <img src="./assets/images/paul-live-lespaul.jpg" alt="Live Music Archive">
-          </div>
-          <div class="col-body-wrap">
-            <div>
-              <span class="col-badge">1984 — 2026 · Concert Captures</span>
-              <h3 class="col-title">Live Music Archive</h3>
-              <p class="col-desc">
-                Full concert captures and front-row recordings: The Smiths Rockpalast '84, Brixton Academy '98, Glastonbury sets, and Reading Festival '99.
-              </p>
-            </div>
-            <a class="col-cta" href="./youtube.html">View Archive →</a>
-          </div>
-        </article>
-
-        <!-- 4. Broadcast Archive -->
+        <!-- 2. Broadcast & Television Archive -->
         <article class="col-card-3d">
           <div class="col-img-wrap">
             <img src="./assets/images/rocksound2000.jpg" alt="Broadcast Archive">
           </div>
           <div class="col-body-wrap">
             <div>
-              <span class="col-badge">1970 — 2026 · Radio, TV &amp; Print</span>
-              <h3 class="col-title">Broadcast Archive</h3>
+              <span class="col-badge">1970 — 2026 · Radio, TV &amp; In-Studio</span>
+              <h3 class="col-title">Broadcast &amp; TV Archive</h3>
               <p class="col-desc">
-                Restored television sessions, BBC Radio broadcasts, Later... with Jools Holland performances, and archived music press features.
+                Restored television performances, BBC Radio sessions, Channel 4 The Word, Later... with Jools Holland, and archived broadcast master tapes.
               </p>
             </div>
-            <a class="col-cta" href="./pages/press-layout.html">View Archive →</a>
+            <a class="col-cta" href="./youtube.html">View Broadcasts →</a>
           </div>
         </article>
 
-        <!-- 5. Documentary Archive -->
-        <article class="col-card-3d">
+        <!-- 3. Band Documentaries & Specials -->
+        <article class="col-card-3d" id="documentaries">
           <div class="col-img-wrap">
             <img src="./assets/images/paul-vintage-mic.jpg" alt="Documentary Archive">
           </div>
           <div class="col-body-wrap">
             <div>
-              <span class="col-badge">Archive Signal · Film &amp; Docs</span>
-              <h3 class="col-title">Documentary Archive</h3>
+              <span class="col-badge">Archive Signal · Feature Films</span>
+              <h3 class="col-title">Music Documentaries</h3>
               <p class="col-desc">
-                Long-form music documentaries and cultural profiles including Peter Green: A Hard Road (179K+ views) and rare band retrospectives.
+                Long-form music documentaries and artist retrospectives, including <em>Peter Green: A Hard Road</em> (179,000+ views) and rare independent music films.
               </p>
             </div>
-            <a class="col-cta" href="./youtube.html">View Archive →</a>
+            <a class="col-cta" href="./youtube.html">Watch Films →</a>
           </div>
         </article>
 
-        <!-- 6. Community Stories -->
+        <!-- 4. Lost Media & Tape Transfers -->
         <article class="col-card-3d">
           <div class="col-img-wrap">
-            <img src="./assets/images/six-soundmasters-ref.jpg" alt="Community Stories">
+            <img src="./assets/images/six-soundmasters-ref.jpg" alt="Tape Transfers">
           </div>
           <div class="col-body-wrap">
             <div>
-              <span class="col-badge">2001 — 2026 · Listener Memory</span>
+              <span class="col-badge">Analog Vault · Betacam SP &amp; DAT</span>
+              <h3 class="col-title">Lost Media &amp; Tapes</h3>
+              <p class="col-desc">
+                Rescuing degrading physical media: Betacam SP studio master reels, unreleased soundboard mixes, lost demo sessions, and fan-captured tapes.
+              </p>
+            </div>
+            <a class="col-cta" href="./youtube.html">Explore Transfers →</a>
+          </div>
+        </article>
+
+        <!-- 5. 90s Alternative & Britpop Era -->
+        <article class="col-card-3d">
+          <div class="col-img-wrap">
+            <img src="./assets/images/glam_1_big.jpg" alt="90s Alternative Archive">
+          </div>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">1990 — 2003 · Independent Scene</span>
+              <h3 class="col-title">90s Alternative Archive</h3>
+              <p class="col-desc">
+                In-depth preservation of the 1990s UK and international alternative movement: John Peel sessions, club tours, rare B-sides, and music press articles.
+              </p>
+            </div>
+            <a class="col-cta" href="./youtube.html">Explore Era →</a>
+          </div>
+        </article>
+
+        <!-- 6. Community Recoveries & Fan Footage -->
+        <article class="col-card-3d">
+          <div class="col-img-wrap">
+            <img src="./assets/images/draposound-studio-bw.jpg" alt="Community Stories">
+          </div>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">2001 — 2026 · Listener History</span>
               <h3 class="col-title">Community Stories</h3>
               <p class="col-desc">
-                Fan-contributed concert memories, lost tape recoveries, collector histories, and independent community discussions across 25 years.
+                Listener-contributed concert bootlegs, audience recordings, recovered cassette tapes, and shared cultural memories from 25 years of community preservation.
               </p>
             </div>
             <a class="col-cta" href="./forum.html">View Stories →</a>
@@ -1201,14 +1215,14 @@
       </div>
     </section>
 
-    <!-- SECTION 6: MEMORY TRAILS™ PROTOTYPE (DIRECTLY UNDERNEATH FEATURED COLLECTIONS AND ABOVE ARCHIVE VAULT) -->
+    <!-- SECTION 7: MEMORY TRAILS™ PROTOTYPE (DIRECTLY UNDERNEATH FEATURED COLLECTIONS AND ABOVE ARCHIVE VAULT) -->
     <section class="section-block" id="memory-trails">
       <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
         <div>
           <span class="section-kicker">HISTORICAL INTELLIGENCE • STORY → TIMELINE → DISCOVERY → CONTEXT</span>
           <h2 class="section-title" style="margin-bottom:0.35rem;">Memory Trails™ Prototype</h2>
-          <p style="color:#404040; max-width:740px; margin:0; font-size:1.05rem;">
-            This prototype creates the first version of the feature directly inside the website. Instead of <em>Search → Result</em> or <em>Video → Related Videos</em>, it becomes <strong>Story → Timeline → Discovery → Context</strong>. Loaded dynamically from <code>/assets/data/memory-trails.json</code>.
+          <p style="color:var(--muted); max-width:740px; margin:0; font-size:1.05rem;">
+            This prototype transforms content exploration from simple video lists into an interactive journey: <strong>Story → Timeline → Discovery → Context</strong>. Loaded dynamically from <code>/assets/data/memory-trails.json</code>.
           </p>
         </div>
         <a class="btn-3d btn-3d-primary" href="./trail-builder.html">Open Trail Builder AI →</a>
@@ -1222,12 +1236,12 @@
         <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
           <div>
             <span class="section-kicker">AI DISCOVERY LAYER • HIDDEN CONNECTIONS ACROSS TIME</span>
-            <h3 style="font-size:1.6rem; font-weight:950; text-transform:uppercase; margin:0; letter-spacing:-0.02em;">Memory Signals™</h3>
-            <p style="color:#525252; margin:0.35rem 0 0; font-size:0.95rem; max-width:680px;">
-              Instead of recommending content based on popularity (<em>Most Viewed</em>), the AI identifies unusual relationships across venues, broadcast dates, festivals, producers, and press.
+            <h3 style="font-size:1.6rem; font-weight:950; text-transform:uppercase; margin:0; letter-spacing:-0.02em; color:#ffffff;">Memory Signals™</h3>
+            <p style="color:var(--muted); margin:0.35rem 0 0; font-size:0.95rem; max-width:680px;">
+              Instead of recommending videos by click-rate or popularity, the AI identifies contextual resonance across shared venues, broadcast dates, festival lineups, and producers.
             </p>
           </div>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:800; color:#404040;">4 Active Signals Detected</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; font-weight:800; color:#ffffff;">4 Active Signals Detected</span>
         </div>
 
         <div class="memory-signals-container">
@@ -1235,31 +1249,31 @@
           <article class="memory-signal-card">
             <div>
               <span class="signal-badge">⚡ Broadcast Convergence</span>
-              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase;">BBC Session &amp; Festival Resonance</h4>
-              <p style="font-size:0.9rem; color:#404040; line-height:1.55; margin:0;">
-                This recording was broadcast on the same weekend as a recovered BBC session found elsewhere in the archive.
+              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase; color:#ffffff;">BBC Session &amp; Festival Resonance</h4>
+              <p style="font-size:0.9rem; color:var(--ink-secondary); line-height:1.6; margin:0;">
+                This concert recording was broadcast on the exact weekend that a recovered BBC radio session took place elsewhere in the UK archive.
               </p>
               <div class="signal-connection-tags">
                 <span class="signal-tag">Same Broadcaster</span>
-                <span class="signal-tag">Oct 1995</span>
+                <span class="signal-tag">BBC Radio 1</span>
                 <span class="signal-tag">John Peel Session</span>
               </div>
             </div>
-            <a href="./pages/mansun-mp3-vault.html" class="col-cta">Explore Connection →</a>
+            <a href="./youtube.html" class="col-cta">Explore Connection →</a>
           </article>
 
           <!-- Signal 2 -->
           <article class="memory-signal-card">
             <div>
               <span class="signal-badge">⚡ Venue Footprint</span>
-              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase;">Brixton Academy Soundmasters Inlay</h4>
-              <p style="font-size:0.9rem; color:#404040; line-height:1.55; margin:0;">
-                Filmed at the same venue (Brixton Academy) 3 days after unreleased soundboard monitor mixes were logged during the Six Tour.
+              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase; color:#ffffff;">Brixton Academy Soundmasters Inlay</h4>
+              <p style="font-size:0.9rem; color:var(--ink-secondary); line-height:1.6; margin:0;">
+                Filmed at Brixton Academy just 3 days after unreleased soundboard monitor mixes were logged during the autumn 1998 national tour.
               </p>
               <div class="signal-connection-tags">
                 <span class="signal-tag">Same Venue</span>
                 <span class="signal-tag">Brixton Academy</span>
-                <span class="signal-tag">Oct 1998</span>
+                <span class="signal-tag">October 1998</span>
               </div>
             </div>
             <a href="./youtube.html" class="col-cta">Explore Connection →</a>
@@ -1268,35 +1282,35 @@
           <!-- Signal 3 -->
           <article class="memory-signal-card">
             <div>
-              <span class="signal-badge">⚡ Solo Continuity</span>
-              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase;">Chester Premiere to Blackpool 2027</h4>
-              <p style="font-size:0.9rem; color:#404040; line-height:1.55; margin:0;">
-                The 2014 Chester world premiere filmed by RJM links directly to the newly confirmed Saturday 1 May 2027 Blackpool Winter Gardens live return.
+              <span class="signal-badge">⚡ Festival Timeline Lineage</span>
+              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase; color:#ffffff;">Glastonbury &amp; Reading Festival '99</h4>
+              <p style="font-size:0.9rem; color:var(--ink-secondary); line-height:1.6; margin:0;">
+                Connects restored festival master footage across the legendary 1999 summer circuit, showing comparative stage setups and soundboard acoustics.
               </p>
               <div class="signal-connection-tags">
-                <span class="signal-tag">Live Premiere</span>
-                <span class="signal-tag">Kscope Solo Era</span>
-                <span class="signal-tag">1 May 2027</span>
+                <span class="signal-tag">Festival Circuit</span>
+                <span class="signal-tag">Broadcast Archive</span>
+                <span class="signal-tag">Summer 1999</span>
               </div>
             </div>
-            <a href="./pages/draper-news.html" class="col-cta">Explore Connection →</a>
+            <a href="./youtube.html" class="col-cta">Explore Connection →</a>
           </article>
 
           <!-- Signal 4 -->
           <article class="memory-signal-card">
             <div>
               <span class="signal-badge">⚡ Archival Graph Echo</span>
-              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase;">38 Fan Q&amp;As &amp; Kleptomania Masters</h4>
-              <p style="font-size:0.9rem; color:#404040; line-height:1.55; margin:0;">
-                Paul Draper's 2006 fan forum responses directly reference the unreleased demos and Grind sessions preserved in the MP3 vault.
+              <h4 style="font-size:1.15rem; font-weight:900; margin:0 0 0.5rem; text-transform:uppercase; color:#ffffff;">Betacam SP &amp; Studio Multitrack Session</h4>
+              <p style="font-size:0.9rem; color:var(--ink-secondary); line-height:1.6; margin:0;">
+                Recovered video camera footage cross-referenced with unreleased studio mixing console notes logged in 1997.
               </p>
               <div class="signal-connection-tags">
-                <span class="signal-tag">Community Q&amp;A</span>
-                <span class="signal-tag">Studio Demos</span>
+                <span class="signal-tag">Studio Masters</span>
+                <span class="signal-tag">Tape Transfer</span>
                 <span class="signal-tag">25-Year Vault</span>
               </div>
             </div>
-            <a href="./pages/draper-qa.html" class="col-cta">Explore Connection →</a>
+            <a href="./youtube.html" class="col-cta">Explore Connection →</a>
           </article>
         </div>
       </div>
@@ -1306,9 +1320,9 @@
         <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
           <div>
             <span class="section-kicker">VISUAL RELATIONSHIP NETWORK • ARCHIVE GRAPH™</span>
-            <h3 style="font-size:1.6rem; font-weight:950; text-transform:uppercase; margin:0; letter-spacing:-0.02em;">Memory Constellations™</h3>
-            <p style="color:#404040; max-width:720px; margin:0.35rem 0 0; font-size:0.95rem;">
-              Hover over any star node to inspect its relationship edges across broadcasts, press, tours, venues, and communities.
+            <h3 style="font-size:1.6rem; font-weight:950; text-transform:uppercase; margin:0; letter-spacing:-0.02em; color:#ffffff;">Memory Constellations™</h3>
+            <p style="color:var(--muted); max-width:720px; margin:0.35rem 0 0; font-size:0.95rem;">
+              Hover over any star node to inspect its relationship edges across broadcasts, live concert recordings, venues, and festival sessions.
             </p>
           </div>
           <a class="btn-3d btn-3d-secondary" href="./trail-builder.html#constellations">Full Intelligence Stack →</a>
@@ -1321,14 +1335,14 @@
               <div style="font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:#a3a3a3; text-transform:uppercase; letter-spacing:0.14em;">
                 ACTIVE CONSTELLATION NODE INSPECTOR
               </div>
-              <div id="constellationInspectorTitle" style="font-weight:900; font-size:1.1rem; margin-top:0.15rem;">
-                Mansun (BAND • CENTRE NODE)
+              <div id="constellationInspectorTitle" style="font-weight:900; font-size:1.1rem; margin-top:0.15rem; color:#ffffff;">
+                Live Music Archive (CENTRE NODE)
               </div>
               <div id="constellationInspectorDesc" style="font-size:0.86rem; color:#d4d4d4;">
-                Hover over any star node in the constellation above to highlight its relationship edges, or click a node to open its archive page.
+                Hover over any star node in the constellation above to highlight its relationship edges across YouTube concert tapes and broadcast masters.
               </div>
             </div>
-            <a id="constellationInspectorLink" href="./pages/index.html" class="btn-3d" style="background:#ffffff; color:#000000; padding:0.65rem 1.15rem; font-size:0.75rem;">
+            <a id="constellationInspectorLink" href="./youtube.html" class="btn-3d" style="background:#ffffff; color:#000000; padding:0.65rem 1.15rem; font-size:0.75rem;">
               Open Archive Node →
             </a>
           </div>
@@ -1336,7 +1350,7 @@
       </div>
     </section>
 
-    <!-- SECTION 7: RJMEDIA ARCHIVE VAULT (YOUTUBE) -->
+    <!-- SECTION 8: RJMEDIA ARCHIVE VAULT (YOUTUBE MASTER STAGE) -->
     <section class="section-block" id="vault">
       <div class="vault-preview-card">
         <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
@@ -1344,8 +1358,9 @@
             <span class="section-kicker">STREAMING VAULT • 3,200+ SUBSCRIBERS • 1,001,987+ VIEWS</span>
             <h2 class="section-title">RJMedia Archive Vault</h2>
           </div>
-          <a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 800; background: #000000; color: #ffffff; padding: 0.45rem 0.9rem; border-radius: 999px; display: inline-block;">
-            3,200+ Subscribers · @RJMmedia-uk ↗
+          <a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener" style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5rem 1rem; border-radius: 999px; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 15px rgba(255,255,255,0.3);">
+            <span class="yt-live-dot" style="background:#000000; box-shadow:none;"></span>
+            <span>3,200+ Subscribers · @RJMmedia-uk ↗</span>
           </a>
         </div>
 
@@ -1354,51 +1369,51 @@
             <div class="video-stage-box">
               <iframe src="https://www.youtube.com/embed/ubkpJnoXVeA?rel=0" title="Featured Broadcast: Peter Green A Hard Road" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="margin-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
               <div>
-                <strong style="font-size: 1.05rem; text-transform: uppercase;">Peter Green : A Hard Road</strong>
-                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #525252;">Latest Featured Documentary · 179,000+ Views · 21,134+ Watch Hours</div>
+                <strong style="font-size: 1.15rem; text-transform: uppercase; color: #ffffff;">Peter Green : A Hard Road</strong>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem;">Featured Music Documentary · 179,000+ Views · 21,134+ Watch Hours</div>
               </div>
-              <a class="btn-3d btn-3d-primary" href="./youtube.html">Open Full Video Vault →</a>
+              <a class="btn-3d btn-3d-primary" href="./youtube.html">Open Video Vault →</a>
             </div>
           </div>
 
           <div class="vault-list">
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #525252; margin-bottom: 0.2rem;">
-              LATEST YOUTUBE UPLOADS &amp; RECENT ARCHIVE ADDITIONS
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem;">
+              FEATURED CONCERT TAPES &amp; BROADCAST UPLOADS
             </div>
             <div class="vault-item">
               <div>
                 <div class="vault-item-title">Peter Green : A Hard Road</div>
-                <div class="vault-item-meta">Latest Upload · 179,000+ Views · 28:46 Documentary</div>
+                <div class="vault-item-meta">Full Documentary · 179,000+ Views · 28:46</div>
               </div>
               <a href="./youtube.html" class="col-cta">Watch</a>
             </div>
             <div class="vault-item">
               <div>
                 <div class="vault-item-title">The Smiths — Live Rockpalast 1984 FHD</div>
-                <div class="vault-item-meta">Recent Addition · 14,000+ Views · 71:00 Full Show</div>
+                <div class="vault-item-meta">Broadcast Master · 14,000+ Views · 71:00 Full Set</div>
               </div>
               <a href="./youtube.html" class="col-cta">Watch</a>
             </div>
             <div class="vault-item">
               <div>
-                <div class="vault-item-title">Paul Draper — Solo Discography &amp; 2027 Blackpool Date</div>
-                <div class="vault-item-meta">Recent Archive Addition · 7 Releases + Festival Poster</div>
-              </div>
-              <a href="./pages/draper-gallery.html" class="col-cta">Inspect</a>
-            </div>
-            <div class="vault-item">
-              <div>
                 <div class="vault-item-title">Editors — Glastonbury 2023 Restored Set</div>
-                <div class="vault-item-meta">Latest Video · Broadcast Archive · Full HD</div>
+                <div class="vault-item-meta">Broadcast Archive · Soundboard Master · Full HD</div>
               </div>
               <a href="./youtube.html" class="col-cta">Watch</a>
             </div>
             <div class="vault-item">
               <div>
                 <div class="vault-item-title">The Jesus and Mary Chain — Live Broadcast</div>
-                <div class="vault-item-meta">Recent Addition · Archive Signal Restoration</div>
+                <div class="vault-item-meta">Archive Signal Restoration · Studio Broadcast</div>
+              </div>
+              <a href="./youtube.html" class="col-cta">Watch</a>
+            </div>
+            <div class="vault-item">
+              <div>
+                <div class="vault-item-title">Suede — Live at Royal Albert Hall 1997</div>
+                <div class="vault-item-meta">Unreleased Stereo Broadcast Transfer</div>
               </div>
               <a href="./youtube.html" class="col-cta">Watch</a>
             </div>
@@ -1407,48 +1422,10 @@
       </div>
     </section>
 
-    <!-- SECTION 8: PAUL DRAPER DEDICATED SPOTLIGHT & TRANSITION TO SITE 01 -->
-    <section class="section-block" id="paul-draper">
-      <div style="background: #f5f5f5; border: 1px solid #d8d8d8; border-radius: 20px; padding: clamp(2rem, 4.5vw, 3.5rem); box-shadow: var(--shadow-3d); color: #222222;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.5rem; margin-bottom:1.5rem;">
-          <div>
-            <span class="section-kicker" style="color:#555555;">SITE 01 SPOTLIGHT • DEDICATED FEATURED COLLECTION</span>
-            <h2 class="section-title" style="color:#050505; margin-bottom:0.5rem;">PAUL DRAPER ARCHIVE</h2>
-            <p style="color:#404040; max-width:720px; margin:0; font-size:1.02rem;">
-              Over 25 years of continuous independent preservation: 35 news dispatches (2003–2012), 38 fan forum Q&amp;As, complete Mansun singles &amp; EP discography, all 7 Paul Draper solo album covers, and the newly announced 1 May 2027 <em>Indie By The Sea</em> festival at Winter Gardens Blackpool.
-            </p>
-          </div>
-          <a class="btn-3d" style="background:#050505; color:#ffffff;" href="./pages/index.html">Enter Paul Draper Archive (Light Grey Room) →</a>
-        </div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:1rem; margin-top:2rem;">
-          <div style="background:#ffffff; border:1px solid #d8d8d8; border-radius:12px; overflow:hidden; text-align:center; padding-bottom:0.6rem;">
-            <img src="./assets/images/solo-spooky-action.jpg" alt="Spooky Action" style="width:100%; height:120px; object-fit:cover;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; font-weight:800; display:block; margin-top:0.4rem;">Spooky Action (#19)</span>
-          </div>
-          <div style="background:#ffffff; border:1px solid #d8d8d8; border-radius:12px; overflow:hidden; text-align:center; padding-bottom:0.6rem;">
-            <img src="./assets/images/solo-cult-leader-tactics.jpg" alt="Cult Leader Tactics" style="width:100%; height:120px; object-fit:cover;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; font-weight:800; display:block; margin-top:0.4rem;">Cult Leader Tactics</span>
-          </div>
-          <div style="background:#ffffff; border:1px solid #d8d8d8; border-radius:12px; overflow:hidden; text-align:center; padding-bottom:0.6rem;">
-            <img src="./assets/images/solo-mansun-retold.jpg" alt="Mansun Retold" style="width:100%; height:120px; object-fit:cover;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; font-weight:800; display:block; margin-top:0.4rem;">Mansun Retold (Live)</span>
-          </div>
-          <div style="background:#ffffff; border:1px solid #d8d8d8; border-radius:12px; overflow:hidden; text-align:center; padding-bottom:0.6rem;">
-            <img src="./assets/images/solo-live-at-scala.jpg" alt="Live at Scala" style="width:100%; height:120px; object-fit:cover;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; font-weight:800; display:block; margin-top:0.4rem;">Live at Scala</span>
-          </div>
-          <div style="background:#ffffff; border:1px solid #d8d8d8; border-radius:12px; overflow:hidden; text-align:center; padding-bottom:0.6rem;">
-            <img src="./assets/images/indie-by-the-sea-2027.jpg" alt="Indie By The Sea 2027" style="width:100%; height:120px; object-fit:cover;">
-            <span style="font-family:'JetBrains Mono',monospace; font-size:0.65rem; font-weight:800; display:block; margin-top:0.4rem;">Blackpool 1 May 2027</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 9: KEEP THE CONNECTION (OWN PROJECT SPACE — BLACK THEME) -->
+    <!-- SECTION 9: KEEP THE CONNECTION (COMMUNITY PROJECT SPACE) -->
     <section class="connection-section" id="connection">
       <div class="connection-card">
-        <span class="connection-kicker">DEDICATED PROJECT SPACE • BLACK THEME • COMMUNITY SUPPORT</span>
+        <span class="connection-kicker">COMMUNITY SUPPORT PROJECT • KEEP THE CONNECTION</span>
         <h2 class="connection-title">KEEP THE CONNECTION</h2>
         <div class="connection-quote">
           Hopefully I, and others,<br>
@@ -1459,7 +1436,8 @@
           Take It Easy.
         </div>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a class="btn-3d" style="background:#ffffff; color:#000000;" href="./community.html">Visit Keep The Connection →</a>
+          <a class="btn-3d btn-3d-primary" href="./community.html">Visit Keep The Connection →</a>
+          <a class="btn-3d btn-3d-secondary" href="./forum.html">Community Discussions →</a>
         </div>
       </div>
     </section>
@@ -1471,19 +1449,18 @@
           <span class="jupiter-kicker">FUTURE TECHNOLOGY DIVISION • CREATED BY RJM</span>
           <h3 class="jupiter-title">JUPITER ISLAND</h3>
           <p class="jupiter-desc">
-            Separate future AI and technology division exploring local memory routing, consumer GPU reality, and open-source preservation engineering.
+            Independent technology division exploring local memory engines, consumer GPU VRAM analysis, and AI infrastructure without cloud lock-in.
           </p>
           <div class="jupiter-pills">
             <span class="j-pill">MemoryOS</span>
             <span class="j-pill">Jupiter One</span>
             <span class="j-pill">The Quiet Advisor</span>
-            <span class="j-pill">Research</span>
-            <span class="j-pill">GitHub</span>
             <span class="j-pill">Open Source</span>
+            <span class="j-pill">GitHub</span>
           </div>
         </div>
         <div>
-          <a class="btn-3d" style="background:#ffffff; color:#000000;" href="./jupiter-island.html">Visit Jupiter Island →</a>
+          <a class="btn-3d btn-3d-primary" href="./jupiter-island.html">Visit Jupiter Island →</a>
         </div>
       </div>
     </section>
@@ -1496,23 +1473,23 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="logo-mark" style="margin-bottom: 0.75rem;">
-            <span class="logo-box" style="background:#ffffff; color:#000000;">RJ</span>
-            <span class="logo-text" style="color:#ffffff;">MEDIA</span>
+            <span class="logo-box">RJ</span>
+            <span class="logo-text">MEDIA</span>
           </div>
-          <p style="color: #8a8a8a; line-height: 1.6; max-width: 300px; margin: 0 0 1rem; font-size: 0.85rem;">
-            RJMedia Digital Archive preserves music history, live recordings, digital culture and independent archives.
+          <p style="color: var(--muted); line-height: 1.6; max-width: 300px; margin: 0 0 1rem; font-size: 0.85rem;">
+            RJMedia Digital Archive preserves live recordings, television broadcasts, band documentaries, and independent music history.
           </p>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #8a8a8a;">REMEMBER THE SOUND</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted);">REMEMBER THE SOUND</span>
         </div>
 
         <div class="footer-col">
-          <h5>Featured Collections</h5>
+          <h5>Archive Divisions</h5>
           <ul>
-            <li><a href="./pages/index.html">Paul Draper Archive</a></li>
-            <li><a href="./pages/mansun-albums.html">Mansun Archive</a></li>
-            <li><a href="./youtube.html">Live Music Archive</a></li>
-            <li><a href="./pages/press-layout.html">Broadcast Archive</a></li>
-            <li><a href="./youtube.html">Documentary Archive</a></li>
+            <li><a href="./youtube.html">Live Concert Archive</a></li>
+            <li><a href="./youtube.html">Broadcast &amp; TV Sessions</a></li>
+            <li><a href="./youtube.html">Band Documentaries</a></li>
+            <li><a href="#collections">Lost Media Transfers</a></li>
+            <li><a href="#collections">90s Alternative Scene</a></li>
             <li><a href="./forum.html">Community Stories</a></li>
           </ul>
         </div>
@@ -1520,22 +1497,22 @@
         <div class="footer-col">
           <h5>Community &amp; Support</h5>
           <ul>
-            <li><a href="./forum.html">Community Forum</a></li>
+            <li><a href="./forum.html">Community Forum (9 Boards)</a></li>
             <li><a href="#support">Sponsor Programme</a></li>
-            <li><a href="#support">Donate &amp; Equipment</a></li>
+            <li><a href="#support">Donate &amp; Equipment Support</a></li>
             <li><a href="./community.html">Keep The Connection</a></li>
             <li><a href="mailto:richardmurray2022@gmail.com">Contact RJMedia</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Technology &amp; Intelligence</h5>
+          <h5>Ecosystem Network</h5>
           <ul>
-            <li><a href="./trail-builder.html">Memory Trails &amp; Constellations</a></li>
+            <li><a href="./trail-builder.html">Memory Trails™ Engine</a></li>
+            <li><a href="./pages/index.html">Paul Draper Dedicated Archive ↗</a></li>
             <li><a href="./jupiter-island.html">Jupiter Island (RJM Tech)</a></li>
-            <li><a href="https://github.com/JupiterIsland/memoryos" target="_blank" rel="noopener">MemoryOS</a></li>
-            <li><a href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">Archive Signal</a></li>
-            <li><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">GitHub Repositories</a></li>
+            <li><a href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">Archive Signal (GitHub)</a></li>
+            <li><a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">YouTube @RJMmedia-uk ↗</a></li>
           </ul>
         </div>
       </div>

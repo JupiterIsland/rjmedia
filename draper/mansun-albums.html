@@ -3,10 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mansun Albums &amp; Biography | PaulDraper-Music.co.uk Archive</title>
+  <title>Mansun &amp; Paul Draper Albums &amp; Complete Biography | PaulDraper-Music.co.uk Archive</title>
   <link rel="stylesheet" href="../assets/css/archive.css">
+  <style>
+    .album-detail-card {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 18px;
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .album-detail-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+    }
+    .album-header-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.75rem;
+      align-items: start;
+      margin-bottom: 1.5rem;
+    }
+    .album-cover-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      cursor: pointer;
+      transition: transform 0.25s ease;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .album-cover-img:hover {
+      transform: scale(1.05);
+    }
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.5rem 1.5rem;
+      background: #f8f8f8;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    .track-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+    .track-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #888888;
+      min-width: 24px;
+    }
+    .track-name {
+      font-weight: 600;
+      color: #111111;
+    }
+    .meta-pill {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: #f0f0f0;
+      color: #333333;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    @media (max-width: 600px) {
+      .album-header-grid { grid-template-columns: 1fr; }
+      .album-cover-img { width: 100%; height: auto; max-width: 200px; margin: 0 auto; }
+    }
+  </style>
 </head>
 <body>
+  <!-- DUAL MISSION BAR -->
   <div class="dual-mission-bar" role="region" aria-label="Remember The Sound and Keep The Connection">
     <div class="dual-mission-inner">
       <a class="mission-pill active-mission" href="./index.html">
@@ -21,6 +103,7 @@
       </a>
     </div>
   </div>
+
   <header class="masthead">
     <div class="wrap-narrow nav">
       <a class="brand" href="../index.html"><span class="mark" aria-hidden="true"></span> RJMEDIA / PAUL DRAPER ARCHIVE</a>
@@ -42,146 +125,379 @@
 
   <main class="wrap-narrow">
     <section class="hero-clean">
-      <p class="eyebrow">MANSUN STUDIO LPs (1997–2006) • PAUL DRAPER SOLO ALBUMS &amp; EPs (2016–PRESENT) • BIOGRAPHY</p>
+      <p class="eyebrow">AUTHENTIC GREY HOUSE &amp; PAULDRAPER-MUSIC.CO.UK ARCHIVE • COMPLETE DISCOGRAPHY</p>
       <h1>MANSUN &amp; PAUL DRAPER<br>ALBUMS &amp; BIOGRAPHY</h1>
-      <p class="intro">The complete Mansun studio album and boxset discography (1997–2006), Paul Draper's solo albums &amp; EPs (<em>EP ONE</em>, <em>EP TWO</em>, <em>Spooky Action</em>, <em>Live at Scala</em>, <em>Cult Leader Tactics</em>, <em>Attack of the Grey Lantern: Live at the Ritz</em>, <em>Mansun Retold</em>), original 1998 <em>Six</em> Soundmasters reference scans, and the "Outsider Thing" biography.</p>
+      <p class="intro">
+        The definitive Mansun studio album catalogue (1997–2006) and Paul Draper solo discography (2016–Present), featuring authentic sleeve scans from the original <em>PaulDraper-Music.co.uk</em> and <em>Grey House</em> archives, verified song titles, studio references, and the full "Outsider Thing" band biography.
+      </p>
     </section>
 
     <section class="news-feed">
 
-      <!-- PAUL DRAPER SOLO DISCOGRAPHY -->
-      <article class="news-item">
-        <span class="news-date">2016 — PRESENT • KSCOPE • PAUL DRAPER SOLO DISCOGRAPHY</span>
-        <h2 class="news-title">.: PAUL DRAPER — SOLO ALBUMS, LIVE LPs &amp; EPs :.</h2>
-        <div class="news-body">
-          <p>Following the August 2014 world premiere of <em>"Feeling My Heart Run Slow"</em> at the first Mansun Fan Convention in Chester (filmed and shared by Richard Murray of <em>Paul-Draper.net</em>), Paul Draper launched his acclaimed solo catalogue on Kscope:</p>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(195px, 1fr)); gap:1rem; margin:1.25rem 0;">
-            <div class="photo-card">
-              <img src="../assets/images/solo-mansun-retold.jpg" alt="Paul Draper - Mansun Retold" onclick="openLightbox('../assets/images/solo-mansun-retold.jpg', 'Paul Draper — Mansun Retold')">
-              <div class="cap"><strong>Mansun Retold</strong>Reimagined Mansun classics by Paul Draper.</div>
+      <!-- ========================================== -->
+      <!-- ALBUM 1: ATTACK OF THE GREY LANTERN       -->
+      <!-- ========================================== -->
+      <article class="album-detail-card" id="attack-of-the-grey-lantern">
+        <div class="album-header-grid">
+          <img class="album-cover-img" src="../assets/images/attack.jpg" alt="Mansun — Attack of the Grey Lantern Album Cover" onclick="openLightbox('../assets/images/attack.jpg', 'Mansun — Attack of the Grey Lantern (1997, Parlophone CDPCS7387, UK #1)')">
+          <div>
+            <div style="margin-bottom: 0.5rem;">
+              <span class="meta-pill">17 Feb 1997</span>
+              <span class="meta-pill">Parlophone CDPCS7387</span>
+              <span class="meta-pill" style="background:#000000; color:#ffffff;">UK Official Albums Chart: No. 1</span>
             </div>
-            <div class="photo-card">
-              <img src="../assets/images/solo-grey-lantern-ritz.jpg" alt="Paul Draper - Attack of the Grey Lantern Live at the Ritz" onclick="openLightbox('../assets/images/solo-grey-lantern-ritz.jpg', 'Paul Draper — Attack of the Grey Lantern (Live at the Ritz)')">
-              <div class="cap"><strong>Attack of the Grey Lantern (Live at the Ritz)</strong>Full live performance of the #1 debut album.</div>
+            <h2 style="font-size: 1.8rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">
+              Attack of the Grey Lantern
+            </h2>
+            <p style="color: #555555; margin: 0; font-size: 0.95rem;">
+              <strong>Producer:</strong> Paul Draper · <strong>Engineers:</strong> Ronnie Stone, Mike Hunter · <strong>Studio:</strong> Parr Street Studios, Liverpool
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.92rem; color: #444444; margin-bottom: 1rem;">
+          Mansun's legendary debut concept album. Knocked Blur's self-titled LP off the top of the UK Albums Chart in its debut week.
+        </p>
+
+        <div class="track-grid">
+          <div class="track-item"><span class="track-num">01.</span><span class="track-name">The Chad Who Loved Me</span></div>
+          <div class="track-item"><span class="track-num">02.</span><span class="track-name">Mansun's Only Love Song</span></div>
+          <div class="track-item"><span class="track-num">03.</span><span class="track-name">Taxlo$$</span></div>
+          <div class="track-item"><span class="track-num">04.</span><span class="track-name">You, Who Do You Hate?</span></div>
+          <div class="track-item"><span class="track-num">05.</span><span class="track-name">Wide Open Space</span></div>
+          <div class="track-item"><span class="track-num">06.</span><span class="track-name">Stripper Vicar</span></div>
+          <div class="track-item"><span class="track-num">07.</span><span class="track-name">Disgusting</span></div>
+          <div class="track-item"><span class="track-num">08.</span><span class="track-name">She Makes My Nose Bleed</span></div>
+          <div class="track-item"><span class="track-num">09.</span><span class="track-name">Naked Twister</span></div>
+          <div class="track-item"><span class="track-num">10.</span><span class="track-name">Egg Shaped Fred</span></div>
+          <div class="track-item"><span class="track-num">11.</span><span class="track-name">Dark Mavis</span></div>
+          <div class="track-item"><span class="track-num">12.</span><span class="track-name">An Open Letter To The Lyrical Trainspotter <small style="color:#777;">(Hidden Track)</small></span></div>
+        </div>
+      </article>
+
+      <!-- ========================================== -->
+      <!-- ALBUM 2: SIX                               -->
+      <!-- ========================================== -->
+      <article class="album-detail-card" id="six">
+        <div class="album-header-grid">
+          <img class="album-cover-img" src="../assets/images/mansun-six.jpg" alt="Mansun — Six Album Cover" onclick="openLightbox('../assets/images/mansun-six.jpg', 'Mansun — Six (1998, Parlophone, UK #6)')">
+          <div>
+            <div style="margin-bottom: 0.5rem;">
+              <span class="meta-pill">07 Sep 1998</span>
+              <span class="meta-pill">Parlophone PCS7394</span>
+              <span class="meta-pill" style="background:#000000; color:#ffffff;">UK Official Albums Chart: No. 6</span>
             </div>
-            <div class="photo-card">
-              <img src="../assets/images/solo-cult-leader-tactics.jpg" alt="Paul Draper - Cult Leader Tactics (2022)" onclick="openLightbox('../assets/images/solo-cult-leader-tactics.jpg', 'Paul Draper — Cult Leader Tactics (2022)')">
-              <div class="cap"><strong>Cult Leader Tactics (2022)</strong>Second solo studio album (UK Top 25).</div>
-            </div>
-            <div class="photo-card">
-              <img src="../assets/images/solo-live-at-scala.jpg" alt="Paul Draper - Live at Scala (2018)" onclick="openLightbox('../assets/images/solo-live-at-scala.jpg', 'Paul Draper — Live at Scala (2018)')">
-              <div class="cap"><strong>Live at Scala (2018)</strong>Solo &amp; Mansun live set in London.</div>
-            </div>
-            <div class="photo-card">
-              <img src="../assets/images/solo-spooky-action.jpg" alt="Paul Draper - Spooky Action (2017)" onclick="openLightbox('../assets/images/solo-spooky-action.jpg', 'Paul Draper — Spooky Action (2017, UK #19)')">
-              <div class="cap"><strong>Spooky Action (2017)</strong>Debut solo album (UK Top 20, #19).</div>
-            </div>
-            <div class="photo-card">
-              <img src="../assets/images/solo-ep-two.jpg" alt="Paul Draper - EP TWO (2016)" onclick="openLightbox('../assets/images/solo-ep-two.jpg', 'Paul Draper — EP TWO (Nov 2016)')">
-              <div class="cap"><strong>EP TWO (Nov 2016)</strong>Featuring <em>Friends Make The Worst Enemies</em>.</div>
-            </div>
-            <div class="photo-card">
-              <img src="../assets/images/paul-draper-ep-one.jpg" alt="Paul Draper - EP ONE (June 2016)" onclick="openLightbox('../assets/images/paul-draper-ep-one.jpg', 'Paul Draper — EP ONE (June 2016, feat. Feeling My Heart Run Slow)')">
-              <div class="cap"><strong>EP ONE (Jun 2016)</strong>Lead track: <em>Feeling My Heart Run Slow</em>.</div>
+            <h2 style="font-size: 1.8rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">
+              Six
+            </h2>
+            <p style="color: #555555; margin: 0; font-size: 0.95rem;">
+              <strong>Producers:</strong> Paul Draper, Mark 'Spike' Stent · <strong>Cover Art:</strong> Max Schindler / Paul Draper
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.92rem; color: #444444; margin-bottom: 1rem;">
+          Mansun's uncompromising masterpiece of interlinked symphonic rock. Over thirty distinct musical movements constructed across thirteen tracks.
+        </p>
+
+        <div class="track-grid">
+          <div class="track-item"><span class="track-num">01.</span><span class="track-name">Six</span></div>
+          <div class="track-item"><span class="track-num">02.</span><span class="track-name">Negative</span></div>
+          <div class="track-item"><span class="track-num">03.</span><span class="track-name">Shotgun</span></div>
+          <div class="track-item"><span class="track-num">04.</span><span class="track-name">Inverse Midas</span></div>
+          <div class="track-item"><span class="track-num">05.</span><span class="track-name">Anti Everything</span></div>
+          <div class="track-item"><span class="track-num">06.</span><span class="track-name">Fall Out</span></div>
+          <div class="track-item"><span class="track-num">07.</span><span class="track-name">Serotonin</span></div>
+          <div class="track-item"><span class="track-num">08.</span><span class="track-name">Cancer</span></div>
+          <div class="track-item"><span class="track-num">09.</span><span class="track-name">Witness To A Murder (Part Two)</span></div>
+          <div class="track-item"><span class="track-num">10.</span><span class="track-name">Television</span></div>
+          <div class="track-item"><span class="track-num">11.</span><span class="track-name">Special / Blown It (Delete As Appropriate)</span></div>
+          <div class="track-item"><span class="track-num">12.</span><span class="track-name">Legacy</span></div>
+          <div class="track-item"><span class="track-num">13.</span><span class="track-name">Being A Girl (Part One and Two)</span></div>
+        </div>
+
+        <!-- Studio Artifacts -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem;">
+          <div class="photo-card" style="background:#f8f8f8; border-radius:12px; overflow:hidden; border:1px solid #e0e0e0;">
+            <img src="../assets/images/six-soundmasters-ref.jpg" style="aspect-ratio:16/9; object-fit:contain; background:#ffffff; width:100%; cursor:pointer;" alt="Mansun album '98 The Soundmasters CD Ref 20/6/1998" onclick="openLightbox('../assets/images/six-soundmasters-ref.jpg', 'Mansun — Six Soundmasters CD Ref (20/06/1998) showing working titles Bobble Hat, Funkofski &amp; Pentagram')">
+            <div class="cap" style="padding:0.75rem 1rem; font-size:0.8rem;">
+              <strong>The Soundmasters CD Ref (20/06/1998)</strong>Original Parlophone inlay with working titles <em>Bobble Hat</em>, <em>Funkofski</em>, and <em>Pentagram</em>.
             </div>
           </div>
-          <p style="margin-top:1rem;">
-            <a class="btn" href="javascript:void(0)" onclick="openLightbox('../assets/images/paul-draper-solo-discography.jpg', 'Paul Draper — Complete Solo Discography Overview')">View Full Solo Discography Sheet →</a>
-          </p>
-        </div>
-      </article>
-
-      <!-- ALBUM 1: ATTACK OF THE GREY LANTERN -->
-      <article class="news-item">
-        <span class="news-date">17/02/1997 • PARLOPHONE (CDPCS7387) • UK CHART POSITION: #1</span>
-        <h2 class="news-title">.: ATTACK OF THE GREY LANTERN :.</h2>
-        <div class="news-body">
-          <p><strong>Released:</strong> 17 February 1997 · <strong>Label:</strong> Parlophone · <strong>Producer:</strong> Paul Draper · <strong>UK Official Albums Chart:</strong> No. 1</p>
-          <p><strong>Tracklisting:</strong><br>
-          01. The Chad Who Loved Me · 02. Mansun's Only Love Song · 03. Taxlo$$ · 04. You, Who Do You Hate? · 05. Wide Open Space · 06. Stripper Vicar · 07. Disgusting · 08. She Makes My Nose Bleed · 09. Naked Twister · 10. Egg Shaped Fred · 11. Dark Mavis · 12. An Open Letter To The Lyrical Trainspotter (hidden bonus track + Parr Street Studios "Duncan Ferguson" subliminal chant).</p>
-          <p><a class="btn" href="./mansun-mp3-vault.html">Stream Grey Lantern Era Tracks in Vault →</a></p>
-        </div>
-      </article>
-
-      <!-- ALBUM 2: SIX -->
-      <article class="news-item">
-        <span class="news-date">07/09/1998 • PARLOPHONE • UK CHART POSITION: #6</span>
-        <h2 class="news-title">.: SIX (PLUS 20/06/1998 SOUNDMASTERS MASTERING REFERENCE &amp; STUDIO NOTES) :.</h2>
-        <div class="news-body">
-          <p><strong>Released:</strong> 7 September 1998 · <strong>Label:</strong> Parlophone · <strong>Producer:</strong> Paul Draper / Mark 'Spike' Stent · <strong>UK Official Albums Chart:</strong> No. 6</p>
-          <p><strong>Tracklisting:</strong><br>
-          01. Six · 02. Negative · 03. Shotgun · 04. Inverse Midas · 05. Anti Everything · 06. Fall Out · 07. Serotonin · 08. Cancer · 09. Witness To A Murder (Part Two) · 10. Television · 11. Special / Blown It (Delete As Appropriate) · 12. Legacy · 13. Being A Girl (Part One &amp; Part Two).</p>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.25rem 0;">
-            <div class="photo-card">
-              <img src="../assets/images/six-soundmasters-ref.jpg" style="aspect-ratio:16/9; object-fit:contain; background:#fff;" alt="Mansun album '98 The Soundmasters CD Ref 20/6/1998" onclick="openLightbox('../assets/images/six-soundmasters-ref.jpg', 'Mansun — album \'98 (Six) The Soundmasters Parlophone CD Ref (20/06/1998) showing working titles Bobble Hat, Funkofski & Pentagram')">
-              <div class="cap"><strong>The Soundmasters CD Ref (20/06/1998)</strong>Original Parlophone reference inlay with working titles <em>Bobble Hat</em>, <em>Funkofski</em>, and <em>Pentagram</em> + handwritten live setlist notes.</div>
-            </div>
-            <div class="photo-card">
-              <img src="../assets/images/six-handwritten-notes.jpg" style="aspect-ratio:16/9; object-fit:contain; background:#fff;" alt="Paul Draper handwritten Six sequencing and edit notes" onclick="openLightbox('../assets/images/six-handwritten-notes.jpg', 'Paul Draper — Handwritten sequencing and mix edit notes for Six (1998)')">
-              <div class="cap"><strong>Handwritten Sequencing &amp; Edit Notes</strong>Original studio notes: <em>"1) shotgun as third trk? 2) cut mid 8 + last ch from bobblehat 3) edit funkofski - sugar plum reprise... cut bowie bit"</em>.</div>
+          <div class="photo-card" style="background:#f8f8f8; border-radius:12px; overflow:hidden; border:1px solid #e0e0e0;">
+            <img src="../assets/images/six-handwritten-notes.jpg" style="aspect-ratio:16/9; object-fit:contain; background:#ffffff; width:100%; cursor:pointer;" alt="Paul Draper handwritten Six sequencing and edit notes" onclick="openLightbox('../assets/images/six-handwritten-notes.jpg', 'Paul Draper — Handwritten sequencing and mix edit notes for Six (1998)')">
+            <div class="cap" style="padding:0.75rem 1rem; font-size:0.8rem;">
+              <strong>Handwritten Sequencing Notes</strong>Paul Draper's studio notes: <em>"1) shotgun as third trk? 2) cut mid 8 + last ch from bobblehat"</em>.
             </div>
           </div>
-          <p><a class="btn" href="./mansun-mp3-vault.html">Stream all 22 'NewSix' &amp; 'Six Demo Sessions' MP3s →</a></p>
         </div>
       </article>
 
-      <!-- ALBUM 3: LITTLE KIX -->
-      <article class="news-item">
-        <span class="news-date">14/08/2000 • PARLOPHONE • UK CHART POSITION: #12</span>
-        <h2 class="news-title">.: LITTLE KIX :.</h2>
-        <div class="news-body">
-          <p><strong>Released:</strong> 14 August 2000 · <strong>Label:</strong> Parlophone · <strong>Producer:</strong> Hugh Padgham · <strong>UK Official Albums Chart:</strong> No. 12</p>
-          <p><strong>Tracklisting:</strong><br>
-          01. Butterfly (A New Beginning) · 02. I Can Only Disappoint U · 03. Comes As No Surprise · 04. Electric Man · 05. Love Is... · 06. Soundtrack 4 2 Lovers · 07. Forgive Me · 08. Until The Next Life · 09. Fool · 10. We Are The Boys · 11. Goodbye.</p>
-          <p><a class="btn" href="./press-layout.html">View Rock Sound 2000 'Just For Kix' Magazine Spread →</a></p>
+      <!-- ========================================== -->
+      <!-- ALBUM 3: LITTLE KIX                        -->
+      <!-- ========================================== -->
+      <article class="album-detail-card" id="little-kix">
+        <div class="album-header-grid">
+          <img class="album-cover-img" src="../assets/images/littlekix.jpg" alt="Mansun — Little Kix Album Cover" onclick="openLightbox('../assets/images/littlekix.jpg', 'Mansun — Little Kix (2000, Parlophone, UK #12)')">
+          <div>
+            <div style="margin-bottom: 0.5rem;">
+              <span class="meta-pill">14 Aug 2000</span>
+              <span class="meta-pill">Parlophone</span>
+              <span class="meta-pill" style="background:#000000; color:#ffffff;">UK Official Albums Chart: No. 12</span>
+            </div>
+            <h2 style="font-size: 1.8rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">
+              Little Kix
+            </h2>
+            <p style="color: #555555; margin: 0; font-size: 0.95rem;">
+              <strong>Producer:</strong> Hugh Padgham · <strong>Studio:</strong> Astoria Studio &amp; Olympic Studios, London
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.92rem; color: #444444; margin-bottom: 1rem;">
+          Recorded on David Gilmour's Astoria houseboat and Olympic Studios. Features UK Top 10 single <em>I Can Only Disappoint U</em>.
+        </p>
+
+        <div class="track-grid">
+          <div class="track-item"><span class="track-num">01.</span><span class="track-name">Butterfly (A New Beginning)</span></div>
+          <div class="track-item"><span class="track-num">02.</span><span class="track-name">I Can Only Disappoint U</span></div>
+          <div class="track-item"><span class="track-num">03.</span><span class="track-name">Comes As No Surprise</span></div>
+          <div class="track-item"><span class="track-num">04.</span><span class="track-name">Electric Man</span></div>
+          <div class="track-item"><span class="track-num">05.</span><span class="track-name">Love Is...</span></div>
+          <div class="track-item"><span class="track-num">06.</span><span class="track-name">Soundtrack 4 2 Lovers</span></div>
+          <div class="track-item"><span class="track-num">07.</span><span class="track-name">Forgive Me</span></div>
+          <div class="track-item"><span class="track-num">08.</span><span class="track-name">Until The Next Life</span></div>
+          <div class="track-item"><span class="track-num">09.</span><span class="track-name">Fool</span></div>
+          <div class="track-item"><span class="track-num">10.</span><span class="track-name">We Are The Boys</span></div>
+          <div class="track-item"><span class="track-num">11.</span><span class="track-name">Goodbye</span></div>
         </div>
       </article>
 
-      <!-- ALBUM 4: KLEPTOMANIA (3-CD BOXSET) -->
-      <article class="news-item">
-        <span class="news-date">27/09/2004 • PARLOPHONE • 3-CD COLLECTOR'S BOXSET</span>
-        <h2 class="news-title">.: KLEPTOMANIA (THE 4TH ALBUM SESSIONS, EPs &amp; RARITIES) :.</h2>
-        <div class="news-body">
-          <p><strong>Released:</strong> 27 September 2004 · <strong>Label:</strong> Parlophone · <strong>Producers:</strong> Paul Draper, Richard Rainey, Various</p>
-          <p><strong>CD1 — The 4th Album Sessions (Previously Unreleased):</strong><br>
-          01. Getting Your Way · 02. Slipping Away · 03. Keep Telling Myself · 04. Harris · 05. Love Remains · 06. Cry 2 My Face · 07. No Signal/No Complaints · 08. Home · 09. Fragile · 10. Wanted So Much · 11. Good Intentions Heal The Soul · 12. The Dog From Two Doors Down (hidden bonus track).</p>
-          <p><strong>CD2 — Non-Album Singles, B-Sides &amp; EP-Only Tracks (Voted by Fans):</strong><br>
-          01. Take It Easy Chicken · 02. Everyone Must Win · 03. Closed For Business · 04. Ski Jump Nose · 05. Can't Afford To Die · 06. Railings · 07. Flourella · 08. Decisions, Decisions · 09. Been Here Before · 10. My Idea Of Fun · 11. When The Wind Blows · 12. Check Under The Bed · 13. Skin Up Pin Up · 14. I Care · 15. The World's Still Open.</p>
-          <p><strong>CD3 — Abbey Road Vault Rarities, Demos &amp; Unreleased Tracks:</strong><br>
-          01. Rock 'N' Roll Loser · 02. Secrets · 03. These Days (Full Length Version) · 04. It's OK · 05. Drones · 06. Right To The End Of The Earth · 07. I Can Only Disappoint U (Home Demo) · 08. Love Remains (Home Demo) · 09. Love Is... (Home Demo) · 10. Shot By Both Sides (Live John Peel Session) · 11. Taxlo$$ (Live Brixton Academy '98) · 12. Witness To A Murder · 13. Thief · 14. Stupid Open Space.</p>
+      <!-- ========================================== -->
+      <!-- ALBUM 4: KLEPTOMANIA (3-CD BOXSET)         -->
+      <!-- ========================================== -->
+      <article class="album-detail-card" id="kleptomania">
+        <div class="album-header-grid">
+          <img class="album-cover-img" src="../assets/images/kleptomania.jpg" alt="Mansun — Kleptomania 3-CD Boxset Cover" onclick="openLightbox('../assets/images/kleptomania.jpg', 'Mansun — Kleptomania (2004, 3-CD Parlophone Boxset)')">
+          <div>
+            <div style="margin-bottom: 0.5rem;">
+              <span class="meta-pill">27 Sep 2004</span>
+              <span class="meta-pill">Parlophone 7243 5 71000 2 0</span>
+              <span class="meta-pill">3-CD Boxset</span>
+              <span class="meta-pill">UK Chart: #135</span>
+            </div>
+            <h2 style="font-size: 1.8rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">
+              Kleptomania
+            </h2>
+            <p style="color: #555555; margin: 0; font-size: 0.95rem;">
+              <strong>Producers:</strong> Paul Draper, Richard Rainey, Various · <strong>Mastering:</strong> Peter Mew at Abbey Road Studios
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.92rem; color: #444444; margin-bottom: 1rem;">
+          The definitive posthumous 3-disc retrospective: CD1 delivers the unfinished 4th studio album sessions; CD2 collects the definitive fan-voted B-sides; CD3 compiles unreleased Abbey Road and home cassette vault rarities.
+        </p>
+
+        <!-- CD1 -->
+        <h4 style="margin:1.25rem 0 0.5rem; text-transform:uppercase; font-size:0.88rem; color:#111111;">CD1 — The 4th Album Sessions (Unreleased Studio Tracks)</h4>
+        <div class="track-grid" style="margin-bottom:1rem;">
+          <div class="track-item"><span class="track-num">01.</span><span class="track-name">Getting Your Way</span></div>
+          <div class="track-item"><span class="track-num">02.</span><span class="track-name">Slipping Away</span></div>
+          <div class="track-item"><span class="track-num">03.</span><span class="track-name">Keep Telling Myself</span></div>
+          <div class="track-item"><span class="track-num">04.</span><span class="track-name">Harris</span></div>
+          <div class="track-item"><span class="track-num">05.</span><span class="track-name">Love Remains</span></div>
+          <div class="track-item"><span class="track-num">06.</span><span class="track-name">Cry 2 My Face</span></div>
+          <div class="track-item"><span class="track-num">07.</span><span class="track-name">No Signal/No Complaints</span></div>
+          <div class="track-item"><span class="track-num">08.</span><span class="track-name">Home</span></div>
+          <div class="track-item"><span class="track-num">09.</span><span class="track-name">Fragile</span></div>
+          <div class="track-item"><span class="track-num">10.</span><span class="track-name">Wanted So Much</span></div>
+          <div class="track-item"><span class="track-num">11.</span><span class="track-name">Good Intentions Heal The Soul</span></div>
+          <div class="track-item"><span class="track-num">12.</span><span class="track-name">The Dog From Two Doors Down <small style="color:#777;">(Hidden Track)</small></span></div>
+        </div>
+
+        <!-- CD2 -->
+        <h4 style="margin:1.25rem 0 0.5rem; text-transform:uppercase; font-size:0.88rem; color:#111111;">CD2 — Non-Album Singles, B-Sides &amp; EP Tracks (Fan Voted)</h4>
+        <div class="track-grid" style="margin-bottom:1rem;">
+          <div class="track-item"><span class="track-num">01.</span><span class="track-name">Take It Easy Chicken</span></div>
+          <div class="track-item"><span class="track-num">02.</span><span class="track-name">Everyone Must Win</span></div>
+          <div class="track-item"><span class="track-num">03.</span><span class="track-name">Closed For Business</span></div>
+          <div class="track-item"><span class="track-num">04.</span><span class="track-name">Ski Jump Nose</span></div>
+          <div class="track-item"><span class="track-num">05.</span><span class="track-name">Can't Afford To Die</span></div>
+          <div class="track-item"><span class="track-num">06.</span><span class="track-name">Railings</span></div>
+          <div class="track-item"><span class="track-num">07.</span><span class="track-name">Flourella</span></div>
+          <div class="track-item"><span class="track-num">08.</span><span class="track-name">Decisions, Decisions</span></div>
+          <div class="track-item"><span class="track-num">09.</span><span class="track-name">Been Here Before</span></div>
+          <div class="track-item"><span class="track-num">10.</span><span class="track-name">My Idea Of Fun</span></div>
+          <div class="track-item"><span class="track-num">11.</span><span class="track-name">When The Wind Blows</span></div>
+          <div class="track-item"><span class="track-num">12.</span><span class="track-name">Check Under The Bed</span></div>
+          <div class="track-item"><span class="track-num">13.</span><span class="track-name">Skin Up Pin Up</span></div>
+          <div class="track-item"><span class="track-num">14.</span><span class="track-name">I Care</span></div>
+          <div class="track-item"><span class="track-num">15.</span><span class="track-name">The World's Still Open</span></div>
+        </div>
+
+        <!-- CD3 -->
+        <h4 style="margin:1.25rem 0 0.5rem; text-transform:uppercase; font-size:0.88rem; color:#111111;">CD3 — Abbey Road Vault Rarities, Demos &amp; Unreleased Tracks</h4>
+        <div class="track-grid">
+          <div class="track-item"><span class="track-num">01.</span><span class="track-name">Rock 'N' Roll Loser</span></div>
+          <div class="track-item"><span class="track-num">02.</span><span class="track-name">Secrets</span></div>
+          <div class="track-item"><span class="track-num">03.</span><span class="track-name">These Days (Full Length Version)</span></div>
+          <div class="track-item"><span class="track-num">04.</span><span class="track-name">It's OK</span></div>
+          <div class="track-item"><span class="track-num">05.</span><span class="track-name">Drones</span></div>
+          <div class="track-item"><span class="track-num">06.</span><span class="track-name">Right To The End Of The Earth</span></div>
+          <div class="track-item"><span class="track-num">07.</span><span class="track-name">I Can Only Disappoint U (Home Demo)</span></div>
+          <div class="track-item"><span class="track-num">08.</span><span class="track-name">Love Remains (Home Demo)</span></div>
+          <div class="track-item"><span class="track-num">09.</span><span class="track-name">Love Is... (Home Demo)</span></div>
+          <div class="track-item"><span class="track-num">10.</span><span class="track-name">Shot By Both Sides (Live John Peel Session)</span></div>
+          <div class="track-item"><span class="track-num">11.</span><span class="track-name">Taxloss (Live Brixton Academy '98)</span></div>
+          <div class="track-item"><span class="track-num">12.</span><span class="track-name">Witness To A Murder (Part One)</span></div>
+          <div class="track-item"><span class="track-num">13.</span><span class="track-name">Thief</span></div>
+          <div class="track-item"><span class="track-num">14.</span><span class="track-name">Stupid Open Space</span></div>
         </div>
       </article>
 
-      <!-- ALBUM 5: LEGACY -->
-      <article class="news-item">
-        <span class="news-date">18/09/2006 • PARLOPHONE • CD / SPECIAL EDITION DVD</span>
-        <h2 class="news-title">.: LEGACY: THE BEST OF MANSUN :.</h2>
-        <div class="news-body">
-          <p><strong>Released:</strong> 18 September 2006 · <strong>Label:</strong> Parlophone · <strong>Compiled by:</strong> Paul Draper &amp; Dominic Chad</p>
-          <p><strong>CD Tracklisting:</strong><br>
-          01. I Can Only Disappoint U · 02. Wide Open Space · 03. Stripper Vicar · 04. Being A Girl (Part One) · 05. Negative · 06. Take It Easy Chicken · 07. Legacy · 08. She Makes My Nose Bleed · 09. Closed For Business · 10. Six · 11. Getting Your Way · 12. Electric Man · 13. The Chad Who Loved Me · 14. Egg Shaped Fred · 15. Slipping Away · 16. Fool · 17. Taxloss · <strong>Digital Bonus:</strong> South Of The Painted Hall.</p>
-          <p><strong>Special Edition DVD:</strong><br>
-          01. Flourella · 02. Egg Shaped Fred · 03. Take It Easy Chicken · 04. Stripper Vicar · 05. Wide Open Space · 06. Wide Open Space (US Version) · 07. She Makes My Nose Bleed · 08. Taxloss · 09. Closed For Business · 10. Legacy · 11. Being A Girl (Part One) · 12. Negative · 13. Six · 14. I Can Only Disappoint U · 15. Electric Man · 16. Fool · <strong>Plus:</strong> Taxloss (Live at Brixton 23/10/98) · Love Remains (Super 8 Montage) · Nobody Cares When You're Gone (Documentary narrated by Paul &amp; Chad).</p>
+      <!-- ========================================== -->
+      <!-- ALBUM 5: LEGACY (THE BEST OF MANSUN)       -->
+      <!-- ========================================== -->
+      <article class="album-detail-card" id="legacy">
+        <div class="album-header-grid">
+          <img class="album-cover-img" src="../assets/images/legacy.jpg" alt="Mansun — Legacy Album Cover" onclick="openLightbox('../assets/images/legacy.jpg', 'Mansun — Legacy: The Best of Mansun (2006, Parlophone CD / Special Edition DVD)')">
+          <div>
+            <div style="margin-bottom: 0.5rem;">
+              <span class="meta-pill">18 Sep 2006</span>
+              <span class="meta-pill">Parlophone</span>
+              <span class="meta-pill">CD / Special Edition DVD</span>
+            </div>
+            <h2 style="font-size: 1.8rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">
+              Legacy: The Best of Mansun
+            </h2>
+            <p style="color: #555555; margin: 0; font-size: 0.95rem;">
+              <strong>Compiled by:</strong> Paul Draper &amp; Dominic Chad · <strong>Label:</strong> Parlophone
+            </p>
+          </div>
+        </div>
+
+        <div class="track-grid">
+          <div class="track-item"><span class="track-num">01.</span><span class="track-name">I Can Only Disappoint U</span></div>
+          <div class="track-item"><span class="track-num">02.</span><span class="track-name">Wide Open Space</span></div>
+          <div class="track-item"><span class="track-num">03.</span><span class="track-name">Stripper Vicar</span></div>
+          <div class="track-item"><span class="track-num">04.</span><span class="track-name">Being A Girl (Part One)</span></div>
+          <div class="track-item"><span class="track-num">05.</span><span class="track-name">Negative</span></div>
+          <div class="track-item"><span class="track-num">06.</span><span class="track-name">Take It Easy Chicken</span></div>
+          <div class="track-item"><span class="track-num">07.</span><span class="track-name">Legacy</span></div>
+          <div class="track-item"><span class="track-num">08.</span><span class="track-name">She Makes My Nose Bleed</span></div>
+          <div class="track-item"><span class="track-num">09.</span><span class="track-name">Closed For Business</span></div>
+          <div class="track-item"><span class="track-num">10.</span><span class="track-name">Six</span></div>
+          <div class="track-item"><span class="track-num">11.</span><span class="track-name">Getting Your Way</span></div>
+          <div class="track-item"><span class="track-num">12.</span><span class="track-name">Electric Man</span></div>
+          <div class="track-item"><span class="track-num">13.</span><span class="track-name">The Chad Who Loved Me</span></div>
+          <div class="track-item"><span class="track-num">14.</span><span class="track-name">Egg Shaped Fred</span></div>
+          <div class="track-item"><span class="track-num">15.</span><span class="track-name">Slipping Away</span></div>
+          <div class="track-item"><span class="track-num">16.</span><span class="track-name">Fool</span></div>
+          <div class="track-item"><span class="track-num">17.</span><span class="track-name">Taxloss</span></div>
+          <div class="track-item"><span class="track-num">Bonus:</span><span class="track-name">South Of The Painted Hall <small style="color:#777;">(Digital)</small></span></div>
         </div>
       </article>
 
-      <div class="mid-divider-bar">
-        <span>◆ ORIGINAL MANSUN BIOGRAPHY (MANSUN.HTML)</span>
-        <span>PAULDRAPER-MUSIC.CO.UK</span>
-      </div>
+      <!-- ========================================== -->
+      <!-- PAUL DRAPER SOLO DISCOGRAPHY              -->
+      <!-- ========================================== -->
+      <article class="album-detail-card" id="paul-draper-solo">
+        <div style="margin-bottom: 1.25rem;">
+          <span class="meta-pill">2016 — PRESENT</span>
+          <span class="meta-pill">KSCOPE</span>
+          <span class="meta-pill" style="background:#000000; color:#ffffff;">SOLO ALBUMS &amp; EPs</span>
+        </div>
+        <h2 style="font-size: 1.8rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.5rem; letter-spacing: -0.02em;">
+          Paul Draper — Solo Discography
+        </h2>
+        <p style="color: #444444; font-size: 0.95rem; margin-bottom: 1.5rem;">
+          Following the August 2014 world premiere of <em>"Feeling My Heart Run Slow"</em> at the Mansun Fan Convention in Chester (filmed and shared by Richard Murray of <em>Paul-Draper.net</em>), Paul Draper launched his critically acclaimed solo catalogue on Kscope:
+        </p>
 
-      <!-- FULL BIOGRAPHY FROM MANSUN.HTML -->
-      <article class="news-item">
-        <span class="news-date">ARCHIVE BIOGRAPHY • "AN OUTSIDER THING"</span>
-        <h2 class="news-title">.: MANSUN BIOGRAPHY (1995 — 2003) :.</h2>
-        <div class="news-body">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.25rem;">
+          <div class="photo-card" style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+            <img src="../assets/images/solo-spooky-action.jpg" alt="Spooky Action (2017)" style="width:100%; aspect-ratio:1; object-fit:cover; cursor:pointer;" onclick="openLightbox('../assets/images/solo-spooky-action.jpg', 'Paul Draper — Spooky Action (2017, UK Top 20 #19)')">
+            <div style="padding:0.75rem;">
+              <strong style="display:block; font-size:0.85rem;">Spooky Action (2017)</strong>
+              <small style="color:#666;">UK Official Chart #19</small>
+            </div>
+          </div>
+
+          <div class="photo-card" style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+            <img src="../assets/images/solo-cult-leader-tactics.jpg" alt="Cult Leader Tactics (2022)" style="width:100%; aspect-ratio:1; object-fit:cover; cursor:pointer;" onclick="openLightbox('../assets/images/solo-cult-leader-tactics.jpg', 'Paul Draper — Cult Leader Tactics (2022, UK Top 25)')">
+            <div style="padding:0.75rem;">
+              <strong style="display:block; font-size:0.85rem;">Cult Leader Tactics (2022)</strong>
+              <small style="color:#666;">UK Official Chart Top 25</small>
+            </div>
+          </div>
+
+          <div class="photo-card" style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+            <img src="../assets/images/solo-mansun-retold.jpg" alt="Mansun Retold" style="width:100%; aspect-ratio:1; object-fit:cover; cursor:pointer;" onclick="openLightbox('../assets/images/solo-mansun-retold.jpg', 'Paul Draper — Mansun Retold (Live Reimagining)')">
+            <div style="padding:0.75rem;">
+              <strong style="display:block; font-size:0.85rem;">Mansun Retold</strong>
+              <small style="color:#666;">Acoustic &amp; Live Re-recordings</small>
+            </div>
+          </div>
+
+          <div class="photo-card" style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+            <img src="../assets/images/solo-live-at-scala.jpg" alt="Live at Scala (2018)" style="width:100%; aspect-ratio:1; object-fit:cover; cursor:pointer;" onclick="openLightbox('../assets/images/solo-live-at-scala.jpg', 'Paul Draper — Live at Scala (2018)')">
+            <div style="padding:0.75rem;">
+              <strong style="display:block; font-size:0.85rem;">Live at Scala (2018)</strong>
+              <small style="color:#666;">Full London Concert</small>
+            </div>
+          </div>
+
+          <div class="photo-card" style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+            <img src="../assets/images/solo-grey-lantern-ritz.jpg" alt="Attack of the Grey Lantern Live at the Ritz" style="width:100%; aspect-ratio:1; object-fit:cover; cursor:pointer;" onclick="openLightbox('../assets/images/solo-grey-lantern-ritz.jpg', 'Paul Draper — Attack of the Grey Lantern Live at the Ritz')">
+            <div style="padding:0.75rem;">
+              <strong style="display:block; font-size:0.85rem;">Live at the Ritz</strong>
+              <small style="color:#666;">Full Debut LP Performed Live</small>
+            </div>
+          </div>
+
+          <div class="photo-card" style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+            <img src="../assets/images/solo-ep-two.jpg" alt="EP TWO (Nov 2016)" style="width:100%; aspect-ratio:1; object-fit:cover; cursor:pointer;" onclick="openLightbox('../assets/images/solo-ep-two.jpg', 'Paul Draper — EP TWO (Nov 2016)')">
+            <div style="padding:0.75rem;">
+              <strong style="display:block; font-size:0.85rem;">EP TWO (Nov 2016)</strong>
+              <small style="color:#666;">Friends Make The Worst Enemies</small>
+            </div>
+          </div>
+
+          <div class="photo-card" style="background:#ffffff; border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+            <img src="../assets/images/paul-draper-ep-one.jpg" alt="EP ONE (Jun 2016)" style="width:100%; aspect-ratio:1; object-fit:cover; cursor:pointer;" onclick="openLightbox('../assets/images/paul-draper-ep-one.jpg', 'Paul Draper — EP ONE (Jun 2016)')">
+            <div style="padding:0.75rem;">
+              <strong style="display:block; font-size:0.85rem;">EP ONE (Jun 2016)</strong>
+              <small style="color:#666;">Feeling My Heart Run Slow</small>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========================================== -->
+      <!-- ORIGINAL BAND BIOGRAPHY ("AN OUTSIDER THING") -->
+      <!-- ========================================== -->
+      <article class="album-detail-card" id="biography">
+        <div style="margin-bottom: 0.85rem;">
+          <span class="meta-pill">ARCHIVE BIOGRAPHY</span>
+          <span class="meta-pill">"AN OUTSIDER THING"</span>
+          <span class="meta-pill">PAULDRAPER-MUSIC.CO.UK</span>
+        </div>
+        <h2 style="font-size: 1.8rem; font-weight: 950; text-transform: uppercase; margin: 0 0 1rem; letter-spacing: -0.02em;">
+          Mansun Biography (1995 — 2003)
+        </h2>
+        <div style="line-height: 1.7; color: #222222; font-size: 1.02rem;">
           <p>It was an "outsider thing". The kind of "outsider thing" that has lured lost souls into the dark labyrinths of obsession throughout the decades: Pulp's twitching-curtain sleaze, the leopardskin gaudiness of the Manic Street Preachers' Useless Generation, The Smiths' NHS geek-chic, Joy Division's catacombs of Camus. It was that defiant radiation-burst of savage individualism that often defines a band as a "cult" and its fans as "devotees". But even alongside rock's lengthy parade of eccentrics and non-conformists, Mansun stood out a mile. Mansun — poor Mansun, doomed to be crushed beneath the stampede of their own inventiveness — were the most "outsider" band on Earth.</p>
           <p>They hailed from Chester — a town mid-way between Liverpool and Wales — yet even here they were rock kid cast-outs from the Hollyoaks bar crowd. In 1996, as Blur went Benny Hill and Oasis glammed for supremacy in the Britpop Wars, these enigmatic mis-shapes slunk out of the looking glass bearing numbered EPs of seditious and shimmering '80s-flecked pop music, filled with stories of even more gruesome social outcasts: the stripping clergymen, the dark Mavises, the gentlemen of ovarian shape and alpine protuberance and all the other caricatures of humanity's moral rot that inhabited the Grimm urban townscape of Paul Draper's imagination.</p>
           <p>So the poets, the loners and the dreamers flocked to Mansun for catharsis and companionship, and Mansun repaid them with their own strange devotion. At a time when most guitar bands were dreaming of a week's residency at Knebworth, Mansun eschewed the bigger venues they could easily sell out to play extensive small-town club tours from King's Lynn to Aberystwyth. They produced non-album EPs of startling depth and drama (<em>Take It Easy Chicken</em>, <em>Closed For Business</em>, <em>Flourella</em>, <em>Ski Jump Nose</em>, <em>The World's Still Open</em>). They made a video for <em>Taxlo$$</em> by simply flinging the entire £25,000 video budget into Liverpool Street station during rush hour and filming the commuters scrambling for the notes. When <em>Wide Open Space</em> reached cultural saturation and the twisted pop symphonies of <em>Attack Of The Grey Lantern</em> debuted at Number One in February 1997, suddenly Mansun were the king of all cult bands.</p>
-          <blockquote>"It was weird," says Paul Draper, "because it was never, ever a mainstream band, but we were always dipping into that world. It wasn't for me, really. I don't even know how it got that big. I don't know how we ended up playing at Glastonbury or V. Going from making your own piece of 7-inch vinyl to that seemed amazing."</blockquote>
+          <blockquote style="border-left: 3px solid #000000; padding-left: 1.25rem; margin: 1.5rem 0; font-style: italic; color: #444444;">
+            "It was weird," says Paul Draper, "because it was never, ever a mainstream band, but we were always dipping into that world. It wasn't for me, really. I don't even know how it got that big. I don't know how we ended up playing at Glastonbury or V. Going from making your own piece of 7-inch vinyl to that seemed amazing."
+          </blockquote>
           <p>It is the outsider's nature, of course, to shun all forms of acceptance. Hence came 1998's masterpiece of malfunction <em>Six</em>. As an attempt to segue sections of music in tribute to the great Prince albums of the '80s, it was essentially around 30 song segments linked together into thirteen tracks. The public took one look at its Marillion-esque sleeve packed with references to the Marquis De Sade, Winnie The Pooh and Tom Baker, clocked song titles such as <em>Negative</em>, <em>Shotgun</em> and <em>Cancer</em>, and fled screaming. But a select few saw <em>Six</em> for what it really was — one of the most inspiring, inventive and downright best records of the '90s.</p>
           <p><em>Little Kix</em> (2000) was an attempt to re-balance Mansun within an outer orbit of popular culture before they meteored off into the void — closing with a track called <em>Goodbye</em>. When the band reconvened between 2001 and the spring of 2003 to work on sessions for their fourth album, progress was sluggish:</p>
-          <blockquote>"We went into the studio to start a new album and it just took forever," says Paul. "We didn't want to get in the situation we had with the last album, where we put out an album we didn't believe in. It just disintegrated over a weekend at the last session where we all sat down and went 'this just isn't happening, why is it taking a week to record a song whereas in the past we'd do it in four hours?'. It became very soul-destroying in the end. We thought it was the music but it wasn't, it was us as people. The band was dead."</blockquote>
+          <blockquote style="border-left: 3px solid #000000; padding-left: 1.25rem; margin: 1.5rem 0; font-style: italic; color: #444444;">
+            "We went into the studio to start a new album and it just took forever," says Paul. "We didn't want to get in the situation we had with the last album, where we put out an album we didn't believe in. It just disintegrated over a weekend at the last session where we all sat down and went 'this just isn't happening, why is it taking a week to record a song whereas in the past we'd do it in four hours?'. It became very soul-destroying in the end. We thought it was the music but it wasn't, it was us as people. The band was dead."
+          </blockquote>
           <p>CD1 of <em>Kleptomania</em> is the rough-hewn skeleton of what would undoubtedly have been a staggering return to form — blasted through with the raw fire-shriek of their early EPs and billowing with the archetypal Draper concerns of bloody-minded emotional endurance (<em>Keep Telling Myself</em>, <em>Good Intentions Heal The Soul</em>, <em>Home</em>) and satirical caricature (<em>Getting Your Way</em>, <em>Slipping Away</em>, <em>Harris</em>). Hey, I tell him, it's a bright new world out there. He mishears me: <em>"Yeah. It's a frightening world."</em> It's an "outsider thing". You understand.</p>
         </div>
       </article>
@@ -190,15 +506,12 @@
 
     <footer>
       <div>◆ RJMEDIA / PAUL DRAPER &amp; MANSUN MASTER ARCHIVE (2001 — 2026)</div>
-      <div>
-        <a href="../index.html">Remember The Sound</a> ·
-        <a href="../community.html">Keep The Connection</a> ·
+      <div style="margin-top: 0.5rem;">
+        <a href="../index.html">RJMedia Main Archive</a> ·
+        <a href="./index.html">Paul Draper Hub</a> ·
+        <a href="./mansun-singles.html">Singles &amp; EPs (17)</a> ·
         <a href="./draper-news.html">News (35)</a> ·
         <a href="./draper-qa.html">2006 Q&amp;A</a> ·
-        <a href="./mansun-albums.html">Albums</a> ·
-        <a href="./mansun-singles.html">Singles &amp; EPs</a> ·
-        <a href="./draper-collaborations.html">Collaborations</a> ·
-        <a href="./draper-gallery.html">Gallery</a> ·
         <a href="./mansun-mp3-vault.html">MP3 Vault (91)</a>
       </div>
     </footer>
