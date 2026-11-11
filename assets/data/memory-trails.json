@@ -9,31 +9,31 @@
           "year": "1995",
           "title": "John Peel Session",
           "objectId": "mansun-1995-peel",
-          "url": "./pages/mansun-mp3-vault.html"
+          "url": "/rjmedia/pages/mansun-mp3-vault.html"
         },
         {
           "year": "1997",
           "title": "Early Interview",
           "objectId": "mansun-1997-001",
-          "url": "./pages/mansun-albums.html"
+          "url": "/rjmedia/pages/mansun-albums.html"
         },
         {
           "year": "1998",
           "title": "Festival Appearance",
           "objectId": "mansun-1998-001",
-          "url": "./pages/draper-articles.html"
+          "url": "/rjmedia/pages/draper-articles.html"
         },
         {
           "year": "1999",
           "title": "Television Performance",
           "objectId": "mansun-1999-001",
-          "url": "./youtube.html"
+          "url": "/rjmedia/youtube.html"
         },
         {
           "year": "2003",
           "title": "Solo Direction",
           "objectId": "pd-2003-solo",
-          "url": "./pages/draper-news.html"
+          "url": "/rjmedia/pages/draper-news.html"
         }
       ]
     },
@@ -46,25 +46,25 @@
           "year": "1994",
           "title": "Emerging Scene",
           "objectId": "britpop-1994-001",
-          "url": "./pages/mansun-singles.html"
+          "url": "/rjmedia/pages/mansun-singles.html"
         },
         {
           "year": "1995",
           "title": "Festival Growth",
           "objectId": "britpop-1995-001",
-          "url": "./pages/mansun-mp3-vault.html"
+          "url": "/rjmedia/pages/mansun-mp3-vault.html"
         },
         {
           "year": "1997",
           "title": "Peak Era",
           "objectId": "britpop-1997-001",
-          "url": "./pages/mansun-albums.html"
+          "url": "/rjmedia/pages/mansun-albums.html"
         },
         {
           "year": "1998",
           "title": "Six & Art Rock Shift",
           "objectId": "britpop-1998-001",
-          "url": "./pages/press-layout.html"
+          "url": "/rjmedia/pages/press-layout.html"
         }
       ]
     },
@@ -77,31 +77,31 @@
           "year": "2006",
           "title": "38 Forum Q&As",
           "objectId": "pd-2006-qa",
-          "url": "./pages/draper-qa.html"
+          "url": "/rjmedia/pages/draper-qa.html"
         },
         {
           "year": "2014",
           "title": "Chester World Premiere",
           "objectId": "pd-2014-chester",
-          "url": "./pages/draper-news.html"
+          "url": "/rjmedia/pages/draper-news.html"
         },
         {
           "year": "2017",
           "title": "Spooky Action (#19)",
           "objectId": "pd-2017-spooky",
-          "url": "./pages/mansun-albums.html"
+          "url": "/rjmedia/pages/mansun-albums.html"
         },
         {
           "year": "2022",
           "title": "Cult Leader Tactics",
           "objectId": "pd-2022-clt",
-          "url": "./pages/mansun-albums.html"
+          "url": "/rjmedia/pages/mansun-albums.html"
         },
         {
           "year": "2027",
           "title": "Indie By The Sea",
           "objectId": "pd-2027-blackpool",
-          "url": "./pages/draper-news.html"
+          "url": "/rjmedia/pages/draper-news.html"
         }
       ]
     }

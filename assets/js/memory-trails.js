@@ -207,7 +207,7 @@ async function loadMemoryTrails() {
   if (!container) return;
 
   try {
-    const response = await fetch("./assets/data/memory-trails.json");
+    const response = await fetch("/rjmedia/assets/data/memory-trails.json");
     if (!response.ok) throw new Error("HTTP " + response.status);
     const data = await response.json();
     renderTrails(data.trails);
