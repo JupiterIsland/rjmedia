@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4f1">
+  <meta name="description" content="www.PaulDraper-Music.co.uk : Media — Grind Videos and MP3s, Six Early Version And Notes By Paul, Six Demo Sessions, John Peel Session 7/10/1995.">
+  <title>www.PaulDraper-Music.co.uk : Media | RJMedia Archive</title>
+  <link rel="stylesheet" href="../assets/css/archive.css">
+  <style>
+    .media-container {
+      max-width: 820px;
+      margin: 2.5rem auto 4rem;
+      background: #ffffff;
+      border: 2px solid #c0c0c0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      padding: 2.25rem 2.5rem;
+    }
+    .media-top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding-bottom: 1.75rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #d8d8d8;
+    }
+    .media-top-header h1 {
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.01em;
+      text-transform: none;
+    }
+    .media-player-bar {
+      position: sticky;
+      top: 56px;
+      z-index: 30;
+      background: #f5f5f5;
+      border: 1px solid #cccccc;
+      padding: 0.85rem 1.1rem;
+      margin-bottom: 2.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .media-now-playing {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 0.82rem;
+      color: #111111;
+    }
+    .media-now-playing strong {
+      color: #370005;
+    }
+    .media-player-bar audio {
+      height: 34px;
+      flex: 1;
+      min-width: 240px;
+      max-width: 420px;
+    }
+    .media-section {
+      margin-bottom: 2.75rem;
+    }
+    .media-section-heading {
+      background: #f5f5f5;
+      border-left: 4px solid #370005;
+      padding: 0.65rem 1rem;
+      margin: 0 0 1.25rem;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111111;
+      letter-spacing: -0.01em;
+    }
+    .media-section-heading .sub-note {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #555555;
+      margin-left: 0.5rem;
+    }
+    .media-subheading {
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: underline;
+      color: #000000;
+      margin: 1.25rem 0 0.65rem;
+    }
+    .media-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+    .media-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.15rem 0;
+      border-bottom: 1px dotted #e5e5e5;
+    }
+    .media-list li:last-child {
+      border-bottom: none;
+    }
+    .media-link {
+      color: #000000;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .media-link:hover {
+      color: #78000a;
+    }
+    .play-inline-btn {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 0.72rem;
+      background: #f5f5f5;
+      color: #111111;
+      border: 1px solid #b0b0b0;
+      padding: 0.1rem 0.5rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .play-inline-btn:hover {
+      background: #370005;
+      color: #ffffff;
+      border-color: #370005;
+    }
+    .notes-thumbs {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 0.75rem 0 1.25rem;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 0.78rem;
+    }
+    .notes-thumb-item p {
+      margin: 0 0 0.35rem;
+      color: #333333;
+    }
+    .notes-thumb-item img {
+      width: 180px;
+      height: 95px;
+      object-fit: cover;
+      border: 1px solid #000000;
+      cursor: pointer;
+    }
+    .coming-soon-line {
+      color: #555555;
+      font-size: 0.88rem;
+    }
+    @media (max-width: 640px) {
+      .media-container { padding: 1.25rem; }
+      .media-section-heading { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dual-mission-bar" role="region" aria-label="Remember The Sound and Keep The Connection">
+    <div class="dual-mission-inner">
+      <a class="mission-pill active-mission" href="./index.html">
+        <span class="mission-badge">REMEMBER THE SOUND</span>
+        <span class="mission-text">Paul Draper &amp; Mansun Archive</span>
+        <span class="mission-cta">Archive Hub →</span>
+      </a>
+      <a class="mission-pill" href="../community.html">
+        <span class="mission-badge">KEEP THE CONNECTION</span>
+        <span class="mission-text">Take It Easy • Community Hub</span>
+        <span class="mission-cta">Enter Community →</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="wrap nav">
+      <a class="brand" href="./index.html"><span class="mark" aria-hidden="true"></span> www.PaulDraper-Music.co.uk : Media</a>
+      <nav class="nav-links" aria-label="Paul Draper Archive Navigation">
+        <a href="./index.html" data-page="hub">HUB</a>
+        <a href="../community.html" data-page="connection" style="background:#111111; color:#ffffff; padding:3px 8px; border-bottom:none;">KEEP THE CONNECTION</a>
+        <a href="./draper-news.html" data-page="news">NEWS</a>
+        <a href="./draper-qa.html" data-page="qa">Q&amp;A</a>
+        <a href="./mansun-albums.html" data-page="albums">ALBUMS</a>
+        <a href="./mansun-singles.html" data-page="singles">SINGLES</a>
+        <a href="./draper-collaborations.html" data-page="collabs">COLLABORATIONS</a>
+        <a href="./draper-gallery.html" data-page="gallery">GALLERY</a>
+        <a href="./draper-articles.html" data-page="articles">ARTICLES</a>
+        <a href="./mansun-mp3-vault.html" class="active" data-page="vault">MEDIA</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="media-container">
+      <div class="media-top-header">
+        <div>
+          <img src="../assets/images/pd-music-banner.png" alt="www.PaulDraper-Music.co.uk" style="max-width: 290px; height: auto; display: block; margin-bottom: 0.5rem;">
+          <h1>Media</h1>
+        </div>
+        <img src="../assets/images/paulcorner.jpg" alt="Paul Draper" width="108" height="132" style="border: 1px solid #ccc;">
+      </div>
+
+      <!-- Clean Playback Bar -->
+      <div class="media-player-bar">
+        <div class="media-now-playing">
+          Now Playing: <strong id="nowPlayingTitle">Grey Lantern (John Peel Session 7/10/1995)</strong>
+        </div>
+        <audio id="mediaPlayer" controls preload="none" src="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3"></audio>
+      </div>
+
+      <!-- SECTION 1: .:Grind Videos and MP3s:. -->
+      <section class="media-section" id="grind-era">
+        <h2 class="media-section-heading">.:Grind Videos and MP3s:.</h2>
+
+        <div class="media-subheading">Videos</div>
+        <ul class="media-list">
+          <li>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/01VideoDiary.mov" target="_blank" rel="noopener">The Diary</a>
+          </li>
+          <li>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/03Epic.mov" target="_blank" rel="noopener">Epic</a>
+          </li>
+          <li>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/04Lantern.mov" target="_blank" rel="noopener">Lantern</a>
+          </li>
+          <li>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/02TheWindow.mov" target="_blank" rel="noopener">The Window</a>
+          </li>
+          <li>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media/05Office.mov" target="_blank" rel="noopener">The Office</a>
+          </li>
+        </ul>
+
+        <div class="media-subheading">MP3s</div>
+        <ul class="media-list">
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Slide', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Slide.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Slide.mp3" target="_blank" rel="noopener">Slide</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Thought', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-thought.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-thought.mp3" target="_blank" rel="noopener">Thought</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('The Dying Man', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-the_dying_man.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/grind-the_dying_man.mp3" target="_blank" rel="noopener">The Dying Man</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('I Lust You', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/ILustYou.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/ILustYou.mp3" target="_blank" rel="noopener">I Lust You</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Hand', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Hand.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Hand.mp3" target="_blank" rel="noopener">Hand</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Colour', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour.mp3" target="_blank" rel="noopener">Colour</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Colour (Remix)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour%20(Remix).mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Colour%20(Remix).mp3" target="_blank" rel="noopener">Colour (Remix)</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Precious Internal', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Precious%20Internal.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-music.co.uk/Precious%20Internal.mp3" target="_blank" rel="noopener">Precious Internal</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- SECTION 2: .:Six Early Version And Notes By Paul:. -->
+      <section class="media-section" id="six-early">
+        <h2 class="media-section-heading">
+          .:Six Early Version And Notes By Paul:.
+          <span class="sub-note">(Please note new Draper media coming soon)</span>
+        </h2>
+
+        <div class="notes-thumbs">
+          <div class="notes-thumb-item">
+            <p>(Click To Enlarge)</p>
+            <img src="../assets/images/six-soundmasters-ref.jpg" alt="Mansun album '98 Soundmasters Reference" onclick="openLightbox('../assets/images/six-soundmasters-ref.jpg', 'Mansun — album \'98 The Soundmasters CD Reference (20/6/1998)')">
+          </div>
+          <div class="notes-thumb-item">
+            <p>(Click To Enlarge)</p>
+            <img src="../assets/images/six-handwritten-notes.jpg" alt="Paul Draper Six Handwritten Notes" onclick="openLightbox('../assets/images/six-handwritten-notes.jpg', 'Paul Draper — Handwritten sequencing and mix notes for Six')">
+          </div>
+        </div>
+
+        <ul class="media-list">
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Six', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/six.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/six.mp3" target="_blank" rel="noopener">Six</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Negative', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/negative.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/negative.mp3" target="_blank" rel="noopener">Negative</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Shotgun', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/shotgun.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/shotgun.mp3" target="_blank" rel="noopener">Shotgun</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Bobblehat', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/Bobblehat.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/Bobblehat.mp3" target="_blank" rel="noopener">Bobblehat</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Anti Everything', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/antieverything.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/antieverything.mp3" target="_blank" rel="noopener">Anti Everything</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Funkofski', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/funkofski.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/funkofski.mp3" target="_blank" rel="noopener">Funkofski</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Seratonin', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/seratonin.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/seratonin.mp3" target="_blank" rel="noopener">Seratonin</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Pentagram', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/pentagram.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/pentagram.mp3" target="_blank" rel="noopener">Pentagram</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Witness To A Murder', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/witnesstoamurder.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/witnesstoamurder.mp3" target="_blank" rel="noopener">Witness To A Murder</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Television', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/television.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/television.mp3" target="_blank" rel="noopener">Television</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Special / Blown It', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/specialblownit.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/specialblownit.mp3" target="_blank" rel="noopener">Special / Blown It</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Legacy', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/legacy.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/legacy.mp3" target="_blank" rel="noopener">Legacy</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Being A Girl', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/beingagirl.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/NewSix/beingagirl.mp3" target="_blank" rel="noopener">Being A Girl</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- SECTION 3: .:Six Demo Sessions:. -->
+      <section class="media-section" id="six-demos">
+        <h2 class="media-section-heading">.:Six Demo Sessions:.</h2>
+        <ul class="media-list">
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Six Monitor Mix (28/9/97)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/SixEarlyMonitorMix.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/SixEarlyMonitorMix.mp3" target="_blank" rel="noopener">Six Monitor Mix</a>
+            <span class="coming-soon-line">(28/9/97)</span>
+          </li>
+          <li class="coming-soon-line">Taxloss Monitor Mix 1 (Ridge Farm 1998) Coming Soon</li>
+          <li class="coming-soon-line">Taxloss Monitor Mix 2 (Ridge Farm 1998) Coming Soon</li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Pentagram (Demo)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Pentagram.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Pentagram.mp3" target="_blank" rel="noopener">Pentagram</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Dr Funkoffski', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/DrFunkoffski.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/DrFunkoffski.mp3" target="_blank" rel="noopener">Dr Funkoffski</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Seratonin (Demo)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Seratonin.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Seratonin.mp3" target="_blank" rel="noopener">Seratonin</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Legacy Rough Edit 1', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy1.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy1.mp3" target="_blank" rel="noopener">Legacy Rough Edit 1</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Legacy Rough Edit 2', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy2.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy2.mp3" target="_blank" rel="noopener">Legacy Rough Edit 2</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Legacy Rough Edit 3', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy3.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/Legacy3.mp3" target="_blank" rel="noopener">Legacy Rough Edit 3</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Gods Are Not Us', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/GodsAreNotUs.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/GodsAreNotUs.mp3" target="_blank" rel="noopener">Gods Are Not Us</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('The Loud Song', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/TheLoudSong.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/TheLoudSong.mp3" target="_blank" rel="noopener">The Loud Song</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- SECTION 4: .:John Peel Session 7/10/1995:. -->
+      <section class="media-section" id="peel-session" style="margin-bottom: 1rem;">
+        <h2 class="media-section-heading">.:John Peel Session 7/10/1995:.</h2>
+        <ul class="media-list">
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Grey Lantern (John Peel Session 7/10/1995)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3" target="_blank" rel="noopener">Grey Lantern</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Flourella (John Peel Session 7/10/1995)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/Flourella.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/Flourella.mp3" target="_blank" rel="noopener">Flourella</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Skin Up Pin Up (John Peel Session 7/10/1995)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/SkinUp.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/SkinUp.mp3" target="_blank" rel="noopener">Skin Up Pin Up</a>
+          </li>
+          <li>
+            <button type="button" class="play-inline-btn" onclick="playTrack('Take It Easy Chicken (John Peel Session 7/10/1995)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/TIEC.mp3')">▶ Play</button>
+            <a class="media-link" href="https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/TIEC.mp3" target="_blank" rel="noopener">Take It Easy Chicken</a>
+          </li>
+        </ul>
+      </section>
+
+      <div style="border-top: 1px solid #d8d8d8; padding-top: 1rem; margin-top: 2rem; font-family: Verdana, Arial, sans-serif; font-size: 0.75rem; color: #666; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <span>© Copyright: 2007 www.pauldraper-music.co.uk</span>
+        <a href="https://web.archive.org/web/20120529132007/http://www.pauldraper-music.co.uk/media.html" target="_blank" rel="noopener" style="text-decoration: underline;">View 2012 Wayback Snapshot ↗</a>
+      </div>
+    </div>
+
+    <footer>
+      <div>◆ www.PaulDraper-Music.co.uk · REMEMBER THE SOUND</div>
+      <div>
+        <a href="../index.html">Remember The Sound</a> ·
+        <a href="../community.html">Keep The Connection</a> ·
+        <a href="./draper-news.html">News</a> ·
+        <a href="./draper-qa.html">Q&amp;A</a> ·
+        <a href="./mansun-albums.html">Albums</a> ·
+        <a href="./mansun-singles.html">Singles</a> ·
+        <a href="./draper-collaborations.html">Collaborations</a> ·
+        <a href="./draper-gallery.html">Gallery</a> ·
+        <a href="./mansun-mp3-vault.html">Media</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="">
+      <div class="lightbox-bar">
+        <span id="lightboxCap"></span>
+        <button type="button" class="lightbox-close" onclick="closeLightbox(event, true)">Close [ESC]</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function playTrack(title, url) {
+      var player = document.getElementById('mediaPlayer');
+      var label = document.getElementById('nowPlayingTitle');
+      label.textContent = title;
+      player.src = url;
+      player.play().catch(function() {});
+    }
+    function openLightbox(src, caption) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCap').textContent = caption || src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox(e, force) {
+      if (force || e.target.id === 'lightbox') {
+        document.getElementById('lightbox').classList.remove('open');
+      }
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox(e, true);
+    });
+  </script>
+</body>
+</html>
