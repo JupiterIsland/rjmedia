@@ -266,84 +266,181 @@
       .hero-grid, .eco-grid, .why-grid { grid-template-columns: 1fr; }
       .stats-cluster { width: 100%; }
     }
+    /* Dual Primary Missions Bar */
+    .dual-mission-bar {
+      background: #0d0f12;
+      color: #ffffff;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.74rem;
+    }
+    .dual-mission-inner {
+      width: min(var(--max), calc(100% - 3rem));
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .mission-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      color: #9ca3af;
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .mission-pill:first-child { border-right: 1px solid var(--rule); }
+    .mission-pill:hover { background: #161920; color: #ffffff; }
+    .mission-pill.active-mission { background: #12151a; color: #ffffff; border-bottom-color: #ffffff; }
+    .mission-badge {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border: 1px solid currentColor;
+      white-space: nowrap;
+    }
+    .mission-text {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      flex: 1;
+    }
+    .mission-cta {
+      font-family: monospace;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .btn-light {
+      display: inline-block;
+      padding: 0.85rem 1.35rem;
+      background: #ffffff;
+      color: #050505;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid #ffffff;
+    }
+    .btn-dark {
+      display: inline-block;
+      padding: 0.85rem 1.35rem;
+      background: transparent;
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid #ffffff;
+    }
+    @media (max-width: 820px) {
+      .dual-mission-inner { grid-template-columns: 1fr; }
+      .mission-pill:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
+    }
   </style>
 </head>
 <body>
+  <div class="dual-mission-bar" role="region" aria-label="RJMedia Two Primary Missions">
+    <div class="dual-mission-inner">
+      <a class="mission-pill" href="./index.html">
+        <span class="mission-badge">MISSION 1 • ARCHIVE</span>
+        <span class="mission-text">Remember The Sound — Preserve Music History &amp; Community Archives</span>
+        <span class="mission-cta">Explore Archive →</span>
+      </a>
+      <a class="mission-pill active-mission" href="./community.html">
+        <span class="mission-badge">MISSION 2 • CONNECTION</span>
+        <span class="mission-text">Keep The Connection — Help People Remain Connected In Difficult Times</span>
+        <span class="mission-cta">Active Hub ↓</span>
+      </a>
+    </div>
+  </div>
   <header class="mid-nav">
     <div class="wrap mid-nav-inner">
       <a class="brand" href="./index.html"><span class="diamond"></span> RJMEDIA COMMUNITY</a>
-      <nav class="nav-links">
-        <a href="./index.html">ARCHIVE</a>
-        <a href="./community.html" class="active-link">COMMUNITY</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="./index.html">MISSION 1: REMEMBER THE SOUND</a>
+        <a href="./community.html" class="active-link">MISSION 2: KEEP THE CONNECTION</a>
+        <a href="./pages/index.html">PAUL DRAPER ARCHIVE (12 PAGES)</a>
+        <a href="./pages/mansun-mp3-vault.html">VAULT (91)</a>
         <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">JUPITER ISLAND</a>
-        <a href="./pages/draper-news.html">STORIES</a>
-        <a href="./pages/mansun-mp3-vault.html">VAULT</a>
       </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <p class="eyebrow">RJMEDIA COMMUNITY • PRESENT</p>
+      <p class="eyebrow">PRIMARY MISSION 02 • EQUAL TO THE ARCHIVE IN IMPORTANCE</p>
       <div class="hero-grid">
         <div class="title-block">
           <h1>KEEP<br>THE<br>CONNECTI<span style="letter-spacing: -0.08em;">O</span>N</h1>
-          <p class="hero-sub">Community stories, practical resources and discussion spaces for people navigating change, connectivity, technology and life.</p>
+          <p class="hero-sub">Helping people remain connected during difficult times — alongside Mission 1 (preserving music history and community archives). Community stories, housing &amp; digital-inclusion guidance, and AI-powered self-advocacy resources.</p>
+          <div class="btn-row">
+            <a class="btn-light" href="#need-help">GET SUPPORT &amp; RESOURCES ↓</a>
+            <a class="btn-dark" href="./pages/index.html">MISSION 1: PAUL DRAPER ARCHIVE →</a>
+          </div>
         </div>
         <div class="stats-cluster">
           <div class="stats-boxes">
             <div class="stat-card">
               <div class="stat-label">ARCHIVE VIEWS</div>
-              <div class="stat-num">1,000,883</div>
+              <div class="stat-num">1,001,987</div>
             </div>
             <div class="stat-card">
               <div class="stat-label">WATCH HOURS</div>
-              <div class="stat-num">72,365</div>
+              <div class="stat-num">72,500</div>
             </div>
           </div>
-          <div class="stat-caption">APPROACHING ONE MILLION VIEWS</div>
+          <div class="stat-caption">OVER ONE MILLION VIEWS • 25 YEARS ONLINE</div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <p class="eyebrow">THREE CLEAR PURPOSES. ONE CONNECTED ECOSYSTEM.</p>
-      <h2>THE ECOSYSTEM</h2>
+      <p class="eyebrow">TWO PRIMARY MISSIONS • ONE CONNECTED ECOSYSTEM</p>
+      <h2>EQUAL MISSIONS: ARCHIVE &amp; CONNECTION</h2>
       <div class="eco-grid">
         <div class="eco-card">
           <div>
-            <div class="eco-tag">PAST</div>
-            <h3 class="eco-title">RJMEDIA DIGITAL ARCHIVE</h3>
+            <div class="eco-tag">MISSION 01 • CULTURAL PRESERVATION</div>
+            <h3 class="eco-title">REMEMBER THE SOUND (ARCHIVE)</h3>
             <ul class="eco-list">
-              <li>LIVE MUSIC ARCHIVE</li>
-              <li>HISTORICAL RESEARCH</li>
-              <li>DIGITAL RESTORATION</li>
+              <li>25-YEAR PAUL DRAPER &amp; MANSUN ARCHIVE</li>
+              <li>91-TRACK STREAM &amp; MP3 VAULT</li>
+              <li>35 NEWS DISPATCHES &amp; MAGAZINE SPREADS</li>
             </ul>
           </div>
-          <a class="eco-cta" href="./index.html">REMEMBER THE SOUND →</a>
+          <a class="eco-cta" href="./pages/index.html">EXPLORE MISSION 1 (ARCHIVE HUB) →</a>
+        </div>
+
+        <div class="eco-card" style="border-color:#ffffff;">
+          <div>
+            <div class="eco-tag">MISSION 02 • HUMAN CONTINUITY</div>
+            <h3 class="eco-title">KEEP THE CONNECTION (COMMUNITY)</h3>
+            <ul class="eco-list">
+              <li>STAYING CONNECTED IN DIFFICULT TIMES</li>
+              <li>HOUSING &amp; PET-FRIENDLY ADVOCACY</li>
+              <li>PRACTICAL AI &amp; DIGITAL INCLUSION</li>
+            </ul>
+          </div>
+          <a class="eco-cta" href="#need-help">EXPLORE MISSION 2 (SUPPORT &amp; STORIES) ↓</a>
         </div>
 
         <div class="eco-card">
           <div>
-            <div class="eco-tag">PRESENT</div>
-            <h3 class="eco-title">RJMEDIA COMMUNITY</h3>
-            <ul class="eco-list">
-              <li>STORIES</li>
-              <li>RESOURCES</li>
-              <li>DISCUSSION</li>
-            </ul>
-          </div>
-          <a class="eco-cta" href="./pages/draper-news.html">KEEP THE CONNECTION ↑</a>
-        </div>
-
-        <div class="eco-card">
-          <div>
-            <div class="eco-tag">FUTURE</div>
+            <div class="eco-tag">INFRASTRUCTURE • OPEN SOURCE</div>
             <h3 class="eco-title">JUPITER ISLAND</h3>
             <ul class="eco-list">
-              <li>AI SYSTEMS</li>
-              <li>AUTOMATION</li>
-              <li>OPEN SOURCE</li>
+              <li>AI SYSTEMS &amp; MEMORYOS</li>
+              <li>VIDEO &amp; AUDIO RESTORATION TOOLS</li>
+              <li>OPEN-SOURCE COMMUNITY CODE</li>
             </ul>
           </div>
           <a class="eco-cta" href="https://github.com/JupiterIsland" target="_blank" rel="noopener">BUILD WHAT'S NEXT →</a>
@@ -351,18 +448,22 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="need-help">
       <p class="eyebrow">PEOPLE • CONNECTION • CONTINUITY</p>
-      <h2>WHY KEEP THE CONNECTION?</h2>
+      <h2>WHY KEEP THE CONNECTION EQUALS THE ARCHIVE</h2>
       <div class="why-grid">
         <div class="why-box">
-          <p>The archive preserves recordings.</p>
-          <p>The community preserves people.</p>
-          <p>Behind every performance, documentary, photograph and recording is a personal story.</p>
-          <p>The purpose of RJMedia Community is to create a space where people can share experiences, exchange ideas and help one another remain informed, organised and connected.</p>
+          <p><strong>Mission 1 preserves recordings. Mission 2 preserves people.</strong></p>
+          <p>Behind every performance, documentary, photograph and recording is a personal story. Like many people across the UK, Richard John Murray experienced housing instability while continuing to maintain 25 years of music archives and community resources.</p>
+          <p>Using AI tools from temporary accommodation to organise evidence, document Section 188 housing duties, and advocate for safe, pet-friendly housing proved that <strong>reliable connectivity is not a luxury — it is a lifeline</strong>.</p>
+          <p>If you are experiencing housing difficulties, digital exclusion, connectivity problems, or need help organising information with AI, reach out directly: <a href="mailto:richardmurray2022@gmail.com" style="color:#ffffff; text-decoration:underline; font-weight:700;">richardmurray2022@gmail.com</a></p>
         </div>
         <div class="why-manifesto">
-          <h3>TECHNOLOGY CHANGES.<br>PLATFORMS COME AND GO.<br>COMMUNITIES MATTER.</h3>
+          <h3>TECHNOLOGY CHANGES.<br>PLATFORMS COME AND GO.<br>PEOPLE &amp; COMMUNITIES MATTER.</h3>
+          <div class="btn-row" style="margin-top:2rem;">
+            <a class="btn-light" href="mailto:richardmurray2022@gmail.com">CONTACT / SHARE YOUR STORY</a>
+            <a class="btn-dark" href="./index.html">RETURN TO ARCHIVE HUB →</a>
+          </div>
         </div>
       </div>
     </section>

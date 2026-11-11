@@ -809,3 +809,120 @@ img.img-missing {
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
+
+/* === DUAL PRIMARY MISSIONS BAR (MISSION 1 === MISSION 2) === */
+.dual-mission-bar {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-bottom: 2px solid #111111;
+  font-size: 0.74rem;
+}
+.dual-mission-inner {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.mission-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  color: #d1d5db;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.mission-pill:first-child {
+  border-right: 1px solid #2a2a2a;
+}
+.mission-pill:hover {
+  background: #18181b;
+  color: #ffffff;
+}
+.mission-pill.active-mission {
+  background: #141417;
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.mission-badge {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.mission-text {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex: 1;
+}
+.mission-cta {
+  font-family: monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.dual-mission-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+.dual-mission-card {
+  border: 2px solid var(--ink);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.dual-mission-card.mission-one {
+  background: var(--white);
+  color: var(--ink);
+}
+.dual-mission-card.mission-two {
+  background: #0d0f12;
+  color: #ffffff;
+}
+.dual-mission-card .m-kicker {
+  font-family: monospace;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.dual-mission-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.dual-mission-card p {
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+@media (max-width: 820px) {
+  .dual-mission-inner,
+  .dual-mission-cards {
+    grid-template-columns: 1fr;
+  }
+  .mission-pill:first-child {
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+  }
+}
