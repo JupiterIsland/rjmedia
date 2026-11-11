@@ -2,552 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RJMedia Community — Keep The Connection | The Ecosystem</title>
-  <style>
-    :root {
-      --bg: #050505;
-      --panel: #111111;
-      --ink: #ffffff;
-      --muted: #8a8a8a;
-      --rule: rgba(255, 255, 255, 0.08);
-      --max: 1120px;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 15px/1.6 'Inter', 'Segoe UI', Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
-
-    /* Sticky Mid Navigation Bar */
-    .mid-nav {
-      border-bottom: 1px solid var(--rule);
-      background: rgba(5, 5, 5, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .mid-nav-inner {
-      height: 64px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-    .diamond {
-      width: 8px;
-      height: 8px;
-      background: #ffffff;
-      transform: rotate(45deg);
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.6rem;
-      align-items: center;
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .nav-links a:hover { color: #ffffff; }
-    .nav-links a.active-link { color: #ffffff; border-bottom: 2px solid #ffffff; padding-bottom: 3px; }
-
-    /* Hero Section with Radial Glow */
-    .hero {
-      position: relative;
-      padding: 5rem 0 3.5rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -60px;
-      left: 5%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-      filter: blur(60px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .hero > * { position: relative; z-index: 1; }
-    .eyebrow {
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 1.25rem;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 3rem;
-      align-items: start;
-    }
-    .title-block h1 {
-      margin: 0;
-      font-size: clamp(3.2rem, 7.5vw, 6.2rem);
-      font-weight: 1000;
-      letter-spacing: -0.05em;
-      line-height: 0.88;
-      text-transform: uppercase;
-    }
-    .title-block h1 span.highlight {
-      background: #ffffff;
-      color: #000000;
-      padding: 0 0.25em;
-    }
-    .hero-sub {
-      margin: 1.5rem 0 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 520px;
-      line-height: 1.6;
-    }
-
-    /* Stats Box */
-    .stats-cluster {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      min-width: 300px;
-    }
-    .stats-boxes {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-    .stat-card {
-      background: linear-gradient(145deg, #181818, #0b0b0b);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
-      padding: 1.15rem 1.25rem;
-      transition: all 0.3s ease;
-    }
-    .stat-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.15);
-    }
-    .stat-label {
-      font-size: 0.6rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.35rem;
-    }
-    .stat-num {
-      font-size: 1.75rem;
-      font-weight: 950;
-      letter-spacing: -0.03em;
-    }
-    .stat-caption {
-      font-size: 0.65rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #d9d9d9;
-      padding-top: 0.25rem;
-    }
-
-    /* THE ECOSYSTEM Section */
-    .section {
-      padding: 4.5rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .section h2 {
-      margin: 0 0 2rem;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 950;
-      letter-spacing: -0.03em;
-      text-transform: uppercase;
-    }
-    .eco-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-    .eco-card {
-      background: linear-gradient(145deg, #181818, #0b0b0b);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 310px;
-      transition: all 0.3s ease;
-    }
-    .eco-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.15);
-      border-color: rgba(255,255,255,0.22);
-    }
-    .eco-tag {
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-    .eco-title {
-      margin: 0 0 1.25rem;
-      font-size: 1.4rem;
-      font-weight: 950;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-    }
-    .eco-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.5rem;
-      border-top: 1px solid var(--rule);
-    }
-    .eco-list li {
-      padding: 0.65rem 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .eco-cta {
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      color: #bebebe;
-    }
-    .eco-cta:hover { color: #ffffff; }
-
-    /* WHY KEEP THE CONNECTION Section */
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.25rem;
-    }
-    .why-box {
-      background: linear-gradient(145deg, #181818, #0b0b0b);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
-      padding: 2.5rem;
-      transition: all 0.3s ease;
-    }
-    .why-box:hover {
-      transform: translateY(-6px) scale(1.01);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.15);
-    }
-    .why-box p {
-      margin: 0 0 1.2rem;
-      color: #d9d9d9;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    .why-box p:last-child { margin-bottom: 0; }
-    .why-manifesto {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: rgba(255,255,255,0.03);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
-      padding: 2.5rem;
-    }
-    .why-manifesto h3 {
-      margin: 0;
-      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
-      font-weight: 950;
-      line-height: 1.4;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
-    }
-
-    footer {
-      padding: 3rem 0 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      border-top: 1px solid var(--rule);
-      margin-top: 4rem;
-    }
-    footer a { color: #bebebe; }
-    footer a:hover { color: #ffffff; }
-    @media (max-width: 960px) {
-      .hero-grid, .eco-grid, .why-grid { grid-template-columns: 1fr; }
-      .stats-cluster { width: 100%; }
-    }
-    /* Dual Primary Missions Bar Hidden for Separate Room Experience */
-    .dual-mission-bar {
-      display: none;
-    }
-    .dual-mission-inner {
-      width: min(var(--max), calc(100% - 3rem));
-      margin-inline: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .mission-pill {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      padding: 0.65rem 1rem;
-      color: #9ca3af;
-      text-decoration: none;
-      border-bottom: 3px solid transparent;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-    }
-    .mission-pill:first-child { border-right: 1px solid var(--rule); }
-    .mission-pill:hover { background: #161920; color: #ffffff; }
-    .mission-pill.active-mission { background: #12151a; color: #ffffff; border-bottom-color: #ffffff; }
-    .mission-badge {
-      font-family: monospace;
-      font-size: 0.65rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.15rem 0.45rem;
-      border: 1px solid currentColor;
-      white-space: nowrap;
-    }
-    .mission-text {
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      flex: 1;
-    }
-    .mission-cta {
-      font-family: monospace;
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: underline;
-      white-space: nowrap;
-    }
-    .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
-    .btn-light {
-      display: inline-block;
-      padding: 0.85rem 1.35rem;
-      background: #ffffff;
-      color: #050505;
-      font-size: 0.74rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: 1px solid #ffffff;
-    }
-    .btn-dark {
-      display: inline-block;
-      padding: 0.85rem 1.35rem;
-      background: transparent;
-      color: #ffffff;
-      font-size: 0.74rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: 1px solid #ffffff;
-    }
-    @media (max-width: 820px) {
-      .dual-mission-inner { grid-template-columns: 1fr; }
-      .mission-pill:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keep The Connection — RJMedia</title>
+  <link rel="stylesheet" href="/rjmedia/assets/css/theme.css">
 </head>
-<body>
-  <div class="dual-mission-bar" role="region" aria-label="Remember The Sound and Keep The Connection">
-    <div class="dual-mission-inner">
-      <a class="mission-pill" href="./index.html">
-        <span class="mission-badge">REMEMBER THE SOUND</span>
-        <span class="mission-text">Paul Draper &amp; Mansun Archive</span>
-        <span class="mission-cta">Explore Archive →</span>
-      </a>
-      <a class="mission-pill active-mission" href="./community.html">
-        <span class="mission-badge">KEEP THE CONNECTION</span>
-        <span class="mission-text">Take It Easy • Community Hub</span>
-        <span class="mission-cta">Active Hub ↓</span>
-      </a>
-    </div>
-  </div>
-  <header class="mid-nav">
-    <div class="wrap mid-nav-inner">
-      <a class="brand" href="./index.html"><span class="diamond"></span> RJMEDIA COMMUNITY</a>
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="./index.html">REMEMBER THE SOUND</a>
-        <a href="./community.html" class="active-link">KEEP THE CONNECTION</a>
-        <a href="./pages/index.html">PAUL DRAPER ARCHIVE</a>
-        <a href="./pages/mansun-mp3-vault.html">MEDIA</a>
-        <a href="./youtube.html">YOUTUBE UPLOADS</a>
-        <a href="./bio.html">BIO</a>
-      </nav>
-    </div>
-  </header>
+<body class="theme-community">
 
-  <main class="wrap">
-    <section class="hero">
-      <p class="eyebrow">REMEMBER THE SOUND • KEEP THE CONNECTION</p>
-      <div class="hero-grid">
-        <div class="title-block">
-          <h1>KEEP<br>THE<br>CONNECTI<span style="letter-spacing: -0.08em;">O</span>N</h1>
-          <p class="hero-sub" style="line-height: 1.8; color: #e5e7eb;">
-            Hopefully I, and others,<br>
-            will climb out of the ashes.<br><br>
-            Well...<br><br>
-            Maybe.<br><br>
-            Things keep falling off buildings.<br><br>
-            Take It Easy.
-          </p>
-          <div class="btn-row">
-            <a class="btn-light" href="#forum-discussion">JOIN THE DISCUSSION ↓</a>
-            <a class="btn-dark" href="./pages/index.html">REMEMBER THE SOUND →</a>
-          </div>
-        </div>
-        <div class="stats-cluster">
-          <div class="stats-boxes">
-            <div class="stat-card">
-              <div class="stat-label">ARCHIVE VIEWS</div>
-              <div class="stat-num">1,001,987</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">WATCH HOURS</div>
-              <div class="stat-num">72,500</div>
-            </div>
-          </div>
-          <div class="stat-caption">OVER ONE MILLION VIEWS • 25 YEARS ONLINE</div>
-        </div>
-      </div>
-    </section>
+  <nav>
+    <a href="/rjmedia/">RJMEDIA</a>
+    <a href="/rjmedia/youtube.html">VAULT</a>
+    <a href="/rjmedia/#collections">COLLECTIONS</a>
+    <a href="/rjmedia/#memory-trails">MEMORY TRAILS</a>
+    <a href="/rjmedia/community.html" class="active">KEEP THE CONNECTION</a>
+    <a href="/rjmedia/#support">SUPPORT</a>
+    <a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener">YOUTUBE ↗</a>
+  </nav>
 
-    <section class="section" id="forum-discussion">
-      <p class="eyebrow">COMMUNITY BOARD</p>
-      <h2>JOIN THE DISCUSSION</h2>
-      <div style="border: 1px solid #ffffff; background: var(--panel); padding: 2.5rem;">
-        <div style="display: flex; flex-wrap: wrap; gap: 1.25rem 3rem; margin-bottom: 2rem; font-size: 1.35rem; font-weight: 900; letter-spacing: 0.02em;">
-          <span>Music</span>
-          <span>Football</span>
-          <span>Gaming</span>
-          <span>AI</span>
-          <span>Life</span>
-        </div>
-        <div>
-          <span style="display: inline-block; font-family: monospace; font-size: 0.9rem; font-weight: 900; padding: 0.75rem 1.35rem; background: #ffffff; color: #050505; letter-spacing: 0.08em;">[ Forum Coming Online ]</span>
-        </div>
-      </div>
-    </section>
+  <section class="hero" style="text-align:center; padding:6rem 2rem 3rem;">
+    <h1 style="font-size:2.5rem; letter-spacing:3px; text-transform:uppercase;">Keep The Connection</h1>
+    <p style="color:var(--text-secondary); font-size:0.85rem; letter-spacing:2px; text-transform:uppercase; margin-top:0.5rem;">
+      Not being left behind &middot; Learning together &middot; 25+ years connected
+    </p>
+    <p style="max-width:640px; margin:2rem auto 0; color:var(--text-secondary);">
+      A space for people who feel locked out of the tech world, out of the housing system,
+      or out of the conversation — and want to get back in. No jargon. No gatekeeping.
+      No "just Google it". Real answers, shared between real people.
+    </p>
+  </section>
 
-    <section class="section">
-      <p class="eyebrow">REMEMBER THE SOUND • KEEP THE CONNECTION</p>
-      <h2>THE ARCHIVE &amp; COMMUNITY</h2>
-      <div class="eco-grid">
-        <div class="eco-card">
-          <div>
-            <div class="eco-tag">REMEMBER THE SOUND</div>
-            <h3 class="eco-title">PAUL DRAPER &amp; MANSUN ARCHIVE</h3>
-            <ul class="eco-list">
-              <li>25-YEAR PAUL DRAPER &amp; MANSUN ARCHIVE</li>
-              <li>ORIGINAL MEDIA PAGE (VIDEOS &amp; MP3S)</li>
-              <li>35 NEWS DISPATCHES &amp; MAGAZINE SPREADS</li>
-            </ul>
-          </div>
-          <a class="eco-cta" href="./pages/index.html">REMEMBER THE SOUND →</a>
-        </div>
+  <section class="topic-grid">
 
-        <div class="eco-card" style="border-color:#ffffff;">
-          <div>
-            <div class="eco-tag">KEEP THE CONNECTION</div>
-            <h3 class="eco-title">KEEP THE CONNECTION</h3>
-            <p style="color: #d1d5db; font-size: 0.92rem; line-height: 1.75; margin: 0 0 1.5rem;">
-              Hopefully I, and others,<br>
-              will climb out of the ashes.<br><br>
-              Well... Maybe.<br>
-              Things keep falling off buildings.<br>
-              Take It Easy.
-            </p>
-          </div>
-          <a class="eco-cta" href="#forum-discussion">JOIN THE DISCUSSION ↑</a>
-        </div>
+    <a href="/rjmedia/forum.html#tech" class="topic-card">
+      <div class="topic-index">01</div>
+      <h3>Not Being Left Behind</h3>
+      <p>Smartphones, apps, online banking, government portals. If it feels like the world moved on without telling you, start here.</p>
+    </a>
 
-        <div class="eco-card">
-          <div>
-            <div class="eco-tag">UNIFIED AI INFRASTRUCTURE</div>
-            <h3 class="eco-title">JUPITER ISLAND</h3>
-            <ul class="eco-list">
-              <li>MEMORYOS • GPU-AWARE MEMORY ROUTING</li>
-              <li>JUPITER ONE • HARDWARE REALITY &amp; VRAM</li>
-              <li>THE QUIET ADVISOR • 10 NIGHTLY DETECTORS</li>
-            </ul>
-          </div>
-          <a class="eco-cta" href="./bio.html">READ BUILDER BIO &amp; AI PROFILE →</a>
-        </div>
-      </div>
-    </section>
+    <a href="/rjmedia/forum.html#ai" class="topic-card">
+      <div class="topic-index">02</div>
+      <h3>Learning AI</h3>
+      <p>What AI actually is, what it isn't, and how to use it for real tasks. Prompts, tools, free options. No hype.</p>
+    </a>
 
-    <section class="section" id="builder-bio">
-      <p class="eyebrow">CARLISLE, ENGLAND • AN RJM TECHNOLOGY PROJECT</p>
-      <h2>THE QUIET INFRASTRUCTURE</h2>
-      <div class="why-grid">
-        <div class="why-box">
-          <p><strong>Created by RJM in Carlisle, England.</strong> Alongside the digital archive and community platform, Jupiter Island runs a unified AI infrastructure built from three core systems: <strong>MemoryOS</strong>, <strong>Jupiter One Hardware Reality</strong>, and <strong>The Quiet Advisor</strong>.</p>
-          <p><strong>MemoryOS</strong> handles GPU-aware memory routing, tier management, and checkpoint persistence. <strong>Jupiter One</strong> provides real-time VRAM analysis, hardware ROI recommendations, and multi-model scheduling. <strong>The Quiet Advisor</strong> observes inference patterns, runs ten detector algorithms nightly, and generates one actionable insight per day based on real usage data.</p>
-          <p>The focus is on inference optimization, GPU efficiency, multi-model orchestration, and exposing hidden patterns in user workflows across Docker, WSL2, Linux, Windows automation, consumer GPUs, and competitive model testing — building systems that reveal waste, improve throughput, and eliminate guesswork.</p>
-          <p>RJM also filmed the first public playback of Paul Draper's debut solo song at the Mansun convention in Chester. <em>Louder Than War</em> credited the recording to the <strong>Paul-Draper.net fansite</strong>, <em>Vanyaland</em> documented the capture, and <em>The Guardian</em> featured the video in its indie playlist.</p>
-          <p>Reach out directly: <a href="mailto:richardmurray2022@gmail.com" style="color:#ffffff; text-decoration:underline; font-weight:700;">richardmurray2022@gmail.com</a></p>
-        </div>
-        <div class="why-manifesto">
-          <h3>REVEAL WASTE.<br>IMPROVE THROUGHPUT.<br>ELIMINATE GUESSWORK.<br><span style="color:#8a8a8a; font-size:0.85em;">TAKE IT EASY.</span></h3>
-          <div class="btn-row" style="margin-top:2rem;">
-            <a class="btn-light" href="./jupiter-island.html">EXPLORE JUPITER ISLAND →</a>
-            <a class="btn-dark" href="./llms.txt">VIEW LLMS.TXT ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    <a href="/rjmedia/forum.html#rights" class="topic-card">
+      <div class="topic-index">03</div>
+      <h3>Council Rights</h3>
+      <p>Housing, benefits, appeals, complaint procedures. Your rights when dealing with local authorities, in plain English.</p>
+    </a>
 
-  <footer>
-    <div class="wrap" style="width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-      <div>◆ PRESENTED BY RJMEDIA DIGITAL ARCHIVE · REMEMBER THE SOUND · CREATED BY RJM</div>
-      <div>
-        <a href="./index.html">RJMedia Digital Archive</a> ·
-        <a href="./pages/index.html">Paul Draper Music</a> ·
-        <a href="./jupiter-island.html">Jupiter Island</a> ·
-        <a href="./youtube.html">YouTube Vault</a> ·
-        <a href="./llms.txt">llms.txt</a>
-      </div>
-    </div>
+    <a href="/rjmedia/forum.html#homelessness" class="topic-card">
+      <div class="topic-index">04</div>
+      <h3>Homelessness in the UK</h3>
+      <p>Support, resources, staying safe, getting help. Practical advice and a space where nobody judges how you got here.</p>
+    </a>
+
+    <a href="/rjmedia/forum.html#music" class="topic-card">
+      <div class="topic-index">05</div>
+      <h3>Music &amp; Nostalgia</h3>
+      <p>Gig memories, discography chat, and the music that got us through. The archive exists because people cared enough to keep it.</p>
+    </a>
+
+    <a href="/rjmedia/forum.html#requests" class="topic-card">
+      <div class="topic-index">06</div>
+      <h3>Archive Requests</h3>
+      <p>Lost recordings, missing footage, rare broadcasts. If it existed once, someone here might remember it.</p>
+    </a>
+
+    <a href="/rjmedia/forum.html#tools" class="topic-card">
+      <div class="topic-index">07</div>
+      <h3>Technology &amp; Tools</h3>
+      <p>Docker, Python, local AI, hardware. For anyone who wants to build, not just consume.</p>
+    </a>
+
+    <a href="/rjmedia/forum.html#checkin" class="topic-card">
+      <div class="topic-index">08</div>
+      <h3>Check-In</h3>
+      <p>How are you doing? Peer support, light conversation, and a place to say things you can't say elsewhere.</p>
+    </a>
+
+    <a href="/rjmedia/forum.html#news" class="topic-card">
+      <div class="topic-index">09</div>
+      <h3>Site Announcements</h3>
+      <p>Archive additions, new features, and news from the RJMedia project.</p>
+    </a>
+
+  </section>
+
+  <footer style="text-align:center; padding:3rem; border-top:1px solid var(--border); font-size:0.75rem; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">
+    Created by RJM &middot; RJMedia Digital Archive
   </footer>
+
+  <script src="/rjmedia/assets/js/effects.js" defer></script>
 </body>
 </html>

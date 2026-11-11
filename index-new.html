@@ -255,8 +255,9 @@
       .tab-btn { padding: 0.75rem 1rem; font-size: 0.8rem; }
     }
   </style>
+  <link rel="stylesheet" href="/rjmedia/assets/css/theme.css">
 </head>
-<body>
+<body class="theme-archive">
   <!-- NAVIGATION -->
   <header class="topbar">
     <div class="wrap nav">
@@ -290,7 +291,7 @@
 
       <!-- TAB 1: PAST - ARCHIVE -->
       <section id="past" class="tab-content active">
-        <h2 style="font-size: 1.8rem; margin: 0 0 0.5rem; text-transform: uppercase;">Remember the Sound</h2>
+        <h2 class="reveal" style="font-size: 1.8rem; margin: 0 0 0.5rem; text-transform: uppercase;">Remember the Sound</h2>
         <p style="color: var(--muted); max-width: 700px;">RJMedia Digital Archive preserves rare performances, music documentaries, research, and cultural history. Museum-grade preservation meets accessible discovery.</p>
 
         <!-- Paul Draper & Mansun Collection -->
@@ -299,7 +300,7 @@
           
           <div class="featured">
             <div class="featured-image">
-              <img src="./draper/images/paulcorner4.jpg" alt="Paul Draper" style="width: 100%; height: 100%; object-fit: cover;">
+              <img class="archive-image" src="./draper/images/paulcorner4.jpg" alt="Paul Draper" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="featured-info">
               <h3>Paul Draper & Mansun<br/>Complete Archive</h3>
@@ -311,17 +312,17 @@
 
         <!-- Archive Sections -->
         <div class="portal-grid" style="margin-top: 2rem;">
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>📰 News & Logs</h3>
             <p>16 chronological studio dispatches, announcements, and direct updates from 2006–2012.</p>
             <p><a href="./draper/draper-news.html">Browse News →</a></p>
           </div>
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>📄 Press & Interviews</h3>
             <p>High-resolution magazine scans from Melody Maker, Select, Rock Sound, and Uncut. 4 major features.</p>
             <p><a href="./draper/draper-articles.html">Read Articles →</a></p>
           </div>
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>🎵 MP3 Vault</h3>
             <p>52 tracks: Amsterdam Paradiso 1998 live bootleg, Grind demos, rarities, and unreleased studio work.</p>
             <p><a href="./draper/mansun-mp3-vault.html">Play Audio →</a></p>
@@ -331,21 +332,21 @@
 
       <!-- TAB 2: PRESENT - COMMUNITY -->
       <section id="present" class="tab-content">
-        <h2 style="font-size: 1.8rem; margin: 0 0 0.5rem; text-transform: uppercase;">Keep the Connection</h2>
+        <h2 class="reveal" style="font-size: 1.8rem; margin: 0 0 0.5rem; text-transform: uppercase;">Keep the Connection</h2>
         <p style="color: var(--muted); max-width: 700px;">Community stories, practical resources, and discussion spaces. Behind every archive entry is a person. This is where they connect.</p>
 
         <div class="portal-grid" style="margin-top: 2rem;">
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>🏘️ Community Stories</h3>
             <p>Personal narratives about housing, connectivity, digital inclusion, and life change. Coming soon.</p>
             <p style="color: #aaa; font-size: 0.85rem;">Launching Soon</p>
           </div>
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>💬 Forum & Discussion</h3>
             <p>Topics: housing, AI, ADHD, music preservation, creator workflows, and open source projects.</p>
             <p style="color: #aaa; font-size: 0.85rem;">Launching Soon</p>
           </div>
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>🤝 Need Help?</h3>
             <p>Practical support with housing, digital access, connectivity, and information organization.</p>
             <p><a href="mailto:richardmurray2022@gmail.com">Get in Touch →</a></p>
@@ -361,21 +362,21 @@
 
       <!-- TAB 3: FUTURE - TECHNOLOGY -->
       <section id="future" class="tab-content">
-        <h2 style="font-size: 1.8rem; margin: 0 0 0.5rem; text-transform: uppercase;">Build What's Next</h2>
+        <h2 class="reveal" style="font-size: 1.8rem; margin: 0 0 0.5rem; text-transform: uppercase;">Build What's Next</h2>
         <p style="color: var(--muted); max-width: 700px;">AI systems, metadata automation, and open-source tools. Technology in service of preservation and community.</p>
 
         <div class="portal-grid" style="margin-top: 2rem;">
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>🤖 AI & Automation</h3>
             <p>Archive intelligence notes. AI-assisted cataloguing, preservation metadata, and intelligent discovery tools.</p>
             <p><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">View on GitHub →</a></p>
           </div>
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>🔗 Open Source</h3>
             <p>Docker containers, metadata frameworks, and preservation pipelines. Join the mission on GitHub.</p>
             <p><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">Explore Projects →</a></p>
           </div>
-          <div class="portal-card">
+          <div class="portal-card reveal">
             <h3>📊 Data & Metadata</h3>
             <p>Standardized archival formats, structured data, and intelligent systems for cultural preservation.</p>
             <p><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">See Architecture →</a></p>
@@ -444,5 +445,6 @@
       });
     });
   </script>
+  <script src="/rjmedia/assets/js/effects.js" defer></script>
 </body>
 </html>

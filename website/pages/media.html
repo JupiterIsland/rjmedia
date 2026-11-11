@@ -158,8 +158,9 @@
       .media-section-heading { font-size: 1.05rem; }
     }
   </style>
+  <link rel="stylesheet" href="/rjmedia/assets/css/theme.css">
 </head>
-<body>
+<body class="theme-draper">
   <div class="dual-mission-bar" role="region" aria-label="Remember The Sound and Keep The Connection">
     <div class="dual-mission-inner">
       <a class="mission-pill active-mission" href="./index.html">
@@ -198,10 +199,10 @@
     <div class="media-container">
       <div class="media-top-header">
         <div>
-          <img src="../assets/images/pd-music-banner.png" alt="www.PaulDraper-Music.co.uk" style="max-width: 290px; height: auto; display: block; margin-bottom: 0.5rem;">
+          <img class="archive-image" src="../assets/images/pd-music-banner.png" alt="www.PaulDraper-Music.co.uk" style="max-width: 290px; height: auto; display: block; margin-bottom: 0.5rem;">
           <h1>Media</h1>
         </div>
-        <img src="../assets/images/paulcorner.jpg" alt="Paul Draper" width="108" height="132" style="border: 1px solid #ccc;">
+        <img class="archive-image" src="../assets/images/paulcorner.jpg" alt="Paul Draper" width="108" height="132" style="border: 1px solid #ccc;">
       </div>
 
       <!-- Clean Playback Bar -->
@@ -214,7 +215,7 @@
 
       <!-- SECTION 1: .:Grind Videos and MP3s:. -->
       <section class="media-section" id="grind-era">
-        <h2 class="media-section-heading">.:Grind Videos and MP3s:.</h2>
+        <h2 class="media-section-heading reveal">.:Grind Videos and MP3s:.</h2>
 
         <div class="media-subheading">Videos</div>
         <ul class="media-list">
@@ -274,7 +275,7 @@
 
       <!-- SECTION 2: .:Six Early Version And Notes By Paul:. -->
       <section class="media-section" id="six-early">
-        <h2 class="media-section-heading">
+        <h2 class="media-section-heading reveal">
           .:Six Early Version And Notes By Paul:.
           <span class="sub-note">(Please note new Draper media coming soon)</span>
         </h2>
@@ -282,11 +283,11 @@
         <div class="notes-thumbs">
           <div class="notes-thumb-item">
             <p>(Click To Enlarge)</p>
-            <img src="../assets/images/six-soundmasters-ref.jpg" alt="Mansun album '98 Soundmasters Reference" onclick="openLightbox('../assets/images/six-soundmasters-ref.jpg', 'Mansun — album \'98 The Soundmasters CD Reference (20/6/1998)')">
+            <img class="archive-image" src="../assets/images/six-soundmasters-ref.jpg" alt="Mansun album '98 Soundmasters Reference" onclick="openLightbox('../assets/images/six-soundmasters-ref.jpg', 'Mansun — album \'98 The Soundmasters CD Reference (20/6/1998)')">
           </div>
           <div class="notes-thumb-item">
             <p>(Click To Enlarge)</p>
-            <img src="../assets/images/six-handwritten-notes.jpg" alt="Paul Draper Six Handwritten Notes" onclick="openLightbox('../assets/images/six-handwritten-notes.jpg', 'Paul Draper — Handwritten sequencing and mix notes for Six')">
+            <img class="archive-image" src="../assets/images/six-handwritten-notes.jpg" alt="Paul Draper Six Handwritten Notes" onclick="openLightbox('../assets/images/six-handwritten-notes.jpg', 'Paul Draper — Handwritten sequencing and mix notes for Six')">
           </div>
         </div>
 
@@ -348,7 +349,7 @@
 
       <!-- SECTION 3: .:Six Demo Sessions:. -->
       <section class="media-section" id="six-demos">
-        <h2 class="media-section-heading">.:Six Demo Sessions:.</h2>
+        <h2 class="media-section-heading reveal">.:Six Demo Sessions:.</h2>
         <ul class="media-list">
           <li>
             <button type="button" class="play-inline-btn" onclick="playTrack('Six Monitor Mix (28/9/97)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/demos/SixEarlyMonitorMix.mp3')">▶ Play</button>
@@ -394,7 +395,7 @@
 
       <!-- SECTION 4: .:John Peel Session 7/10/1995:. -->
       <section class="media-section" id="peel-session" style="margin-bottom: 1rem;">
-        <h2 class="media-section-heading">.:John Peel Session 7/10/1995:.</h2>
+        <h2 class="media-section-heading reveal">.:John Peel Session 7/10/1995:.</h2>
         <ul class="media-list">
           <li>
             <button type="button" class="play-inline-btn" onclick="playTrack('Grey Lantern (John Peel Session 7/10/1995)', 'https://web.archive.org/web/20120529132007if_/http://www.pauldraper-mansun.co.uk/downloads/mp3s/PeelSession/GreyLantern.mp3')">▶ Play</button>
@@ -470,5 +471,6 @@
       if (e.key === 'Escape') closeLightbox(e, true);
     });
   </script>
+  <script src="/rjmedia/assets/js/effects.js" defer></script>
 </body>
 </html>

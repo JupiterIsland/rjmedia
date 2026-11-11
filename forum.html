@@ -300,8 +300,9 @@
             }
         }
     </style>
+  <link rel="stylesheet" href="/rjmedia/assets/css/theme.css">
 </head>
-<body>
+<body class="theme-community">
 
     <!-- Frosted Glass Masthead -->
     <header>
@@ -327,7 +328,7 @@
     <!-- 3x3 Archive Grid -->
     <section class="forum-grid">
         
-        <div class="board-card" onclick="openBoard('Board 01 // The Archives', 'General music history, alternative rock discussion, and 90s retrospectives.', 'Discuss classic albums, Britpop era history, unreleased live recordings, and music retrospectives with fellow listeners.')">
+        <div class="board-card reveal" onclick="openBoard('Board 01 // The Archives', 'General music history, alternative rock discussion, and 90s retrospectives.', 'Discuss classic albums, Britpop era history, unreleased live recordings, and music retrospectives with fellow listeners.')">
             <div class="board-index">01</div>
             <div class="board-content">
                 <h3>The Archives</h3>
@@ -335,7 +336,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 02 // Lost Recordings', 'The request line. Help track down missing physical media, bootlegs, and lost B-sides.', 'Post missing concert bootlegs, untracked B-sides, or unreleased radio broadcasts you are searching for.')">
+        <div class="board-card reveal" onclick="openBoard('Board 02 // Lost Recordings', 'The request line. Help track down missing physical media, bootlegs, and lost B-sides.', 'Post missing concert bootlegs, untracked B-sides, or unreleased radio broadcasts you are searching for.')">
             <div class="board-index">02</div>
             <div class="board-content">
                 <h3>Lost Recordings</h3>
@@ -343,7 +344,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 03 // Live Music & Gigs', 'Setlists, front-row memories, and soundboard recording discussions.', 'Share your concert memories, venue ticket stubs, soundboard tapes, and setlists from 1980s to present day.')">
+        <div class="board-card reveal" onclick="openBoard('Board 03 // Live Music & Gigs', 'Setlists, front-row memories, and soundboard recording discussions.', 'Share your concert memories, venue ticket stubs, soundboard tapes, and setlists from 1980s to present day.')">
             <div class="board-index">03</div>
             <div class="board-content">
                 <h3>Live Music &amp; Gigs</h3>
@@ -351,7 +352,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 04 // Broadcast History', 'Television appearances, radio sessions, and historic interviews.', 'Documenting BBC John Peel sessions, Channel 4 The Word, MTV Europe, and historic music broadcast recordings.')">
+        <div class="board-card reveal" onclick="openBoard('Board 04 // Broadcast History', 'Television appearances, radio sessions, and historic interviews.', 'Documenting BBC John Peel sessions, Channel 4 The Word, MTV Europe, and historic music broadcast recordings.')">
             <div class="board-index">04</div>
             <div class="board-content">
                 <h3>Broadcast History</h3>
@@ -359,7 +360,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 05 // Community Support', 'Keep The Connection. Peer support, check-ins, and a space for mental health.', 'A calm, dedicated sanctuary for peer support, checking in with long-time archive members, and looking out for one another.')">
+        <div class="board-card reveal" onclick="openBoard('Board 05 // Community Support', 'Keep The Connection. Peer support, check-ins, and a space for mental health.', 'A calm, dedicated sanctuary for peer support, checking in with long-time archive members, and looking out for one another.')">
             <div class="board-index">05</div>
             <div class="board-content">
                 <h3>Community Support</h3>
@@ -367,7 +368,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 06 // Technology Discussion', 'Hardware, Docker, vLLM, local inference, and AI ecosystem builds.', 'Technical discussions around MemoryOS, consumer GPU inference, vLLM, local checkpoints, and open preservation tools.')">
+        <div class="board-card reveal" onclick="openBoard('Board 06 // Technology Discussion', 'Hardware, Docker, vLLM, local inference, and AI ecosystem builds.', 'Technical discussions around MemoryOS, consumer GPU inference, vLLM, local checkpoints, and open preservation tools.')">
             <div class="board-index">06</div>
             <div class="board-content">
                 <h3>Technology Discussion</h3>
@@ -375,7 +376,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 07 // Announcements', 'Site updates, new archive additions, and RJMedia news.', 'Official news dispatches, newly restored tape additions to the YouTube channel, and ecosystem upgrades.')">
+        <div class="board-card reveal" onclick="openBoard('Board 07 // Announcements', 'Site updates, new archive additions, and RJMedia news.', 'Official news dispatches, newly restored tape additions to the YouTube channel, and ecosystem upgrades.')">
             <div class="board-index">07</div>
             <div class="board-content">
                 <h3>Announcements</h3>
@@ -383,7 +384,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 08 // Tape Restorations', 'Workflows for Topaz Video AI, VHS digitization, and audio mastering.', 'Techniques for Betacam SP capture, analog audio de-noising, 60fps de-interlacing, and archival preservation standards.')">
+        <div class="board-card reveal" onclick="openBoard('Board 08 // Tape Restorations', 'Workflows for Topaz Video AI, VHS digitization, and audio mastering.', 'Techniques for Betacam SP capture, analog audio de-noising, 60fps de-interlacing, and archival preservation standards.')">
             <div class="board-index">08</div>
             <div class="board-content">
                 <h3>Tape Restorations</h3>
@@ -391,7 +392,7 @@
             </div>
         </div>
 
-        <div class="board-card" onclick="openBoard('Board 09 // Open Community', 'General off-topic conversation and connecting with long-time members.', 'General casual discussion, gear chat, recommendations, and connecting with the 25-year RJMedia community.')">
+        <div class="board-card reveal" onclick="openBoard('Board 09 // Open Community', 'General off-topic conversation and connecting with long-time members.', 'General casual discussion, gear chat, recommendations, and connecting with the 25-year RJMedia community.')">
             <div class="board-index">09</div>
             <div class="board-content">
                 <h3>Open Community</h3>
@@ -405,7 +406,7 @@
     <div class="board-modal" id="boardModal" onclick="closeBoardModal(event)">
         <div class="modal-box">
             <button class="modal-close" onclick="closeBoardModal(event, true)">Close [ESC]</button>
-            <h2 id="modalTitle" style="margin: 0 0 0.5rem 0; font-size: 1.4rem; color: #ffffff; text-transform: uppercase;"></h2>
+            <h2 class="reveal" id="modalTitle" style="margin: 0 0 0.5rem 0; font-size: 1.4rem; color: #ffffff; text-transform: uppercase;"></h2>
             <p id="modalSub" style="color: #888888; font-size: 0.9rem; margin-bottom: 1.5rem;"></p>
             <div id="modalDesc" style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;"></div>
             <a id="modalMailBtn" href="" class="btn-glass" style="display: inline-block;">Post New Topic in Board &rarr;</a>
@@ -434,5 +435,6 @@
         });
     </script>
 
+  <script src="/rjmedia/assets/js/effects.js" defer></script>
 </body>
 </html>

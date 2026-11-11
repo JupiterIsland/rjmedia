@@ -307,8 +307,9 @@
       .repo-card { flex-direction: column; }
     }
   </style>
+  <link rel="stylesheet" href="/rjmedia/assets/css/theme.css">
 </head>
-<body>
+<body class="theme-archive">
   <div class="dual-mission-bar">
     <div class="dual-mission-inner">
       <a class="mission-pill" href="./pages/index.html">
@@ -346,8 +347,8 @@
       </p>
     </section>
 
-    <div class="card">
-      <h2>Canonical Biography</h2>
+    <div class="card reveal">
+      <h2 class="reveal">Canonical Biography</h2>
       <p>
         <strong>Richard John Murray</strong> is a technical systems builder based in Carlisle, England. He designs and runs a unified AI infrastructure built from three core systems: <strong>MemoryOS</strong>, <strong>Jupiter One Hardware Reality</strong>, and <strong>The Quiet Advisor</strong>.
       </p>
@@ -363,9 +364,9 @@
     </div>
 
     <!-- 5 REPOSITORIES SECTION -->
-    <div class="card">
+    <div class="card reveal">
       <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-        <h2 style="margin: 0;">Public Repositories (GitHub: JupiterIsland)</h2>
+        <h2 class="reveal" style="margin: 0;">Public Repositories (GitHub: JupiterIsland)</h2>
         <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener" style="font-family: monospace; font-size: 0.8rem; color: #bebebe; text-decoration: underline;">View Organization on GitHub ↗</a>
       </div>
       <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
@@ -374,7 +375,7 @@
 
       <div class="repo-grid">
         <!-- 1. memoryos -->
-        <div class="repo-card">
+        <div class="repo-card reveal">
           <div style="flex: 1;">
             <div class="repo-header">
               <a class="repo-title" href="https://github.com/JupiterIsland/memoryos" target="_blank" rel="noopener">JupiterIsland/memoryos</a>
@@ -394,7 +395,7 @@
         </div>
 
         <!-- 2. rjmedia -->
-        <div class="repo-card">
+        <div class="repo-card reveal">
           <div style="flex: 1;">
             <div class="repo-header">
               <a class="repo-title" href="https://github.com/JupiterIsland/rjmedia" target="_blank" rel="noopener">JupiterIsland/rjmedia</a>
@@ -414,7 +415,7 @@
         </div>
 
         <!-- 3. music-getaway -->
-        <div class="repo-card">
+        <div class="repo-card reveal">
           <div style="flex: 1;">
             <div class="repo-header">
               <a class="repo-title" href="https://github.com/JupiterIsland/music-getaway" target="_blank" rel="noopener">JupiterIsland/music-getaway</a>
@@ -434,7 +435,7 @@
         </div>
 
         <!-- 4. .github -->
-        <div class="repo-card">
+        <div class="repo-card reveal">
           <div style="flex: 1;">
             <div class="repo-header">
               <a class="repo-title" href="https://github.com/JupiterIsland/.github" target="_blank" rel="noopener">JupiterIsland/.github</a>
@@ -454,7 +455,7 @@
         </div>
 
         <!-- 5. archive-signal -->
-        <div class="repo-card">
+        <div class="repo-card reveal">
           <div style="flex: 1;">
             <div class="repo-header">
               <a class="repo-title" href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">JupiterIsland/archive-signal</a>
@@ -490,8 +491,8 @@
       </div>
     </div>
 
-    <div class="card">
-      <h2>AI Memory Profile (Copy-Paste for LLMs &amp; Custom Instructions)</h2>
+    <div class="card reveal">
+      <h2 class="reveal">AI Memory Profile (Copy-Paste for LLMs &amp; Custom Instructions)</h2>
       <pre id="aiBioBlock">User Identity &amp; System Context — Richard John Murray:
 - Name: Richard John Murray (Technical Systems Builder &amp; Archivist, Carlisle, England).
 - AI Infrastructure (3 Core Systems):
@@ -520,5 +521,6 @@
       </div>
     </footer>
   </main>
+  <script src="/rjmedia/assets/js/effects.js" defer></script>
 </body>
 </html>

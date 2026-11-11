@@ -7,8 +7,9 @@
   <meta name="description" content="Paul Draper & Mansun Digital Archive — The master gateway to news logs, press articles, magazine spreads, and the MP3 bootleg vault.">
   <title>Paul Draper &amp; Mansun Archive Hub | RJMedia Digital Archive</title>
   <link rel="stylesheet" href="./archive.css">
+  <link rel="stylesheet" href="/rjmedia/assets/css/theme.css">
 </head>
-<body>
+<body class="theme-draper">
   <div class="archive-status-bar">
     <div class="wrap archive-status-inner">
       <span>RJMEDIA DIGITAL ARCHIVE • PAUL DRAPER &amp; MANSUN COLLECTION</span>
@@ -44,29 +45,29 @@
     <!-- VISIBLE PHOTOGRAPHY STRIP -->
     <section aria-label="Featured Archive Photographs">
       <div class="photo-strip">
-        <article class="photo-card">
-          <img src="./images/indexpic.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper live studio session" onclick="openLightbox('./images/indexpic.jpg', 'Paul Draper — Live studio session photograph')">
+        <article class="photo-card reveal">
+          <img class="archive-image" src="./images/indexpic.jpg" onerror="this.classList.add('img-missing')" alt="Paul Draper live studio session" onclick="openLightbox('./images/indexpic.jpg', 'Paul Draper — Live studio session photograph')">
           <div class="cap">
             <strong>Studio &amp; Live Session</strong>
             Paul Draper on guitar and vocals (indexpic.jpg).
           </div>
         </article>
-        <article class="photo-card">
-          <img src="./images/glam_1_big.jpg" onerror="this.classList.add('img-missing')" alt="Melody Maker Glam Bam" onclick="openLightbox('./images/glam_1_big.jpg', 'Melody Maker (28 Sept 1996) — Glam Bam Thank You Man!')">
+        <article class="photo-card reveal">
+          <img class="archive-image" src="./images/glam_1_big.jpg" onerror="this.classList.add('img-missing')" alt="Melody Maker Glam Bam" onclick="openLightbox('./images/glam_1_big.jpg', 'Melody Maker (28 Sept 1996) — Glam Bam Thank You Man!')">
           <div class="cap">
             <strong>Melody Maker • Sept 1996</strong>
             "Glam Bam Thank You Man!" feature spread.
           </div>
         </article>
-        <article class="photo-card">
-          <img src="./images/taxi_small.jpg" onerror="this.classList.add('img-missing')" alt="Taxi The A.A." onclick="openLightbox('./images/taxi_small.jpg', 'Mansun — Taxi! The A.A.! feature cover')">
+        <article class="photo-card reveal">
+          <img class="archive-image" src="./images/taxi_small.jpg" onerror="this.classList.add('img-missing')" alt="Taxi The A.A." onclick="openLightbox('./images/taxi_small.jpg', 'Mansun — Taxi! The A.A.! feature cover')">
           <div class="cap">
             <strong>'Taxi! The A.A.!' • 1996</strong>
             Stove, Paul, and Chad on the road in early 1996.
           </div>
         </article>
-        <article class="photo-card">
-          <img src="./images/rocksound2000.jpg" onerror="this.classList.add('img-missing')" alt="Rock Sound 2000 Just For Kix" onclick="openLightbox('./images/rocksound2000.jpg', 'Rock Sound (2000) — Mansun: Just For Kix')">
+        <article class="photo-card reveal">
+          <img class="archive-image" src="./images/rocksound2000.jpg" onerror="this.classList.add('img-missing')" alt="Rock Sound 2000 Just For Kix" onclick="openLightbox('./images/rocksound2000.jpg', 'Rock Sound (2000) — Mansun: Just For Kix')">
           <div class="cap">
             <strong>Rock Sound • 2000</strong>
             "Just For Kix" — Anton Corbijn photographic feature.
@@ -77,7 +78,7 @@
 
     <!-- ARCHIVE PORTALS GRID (4 MAIN SECTIONS) -->
     <section style="padding: 3rem 0;">
-      <h2 style="font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--ink);">
+      <h2 class="reveal" style="font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--ink);">
         Explore the Archive Sections
       </h2>
 
@@ -193,5 +194,6 @@
       if (e.key === 'Escape') closeLightbox(e, true);
     });
   </script>
+  <script src="/rjmedia/assets/js/effects.js" defer></script>
 </body>
 </html>
