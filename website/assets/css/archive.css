@@ -1,10 +1,10 @@
 :root {
   color-scheme: light;
-  --paper: #f4f4f1;
+  --paper: #ffffff;
   --white: #ffffff;
   --ink: #111111;
   --muted: #555555;
-  --rule: rgba(17, 17, 17, 0.22);
+  --rule: rgba(17, 17, 17, 0.18);
   --black: #111111;
   --max: 1120px;
 }
@@ -24,7 +24,7 @@ a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(244, 244, 241, 0.96);
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--rule);
 }
 .nav {

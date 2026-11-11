@@ -6,11 +6,23 @@
 - **Name:** Richard John Murray
 - **Location:** Carlisle, England, UK
 - **Role:** Technical Systems Builder, AI Infrastructure Architect, & Digital Archivist
-- **GitHub:** https://github.com/JupiterIsland
+- **GitHub Organization:** https://github.com/JupiterIsland
 - **Live Sites:**
   - https://jupiterisland.github.io/rjmedia/
   - https://jupiterisland.github.io/memoryos/
 - **YouTube Channel:** Live Music & Band Documentaries / RJMedia (`@RJMedia`) — over 1,001,987 views and 72,500+ watch hours.
+
+## Five Public Repositories (GitHub: https://github.com/JupiterIsland)
+1. **`JupiterIsland/memoryos`** (Public • HTML / Systems)
+   - "A tiered memory engine for local AI. TLB + Temporal Graph + NVMe checkpoints. Built for NVIDIA, architected for AMD Helios. No cloud."
+2. **`JupiterIsland/rjmedia`** (Public • HTML / Archive)
+   - RJMedia music archive landing page and project files.
+3. **`JupiterIsland/music-getaway`** (Public • Python)
+   - Python-based tools, scripts, and workflows for musical archives and audio discovery.
+4. **`JupiterIsland/.github`** (Public)
+   - Organization profile, community health files, and GitHub workflows.
+5. **`JupiterIsland/archive-signal`** (Public • MIT License)
+   - Preserves and showcases rare music documentaries, broadcast recordings, interviews, restored footage, and cultural archives, bringing context, discovery, and community to independent music history.
 
 ## Unified AI Infrastructure (Three Core Systems)
 Richard John Murray designs and runs a unified, local-first AI infrastructure built around consumer GPUs, Docker, WSL2, Linux, and Windows automation:

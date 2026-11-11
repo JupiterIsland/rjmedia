@@ -194,6 +194,64 @@
       font-size: 0.9rem;
       color: var(--muted);
     }
+    
+    /* Repositories Grid */
+    .repo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .repo-card {
+      background: #000000;
+      border: 1px solid #2d3748;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      transition: border-color 0.15s ease;
+    }
+    .repo-card:hover {
+      border-color: #ffffff;
+    }
+    .repo-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .repo-title {
+      font-family: monospace;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    .repo-badge {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid #4b5563;
+      color: #9ca3af;
+      text-transform: uppercase;
+    }
+    .repo-desc {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin: 0 0 0.65rem;
+      line-height: 1.5;
+    }
+    .repo-meta {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      gap: 1.25rem;
+    }
+    
     pre {
       background: #000000;
       border: 1px solid #333333;
@@ -232,6 +290,7 @@
     }
     @media (max-width: 780px) {
       .dual-mission-inner, .grid-3 { grid-template-columns: 1fr; }
+      .repo-card { flex-direction: column; }
     }
   </style>
 </head>
@@ -258,6 +317,7 @@
         <a href="./index.html">REMEMBER THE SOUND</a>
         <a href="./community.html">KEEP THE CONNECTION</a>
         <a href="./pages/index.html">PAUL DRAPER ARCHIVE</a>
+        <a href="./youtube.html">YOUTUBE UPLOADS</a>
         <a href="./llms.txt">LLMS.TXT</a>
       </nav>
     </div>
@@ -288,6 +348,119 @@
       </p>
     </div>
 
+    <!-- 5 REPOSITORIES SECTION -->
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+        <h2 style="margin: 0;">Public Repositories (GitHub: JupiterIsland)</h2>
+        <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener" style="font-family: monospace; font-size: 0.8rem; color: #60a5fa; text-decoration: underline;">View Organization on GitHub ↗</a>
+      </div>
+      <p style="color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+        Five repositories maintained under the <strong>JupiterIsland</strong> GitHub ecosystem, spanning local-first AI memory engines, digital music archives, and audio restoration infrastructure:
+      </p>
+
+      <div class="repo-grid">
+        <!-- 1. memoryos -->
+        <div class="repo-card">
+          <div style="flex: 1;">
+            <div class="repo-header">
+              <a class="repo-title" href="https://github.com/JupiterIsland/memoryos" target="_blank" rel="noopener">JupiterIsland/memoryos</a>
+              <span class="repo-badge">Public</span>
+            </div>
+            <p class="repo-desc">
+              "A tiered memory engine for local AI. TLB + Temporal Graph + NVMe checkpoints. Built for NVIDIA, architected for AMD Helios. No cloud."
+            </p>
+            <div class="repo-meta">
+              <span>● HTML / Systems</span>
+              <span>Deploys <code>website/</code> via GitHub Actions</span>
+            </div>
+          </div>
+          <div>
+            <a href="https://github.com/JupiterIsland/memoryos" target="_blank" rel="noopener" style="display: inline-block; font-family: monospace; font-size: 0.75rem; padding: 0.4rem 0.8rem; background: #1e293b; border: 1px solid #475569; color: #fff;">Repository ↗</a>
+          </div>
+        </div>
+
+        <!-- 2. rjmedia -->
+        <div class="repo-card">
+          <div style="flex: 1;">
+            <div class="repo-header">
+              <a class="repo-title" href="https://github.com/JupiterIsland/rjmedia" target="_blank" rel="noopener">JupiterIsland/rjmedia</a>
+              <span class="repo-badge">Public</span>
+            </div>
+            <p class="repo-desc">
+              RJMedia music archive landing page, 25-year Mansun &amp; Paul Draper digital archive, and media preservation project files.
+            </p>
+            <div class="repo-meta">
+              <span>● HTML / JavaScript</span>
+              <span>Serves root on <code>main</code> &amp; <code>gh-pages</code></span>
+            </div>
+          </div>
+          <div>
+            <a href="https://github.com/JupiterIsland/rjmedia" target="_blank" rel="noopener" style="display: inline-block; font-family: monospace; font-size: 0.75rem; padding: 0.4rem 0.8rem; background: #1e293b; border: 1px solid #475569; color: #fff;">Repository ↗</a>
+          </div>
+        </div>
+
+        <!-- 3. music-getaway -->
+        <div class="repo-card">
+          <div style="flex: 1;">
+            <div class="repo-header">
+              <a class="repo-title" href="https://github.com/JupiterIsland/music-getaway" target="_blank" rel="noopener">JupiterIsland/music-getaway</a>
+              <span class="repo-badge">Public</span>
+            </div>
+            <p class="repo-desc">
+              Python-based audio processing, stream discovery, and metadata tools for independent music archives and collector tapes.
+            </p>
+            <div class="repo-meta">
+              <span>● Python</span>
+              <span>Audio Tools &amp; Scripts</span>
+            </div>
+          </div>
+          <div>
+            <a href="https://github.com/JupiterIsland/music-getaway" target="_blank" rel="noopener" style="display: inline-block; font-family: monospace; font-size: 0.75rem; padding: 0.4rem 0.8rem; background: #1e293b; border: 1px solid #475569; color: #fff;">Repository ↗</a>
+          </div>
+        </div>
+
+        <!-- 4. .github -->
+        <div class="repo-card">
+          <div style="flex: 1;">
+            <div class="repo-header">
+              <a class="repo-title" href="https://github.com/JupiterIsland/.github" target="_blank" rel="noopener">JupiterIsland/.github</a>
+              <span class="repo-badge">Public</span>
+            </div>
+            <p class="repo-desc">
+              Jupiter Island organization health files, default community configurations, standards, and reusable GitHub Actions.
+            </p>
+            <div class="repo-meta">
+              <span>● Organization Config</span>
+              <span>CI/CD &amp; Community Standards</span>
+            </div>
+          </div>
+          <div>
+            <a href="https://github.com/JupiterIsland/.github" target="_blank" rel="noopener" style="display: inline-block; font-family: monospace; font-size: 0.75rem; padding: 0.4rem 0.8rem; background: #1e293b; border: 1px solid #475569; color: #fff;">Repository ↗</a>
+          </div>
+        </div>
+
+        <!-- 5. archive-signal -->
+        <div class="repo-card">
+          <div style="flex: 1;">
+            <div class="repo-header">
+              <a class="repo-title" href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">JupiterIsland/archive-signal</a>
+              <span class="repo-badge">Public</span>
+            </div>
+            <p class="repo-desc">
+              Archive Signal preserves and showcases rare music documentaries, broadcast recordings, interviews, restored footage and cultural archives, bringing context, discovery, and community to independent music history.
+            </p>
+            <div class="repo-meta">
+              <span>● MIT License</span>
+              <span>Documentaries &amp; Broadcast Archive</span>
+            </div>
+          </div>
+          <div>
+            <a href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener" style="display: inline-block; font-family: monospace; font-size: 0.75rem; padding: 0.4rem 0.8rem; background: #1e293b; border: 1px solid #475569; color: #fff;">Repository ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="grid-3">
       <div class="sys-box">
         <h3>01 // MemoryOS</h3>
@@ -311,8 +484,14 @@
   1. MemoryOS: GPU-aware memory routing, tier management, and checkpoint persistence.
   2. Jupiter One Hardware Reality: Real-time VRAM analysis, hardware ROI recommendations, and multi-model scheduling.
   3. The Quiet Advisor: Observes inference patterns, runs 10 detector algorithms nightly, and outputs 1 actionable insight per day from real usage data.
+- 5 Public Repositories (GitHub: https://github.com/JupiterIsland):
+  1. JupiterIsland/memoryos: Tiered memory engine for local AI (TLB + Temporal Graph + NVMe checkpoints).
+  2. JupiterIsland/rjmedia: RJMedia music archive landing page &amp; 25-year Mansun &amp; Paul Draper archive.
+  3. JupiterIsland/music-getaway: Python audio archive tools &amp; stream discovery scripts.
+  4. JupiterIsland/.github: Organization standards, community health, and GitHub workflows.
+  5. JupiterIsland/archive-signal: Preserving rare music documentaries, broadcasts, and interviews (MIT).
 - Technical Stack &amp; Focus: Inference optimization, GPU efficiency, multi-model orchestration, competitive model testing, Docker, WSL2, Linux, Windows automation, and consumer GPUs. Philosophy: reveal waste, improve throughput, eliminate guesswork.
-- Cultural Preservation: Founder of the Mansun &amp; Paul Draper fan archives (MansunMusicLovers 2001, pauldraper-music.co.uk, Paul-Draper.net) and RJMedia (1M+ YouTube views). Filmed the first public playback of Paul Draper's debut solo song ("Feeling My Heart Run Slow") at the 2014 Chester Mansun convention — credited by Louder Than War ("Richard Murray of the Paul-Draper.net fansite"), named by Vanyaland, and featured in The Guardian.</pre>
+- Cultural Preservation: Founder of the Mansun &amp; Paul Draper fan archives (MansunMusicLovers 2001, pauldraper-music.co.uk, Paul-Draper.net) and RJMedia (1M+ YouTube views, 72.5K watch hours). Filmed the first public playback of Paul Draper's debut solo song ("Feeling My Heart Run Slow") at the 2014 Chester Mansun convention — credited by Louder Than War ("Richard Murray of the Paul-Draper.net fansite"), named by Vanyaland, and featured in The Guardian.</pre>
       <button type="button" class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('aiBioBlock').innerText); this.textContent='COPIED TO CLIPBOARD ✓';">Copy AI Memory Bio</button>
     </div>
 
@@ -322,6 +501,7 @@
         <a href="./index.html">Remember The Sound</a> ·
         <a href="./community.html">Keep The Connection</a> ·
         <a href="./pages/index.html">Paul Draper Archive</a> ·
+        <a href="./youtube.html">YouTube Uploads</a> ·
         <a href="./llms.txt">llms.txt</a>
       </div>
     </footer>

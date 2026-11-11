@@ -1,0 +1,833 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>RJMedia YouTube Vault â€” Channel Uploads &amp; Documentaries | Peter Green First Up</title>
+  <meta name="description" content="RJMedia YouTube Archive â€” Watch over 1,000,000 views of rare music documentaries and live broadcasts. Featuring Peter Green: A Hard Road (179K views), The Smiths Rockpalast '84, Paul Draper rarities, and more.">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #f9fafb;
+      --ink: #0f1419;
+      --muted: #4b5563;
+      --rule: rgba(15, 20, 25, 0.16);
+      --max: 1120px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.6 'Inter', 'Segoe UI', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
+    
+    /* Top Dual Mission Bar */
+    .dual-mission-bar {
+      background: #0a0a0a;
+      color: #ffffff;
+      border-bottom: 2px solid #0f1419;
+      font-size: 0.74rem;
+    }
+    .dual-mission-inner {
+      width: min(var(--max), calc(100% - 2rem));
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .mission-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      color: #d1d5db;
+      border-bottom: 3px solid transparent;
+      transition: background 0.15s ease;
+    }
+    .mission-pill:first-child { border-right: 1px solid #2a2a2a; }
+    .mission-pill:hover { background: #18181b; color: #ffffff; }
+    .mission-badge {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border: 1px solid currentColor;
+    }
+    .mission-text {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      flex: 1;
+    }
+    .mission-cta {
+      font-family: monospace;
+      font-size: 0.68rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+
+    /* Masthead */
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav {
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .diamond {
+      width: 9px;
+      height: 9px;
+      background: var(--ink);
+      transform: rotate(45deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.active-link { color: var(--ink); font-weight: 900; border-bottom: 2px solid var(--ink); }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+    h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 0 1.5rem;
+      line-height: 1.6;
+    }
+    .channel-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .stat-badge {
+      border: 1px solid var(--ink);
+      padding: 0.65rem 1.15rem;
+      background: var(--card);
+      font-family: monospace;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Featured Player Stage */
+    .stage-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .stage-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: #000000;
+      border: 2px solid var(--ink);
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .stage-info {
+      background: var(--card);
+      border: 1px solid var(--ink);
+      padding: 1.75rem;
+    }
+    .stage-badge {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      background: #dc2626;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+    }
+    .stage-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin: 0 0 0.85rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .stage-meta {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.15rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .stage-desc {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #374151;
+      margin: 0 0 1.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-dark {
+      background: var(--ink);
+      color: #ffffff;
+    }
+    .btn-dark:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn-outline:hover {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    /* Video Grid */
+    .grid-section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    .upload-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .upload-card {
+      background: #ffffff;
+      border: 1px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .upload-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .card-thumb-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      background: #111111;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .card-thumb-wrap img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(0, 0, 0, 0.78);
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.1rem;
+      padding-left: 3px;
+    }
+    .card-body {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-badge {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin: 0 0 0.5rem;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+    .card-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+    .card-stats {
+      font-family: monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #111111;
+      padding-top: 0.65rem;
+      border-top: 1px dotted var(--rule);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Strategy & Traffic Section */
+    .strategy-section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      background: var(--card);
+    }
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .strat-box {
+      background: #ffffff;
+      border: 1px solid var(--ink);
+      padding: 1.5rem;
+    }
+    .strat-box h3 {
+      margin: 0 0 0.65rem;
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+    .strat-box p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .strat-num {
+      font-family: monospace;
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: #dc2626;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    footer {
+      padding: 3rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .stage-grid, .upload-grid, .strategy-grid { grid-template-columns: 1fr; }
+      .dual-mission-inner { grid-template-columns: 1fr; }
+      .mission-pill:first-child { border-right: none; border-bottom: 1px solid #2a2a2a; }
+    }
+  </style>
+</head>
+<body>
+  <div class="dual-mission-bar">
+    <div class="dual-mission-inner">
+      <a class="mission-pill" href="./index.html">
+        <span class="mission-badge">REMEMBER THE SOUND</span>
+        <span class="mission-text">Paul Draper &amp; Mansun Archive</span>
+        <span class="mission-cta">Explore Archive â†’</span>
+      </a>
+      <a class="mission-pill" href="../community.html">
+        <span class="mission-badge">KEEP THE CONNECTION</span>
+        <span class="mission-text">Take It Easy â€¢ Community Hub</span>
+        <span class="mission-cta">Enter Community â†’</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html"><span class="diamond"></span> RJMEDIA / YOUTUBE VAULT</a>
+      <nav class="nav-links">
+        <a href="../index.html">REMEMBER THE SOUND</a>
+        <a href="../community.html">KEEP THE CONNECTION</a>
+        <a href="./index.html">PAUL DRAPER ARCHIVE</a>
+        <a href="./youtube.html" class="active-link">YOUTUBE UPLOADS</a>
+        <a href="../bio.html">BIO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">LIVE MUSIC &amp; BAND DOCUMENTARIES ARCHIVE â€¢ RJMEDIA</p>
+      <h1>YOUTUBE UPLOADS &amp; RARE BROADCASTS</h1>
+      <p class="hero-lead">
+        Preserving legendary rock documentaries, restored concert footage, and historic acoustic sessions from the RJMedia archives. Stream full broadcasts directly below.
+      </p>
+      <div class="channel-badges">
+        <div class="stat-badge">ðŸ“º Channel: @RJMedia</div>
+        <div class="stat-badge">ðŸ‘ï¸ 1,001,987+ Total Views</div>
+        <div class="stat-badge">â±ï¸ 72,500+ Watch Hours</div>
+        <a class="btn btn-dark" href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">Visit YouTube Channel â†—</a>
+      </div>
+    </section>
+
+    <!-- FEATURED STAGE: PETER GREEN FIRST UP -->
+    <section class="stage-section" id="featured-stage">
+      <div class="stage-grid">
+        <div class="video-wrap">
+          <iframe id="mainPlayerFrame" src="https://www.youtube.com/embed/ubkpJnoXVeA?rel=0" title="RJMedia Featured Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="stage-info">
+          <span class="stage-badge" id="playerCategoryBadge">â˜… FIRST UP â€¢ FEATURED DOCUMENTARY</span>
+          <h2 class="stage-title" id="playerTitle">Peter Green : A Hard Road</h2>
+          <div class="stage-meta" id="playerMeta">
+            Published: 11 Jun 2023 Â· Duration: 28:46 Â· 179,000+ Views Â· 21,134+ Watch Hours
+          </div>
+          <p class="stage-desc" id="playerDescription">
+            The definitive broadcast documentary exploring the haunting blues genius, Fleetwood Mac founding years, and turbulent journey of Peter Green. Featuring rare archival footage, in-depth interviews with John Mayall, Mick Fleetwood, and Peter himself.
+          </p>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a id="playerExternalLink" class="btn btn-dark" href="https://www.youtube.com/watch?v=ubkpJnoXVeA" target="_blank" rel="noopener">Watch on YouTube â†—</a>
+            <button type="button" class="btn btn-outline" onclick="copyCurrentShareLink()">Share Video Link</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST UPLOADS GRID -->
+    <section class="grid-section">
+      <div class="section-head">
+        <div>
+          <h2>Best Channel Uploads</h2>
+          <p style="color: var(--muted); font-size: 0.95rem; margin: 0.35rem 0 0;">Click any video to load it into the master player above.</p>
+        </div>
+        <span style="font-family: monospace; font-size: 0.8rem; color: var(--muted);">12 Featured Titles</span>
+      </div>
+
+      <div class="upload-grid">
+        <!-- 1. Peter Green -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('ubkpJnoXVeA', 'Peter Green : A Hard Road', '11 Jun 2023 Â· Duration: 28:46 Â· 179,000+ Views Â· 21,134+ Hours', 'The definitive broadcast documentary exploring the haunting blues genius, Fleetwood Mac founding years, and turbulent journey of Peter Green.', 'â˜… FIRST UP â€¢ FEATURED DOCUMENTARY')">
+            <img src="https://img.youtube.com/vi/ubkpJnoXVeA/hqdefault.jpg" alt="Peter Green A Hard Road">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Documentary / Fleetwood Mac</div>
+              <h3 class="card-title">Peter Green : A Hard Road</h3>
+              <p class="card-desc">The legendary guitarist's story, Mayall's Bluesbreakers, and rare interviews.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ 179,000+ Views</span>
+              <span>â±ï¸ 21,134 Hours</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. The Smiths -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('WLU74h889VI', 'The Smiths - Live Rockpalast 1984 FHD', '05 May 2025 Â· Duration: 71:00 Â· Full Concert Remaster', 'Master restoration of The Smiths complete 1984 German Rockpalast broadcast featuring Morrissey and Johnny Marr in peak form.', 'CONCERT RESTORATION')">
+            <img src="https://img.youtube.com/vi/WLU74h889VI/hqdefault.jpg" alt="The Smiths Rockpalast 1984">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Full Concert / Remaster</div>
+              <h3 class="card-title">The Smiths â€” Live Rockpalast 1984 FHD</h3>
+              <p class="card-desc">Full 71-minute master restoration of the legendary 1984 Rockpalast performance.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ 14,000+ Views</span>
+              <span>â±ï¸ 12,711 Hours</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Paul Draper Take It Easy Chicken -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('Yt9EPXKJ3_s', 'Paul Draper (Mansun) â€” Take It Easy Chicken (Live Manchester Academy)', '18 Mar 2026 Â· Manchester Academy Â· Filmed by RJMedia', 'Front-row live performance of the Mansun classic filmed direct by Richard Murray at Manchester Academy.', 'EXCLUSIVE LIVE RECORDING')">
+            <img src="https://img.youtube.com/vi/Yt9EPXKJ3_s/hqdefault.jpg" alt="Paul Draper Take It Easy Chicken">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Mansun / Paul Draper</div>
+              <h3 class="card-title">Paul Draper â€” Take It Easy Chicken (Live)</h3>
+              <p class="card-desc">Front-row footage filmed by RJMedia at Manchester Academy.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Exclusive Archive</span>
+              <span>Filmed by RJMedia</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Mansun Brixton '98 -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('rxblL3k4LTA', 'Mansun â€” She Makes My Wheels Turn (Live Brixton Academy 1998)', 'Brixton Academy 1998 Â· Six Era Tour', 'Mansun performing live at Brixton Academy during the 1998 Six album tour.', 'MANSUN ARCHIVE')">
+            <img src="https://img.youtube.com/vi/rxblL3k4LTA/hqdefault.jpg" alt="Mansun She Makes My Wheels Turn">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Live Broadcast / 1998</div>
+              <h3 class="card-title">Mansun â€” She Makes My Wheels Turn</h3>
+              <p class="card-desc">Brixton Academy 1998 live performance during the peak Six era.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Six Tour</span>
+              <span>Brixton Academy</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Editors Glastonbury -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('K78QSJRNwJg', 'Editors â€” Glastonbury 2023 Full Set', '09 Sep 2024 Â· Worthy Farm, Pilton Â· Duration: 60:30', 'Complete festival broadcast of Editors performing on the Other Stage at Glastonbury Festival 2023.', 'FESTIVAL ARCHIVE')">
+            <img src="https://img.youtube.com/vi/K78QSJRNwJg/hqdefault.jpg" alt="Editors Glastonbury 2023">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Festival / 2023</div>
+              <h3 class="card-title">Editors â€” Glastonbury 2023</h3>
+              <p class="card-desc">High-definition festival set from Worthy Farm featuring hits from all albums.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Glastonbury Set</span>
+              <span>60 Mins</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Kasabian Leicester -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('fhU887RsUb0', 'Kasabian â€” Live from Leicester, 2011', '16 Dec 2024 Â· Leicester Arena Homecoming', 'Hometown homecoming performance from Leicester during the Velociraptor! album era.', 'HOMECOMING LIVE')">
+            <img src="https://img.youtube.com/vi/fhU887RsUb0/hqdefault.jpg" alt="Kasabian Live Leicester 2011">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Indie Rock / 2011</div>
+              <h3 class="card-title">Kasabian â€” Live from Leicester, 2011</h3>
+              <p class="card-desc">Electrifying hometown arena performance filmed in Leicester.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Homecoming Gig</span>
+              <span>Leicester 2011</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Jesus and Mary Chain -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('CUZ7VnGjGC4', 'The Jesus and Mary Chain â€” Glastonbury 24/06/2022', '16 Sep 2023 Â· Duration: 58:26 Â· Worthy Farm, Pilton', 'Jim and William Reid deliver a feedback-drenched masterclass live from Worthy Farm.', 'GLASTONBURY 2022')">
+            <img src="https://img.youtube.com/vi/CUZ7VnGjGC4/hqdefault.jpg" alt="The Jesus and Mary Chain Glastonbury">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Post-Punk / Shoegaze</div>
+              <h3 class="card-title">The Jesus &amp; Mary Chain â€” Glastonbury</h3>
+              <p class="card-desc">Classic Reid brothers feedback and melodies live at Glastonbury 2022.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Full Set</span>
+              <span>58 Mins</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Beady Eye Jools Holland -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('IZ9DbtSIXWc', 'Beady Eye - Flick of The Finger (Live Later Jools Holland 2013) HD', 'Later... with Jools Holland BBC HD Broadcast', 'Liam Gallagher and Beady Eye performing the brass-driven powerhouse Flick of The Finger.', 'TV BROADCAST')">
+            <img src="https://img.youtube.com/vi/IZ9DbtSIXWc/hqdefault.jpg" alt="Beady Eye Flick of The Finger">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">BBC Broadcast / 2013</div>
+              <h3 class="card-title">Beady Eye â€” Flick of The Finger</h3>
+              <p class="card-desc">High-definition BBC studio performance on Later... with Jools Holland.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Jools Holland</span>
+              <span>HD Studio</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Patrick Duff -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('54LLC9aZ6Hc', 'Patrick Duff - Sway acoustic At Waterstones 26.11.2021', '27 Nov 2022 Â· Acoustic intimate set filmed live', 'Strangelove frontman Patrick Duff performing the heartbreaking Sway live and acoustic at Waterstones.', 'ACOUSTIC RARITY')">
+            <img src="https://img.youtube.com/vi/54LLC9aZ6Hc/hqdefault.jpg" alt="Patrick Duff Sway Acoustic">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Strangelove / Acoustic</div>
+              <h3 class="card-title">Patrick Duff â€” Sway (Acoustic)</h3>
+              <p class="card-desc">Intimate acoustic performance recorded live at Waterstones.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Acoustic Rarity</span>
+              <span>Waterstones 2021</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Depeche Mode Glasgow -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('WIX5IxzYEE0', 'Depeche Mode - Never Let Me Down ending.. Glasgow', '01 Jun 2024 Â· Memento Mori Tour Glasgow', 'The iconic wheat-field arm wave crowd finale of Never Let Me Down Again filmed live in Glasgow.', 'TOUR CLIMAX')">
+            <img src="https://img.youtube.com/vi/WIX5IxzYEE0/hqdefault.jpg" alt="Depeche Mode Glasgow">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Live Arena / Glasgow</div>
+              <h3 class="card-title">Depeche Mode â€” Never Let Me Down</h3>
+              <p class="card-desc">Iconic crowd arm-waving finale from the Glasgow arena performance.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Memento Mori</span>
+              <span>Glasgow Live</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Paul Draper World Premiere 2014 -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('Yt9EPXKJ3_s', 'Paul Draper â€” Feeling My Heart Run Slow (2014 Chester Convention Premiere)', '23 Aug 2014 Â· Filmed by Richard Murray of Paul-Draper.net', 'The historic first public playback of Paul Draper debut solo song. Credited by Louder Than War, Vanyaland, and featured in The Guardian indie playlist.', 'HISTORIC PREMIERE')">
+            <img src="../assets/images/paul-martin-leay.jpg" alt="Paul Draper Premiere 2014">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">World Premiere / Chester</div>
+              <h3 class="card-title">Paul Draper â€” Debut Solo Premiere</h3>
+              <p class="card-desc">Historic 2014 Chester convention recording credited by The Guardian &amp; Louder Than War.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Historic Tape</span>
+              <span>Filmed by Richard Murray</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Everton Decider -->
+        <article class="upload-card">
+          <div class="card-thumb-wrap" onclick="loadVideo('MxUaEOaKf6E', 'Everton 3-2 Crystal Palace : Calvert-Lewin Goal (19 May 2022)', '19 May 2022 Â· Goodison Park Atmospheric Crowd Recording', 'The spine-tingling Goodison Park eruption as Dominic Calvert-Lewin scores the comeback winner to secure Premier League safety.', 'CROWD ATMOSPHERE')">
+            <img src="https://img.youtube.com/vi/MxUaEOaKf6E/hqdefault.jpg" alt="Everton 3-2 Crystal Palace">
+            <div class="play-overlay">â–¶</div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-badge">Goodison Park / 2022</div>
+              <h3 class="card-title">Everton 3-2 Palace â€” The Decider</h3>
+              <p class="card-desc">Raw fan footage capturing the dramatic Goodison Park pitch eruption.</p>
+            </div>
+            <div class="card-stats">
+              <span>ðŸ‘ï¸ Raw Matchday</span>
+              <span>Goodison Park</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TRAFFIC & GROWTH STRATEGY FOR CHANNEL -->
+    <section class="strategy-section">
+      <div class="wrap" style="width: 100%;">
+        <span class="eyebrow">DISTRIBUTION RUNBOOK</span>
+        <h2 style="margin: 0; font-size: 1.75rem; font-weight: 950; text-transform: uppercase;">
+          Traffic Strategy: Driving Viewers to These Uploads
+        </h2>
+        <p style="color: var(--muted); max-width: 680px; margin: 0.5rem 0 0; font-size: 0.95rem;">
+          Five concrete levers to turn the 1,000,000+ views on YouTube into recurring visitors and sustained audience for new uploads:
+        </p>
+
+        <div class="strategy-grid">
+          <div class="strat-box">
+            <span class="strat-num">STRATEGY 01</span>
+            <h3>Pinned Comment &amp; Description Funnel</h3>
+            <p>
+              Your 179K-view Peter Green and 14K-view Smiths videos are permanent traffic engines. Add a pinned comment on each pointing directly to <code>https://jupiterisland.github.io/rjmedia/youtube.html</code>: <em>"Read the complete documentary liner notes and unreleased audio archive here"</em>.
+            </p>
+          </div>
+
+          <div class="strat-box">
+            <span class="strat-num">STRATEGY 02</span>
+            <h3>Community &amp; Forum Seeding</h3>
+            <p>
+              Share specific, timestamped moments in targeted subreddits (<code>r/FleetwoodMac</code>, <code>r/TheSmiths</code>, <code>r/britpop</code>, <code>r/Mansun</code>) and classic rock forums. Posts offering rare contextual liner notes outperform plain links by 5x.
+            </p>
+          </div>
+
+          <div class="strat-box">
+            <span class="strat-num">STRATEGY 03</span>
+            <h3>YouTube Shorts &amp; TikTok Hooks</h3>
+            <p>
+              Cut 45-second high-emotion highlights (e.g. Peter Green talking about his Les Paul tone, Morrissey's Rockpalast stage comments) formatted vertically with a text overlay: <em>"Full 28-min documentary on our archive"</em>.
+            </p>
+          </div>
+
+          <div class="strat-box">
+            <span class="strat-num">STRATEGY 04</span>
+            <h3>Structured Google Video SEO</h3>
+            <p>
+              Embed <code>VideoObject</code> schema metadata on this page so Google Search displays rich video carousels for queries like <em>"Peter Green A Hard Road documentary"</em> and <em>"The Smiths Rockpalast 1984 full"</em>.
+            </p>
+          </div>
+
+          <div class="strat-box">
+            <span class="strat-num">STRATEGY 05</span>
+            <h3>Curated Thematic Playlists</h3>
+            <p>
+              Group videos into YouTube playlists (e.g. <em>"Rare British Blues &amp; Rockpalast Classics"</em> and <em>"Mansun &amp; Paul Draper 25-Year Live Tape Vault"</em>). Playlists auto-chain views and increase YouTube's algorithm recommendation score.
+            </p>
+          </div>
+
+          <div class="strat-box">
+            <span class="strat-num">STRATEGY 06</span>
+            <h3>Cross-Link with 5 Repositories</h3>
+            <p>
+              Link the YouTube Vault inside <code>JupiterIsland/archive-signal</code> and <code>JupiterIsland/rjmedia</code> READMEs to attract open-source archival enthusiasts and music collectors directly from GitHub.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>â—† RJMEDIA DIGITAL ARCHIVE Â· LIVE MUSIC &amp; BAND DOCUMENTARIES</div>
+      <div>
+        <a href="../index.html">Remember The Sound</a> Â·
+        <a href="../community.html">Keep The Connection</a> Â·
+        <a href="./index.html">Paul Draper Archive</a> Â·
+        <a href="../bio.html">Richard John Murray</a> Â·
+        <a href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">YouTube (@RJMedia) â†—</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    function loadVideo(ytId, title, meta, desc, badge) {
+      document.getElementById('mainPlayerFrame').src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0';
+      document.getElementById('playerTitle').textContent = title;
+      document.getElementById('playerMeta').textContent = meta;
+      document.getElementById('playerDescription').textContent = desc;
+      document.getElementById('playerCategoryBadge').textContent = badge || 'ARCHIVE UPLOAD';
+      document.getElementById('playerExternalLink').href = 'https://www.youtube.com/watch?v=' + ytId;
+      
+      var stage = document.getElementById('featured-stage');
+      stage.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function copyCurrentShareLink() {
+      var currentLink = document.getElementById('playerExternalLink').href;
+      navigator.clipboard.writeText(currentLink).then(function() {
+        alert('Copied video link to clipboard: ' + currentLink);
+      });
+    }
+  </script>
+</body>
+</html>
+
