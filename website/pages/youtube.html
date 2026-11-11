@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <title>RJMedia YouTube Vault â€” Channel Uploads &amp; Documentaries | Peter Green First Up</title>
-  <meta name="description" content="RJMedia YouTube Archive â€” Watch over 1,000,000 views of rare music documentaries and live broadcasts. Featuring Peter Green: A Hard Road (179K views), The Smiths Rockpalast '84, Paul Draper rarities, and more.">
+  <title>RJMedia YouTube Vault — Channel Uploads &amp; Documentaries | Peter Green First Up</title>
+  <meta name="description" content="RJMedia YouTube Archive — Watch over 1,000,000 views of rare music documentaries and live broadcasts. Featuring Peter Green: A Hard Road (179K views), The Smiths Rockpalast '84, Paul Draper rarities, and more.">
   <style>
     :root {
-      --bg: #ffffff;
-      --card: #f9fafb;
-      --ink: #0f1419;
-      --muted: #4b5563;
-      --rule: rgba(15, 20, 25, 0.16);
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --ink: #222222;
+      --muted: #555555;
+      --rule: #d8d8d8;
       --max: 1120px;
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -27,12 +27,9 @@
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
     
-    /* Top Dual Mission Bar */
+    /* Top Dual Mission Bar Hidden for Separate Room Experience */
     .dual-mission-bar {
-      background: #0a0a0a;
-      color: #ffffff;
-      border-bottom: 2px solid #0f1419;
-      font-size: 0.74rem;
+      display: none;
     }
     .dual-mission-inner {
       width: min(var(--max), calc(100% - 2rem));
@@ -192,7 +189,9 @@
     }
     .stage-info {
       background: var(--card);
-      border: 1px solid var(--ink);
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
       padding: 1.75rem;
     }
     .stage-badge {
@@ -202,9 +201,10 @@
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      background: #dc2626;
+      padding: 0.25rem 0.65rem;
+      background: #000000;
       color: #ffffff;
+      border-radius: 6px;
       margin-bottom: 0.85rem;
     }
     .stage-title {
@@ -283,15 +283,18 @@
     }
     .upload-card {
       background: #ffffff;
-      border: 1px solid var(--ink);
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: all 0.3s ease;
     }
     .upload-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 22px 44px rgba(0,0,0,0.18);
     }
     .card-thumb-wrap {
       position: relative;
@@ -308,6 +311,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .upload-card:hover .card-thumb-wrap img {
+      transform: scale(1.06);
     }
     .play-overlay {
       position: absolute;
@@ -380,7 +387,9 @@
     }
     .strat-box {
       background: #ffffff;
-      border: 1px solid var(--ink);
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
       padding: 1.5rem;
     }
     .strat-box h3 {
@@ -400,7 +409,7 @@
       font-family: monospace;
       font-size: 0.72rem;
       font-weight: 900;
-      color: #dc2626;
+      color: #000000;
       margin-bottom: 0.35rem;
       display: block;
     }
@@ -429,12 +438,12 @@
       <a class="mission-pill" href="./index.html">
         <span class="mission-badge">REMEMBER THE SOUND</span>
         <span class="mission-text">Paul Draper &amp; Mansun Archive</span>
-        <span class="mission-cta">Explore Archive â†’</span>
+        <span class="mission-cta">Explore Archive →</span>
       </a>
       <a class="mission-pill" href="../community.html">
         <span class="mission-badge">KEEP THE CONNECTION</span>
-        <span class="mission-text">Take It Easy â€¢ Community Hub</span>
-        <span class="mission-cta">Enter Community â†’</span>
+        <span class="mission-text">Take It Easy • Community Hub</span>
+        <span class="mission-cta">Enter Community →</span>
       </a>
     </div>
   </div>
@@ -455,16 +464,16 @@
   <main class="wrap">
     <!-- HERO -->
     <section class="hero">
-      <p class="eyebrow">LIVE MUSIC &amp; BAND DOCUMENTARIES ARCHIVE â€¢ RJMEDIA</p>
+      <p class="eyebrow">LIVE MUSIC &amp; BAND DOCUMENTARIES ARCHIVE • RJMEDIA</p>
       <h1>YOUTUBE UPLOADS &amp; RARE BROADCASTS</h1>
       <p class="hero-lead">
         Preserving legendary rock documentaries, restored concert footage, and historic acoustic sessions from the RJMedia archives. Stream full broadcasts directly below.
       </p>
       <div class="channel-badges">
-        <div class="stat-badge">ðŸ“º Channel: @RJMedia</div>
-        <div class="stat-badge">ðŸ‘ï¸ 1,001,987+ Total Views</div>
-        <div class="stat-badge">â±ï¸ 72,500+ Watch Hours</div>
-        <a class="btn btn-dark" href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">Visit YouTube Channel â†—</a>
+        <div class="stat-badge">📺 Channel: @RJMedia</div>
+        <div class="stat-badge">👁️ 1,001,987+ Total Views</div>
+        <div class="stat-badge">⏱️ 72,500+ Watch Hours</div>
+        <a class="btn btn-dark" href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">Visit YouTube Channel ↗</a>
       </div>
     </section>
 
@@ -476,16 +485,16 @@
         </div>
 
         <div class="stage-info">
-          <span class="stage-badge" id="playerCategoryBadge">â˜… FIRST UP â€¢ FEATURED DOCUMENTARY</span>
+          <span class="stage-badge" id="playerCategoryBadge">★ FIRST UP • FEATURED DOCUMENTARY</span>
           <h2 class="stage-title" id="playerTitle">Peter Green : A Hard Road</h2>
           <div class="stage-meta" id="playerMeta">
-            Published: 11 Jun 2023 Â· Duration: 28:46 Â· 179,000+ Views Â· 21,134+ Watch Hours
+            Published: 11 Jun 2023 · Duration: 28:46 · 179,000+ Views · 21,134+ Watch Hours
           </div>
           <p class="stage-desc" id="playerDescription">
             The definitive broadcast documentary exploring the haunting blues genius, Fleetwood Mac founding years, and turbulent journey of Peter Green. Featuring rare archival footage, in-depth interviews with John Mayall, Mick Fleetwood, and Peter himself.
           </p>
           <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a id="playerExternalLink" class="btn btn-dark" href="https://www.youtube.com/watch?v=ubkpJnoXVeA" target="_blank" rel="noopener">Watch on YouTube â†—</a>
+            <a id="playerExternalLink" class="btn btn-dark" href="https://www.youtube.com/watch?v=ubkpJnoXVeA" target="_blank" rel="noopener">Watch on YouTube ↗</a>
             <button type="button" class="btn btn-outline" onclick="copyCurrentShareLink()">Share Video Link</button>
           </div>
         </div>
@@ -505,9 +514,9 @@
       <div class="upload-grid">
         <!-- 1. Peter Green -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('ubkpJnoXVeA', 'Peter Green : A Hard Road', '11 Jun 2023 Â· Duration: 28:46 Â· 179,000+ Views Â· 21,134+ Hours', 'The definitive broadcast documentary exploring the haunting blues genius, Fleetwood Mac founding years, and turbulent journey of Peter Green.', 'â˜… FIRST UP â€¢ FEATURED DOCUMENTARY')">
+          <div class="card-thumb-wrap" onclick="loadVideo('ubkpJnoXVeA', 'Peter Green : A Hard Road', '11 Jun 2023 · Duration: 28:46 · 179,000+ Views · 21,134+ Hours', 'The definitive broadcast documentary exploring the haunting blues genius, Fleetwood Mac founding years, and turbulent journey of Peter Green.', '★ FIRST UP • FEATURED DOCUMENTARY')">
             <img src="https://img.youtube.com/vi/ubkpJnoXVeA/hqdefault.jpg" alt="Peter Green A Hard Road">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
@@ -516,45 +525,45 @@
               <p class="card-desc">The legendary guitarist's story, Mayall's Bluesbreakers, and rare interviews.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ 179,000+ Views</span>
-              <span>â±ï¸ 21,134 Hours</span>
+              <span>👁️ 179,000+ Views</span>
+              <span>⏱️ 21,134 Hours</span>
             </div>
           </div>
         </article>
 
         <!-- 2. The Smiths -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('WLU74h889VI', 'The Smiths - Live Rockpalast 1984 FHD', '05 May 2025 Â· Duration: 71:00 Â· Full Concert Remaster', 'Master restoration of The Smiths complete 1984 German Rockpalast broadcast featuring Morrissey and Johnny Marr in peak form.', 'CONCERT RESTORATION')">
+          <div class="card-thumb-wrap" onclick="loadVideo('WLU74h889VI', 'The Smiths - Live Rockpalast 1984 FHD', '05 May 2025 · Duration: 71:00 · Full Concert Remaster', 'Master restoration of The Smiths complete 1984 German Rockpalast broadcast featuring Morrissey and Johnny Marr in peak form.', 'CONCERT RESTORATION')">
             <img src="https://img.youtube.com/vi/WLU74h889VI/hqdefault.jpg" alt="The Smiths Rockpalast 1984">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Full Concert / Remaster</div>
-              <h3 class="card-title">The Smiths â€” Live Rockpalast 1984 FHD</h3>
+              <h3 class="card-title">The Smiths — Live Rockpalast 1984 FHD</h3>
               <p class="card-desc">Full 71-minute master restoration of the legendary 1984 Rockpalast performance.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ 14,000+ Views</span>
-              <span>â±ï¸ 12,711 Hours</span>
+              <span>👁️ 14,000+ Views</span>
+              <span>⏱️ 12,711 Hours</span>
             </div>
           </div>
         </article>
 
         <!-- 3. Paul Draper Take It Easy Chicken -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('Yt9EPXKJ3_s', 'Paul Draper (Mansun) â€” Take It Easy Chicken (Live Manchester Academy)', '18 Mar 2026 Â· Manchester Academy Â· Filmed by RJMedia', 'Front-row live performance of the Mansun classic filmed direct by Richard Murray at Manchester Academy.', 'EXCLUSIVE LIVE RECORDING')">
+          <div class="card-thumb-wrap" onclick="loadVideo('Yt9EPXKJ3_s', 'Paul Draper (Mansun) — Take It Easy Chicken (Live Manchester Academy)', '18 Mar 2026 · Manchester Academy · Filmed by RJMedia', 'Front-row live performance of the Mansun classic filmed direct by Richard Murray at Manchester Academy.', 'EXCLUSIVE LIVE RECORDING')">
             <img src="https://img.youtube.com/vi/Yt9EPXKJ3_s/hqdefault.jpg" alt="Paul Draper Take It Easy Chicken">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Mansun / Paul Draper</div>
-              <h3 class="card-title">Paul Draper â€” Take It Easy Chicken (Live)</h3>
+              <h3 class="card-title">Paul Draper — Take It Easy Chicken (Live)</h3>
               <p class="card-desc">Front-row footage filmed by RJMedia at Manchester Academy.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Exclusive Archive</span>
+              <span>👁️ Exclusive Archive</span>
               <span>Filmed by RJMedia</span>
             </div>
           </div>
@@ -562,18 +571,18 @@
 
         <!-- 4. Mansun Brixton '98 -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('rxblL3k4LTA', 'Mansun â€” She Makes My Wheels Turn (Live Brixton Academy 1998)', 'Brixton Academy 1998 Â· Six Era Tour', 'Mansun performing live at Brixton Academy during the 1998 Six album tour.', 'MANSUN ARCHIVE')">
+          <div class="card-thumb-wrap" onclick="loadVideo('rxblL3k4LTA', 'Mansun — She Makes My Wheels Turn (Live Brixton Academy 1998)', 'Brixton Academy 1998 · Six Era Tour', 'Mansun performing live at Brixton Academy during the 1998 Six album tour.', 'MANSUN ARCHIVE')">
             <img src="https://img.youtube.com/vi/rxblL3k4LTA/hqdefault.jpg" alt="Mansun She Makes My Wheels Turn">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Live Broadcast / 1998</div>
-              <h3 class="card-title">Mansun â€” She Makes My Wheels Turn</h3>
+              <h3 class="card-title">Mansun — She Makes My Wheels Turn</h3>
               <p class="card-desc">Brixton Academy 1998 live performance during the peak Six era.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Six Tour</span>
+              <span>👁️ Six Tour</span>
               <span>Brixton Academy</span>
             </div>
           </div>
@@ -581,18 +590,18 @@
 
         <!-- 5. Editors Glastonbury -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('K78QSJRNwJg', 'Editors â€” Glastonbury 2023 Full Set', '09 Sep 2024 Â· Worthy Farm, Pilton Â· Duration: 60:30', 'Complete festival broadcast of Editors performing on the Other Stage at Glastonbury Festival 2023.', 'FESTIVAL ARCHIVE')">
+          <div class="card-thumb-wrap" onclick="loadVideo('K78QSJRNwJg', 'Editors — Glastonbury 2023 Full Set', '09 Sep 2024 · Worthy Farm, Pilton · Duration: 60:30', 'Complete festival broadcast of Editors performing on the Other Stage at Glastonbury Festival 2023.', 'FESTIVAL ARCHIVE')">
             <img src="https://img.youtube.com/vi/K78QSJRNwJg/hqdefault.jpg" alt="Editors Glastonbury 2023">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Festival / 2023</div>
-              <h3 class="card-title">Editors â€” Glastonbury 2023</h3>
+              <h3 class="card-title">Editors — Glastonbury 2023</h3>
               <p class="card-desc">High-definition festival set from Worthy Farm featuring hits from all albums.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Glastonbury Set</span>
+              <span>👁️ Glastonbury Set</span>
               <span>60 Mins</span>
             </div>
           </div>
@@ -600,18 +609,18 @@
 
         <!-- 6. Kasabian Leicester -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('fhU887RsUb0', 'Kasabian â€” Live from Leicester, 2011', '16 Dec 2024 Â· Leicester Arena Homecoming', 'Hometown homecoming performance from Leicester during the Velociraptor! album era.', 'HOMECOMING LIVE')">
+          <div class="card-thumb-wrap" onclick="loadVideo('fhU887RsUb0', 'Kasabian — Live from Leicester, 2011', '16 Dec 2024 · Leicester Arena Homecoming', 'Hometown homecoming performance from Leicester during the Velociraptor! album era.', 'HOMECOMING LIVE')">
             <img src="https://img.youtube.com/vi/fhU887RsUb0/hqdefault.jpg" alt="Kasabian Live Leicester 2011">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Indie Rock / 2011</div>
-              <h3 class="card-title">Kasabian â€” Live from Leicester, 2011</h3>
+              <h3 class="card-title">Kasabian — Live from Leicester, 2011</h3>
               <p class="card-desc">Electrifying hometown arena performance filmed in Leicester.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Homecoming Gig</span>
+              <span>👁️ Homecoming Gig</span>
               <span>Leicester 2011</span>
             </div>
           </div>
@@ -619,18 +628,18 @@
 
         <!-- 7. Jesus and Mary Chain -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('CUZ7VnGjGC4', 'The Jesus and Mary Chain â€” Glastonbury 24/06/2022', '16 Sep 2023 Â· Duration: 58:26 Â· Worthy Farm, Pilton', 'Jim and William Reid deliver a feedback-drenched masterclass live from Worthy Farm.', 'GLASTONBURY 2022')">
+          <div class="card-thumb-wrap" onclick="loadVideo('CUZ7VnGjGC4', 'The Jesus and Mary Chain — Glastonbury 24/06/2022', '16 Sep 2023 · Duration: 58:26 · Worthy Farm, Pilton', 'Jim and William Reid deliver a feedback-drenched masterclass live from Worthy Farm.', 'GLASTONBURY 2022')">
             <img src="https://img.youtube.com/vi/CUZ7VnGjGC4/hqdefault.jpg" alt="The Jesus and Mary Chain Glastonbury">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Post-Punk / Shoegaze</div>
-              <h3 class="card-title">The Jesus &amp; Mary Chain â€” Glastonbury</h3>
+              <h3 class="card-title">The Jesus &amp; Mary Chain — Glastonbury</h3>
               <p class="card-desc">Classic Reid brothers feedback and melodies live at Glastonbury 2022.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Full Set</span>
+              <span>👁️ Full Set</span>
               <span>58 Mins</span>
             </div>
           </div>
@@ -640,16 +649,16 @@
         <article class="upload-card">
           <div class="card-thumb-wrap" onclick="loadVideo('IZ9DbtSIXWc', 'Beady Eye - Flick of The Finger (Live Later Jools Holland 2013) HD', 'Later... with Jools Holland BBC HD Broadcast', 'Liam Gallagher and Beady Eye performing the brass-driven powerhouse Flick of The Finger.', 'TV BROADCAST')">
             <img src="https://img.youtube.com/vi/IZ9DbtSIXWc/hqdefault.jpg" alt="Beady Eye Flick of The Finger">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">BBC Broadcast / 2013</div>
-              <h3 class="card-title">Beady Eye â€” Flick of The Finger</h3>
+              <h3 class="card-title">Beady Eye — Flick of The Finger</h3>
               <p class="card-desc">High-definition BBC studio performance on Later... with Jools Holland.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Jools Holland</span>
+              <span>👁️ Jools Holland</span>
               <span>HD Studio</span>
             </div>
           </div>
@@ -657,18 +666,18 @@
 
         <!-- 9. Patrick Duff -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('54LLC9aZ6Hc', 'Patrick Duff - Sway acoustic At Waterstones 26.11.2021', '27 Nov 2022 Â· Acoustic intimate set filmed live', 'Strangelove frontman Patrick Duff performing the heartbreaking Sway live and acoustic at Waterstones.', 'ACOUSTIC RARITY')">
+          <div class="card-thumb-wrap" onclick="loadVideo('54LLC9aZ6Hc', 'Patrick Duff - Sway acoustic At Waterstones 26.11.2021', '27 Nov 2022 · Acoustic intimate set filmed live', 'Strangelove frontman Patrick Duff performing the heartbreaking Sway live and acoustic at Waterstones.', 'ACOUSTIC RARITY')">
             <img src="https://img.youtube.com/vi/54LLC9aZ6Hc/hqdefault.jpg" alt="Patrick Duff Sway Acoustic">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Strangelove / Acoustic</div>
-              <h3 class="card-title">Patrick Duff â€” Sway (Acoustic)</h3>
+              <h3 class="card-title">Patrick Duff — Sway (Acoustic)</h3>
               <p class="card-desc">Intimate acoustic performance recorded live at Waterstones.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Acoustic Rarity</span>
+              <span>👁️ Acoustic Rarity</span>
               <span>Waterstones 2021</span>
             </div>
           </div>
@@ -676,18 +685,18 @@
 
         <!-- 10. Depeche Mode Glasgow -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('WIX5IxzYEE0', 'Depeche Mode - Never Let Me Down ending.. Glasgow', '01 Jun 2024 Â· Memento Mori Tour Glasgow', 'The iconic wheat-field arm wave crowd finale of Never Let Me Down Again filmed live in Glasgow.', 'TOUR CLIMAX')">
+          <div class="card-thumb-wrap" onclick="loadVideo('WIX5IxzYEE0', 'Depeche Mode - Never Let Me Down ending.. Glasgow', '01 Jun 2024 · Memento Mori Tour Glasgow', 'The iconic wheat-field arm wave crowd finale of Never Let Me Down Again filmed live in Glasgow.', 'TOUR CLIMAX')">
             <img src="https://img.youtube.com/vi/WIX5IxzYEE0/hqdefault.jpg" alt="Depeche Mode Glasgow">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Live Arena / Glasgow</div>
-              <h3 class="card-title">Depeche Mode â€” Never Let Me Down</h3>
+              <h3 class="card-title">Depeche Mode — Never Let Me Down</h3>
               <p class="card-desc">Iconic crowd arm-waving finale from the Glasgow arena performance.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Memento Mori</span>
+              <span>👁️ Memento Mori</span>
               <span>Glasgow Live</span>
             </div>
           </div>
@@ -695,18 +704,18 @@
 
         <!-- 11. Paul Draper World Premiere 2014 -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('Yt9EPXKJ3_s', 'Paul Draper â€” Feeling My Heart Run Slow (2014 Chester Convention Premiere)', '23 Aug 2014 Â· Filmed by Richard Murray of Paul-Draper.net', 'The historic first public playback of Paul Draper debut solo song. Credited by Louder Than War, Vanyaland, and featured in The Guardian indie playlist.', 'HISTORIC PREMIERE')">
+          <div class="card-thumb-wrap" onclick="loadVideo('Yt9EPXKJ3_s', 'Paul Draper — Feeling My Heart Run Slow (2014 Chester Convention Premiere)', '23 Aug 2014 · Filmed by Richard Murray of Paul-Draper.net', 'The historic first public playback of Paul Draper debut solo song. Credited by Louder Than War, Vanyaland, and featured in The Guardian indie playlist.', 'HISTORIC PREMIERE')">
             <img src="../assets/images/paul-martin-leay.jpg" alt="Paul Draper Premiere 2014">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">World Premiere / Chester</div>
-              <h3 class="card-title">Paul Draper â€” Debut Solo Premiere</h3>
+              <h3 class="card-title">Paul Draper — Debut Solo Premiere</h3>
               <p class="card-desc">Historic 2014 Chester convention recording credited by The Guardian &amp; Louder Than War.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Historic Tape</span>
+              <span>👁️ Historic Tape</span>
               <span>Filmed by Richard Murray</span>
             </div>
           </div>
@@ -714,18 +723,18 @@
 
         <!-- 12. Everton Decider -->
         <article class="upload-card">
-          <div class="card-thumb-wrap" onclick="loadVideo('MxUaEOaKf6E', 'Everton 3-2 Crystal Palace : Calvert-Lewin Goal (19 May 2022)', '19 May 2022 Â· Goodison Park Atmospheric Crowd Recording', 'The spine-tingling Goodison Park eruption as Dominic Calvert-Lewin scores the comeback winner to secure Premier League safety.', 'CROWD ATMOSPHERE')">
+          <div class="card-thumb-wrap" onclick="loadVideo('MxUaEOaKf6E', 'Everton 3-2 Crystal Palace : Calvert-Lewin Goal (19 May 2022)', '19 May 2022 · Goodison Park Atmospheric Crowd Recording', 'The spine-tingling Goodison Park eruption as Dominic Calvert-Lewin scores the comeback winner to secure Premier League safety.', 'CROWD ATMOSPHERE')">
             <img src="https://img.youtube.com/vi/MxUaEOaKf6E/hqdefault.jpg" alt="Everton 3-2 Crystal Palace">
-            <div class="play-overlay">â–¶</div>
+            <div class="play-overlay">▶</div>
           </div>
           <div class="card-body">
             <div>
               <div class="card-badge">Goodison Park / 2022</div>
-              <h3 class="card-title">Everton 3-2 Palace â€” The Decider</h3>
+              <h3 class="card-title">Everton 3-2 Palace — The Decider</h3>
               <p class="card-desc">Raw fan footage capturing the dramatic Goodison Park pitch eruption.</p>
             </div>
             <div class="card-stats">
-              <span>ðŸ‘ï¸ Raw Matchday</span>
+              <span>👁️ Raw Matchday</span>
               <span>Goodison Park</span>
             </div>
           </div>
@@ -797,13 +806,13 @@
     </section>
 
     <footer>
-      <div>â—† RJMEDIA DIGITAL ARCHIVE Â· LIVE MUSIC &amp; BAND DOCUMENTARIES</div>
+      <div>◆ PAUL DRAPER ARCHIVE · PART OF THE RJMEDIA DIGITAL ARCHIVE · CREATED BY RJM</div>
       <div>
-        <a href="../index.html">Remember The Sound</a> Â·
-        <a href="../community.html">Keep The Connection</a> Â·
-        <a href="./index.html">Paul Draper Archive</a> Â·
-        <a href="../bio.html">Richard John Murray</a> Â·
-        <a href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">YouTube (@RJMedia) â†—</a>
+        <a href="../index.html">RJMedia Archive</a> ·
+        <a href="../community.html">Keep The Connection</a> ·
+        <a href="./index.html">Paul Draper Music</a> ·
+        <a href="../jupiter-island.html">Jupiter Island</a> ·
+        <a href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">YouTube (@RJMedia) ↗</a>
       </div>
     </footer>
   </main>
@@ -830,4 +839,3 @@
   </script>
 </body>
 </html>
-

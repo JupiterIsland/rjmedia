@@ -127,7 +127,7 @@
 #constellationCanvas {
   position: relative;
   height: 580px;
-  background: radial-gradient(circle at center, #1f242d 0%, #0d0f12 60%, #050505 100%);
+  background: radial-gradient(circle at center, #1b1b1b 0%, #0b0b0b 60%, #050505 100%);
   overflow: hidden;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.14);

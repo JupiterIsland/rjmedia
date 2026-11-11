@@ -1,0 +1,109 @@
+{
+  "trails": [
+    {
+      "id": "mansun-story",
+      "title": "The Mansun Story",
+      "description": "A journey through performances, recordings and archive moments.",
+      "items": [
+        {
+          "year": "1995",
+          "title": "John Peel Session",
+          "objectId": "mansun-1995-peel",
+          "url": "./pages/mansun-mp3-vault.html"
+        },
+        {
+          "year": "1997",
+          "title": "Early Interview",
+          "objectId": "mansun-1997-001",
+          "url": "./pages/mansun-albums.html"
+        },
+        {
+          "year": "1998",
+          "title": "Festival Appearance",
+          "objectId": "mansun-1998-001",
+          "url": "./pages/draper-articles.html"
+        },
+        {
+          "year": "1999",
+          "title": "Television Performance",
+          "objectId": "mansun-1999-001",
+          "url": "./youtube.html"
+        },
+        {
+          "year": "2003",
+          "title": "Solo Direction",
+          "objectId": "pd-2003-solo",
+          "url": "./pages/draper-news.html"
+        }
+      ]
+    },
+    {
+      "id": "britpop-trail",
+      "title": "Britpop Timeline",
+      "description": "Key moments across the Britpop era.",
+      "items": [
+        {
+          "year": "1994",
+          "title": "Emerging Scene",
+          "objectId": "britpop-1994-001",
+          "url": "./pages/mansun-singles.html"
+        },
+        {
+          "year": "1995",
+          "title": "Festival Growth",
+          "objectId": "britpop-1995-001",
+          "url": "./pages/mansun-mp3-vault.html"
+        },
+        {
+          "year": "1997",
+          "title": "Peak Era",
+          "objectId": "britpop-1997-001",
+          "url": "./pages/mansun-albums.html"
+        },
+        {
+          "year": "1998",
+          "title": "Six & Art Rock Shift",
+          "objectId": "britpop-1998-001",
+          "url": "./pages/press-layout.html"
+        }
+      ]
+    },
+    {
+      "id": "paul-draper-solo",
+      "title": "Paul Draper Solo Trajectory",
+      "description": "From Draposound studio logs and the 2014 Chester world premiere to Kscope solo LPs and 2027 live dates.",
+      "items": [
+        {
+          "year": "2006",
+          "title": "38 Forum Q&As",
+          "objectId": "pd-2006-qa",
+          "url": "./pages/draper-qa.html"
+        },
+        {
+          "year": "2014",
+          "title": "Chester World Premiere",
+          "objectId": "pd-2014-chester",
+          "url": "./pages/draper-news.html"
+        },
+        {
+          "year": "2017",
+          "title": "Spooky Action (#19)",
+          "objectId": "pd-2017-spooky",
+          "url": "./pages/mansun-albums.html"
+        },
+        {
+          "year": "2022",
+          "title": "Cult Leader Tactics",
+          "objectId": "pd-2022-clt",
+          "url": "./pages/mansun-albums.html"
+        },
+        {
+          "year": "2027",
+          "title": "Indie By The Sea",
+          "objectId": "pd-2027-blackpool",
+          "url": "./pages/draper-news.html"
+        }
+      ]
+    }
+  ]
+}

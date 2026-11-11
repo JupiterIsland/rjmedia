@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community Forum — RJMedia Digital Archive | Remember The Sound</title>
+  <meta name="description" content="Official RJMedia Digital Archive Community Forum — Discuss music history, submit archive requests, track lost recordings, and connect with listeners across 9 dedicated boards.">
+  <meta name="theme-color" content="#bdbdbd">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #bdbdbd;
+      --bg-gradient: linear-gradient(180deg, #c7c7c7 0%, #b8b8b8 100%);
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.9);
+      --ink: #0a0a0a;
+      --muted: #525252;
+      --rule: rgba(0, 0, 0, 0.14);
+      --max: 1180px;
+      --shadow-3d: 0 18px 40px -10px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      background-image: var(--bg-gradient);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
+
+    /* Masthead */
+    .masthead {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .masthead-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 80px;
+      gap: 1.5rem;
+    }
+    .brand-logo { display: flex; flex-direction: column; align-items: flex-start; }
+    .logo-mark { display: inline-flex; align-items: center; line-height: 1; }
+    .logo-box {
+      background: #000000;
+      color: #ffffff;
+      padding: 0.22rem 0.5rem;
+      font-size: 0.98rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      border-radius: 3px;
+    }
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      margin-left: 0.4rem;
+      color: #000000;
+    }
+    .logo-tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      color: #404040;
+      text-transform: uppercase;
+      margin-top: 0.28rem;
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #404040;
+    }
+    .main-nav a:hover { color: #000000; }
+    .nav-btn {
+      padding: 0.6rem 1.15rem;
+      background: #000000;
+      color: #ffffff !important;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    /* Hero */
+    .hero-section { padding: 4rem 0 2.5rem; }
+    .hero-card {
+      background: var(--surface-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 18px;
+      padding: clamp(2rem, 4.5vw, 3.5rem);
+      box-shadow: var(--shadow-3d);
+    }
+    .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #525252;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .lead {
+      font-size: 1.08rem;
+      color: #262626;
+      max-width: 720px;
+      margin: 0 0 1.75rem;
+    }
+
+    /* Forum Grid */
+    .boards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0 4rem;
+    }
+    .board-card {
+      background: linear-gradient(145deg, #f5f5f5, #e5e5e5);
+      border: 1px solid rgba(255,255,255,0.75);
+      border-radius: 18px;
+      padding: 1.75rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.85);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+    .board-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.22);
+      background: #ffffff;
+    }
+    .board-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #525252;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .board-title {
+      font-size: 1.35rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.65rem;
+    }
+    .board-desc {
+      font-size: 0.9rem;
+      color: #404040;
+      margin: 0 0 1.35rem;
+      line-height: 1.55;
+    }
+    .board-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Request Box */
+    .request-box {
+      background: #ffffff;
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 18px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-3d);
+      margin-bottom: 4.5rem;
+    }
+    .btn-3d {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.6rem;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .btn-outline {
+      background: #ffffff;
+      color: #000000;
+      border: 1px solid rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background: #000000;
+      color: #8a8a8a;
+      padding: 3rem 0;
+      font-size: 0.8rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    @media (max-width: 960px) {
+      .boards-grid { grid-template-columns: repeat(2, 1fr); }
+      .main-nav { display: none; }
+    }
+    @media (max-width: 640px) {
+      .boards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand-logo" href="./index.html">
+        <div class="logo-mark">
+          <span class="logo-box">RJ</span><span class="logo-text">MEDIA</span>
+        </div>
+        <span class="logo-tagline">REMEMBER THE SOUND</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="./index.html">ARCHIVE HOME</a>
+        <a href="./forum.html" style="color:#000000;">FORUM</a>
+        <a href="./youtube.html">YOUTUBE VAULT</a>
+        <a href="./pages/index.html">PAUL DRAPER ARCHIVE</a>
+        <a class="nav-btn" href="./trail-builder.html">TRAIL BUILDER</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero-section">
+      <div class="hero-card">
+        <span class="kicker">PUBLIC COMMUNITY HUB • 148+ FOUNDING MEMBERS</span>
+        <h1>RJMEDIA COMMUNITY FORUM</h1>
+        <p class="lead">
+          Exchange concert memories, submit broadcast restoration requests, help locate lost tapes and missing press clippings, and join ongoing discussions across nine dedicated archive boards.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a class="btn-3d" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Forum%20Submission%20or%20Request">Submit Archive Topic / Request →</a>
+          <a class="btn-3d btn-outline" href="./community.html">Visit Keep The Connection →</a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Forum Categories">
+      <div class="boards-grid">
+        <article class="board-card" id="music-discussion">
+          <div>
+            <span class="board-num">Board 01 // General</span>
+            <h2 class="board-title">Music Discussion</h2>
+            <p class="board-desc">Open conversations on records, songwriting, studio production, UK independent bands, and essential listening recommendations.</p>
+          </div>
+          <div class="board-meta">
+            <span>Public Discussions</span>
+            <a href="mailto:richardmurray2022@gmail.com?subject=Forum%20Post:%20Music%20Discussion">Start Thread →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="archive-requests">
+          <div>
+            <span class="board-num">Board 02 // Preservation Queue</span>
+            <h2 class="board-title">Archive Requests</h2>
+            <p class="board-desc">Request specific broadcasts, vintage interviews, live concert videos, or cassette transfers to be prioritised in the RJMedia Archive Vault.</p>
+          </div>
+          <div class="board-meta">
+            <span>Digitisation Queue</span>
+            <a href="mailto:richardmurray2022@gmail.com?subject=Archive%20Request">Request Item →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="lost-recordings">
+          <div>
+            <span class="board-num">Board 03 // Lost Media Search</span>
+            <h2 class="board-title">Lost Recordings</h2>
+            <p class="board-desc">Collaborative tracking board for missing BBC sessions, regional television appearances, bootleg tapes, and uncirculated demo acetates.</p>
+          </div>
+          <div class="board-meta">
+            <span>Help Locate</span>
+            <a href="mailto:richardmurray2022@gmail.com?subject=Lost%20Recording%20Lead">Report Lead →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="paul-draper-archive">
+          <div>
+            <span class="board-num">Board 04 // Featured Collection</span>
+            <h2 class="board-title">Paul Draper Archive</h2>
+            <p class="board-desc">Dedicated fan board continuing 25 years of Paul-Draper.net &amp; MansunMusicLovers discussions, tour dates, and 2027 festival updates.</p>
+          </div>
+          <div class="board-meta">
+            <span>Collection Board</span>
+            <a href="./pages/index.html">Enter Collection →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="live-music">
+          <div>
+            <span class="board-num">Board 05 // Concerts &amp; Tours</span>
+            <h2 class="board-title">Live Music</h2>
+            <p class="board-desc">Venue memories, ticket stub scans, setlists, and concert reports spanning club gigs, academies, and festival headlines.</p>
+          </div>
+          <div class="board-meta">
+            <span>Live Memories</span>
+            <a href="./youtube.html">Watch Live Vault →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="broadcast-history">
+          <div>
+            <span class="board-num">Board 06 // TV &amp; Radio</span>
+            <h2 class="board-title">Broadcast History</h2>
+            <p class="board-desc">Documenting classic UK &amp; European music television — Rockpalast, Top of the Pops, Later..., John Peel sessions, and documentary specials.</p>
+          </div>
+          <div class="board-meta">
+            <span>Broadcast Logs</span>
+            <a href="./trail-builder.html">Explore Trails →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="community-support">
+          <div>
+            <span class="board-num">Board 07 // Mutual Connection</span>
+            <h2 class="board-title">Community Support</h2>
+            <p class="board-desc">Honest listener check-ins, shared experiences, practical support, and mutual encouragement linked with Keep The Connection.</p>
+          </div>
+          <div class="board-meta">
+            <span>Keep Connected</span>
+            <a href="./community.html">Open Hub →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="technology-discussion">
+          <div>
+            <span class="board-num">Board 08 // Engineering &amp; AI</span>
+            <h2 class="board-title">Technology Discussion</h2>
+            <p class="board-desc">Conversations around VHS/DAT capture workflows, open-source archival scripting, local AI memory systems, and hardware preservation.</p>
+          </div>
+          <div class="board-meta">
+            <span>Jupiter Island</span>
+            <a href="./jupiter-island.html">Tech Division →</a>
+          </div>
+        </article>
+
+        <article class="board-card" id="announcements">
+          <div>
+            <span class="board-num">Board 09 // Official Logs</span>
+            <h2 class="board-title">Announcements</h2>
+            <p class="board-desc">Platform milestones, newly digitised master tapes, sponsor directory updates, and major YouTube Vault premieres.</p>
+          </div>
+          <div class="board-meta">
+            <span>Site Bulletins</span>
+            <a href="./index.html#vault">Latest Additions →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="request-box">
+      <span class="kicker">PRESERVATION SUBMISSIONS • CONTRIBUTE TO THE ARCHIVE</span>
+      <h2 style="font-size: 1.85rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.75rem;">Have a Rare Tape, Broadcast Recording, or Story?</h2>
+      <p style="color: #404040; max-width: 720px; margin: 0 0 1.5rem;">
+        RJMedia preserves community-contributed live tapes, television VHS transfers, press scans, and concert photographs with full contributor credit.
+      </p>
+      <a class="btn-3d" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Archive%20Contribution">Contribute To RJMedia Archive →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>◆ RJMEDIA DIGITAL ARCHIVE · REMEMBER THE SOUND · CREATED BY RJM</div>
+      <div>
+        <a href="./index.html">Archive Home</a> ·
+        <a href="./pages/index.html">Paul Draper Archive</a> ·
+        <a href="./community.html">Keep The Connection</a> ·
+        <a href="./jupiter-island.html">Jupiter Island</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

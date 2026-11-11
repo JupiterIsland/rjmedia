@@ -1,0 +1,309 @@
+{
+  "schemaVersion": "1.0.0",
+  "platform": "RJMedia Historical Intelligence Platform",
+  "sampleCanonicalObject": {
+    "id": "pd-1998-bbc-001",
+    "title": "Paul Draper BBC Interview & Six Sessions",
+    "type": "interview",
+    "date": "1998-05-10",
+    "people": [
+      "Paul Draper"
+    ],
+    "bands": [
+      "Mansun"
+    ],
+    "venues": [
+      "BBC Studios",
+      "Brixton Academy"
+    ],
+    "media": [
+      "Video",
+      "Interview",
+      "Audio"
+    ],
+    "tags": [
+      "BBC",
+      "Britpop",
+      "1998",
+      "Six"
+    ],
+    "source": "BBC",
+    "importance": 92,
+    "preservationRisk": 84,
+    "trailIds": [
+      "mansun-story"
+    ],
+    "echoIds": [
+      "echo-001"
+    ],
+    "graphNodes": [
+      "person-paul-draper",
+      "band-mansun",
+      "organisation-bbc"
+    ]
+  },
+  "objects": [
+    {
+      "id": "mansun-1995-peel",
+      "title": "John Peel Session (7 Oct 1995)",
+      "type": "broadcast",
+      "date": "1995-10-07",
+      "people": ["Paul Draper", "Dominic Chad", "Stove King"],
+      "bands": ["Mansun"],
+      "venues": ["BBC Maida Vale"],
+      "media": ["Audio", "MP3"],
+      "tags": ["John Peel", "BBC Radio 1", "1995", "Grey Lantern", "Take It Easy Chicken"],
+      "source": "BBC Radio 1",
+      "importance": 95,
+      "preservationRisk": 88,
+      "trailIds": ["mansun-story", "britpop-trail"],
+      "echoIds": ["echo-002"],
+      "graphNodes": ["person-paul-draper", "band-mansun", "organisation-bbc"],
+      "url": "./pages/mansun-mp3-vault.html"
+    },
+    {
+      "id": "pd-1998-bbc-001",
+      "title": "Paul Draper BBC Interview & Six Era Features",
+      "type": "interview",
+      "date": "1998-05-10",
+      "people": ["Paul Draper"],
+      "bands": ["Mansun"],
+      "venues": ["BBC Studios"],
+      "media": ["Video", "Interview"],
+      "tags": ["BBC", "Britpop", "1998", "Six"],
+      "source": "BBC",
+      "importance": 92,
+      "preservationRisk": 84,
+      "trailIds": ["mansun-story"],
+      "echoIds": ["echo-001"],
+      "graphNodes": ["person-paul-draper", "band-mansun", "organisation-bbc"],
+      "url": "./pages/draper-articles.html"
+    },
+    {
+      "id": "mansun-1998-soundmasters",
+      "title": "Six — The Soundmasters Reference CD & Handwritten Notes",
+      "type": "master-reference",
+      "date": "1998-06-20",
+      "people": ["Paul Draper", "Mark 'Spike' Stent"],
+      "bands": ["Mansun"],
+      "venues": ["Olympic Studios"],
+      "media": ["Audio", "Manuscript Scan"],
+      "tags": ["Six", "1998", "Master Reference", "Handwritten Notes"],
+      "source": "PaulDraper-Music.co.uk Vault",
+      "importance": 98,
+      "preservationRisk": 97,
+      "trailIds": ["mansun-story", "britpop-trail"],
+      "echoIds": ["echo-001"],
+      "graphNodes": ["person-paul-draper", "band-mansun", "album-six"],
+      "url": "./pages/mansun-mp3-vault.html"
+    },
+    {
+      "id": "pd-2006-qa",
+      "title": "Paul Draper 3-Page Forum Q&A (38 Questions)",
+      "type": "interview",
+      "date": "2006-11-11",
+      "people": ["Paul Draper"],
+      "bands": ["Mansun"],
+      "venues": ["Draposound Studio"],
+      "media": ["Text", "Forum Log"],
+      "tags": ["Q&A", "2006", "Draposound", "Kleptomania"],
+      "source": "pauldraper-music.co.uk",
+      "importance": 94,
+      "preservationRisk": 96,
+      "trailIds": ["paul-draper-solo"],
+      "echoIds": ["echo-001"],
+      "graphNodes": ["person-paul-draper", "venue-draposound"],
+      "url": "./pages/draper-qa.html"
+    },
+    {
+      "id": "pd-2014-chester",
+      "title": "Feeling My Heart Run Slow — World Premiere (Chester Convention)",
+      "type": "live-recording",
+      "date": "2014-08-23",
+      "people": ["Paul Draper", "Martin Leay", "Richard Murray"],
+      "bands": ["Paul Draper Solo"],
+      "venues": ["The Live Rooms Chester"],
+      "media": ["Video", "World Premiere"],
+      "tags": ["2014", "Chester", "The Guardian", "Louder Than War", "Vanyaland"],
+      "source": "RJMedia / Paul-Draper.net",
+      "importance": 96,
+      "preservationRisk": 72,
+      "trailIds": ["paul-draper-solo"],
+      "echoIds": ["echo-003"],
+      "graphNodes": ["person-paul-draper", "venue-chester", "album-spooky-action"],
+      "url": "./pages/draper-news.html"
+    },
+    {
+      "id": "pd-2027-blackpool",
+      "title": "Paul Draper at Indie By The Sea (Winter Gardens Blackpool)",
+      "type": "festival",
+      "date": "2027-05-01",
+      "people": ["Paul Draper", "John Robb"],
+      "bands": ["Paul Draper", "Ocean Colour Scene", "Embrace", "Space", "Northside"],
+      "venues": ["Winter Gardens Blackpool"],
+      "media": ["Live Event", "Poster"],
+      "tags": ["2027", "Blackpool", "Indie By The Sea", "Festival"],
+      "source": "Winter Gardens Blackpool",
+      "importance": 90,
+      "preservationRisk": 25,
+      "trailIds": ["paul-draper-solo"],
+      "echoIds": ["echo-003"],
+      "graphNodes": ["person-paul-draper", "venue-blackpool"],
+      "url": "./pages/draper-news.html"
+    }
+  ],
+  "echoes": [
+    {
+      "id": "echo-001",
+      "sourceObject": "pd-1998-bbc-001",
+      "sourceTitle": "Paul Draper Interview & Six Studio Notes (1998)",
+      "sourceYear": "1998",
+      "strength": 94,
+      "summary": "This 1998 recording & studio session echoes across three decades of solo work and community preservation:",
+      "influenced": [
+        {
+          "id": "pd-2003-solo",
+          "year": "2003",
+          "title": "Grind & Early Solo Direction",
+          "type": "Studio Demos",
+          "url": "./pages/mansun-mp3-vault.html"
+        },
+        {
+          "id": "pd-2006-qa",
+          "year": "2006",
+          "title": "38-Question Fan Community Q&A",
+          "type": "Forum Dispatch",
+          "url": "./pages/draper-qa.html"
+        },
+        {
+          "id": "pd-2017-spooky",
+          "year": "2017",
+          "title": "Spooky Action Debut Solo LP (UK #19)",
+          "type": "Album Release",
+          "url": "./pages/mansun-albums.html"
+        },
+        {
+          "id": "archive-discussion-2026",
+          "year": "2026",
+          "title": "RJMedia Digital Archive Restoration",
+          "type": "Community Vault",
+          "url": "./pages/index.html"
+        }
+      ]
+    },
+    {
+      "id": "echo-002",
+      "sourceObject": "pd-2014-chester",
+      "sourceTitle": "'Feeling My Heart Run Slow' World Premiere at Chester (2014)",
+      "sourceYear": "2014",
+      "strength": 91,
+      "summary": "Filmed by Richard Murray at The Live Rooms Chester, this premiere catalyzed the modern solo era:",
+      "influenced": [
+        {
+          "id": "ltw-2014",
+          "year": "2014",
+          "title": "Louder Than War, Vanyaland & The Guardian Feature",
+          "type": "Press Citation",
+          "url": "./pages/draper-news.html"
+        },
+        {
+          "id": "ep-one-2016",
+          "year": "2016",
+          "title": "EP ONE Release on Kscope (KSCOPE896)",
+          "type": "Official Release",
+          "url": "./pages/mansun-albums.html"
+        },
+        {
+          "id": "clt-2022",
+          "year": "2022",
+          "title": "Cult Leader Tactics & Mansun Retold",
+          "type": "Solo Catalogue",
+          "url": "./pages/mansun-albums.html"
+        },
+        {
+          "id": "pd-2027-blackpool",
+          "year": "2027",
+          "title": "Indie By The Sea — Blackpool Winter Gardens",
+          "type": "Live Festival Bill",
+          "url": "./pages/draper-news.html"
+        }
+      ]
+    }
+  ],
+  "legacyEngine": [
+    {
+      "anniversaryDate": "1996-11-11",
+      "yearsAgo": 30,
+      "badge": "30 YEARS AGO THIS MONTH",
+      "title": "Stripper Vicar EP & Melody Maker Feature Shoot",
+      "description": "Tom Sheehan photographed Mansun in London as 'Stripper Vicar' broke the UK Top 20 ahead of Attack of the Grey Lantern.",
+      "url": "./pages/draper-gallery.html"
+    },
+    {
+      "anniversaryDate": "1998-11-10",
+      "yearsAgo": 28,
+      "badge": "28 YEARS AGO THIS WEEK",
+      "title": "Mansun 'Six' UK Tour & Brixton Academy Broadcast",
+      "description": "Peak Six tour performance featuring 'She Makes My Wheels Turn' and 'Negative' captured live.",
+      "url": "./youtube.html"
+    },
+    {
+      "anniversaryDate": "2001-12-15",
+      "yearsAgo": 25,
+      "badge": "25-YEAR MILESTONE",
+      "title": "MansunMusicLovers Yahoo! Group Founded",
+      "description": "Founded while Mansun were still active in the studio recording Kleptomania — beginning 25 years of continuous preservation.",
+      "url": "./pages/draper-news.html"
+    }
+  ],
+  "preservationRiskQueue": [
+    {
+      "objectId": "vhs-six-demos-1998",
+      "title": "1998 'Six' Soundmasters Reference CD & Handwritten Studio Notes",
+      "sourceType": "Single Reference CD + Original Ink Scan",
+      "copiesKnown": 1,
+      "digitalCopies": 1,
+      "publiclyAvailable": true,
+      "physicalCondition": "Fragile / Retired Website Capture",
+      "riskScore": 98,
+      "status": "Critical",
+      "url": "./pages/mansun-mp3-vault.html"
+    },
+    {
+      "objectId": "pd-forum-qa-2006",
+      "title": "2006 Paul Draper 3-Page Forum Q&A (38 Dispatches)",
+      "sourceType": "Retired Website (pauldraper-music.co.uk)",
+      "copiesKnown": 1,
+      "digitalCopies": 1,
+      "publiclyAvailable": true,
+      "physicalCondition": "Recovered from Wayback / Local Backup",
+      "riskScore": 96,
+      "status": "Critical",
+      "url": "./pages/draper-qa.html"
+    },
+    {
+      "objectId": "grind-videos-2004",
+      "title": ".:Grind Videos and MP3s:. (The Diary, Epic, Lantern, The Window, The Office)",
+      "sourceType": "Retired Flash / WMV Studio Captures",
+      "copiesKnown": 2,
+      "digitalCopies": 1,
+      "publiclyAvailable": true,
+      "physicalCondition": "At Risk — Legacy Codec Migration",
+      "riskScore": 91,
+      "status": "Critical",
+      "url": "./pages/mansun-mp3-vault.html"
+    },
+    {
+      "objectId": "smiths-rockpalast-1984",
+      "title": "The Smiths — Live Rockpalast 1984 (71-Min FHD Broadcast)",
+      "sourceType": "Broadcast Master Restoration",
+      "copiesKnown": 5,
+      "digitalCopies": 3,
+      "publiclyAvailable": true,
+      "physicalCondition": "Preserved in RJMedia Vault",
+      "riskScore": 64,
+      "status": "At Risk",
+      "url": "./youtube.html"
+    }
+  ]
+}

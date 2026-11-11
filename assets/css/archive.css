@@ -1,11 +1,11 @@
 :root {
   color-scheme: light;
-  --paper: #ffffff;
+  --paper: #f5f5f5;
   --white: #ffffff;
-  --ink: #111111;
+  --ink: #222222;
   --muted: #555555;
-  --rule: rgba(17, 17, 17, 0.18);
-  --black: #111111;
+  --rule: #d8d8d8;
+  --black: #050505;
   --max: 1120px;
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -24,7 +24,9 @@ a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(245, 245, 245, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--rule);
 }
 .nav {
@@ -124,11 +126,17 @@ h1 {
 }
 .photo-card {
   background: var(--white);
-  border: 1px solid var(--ink);
-  box-shadow: 5px 5px 0 var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: all 0.3s ease;
+}
+.photo-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 .photo-card img {
   width: 100%;
@@ -136,12 +144,12 @@ h1 {
   object-fit: cover;
   object-position: top center;
   display: block;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.35s ease;
 }
-.photo-card img:hover {
-  transform: scale(1.02);
+.photo-card:hover img {
+  transform: scale(1.04);
 }
 .photo-card .cap {
   padding: 0.75rem 0.9rem;
@@ -218,9 +226,15 @@ h1 {
 }
 .news-item {
   background: var(--white);
-  border: 1px solid var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 18px;
   padding: clamp(1.4rem, 3.5vw, 2.2rem);
-  box-shadow: 6px 6px 0 var(--ink);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.news-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 .news-item.with-thumb {
   display: grid;
@@ -810,12 +824,9 @@ img.img-missing {
   text-transform: uppercase;
 }
 
-/* === DUAL PRIMARY MISSIONS BAR (MISSION 1 === MISSION 2) === */
+/* === SUBTLE SITE RELATIONSHIP (THREE SEPARATE ROOMS) === */
 .dual-mission-bar {
-  background: #0a0a0a;
-  color: #ffffff;
-  border-bottom: 2px solid #111111;
-  font-size: 0.74rem;
+  display: none;
 }
 .dual-mission-inner {
   width: min(1120px, calc(100% - 2rem));
@@ -829,7 +840,7 @@ img.img-missing {
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.65rem 1rem;
-  color: #d1d5db;
+  color: #d4d4d4;
   text-decoration: none;
   border-bottom: 3px solid transparent;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
@@ -838,11 +849,11 @@ img.img-missing {
   border-right: 1px solid #2a2a2a;
 }
 .mission-pill:hover {
-  background: #18181b;
+  background: #1a1a1a;
   color: #ffffff;
 }
 .mission-pill.active-mission {
-  background: #141417;
+  background: #141414;
   color: #ffffff;
   border-bottom-color: #ffffff;
 }

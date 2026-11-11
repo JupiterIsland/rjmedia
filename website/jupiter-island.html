@@ -12,12 +12,12 @@
   <style>
     :root {
       --bg: #050505;
-      --surface: #0d0f12;
-      --surface-elevated: #161920;
-      --card-border: #22262f;
+      --surface: #111111;
+      --surface-elevated: #1b1b1b;
+      --card-border: rgba(255, 255, 255, 0.08);
       --ink: #ffffff;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
+      --muted: #8a8a8a;
+      --accent: #d9d9d9;
       --max: 1180px;
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -33,43 +33,15 @@
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
 
-    /* Ecosystem Ribbon */
     .ecosystem-bar {
-      background: #000000;
-      color: #ffffff;
-      font-size: 0.72rem;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    .ecosystem-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      min-height: 38px;
-    }
-    .eco-brands {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .eco-link {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: #737373;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .eco-link:hover, .eco-link.active {
-      color: #ffffff;
-    }
-    .eco-link.active {
-      color: #38bdf8;
+      display: none;
     }
 
     /* Masthead */
     .masthead {
-      background: rgba(5, 5, 5, 0.94);
-      backdrop-filter: blur(14px);
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--card-border);
       position: sticky;
       top: 0;
@@ -98,9 +70,9 @@
     .brand-dot {
       width: 8px;
       height: 8px;
-      background: #38bdf8;
+      background: #ffffff;
       border-radius: 50%;
-      box-shadow: 0 0 10px #38bdf8;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.65);
     }
     .brand-sub {
       font-family: 'JetBrains Mono', monospace;
@@ -122,15 +94,28 @@
 
     /* Hero */
     .hero {
-      padding: 5rem 0 3.5rem;
+      padding: 5.5rem 0 4rem;
       border-bottom: 1px solid var(--card-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
     }
     .kicker {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.2em;
-      color: #38bdf8;
+      color: #d9d9d9;
       text-transform: uppercase;
       display: block;
       margin-bottom: 1rem;
@@ -145,7 +130,7 @@
     }
     .hero-p {
       font-size: 1.15rem;
-      color: #cbd5e1;
+      color: #d9d9d9;
       max-width: 720px;
       margin: 0 0 2rem;
       line-height: 1.65;
@@ -164,20 +149,23 @@
       font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
+      transition: all 0.2s ease;
     }
     .btn-primary {
       background: #ffffff;
       color: #000000;
     }
     .btn-outline {
-      background: transparent;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
       color: #ffffff;
-      border: 1px solid #334155;
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
     .btn-outline:hover {
       border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     /* Projects Grid */
@@ -205,25 +193,25 @@
       gap: 1.5rem;
     }
     .proj-card {
-      background: var(--surface);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
+      background: linear-gradient(145deg, #181818, #0b0b0b);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
       padding: 2rem 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       min-height: 320px;
-      transition: all 0.2s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
     }
     .proj-card:hover {
-      transform: translateY(-4px);
-      border-color: #475569;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
     .proj-num {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
-      color: #64748b;
+      color: #8a8a8a;
       margin-bottom: 0.75rem;
       display: block;
     }
@@ -236,7 +224,7 @@
     }
     .proj-desc {
       font-size: 0.88rem;
-      color: #94a3b8;
+      color: #bebebe;
       line-height: 1.6;
       margin: 0 0 1.5rem;
     }
@@ -244,18 +232,21 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       font-weight: 800;
-      color: #38bdf8;
+      color: #ffffff;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
 
     /* Repositories Full List */
     .repos-box {
-      background: var(--surface);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
       padding: 2rem;
       margin-top: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
     .repo-item {
       display: flex;
@@ -286,7 +277,7 @@
     footer {
       padding: 3.5rem 0;
       font-size: 0.8rem;
-      color: #64748b;
+      color: #8a8a8a;
     }
     .footer-inner {
       display: flex;
@@ -410,28 +401,28 @@
           <a class="proj-link" href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">Archive Signal Repo ↗</a>
         </article>
 
-        <!-- 5. Music Gateway -->
+        <!-- 5. Open Source -->
         <article class="proj-card">
           <div>
-            <span class="proj-num">05 // STREAM DISCOVERY</span>
-            <h3 class="proj-title">Music Gateway</h3>
+            <span class="proj-num">05 // OPEN SOURCE</span>
+            <h3 class="proj-title">Open Source &amp; Audio Tools</h3>
             <p class="proj-desc">
-              Python audio tools, bootleg cataloguers, and stream discovery scripts designed to extract, tag, and restore analog and broadcast music archives.
+              MIT-licensed stream discovery and restoration scripts under <code>music-getaway</code> — helping independent archives extract, catalog, and safeguard cultural recordings.
             </p>
           </div>
-          <a class="proj-link" href="https://github.com/JupiterIsland/music-getaway" target="_blank" rel="noopener">Music Getaway Repo ↗</a>
+          <a class="proj-link" href="https://github.com/JupiterIsland/music-getaway" target="_blank" rel="noopener">Open Source Repos ↗</a>
         </article>
 
-        <!-- 6. Research & Roadmaps -->
+        <!-- 6. Research & GitHub -->
         <article class="proj-card">
           <div>
-            <span class="proj-num">06 // AI EXPERIMENTS</span>
-            <h3 class="proj-title">Research &amp; Roadmaps</h3>
+            <span class="proj-num">06 // RESEARCH &amp; GITHUB</span>
+            <h3 class="proj-title">Research &amp; Infrastructure</h3>
             <p class="proj-desc">
-              Competitive model testing across Docker, WSL2, Linux, and Windows automation. Benchmarks for agentic workflows and local reasoning engines.
+              Competitive model benchmarks, inference optimization, and multi-model orchestration across Docker, WSL2, Linux, and Windows automation on GitHub.
             </p>
           </div>
-          <a class="proj-link" href="./llms.txt">Read LLM Context ↗</a>
+          <a class="proj-link" href="#repositories">Explore GitHub Repositories ↓</a>
         </article>
       </div>
     </section>
@@ -450,7 +441,7 @@
             <a class="repo-name" href="https://github.com/JupiterIsland/memoryos" target="_blank" rel="noopener">JupiterIsland/memoryos</a>
             <div class="repo-detail">A tiered memory engine for local AI. TLB + Temporal Graph + NVMe checkpoints. Built for NVIDIA, architected for AMD Helios. No cloud.</div>
           </div>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#64748b;">HTML / Systems</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#8a8a8a;">HTML / Systems</span>
         </div>
 
         <div class="repo-item">
@@ -458,7 +449,7 @@
             <a class="repo-name" href="https://github.com/JupiterIsland/rjmedia" target="_blank" rel="noopener">JupiterIsland/rjmedia</a>
             <div class="repo-detail">RJMedia music archive landing page and project files. Serves from root on main and gh-pages.</div>
           </div>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#64748b;">HTML / JS</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#8a8a8a;">HTML / JS</span>
         </div>
 
         <div class="repo-item">
@@ -466,7 +457,7 @@
             <a class="repo-name" href="https://github.com/JupiterIsland/music-getaway" target="_blank" rel="noopener">JupiterIsland/music-getaway</a>
             <div class="repo-detail">Python tools, scripts, and workflows for musical archives and audio discovery.</div>
           </div>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#64748b;">Python</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#8a8a8a;">Python</span>
         </div>
 
         <div class="repo-item">
@@ -474,7 +465,7 @@
             <a class="repo-name" href="https://github.com/JupiterIsland/.github" target="_blank" rel="noopener">JupiterIsland/.github</a>
             <div class="repo-detail">Organization profile, community health files, standards, and reusable GitHub Actions.</div>
           </div>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#64748b;">Community Config</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#8a8a8a;">Community Config</span>
         </div>
 
         <div class="repo-item">
@@ -482,7 +473,7 @@
             <a class="repo-name" href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">JupiterIsland/archive-signal</a>
             <div class="repo-detail">Preserves and showcases rare music documentaries, broadcast recordings, interviews, restored footage, and cultural archives (MIT License).</div>
           </div>
-          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#64748b;">MIT License</span>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#8a8a8a;">MIT License</span>
         </div>
       </div>
     </section>
@@ -494,7 +485,7 @@
           <strong style="color:#ffffff;">JUPITER ISLAND</strong> · Future Technology Division
         </div>
         <div>
-          <a href="./index.html" style="color:#94a3b8; text-decoration:underline;">Return To RJMedia Digital Archive →</a>
+          <a href="./index.html" style="color:#bebebe; text-decoration:underline;">Return To RJMedia Digital Archive →</a>
         </div>
         <div style="font-family:'JetBrains Mono',monospace; font-size:0.75rem;">
           Created by RJM

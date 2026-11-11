@@ -8,11 +8,11 @@
   <meta name="description" content="RJMedia YouTube Archive — Watch over 1,000,000 views of rare music documentaries and live broadcasts. Featuring Peter Green: A Hard Road (179K views), The Smiths Rockpalast '84, Paul Draper rarities, and more.">
   <style>
     :root {
-      --bg: #ffffff;
-      --card: #f9fafb;
-      --ink: #0f1419;
-      --muted: #4b5563;
-      --rule: rgba(15, 20, 25, 0.16);
+      --bg: #bdbdbd;
+      --card: #ffffff;
+      --ink: #111111;
+      --muted: #555555;
+      --rule: rgba(0, 0, 0, 0.14);
       --max: 1120px;
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -27,12 +27,9 @@
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
     
-    /* Top Dual Mission Bar */
+    /* Top Dual Mission Bar Hidden for Separate Room Experience */
     .dual-mission-bar {
-      background: #0a0a0a;
-      color: #ffffff;
-      border-bottom: 2px solid #0f1419;
-      font-size: 0.74rem;
+      display: none;
     }
     .dual-mission-inner {
       width: min(var(--max), calc(100% - 2rem));
@@ -192,7 +189,9 @@
     }
     .stage-info {
       background: var(--card);
-      border: 1px solid var(--ink);
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
       padding: 1.75rem;
     }
     .stage-badge {
@@ -202,9 +201,10 @@
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      background: #dc2626;
+      padding: 0.25rem 0.65rem;
+      background: #000000;
       color: #ffffff;
+      border-radius: 6px;
       margin-bottom: 0.85rem;
     }
     .stage-title {
@@ -283,15 +283,18 @@
     }
     .upload-card {
       background: #ffffff;
-      border: 1px solid var(--ink);
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: all 0.3s ease;
     }
     .upload-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 22px 44px rgba(0,0,0,0.18);
     }
     .card-thumb-wrap {
       position: relative;
@@ -308,6 +311,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .upload-card:hover .card-thumb-wrap img {
+      transform: scale(1.06);
     }
     .play-overlay {
       position: absolute;
@@ -380,7 +387,9 @@
     }
     .strat-box {
       background: #ffffff;
-      border: 1px solid var(--ink);
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
       padding: 1.5rem;
     }
     .strat-box h3 {
@@ -400,7 +409,7 @@
       font-family: monospace;
       font-size: 0.72rem;
       font-weight: 900;
-      color: #dc2626;
+      color: #000000;
       margin-bottom: 0.35rem;
       display: block;
     }
@@ -797,12 +806,12 @@
     </section>
 
     <footer>
-      <div>◆ RJMEDIA DIGITAL ARCHIVE · LIVE MUSIC &amp; BAND DOCUMENTARIES</div>
+      <div>◆ RJMEDIA DIGITAL ARCHIVE · REMEMBER THE SOUND · CREATED BY RJM</div>
       <div>
-        <a href="./index.html">Remember The Sound</a> ·
+        <a href="./index.html">RJMedia Archive</a> ·
         <a href="./community.html">Keep The Connection</a> ·
-        <a href="./pages/index.html">Paul Draper Archive</a> ·
-        <a href="./bio.html">Richard John Murray</a> ·
+        <a href="./pages/index.html">Paul Draper Music</a> ·
+        <a href="./jupiter-island.html">Jupiter Island</a> ·
         <a href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">YouTube (@RJMedia) ↗</a>
       </div>
     </footer>

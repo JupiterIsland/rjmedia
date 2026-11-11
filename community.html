@@ -7,10 +7,10 @@
   <style>
     :root {
       --bg: #050505;
-      --panel: #0d0f12;
+      --panel: #111111;
       --ink: #ffffff;
-      --muted: #9ca3af;
-      --rule: #222222;
+      --muted: #8a8a8a;
+      --rule: rgba(255, 255, 255, 0.08);
       --max: 1120px;
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -20,14 +20,17 @@
       color: var(--ink);
       font: 15px/1.6 'Inter', 'Segoe UI', Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
 
-    /* Sticky Mid Navigation Bar matching Screenshot 1 */
+    /* Sticky Mid Navigation Bar */
     .mid-nav {
       border-bottom: 1px solid var(--rule);
-      background: rgba(5, 5, 5, 0.96);
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -66,11 +69,25 @@
     .nav-links a:hover { color: #ffffff; }
     .nav-links a.active-link { color: #ffffff; border-bottom: 2px solid #ffffff; padding-bottom: 3px; }
 
-    /* Hero Section matching Screenshot 1 */
+    /* Hero Section with Radial Glow */
     .hero {
+      position: relative;
       padding: 5rem 0 3.5rem;
       border-bottom: 1px solid var(--rule);
     }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 5%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 1; }
     .eyebrow {
       font-size: 0.65rem;
       font-weight: 800;
@@ -106,7 +123,7 @@
       line-height: 1.6;
     }
 
-    /* Stats Box matching Screenshot 1 top right */
+    /* Stats Box */
     .stats-cluster {
       display: flex;
       flex-direction: column;
@@ -119,9 +136,16 @@
       gap: 0.75rem;
     }
     .stat-card {
-      border: 1px solid var(--rule);
-      background: var(--panel);
+      background: linear-gradient(145deg, #181818, #0b0b0b);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
       padding: 1.15rem 1.25rem;
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.15);
     }
     .stat-label {
       font-size: 0.6rem;
@@ -141,11 +165,11 @@
       font-weight: 900;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #d1d5db;
+      color: #d9d9d9;
       padding-top: 0.25rem;
     }
 
-    /* THE ECOSYSTEM Section matching Screenshot 1 */
+    /* THE ECOSYSTEM Section */
     .section {
       padding: 4.5rem 0;
       border-bottom: 1px solid var(--rule);
@@ -163,17 +187,21 @@
       gap: 1.25rem;
     }
     .eco-card {
-      border: 1px solid var(--rule);
-      background: var(--panel);
+      background: linear-gradient(145deg, #181818, #0b0b0b);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
       padding: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       min-height: 310px;
-      transition: border-color 0.15s ease;
+      transition: all 0.3s ease;
     }
     .eco-card:hover {
-      border-color: #555;
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.22);
     }
     .eco-tag {
       font-size: 0.62rem;
@@ -213,22 +241,31 @@
       text-transform: uppercase;
       text-decoration: underline;
       text-underline-offset: 4px;
+      color: #bebebe;
     }
+    .eco-cta:hover { color: #ffffff; }
 
-    /* WHY KEEP THE CONNECTION Section matching Screenshot 1 */
+    /* WHY KEEP THE CONNECTION Section */
     .why-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 1.25rem;
     }
     .why-box {
-      border: 1px solid var(--rule);
-      background: var(--panel);
+      background: linear-gradient(145deg, #181818, #0b0b0b);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
       padding: 2.5rem;
+      transition: all 0.3s ease;
+    }
+    .why-box:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.15);
     }
     .why-box p {
       margin: 0 0 1.2rem;
-      color: var(--muted);
+      color: #d9d9d9;
       font-size: 1rem;
       line-height: 1.7;
     }
@@ -237,8 +274,12 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: var(--panel);
-      border: 1px solid var(--rule);
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
       padding: 2.5rem;
     }
     .why-manifesto h3 {
@@ -262,16 +303,15 @@
       border-top: 1px solid var(--rule);
       margin-top: 4rem;
     }
+    footer a { color: #bebebe; }
+    footer a:hover { color: #ffffff; }
     @media (max-width: 960px) {
       .hero-grid, .eco-grid, .why-grid { grid-template-columns: 1fr; }
       .stats-cluster { width: 100%; }
     }
-    /* Dual Primary Missions Bar */
+    /* Dual Primary Missions Bar Hidden for Separate Room Experience */
     .dual-mission-bar {
-      background: #0d0f12;
-      color: #ffffff;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.74rem;
+      display: none;
     }
     .dual-mission-inner {
       width: min(var(--max), calc(100% - 3rem));
@@ -476,20 +516,20 @@
     </section>
 
     <section class="section" id="builder-bio">
-      <p class="eyebrow">CARLISLE, ENGLAND • TECHNICAL SYSTEMS BUILDER &amp; ARCHIVIST</p>
-      <h2>RICHARD JOHN MURRAY</h2>
+      <p class="eyebrow">CARLISLE, ENGLAND • AN RJM TECHNOLOGY PROJECT</p>
+      <h2>THE QUIET INFRASTRUCTURE</h2>
       <div class="why-grid">
         <div class="why-box">
-          <p><strong>Technical Systems Builder in Carlisle, England.</strong> I design and run a unified AI infrastructure built from three core systems: <strong>MemoryOS</strong>, <strong>Jupiter One Hardware Reality</strong>, and <strong>The Quiet Advisor</strong>.</p>
+          <p><strong>Created by RJM in Carlisle, England.</strong> Alongside the digital archive and community platform, Jupiter Island runs a unified AI infrastructure built from three core systems: <strong>MemoryOS</strong>, <strong>Jupiter One Hardware Reality</strong>, and <strong>The Quiet Advisor</strong>.</p>
           <p><strong>MemoryOS</strong> handles GPU-aware memory routing, tier management, and checkpoint persistence. <strong>Jupiter One</strong> provides real-time VRAM analysis, hardware ROI recommendations, and multi-model scheduling. <strong>The Quiet Advisor</strong> observes inference patterns, runs ten detector algorithms nightly, and generates one actionable insight per day based on real usage data.</p>
-          <p>My work focuses on inference optimization, GPU efficiency, multi-model orchestration, and exposing hidden patterns in user workflows across Docker, WSL2, Linux, Windows automation, consumer GPUs, and competitive model testing — building systems that reveal waste, improve throughput, and eliminate guesswork.</p>
-          <p>I also filmed the first public playback of Paul Draper's debut solo song at the Mansun convention in Chester. <em>Louder Than War</em> credited the recording to <strong>"Richard Murray of the Paul-Draper.net fansite"</strong>, <em>Vanyaland</em> named me as the person who captured it, and <em>The Guardian</em> featured the video in its indie playlist.</p>
+          <p>The focus is on inference optimization, GPU efficiency, multi-model orchestration, and exposing hidden patterns in user workflows across Docker, WSL2, Linux, Windows automation, consumer GPUs, and competitive model testing — building systems that reveal waste, improve throughput, and eliminate guesswork.</p>
+          <p>RJM also filmed the first public playback of Paul Draper's debut solo song at the Mansun convention in Chester. <em>Louder Than War</em> credited the recording to the <strong>Paul-Draper.net fansite</strong>, <em>Vanyaland</em> documented the capture, and <em>The Guardian</em> featured the video in its indie playlist.</p>
           <p>Reach out directly: <a href="mailto:richardmurray2022@gmail.com" style="color:#ffffff; text-decoration:underline; font-weight:700;">richardmurray2022@gmail.com</a></p>
         </div>
         <div class="why-manifesto">
-          <h3>REVEAL WASTE.<br>IMPROVE THROUGHPUT.<br>ELIMINATE GUESSWORK.<br><span style="color:#9ca3af; font-size:0.85em;">TAKE IT EASY.</span></h3>
+          <h3>REVEAL WASTE.<br>IMPROVE THROUGHPUT.<br>ELIMINATE GUESSWORK.<br><span style="color:#8a8a8a; font-size:0.85em;">TAKE IT EASY.</span></h3>
           <div class="btn-row" style="margin-top:2rem;">
-            <a class="btn-light" href="./bio.html">OPEN FULL BIO &amp; AI MEMORY PROFILE →</a>
+            <a class="btn-light" href="./jupiter-island.html">EXPLORE JUPITER ISLAND →</a>
             <a class="btn-dark" href="./llms.txt">VIEW LLMS.TXT ↗</a>
           </div>
         </div>
@@ -499,12 +539,12 @@
 
   <footer>
     <div class="wrap" style="width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
-      <div>◆ RJMEDIA COMMUNITY · KEEP THE CONNECTION</div>
+      <div>◆ PRESENTED BY RJMEDIA DIGITAL ARCHIVE · REMEMBER THE SOUND · CREATED BY RJM</div>
       <div>
-        <a href="./index.html">Remember The Sound</a> ·
-        <a href="./bio.html">Richard John Murray (Bio)</a> ·
-        <a href="./pages/draper-news.html">Paul Draper News</a> ·
-        <a href="./pages/mansun-mp3-vault.html">Media</a> ·
+        <a href="./index.html">RJMedia Digital Archive</a> ·
+        <a href="./pages/index.html">Paul Draper Music</a> ·
+        <a href="./jupiter-island.html">Jupiter Island</a> ·
+        <a href="./youtube.html">YouTube Vault</a> ·
         <a href="./llms.txt">llms.txt</a>
       </div>
     </div>

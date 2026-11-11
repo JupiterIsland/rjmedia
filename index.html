@@ -194,15 +194,29 @@
       padding: 5rem 0 4.5rem;
       position: relative;
     }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.45), transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
     .hero-card {
       background: var(--surface-glass);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
+      border-radius: 18px;
       padding: clamp(2.5rem, 5vw, 4.5rem);
-      box-shadow: var(--shadow-3d);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.7);
       position: relative;
+      z-index: 1;
       overflow: hidden;
     }
     .hero-card::before {
@@ -426,33 +440,49 @@
       margin-top: 2.5rem;
     }
     .col-card-3d {
-      background: var(--surface);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 2.25rem 1.75rem;
-      box-shadow: var(--shadow-md);
+      background: linear-gradient(145deg, #f5f5f5, #e5e5e5);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 18px;
+      padding: 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.85);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 310px;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      min-height: 360px;
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
-    .col-card-3d::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: #e5e5e5;
-      transition: background 0.2s ease;
-    }
     .col-card-3d:hover {
-      transform: translateY(-6px) scale(1.01);
-      box-shadow: var(--shadow-3d);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 1);
     }
-    .col-card-3d:hover::before {
-      background: #000000;
+    .col-img-wrap {
+      width: 100%;
+      height: 175px;
+      overflow: hidden;
+      background: #1b1b1b;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .col-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) contrast(1.08);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+    .col-card-3d:hover .col-img-wrap img {
+      transform: scale(1.06);
+      filter: grayscale(80%) contrast(1.12);
+    }
+    .col-body-wrap {
+      padding: 1.5rem 1.65rem 1.65rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
     }
     .col-badge {
       font-family: 'JetBrains Mono', monospace;
@@ -704,12 +734,12 @@
       padding: 2rem 0 5rem;
     }
     .jupiter-card {
-      background: #0d0f12;
+      background: linear-gradient(145deg, #181818, #0b0b0b);
       color: #ffffff;
-      border: 1px solid #222222;
-      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
       padding: 2.5rem 3rem;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -722,7 +752,7 @@
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #737373;
+      color: #8a8a8a;
     }
     .jupiter-title {
       font-size: 1.75rem;
@@ -732,7 +762,7 @@
       margin: 0.35rem 0 0.5rem;
     }
     .jupiter-desc {
-      color: #a3a3a3;
+      color: #bebebe;
       font-size: 0.95rem;
       max-width: 580px;
       margin: 0;
@@ -746,10 +776,10 @@
     .j-pill {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
-      background: #181b22;
-      border: 1px solid #2f3542;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.14);
       padding: 0.25rem 0.65rem;
-      border-radius: 4px;
+      border-radius: 6px;
       color: #e5e5e5;
     }
 
@@ -822,22 +852,7 @@
 </head>
 <body>
 
-  <!-- TRI-PROPERTY ECOSYSTEM BAR -->
-  <div class="ecosystem-bar">
-    <div class="wrap ecosystem-inner">
-      <div class="ecosystem-brands">
-        <a class="eco-pill active" href="./index.html"><span class="dot"></span> RJMedia Digital Archive</a>
-        <a class="eco-pill" href="./pages/index.html"><span class="dot"></span> Paul Draper Archive</a>
-        <a class="eco-pill" href="./trail-builder.html"><span class="dot"></span> Memory Trails &amp; Constellations</a>
-        <a class="eco-pill" href="./jupiter-island.html"><span class="dot"></span> Jupiter Island</a>
-      </div>
-      <div class="eco-pill" style="color:#737373;">
-        Official Independent Music Preservation Platform
-      </div>
-    </div>
-  </div>
-
-  <!-- MAIN MASTHEAD -->
+  <!-- MAIN MASTHEAD (STANDALONE ROOM — NO GIANT ECOSYSTEM BANNER) -->
   <header class="masthead">
     <div class="wrap masthead-inner">
       <a class="brand-logo" href="./index.html">
@@ -847,17 +862,13 @@
         <span class="logo-tagline">REMEMBER THE SOUND</span>
       </a>
 
-      <nav class="main-nav" aria-label="Archive Platform Navigation">
-        <a href="#about">About</a>
-        <a href="#collections">Collections</a>
-        <a href="#memory-trails">Memory Trails™</a>
-        <a href="#constellations">Constellations™</a>
-        <a href="#news">News &amp; Solo LPs</a>
-        <a href="#vault">Archive Vault</a>
-        <a href="#support">Support</a>
-        <a href="#forum">Community</a>
-        <a href="./jupiter-island.html">Jupiter Island</a>
-        <a class="nav-btn" href="./trail-builder.html">Trail Builder AI</a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#about">ARCHIVE</a>
+        <a href="#collections">COLLECTIONS</a>
+        <a href="#vault">YOUTUBE</a>
+        <a href="#support">SUPPORT</a>
+        <a href="./forum.html">FORUM</a>
+        <a class="nav-btn" href="./trail-builder.html">TRAIL BUILDER</a>
       </nav>
     </div>
   </header>
@@ -867,16 +878,16 @@
     <!-- SECTION 1: HERO -->
     <section class="hero-section">
       <div class="hero-card">
-        <span class="hero-kicker">NATIONAL INDEPENDENT MUSIC ARCHIVE • EST. 2001</span>
+        <span class="hero-kicker">INDEPENDENT DIGITAL ARCHIVE &amp; PUBLIC PLATFORM • EST. 2001</span>
         <h1 class="hero-title">RJMEDIA DIGITAL ARCHIVE</h1>
         <div class="hero-subtitle">REMEMBER THE SOUND</div>
         <p class="hero-desc">
-          Preserving music history, live recordings, broadcast recordings, archive footage, and community memories. Dedicated to cultural continuity, permanent audio preservation, and independent discovery.
+          Preserving music history, live recordings, broadcast recordings, archive footage and community memories.
         </p>
         <div class="hero-actions">
-          <a class="btn-3d btn-3d-primary" href="#collections">Explore Archive Collections ↓</a>
-          <a class="btn-3d btn-3d-secondary" href="#support">Support RJMedia Archive →</a>
-          <a class="btn-3d btn-3d-secondary" href="./youtube.html">Watch YouTube Vault (1M+ Views) ↗</a>
+          <a class="btn-3d btn-3d-primary" href="#collections">Explore Archive ↓</a>
+          <a class="btn-3d btn-3d-secondary" href="#support">Support RJMedia →</a>
+          <a class="btn-3d btn-3d-secondary" href="./forum.html">Community Forum →</a>
         </div>
       </div>
     </section>
@@ -885,34 +896,34 @@
     <section class="stats-section" aria-label="Archive Statistics">
       <div class="stats-grid">
         <div class="stat-card">
-          <span class="stat-label">YouTube Views</span>
-          <div class="stat-num">1,001,987+</div>
-          <span class="stat-sub">Across 35+ Broadcasts</span>
+          <span class="stat-label">YouTube Subscribers</span>
+          <div class="stat-num">3,200+</div>
+          <span class="stat-sub">Channel Community</span>
         </div>
         <div class="stat-card">
-          <span class="stat-label">Subscribers</span>
-          <div class="stat-num">3,200+</div>
-          <span class="stat-sub">Community Members</span>
+          <span class="stat-label">YouTube Views</span>
+          <div class="stat-num">1,001,987+</div>
+          <span class="stat-sub">72,500+ Watch Hours</span>
         </div>
         <div class="stat-card">
           <span class="stat-label">Videos Archived</span>
           <div class="stat-num">200+</div>
-          <span class="stat-sub">Tapes, Docs &amp; Gigs</span>
+          <span class="stat-sub">Broadcasts, Docs &amp; Gigs</span>
         </div>
         <div class="stat-card">
           <span class="stat-label">Years Preserved</span>
-          <div class="stat-num">25</div>
-          <span class="stat-sub">2001 — 2026 Archive</span>
+          <div class="stat-num">25+</div>
+          <span class="stat-sub">2001 — 2026 Continuous</span>
         </div>
         <div class="stat-card">
-          <span class="stat-label">Repositories</span>
+          <span class="stat-label">GitHub Repositories</span>
           <div class="stat-num">5</div>
-          <span class="stat-sub">Open-Source Engines</span>
+          <span class="stat-sub">Open-Source Ecosystem</span>
         </div>
         <div class="stat-card">
           <span class="stat-label">Forum Members</span>
           <div class="stat-num">148+</div>
-          <span class="stat-sub">Community Network</span>
+          <span class="stat-sub">Active Community Base</span>
         </div>
       </div>
     </section>
@@ -922,247 +933,246 @@
       <div class="about-card">
         <div class="about-grid">
           <div class="about-body">
-            <span class="section-kicker">OUR INSTITUTIONAL PURPOSE</span>
-            <h2 class="section-title">PRESERVATION. DISCOVERY. COMMUNITY.</h2>
+            <span class="section-kicker">ABOUT RJMEDIA • PRESERVATION, DISCOVERY &amp; COMMUNITY</span>
+            <h2 class="section-title">ARCHIVE MISSION</h2>
             <p>
-              The RJMedia Digital Archive is an independent cultural institution dedicated to rescuing, cataloguing, and providing free public access to rare British rock history, master concert tapes, broadcast documentaries, and lost recordings.
+              RJMedia Digital Archive preserves music history, live recordings, broadcast recordings, archive footage, and community memories for public discovery.
             </p>
             <p>
-              Founded from over 25 years of fan archive curation, RJMedia bridges the gap between deteriorating physical media (VHS, cassette, studio DAT, bootleg pressings) and modern high-definition streaming. We believe cultural preservation must remain non-commercial, open, and permanently discoverable.
+              Built across 25 years of independent preservation (2001–2026), RJMedia rescues deteriorating physical tapes, broadcast transmissions, lost print features, and retired fan websites so musical and cultural history stays freely accessible.
+            </p>
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #525252; text-transform: uppercase; letter-spacing: 0.1em;">
+              Created by RJM
             </p>
           </div>
 
           <div class="about-pillars">
             <div class="pillar-box">
-              <h4>01 // Permanent Audio Preservation</h4>
-              <p>Migrating physical studio recordings, radio sessions, and live master tapes into permanent digital archives.</p>
+              <h4>01 // Preservation</h4>
+              <p>Digitising VHS, cassette, DAT, and broadcast sessions into enduring archival masters.</p>
             </div>
             <div class="pillar-box">
-              <h4>02 // Cultural Discovery</h4>
-              <p>Contextualizing rare footage with historical liner notes, setlists, and original press materials.</p>
+              <h4>02 // Discovery</h4>
+              <p>Connecting recordings, broadcasts, and timelines through Memory Trails™ and open indexing.</p>
             </div>
             <div class="pillar-box">
-              <h4>03 // Community Continuity</h4>
-              <p>Providing a space where audiences, musicians, and historians connect and keep independent culture alive.</p>
+              <h4>03 // Community</h4>
+              <p>Sustaining listener forums, lost media search requests, and shared historical memory.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: FEATURED COLLECTIONS (3D CARDS) -->
+    <!-- SECTION 4: FEATURED COLLECTIONS (PREMIUM 3D ARCHIVE CARDS) -->
     <section class="section-block" id="collections">
       <div class="section-header">
-        <span class="section-kicker">CURATED REPOSITORIES</span>
-        <h2 class="section-title">Featured Archive Collections</h2>
+        <span class="section-kicker">CURATED ARCHIVE CATALOGUE</span>
+        <h2 class="section-title">Featured Collections</h2>
       </div>
 
       <div class="collections-grid">
         <!-- 1. Paul Draper Archive -->
         <article class="col-card-3d">
-          <div>
-            <span class="col-badge">Flagship Music Collection</span>
-            <h3 class="col-title">Paul Draper Archive</h3>
-            <p class="col-desc">
-              The master 12-page dedicated collection: 35 news dispatches (2003–2012), 38 forum Q&amp;As, studio diaries, magazine spreads, and solo discography.
-            </p>
+          <div class="col-img-wrap">
+            <img src="./assets/images/indexpic.jpg" alt="Paul Draper Archive">
           </div>
-          <a class="col-cta" href="./pages/index.html">Enter Collection →</a>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">2003 — 2027 · Dedicated Collection</span>
+              <h3 class="col-title">Paul Draper Archive</h3>
+              <p class="col-desc">
+                12-page collection: 35 news logs (2003–2012), 38 fan forum Q&amp;As, solo discography, and the 1 May 2027 Blackpool Winter Gardens announcement.
+              </p>
+            </div>
+            <a class="col-cta" href="./pages/index.html">View Archive →</a>
+          </div>
         </article>
 
         <!-- 2. Mansun Archive -->
         <article class="col-card-3d">
-          <div>
-            <span class="col-badge">Studio Discography &amp; EPs</span>
-            <h3 class="col-title">Mansun Archive</h3>
-            <p class="col-desc">
-              Comprehensive boxset details, 17 numbered EPs, 1998 <em>Six</em> Soundmasters reference inlays, and the original "Outsider Thing" band history.
-            </p>
+          <div class="col-img-wrap">
+            <img src="./assets/images/glam_1_big.jpg" alt="Mansun Archive">
           </div>
-          <a class="col-cta" href="./pages/mansun-albums.html">Explore Discography →</a>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">1995 — 2003 · Catalogue &amp; Rarities</span>
+              <h3 class="col-title">Mansun Archive</h3>
+              <p class="col-desc">
+                Numbered EPs, singles chart history, studio reference CDs, John Peel sessions, Anton Corbijn shoots, and complete album liner notes.
+              </p>
+            </div>
+            <a class="col-cta" href="./pages/mansun-albums.html">View Archive →</a>
+          </div>
         </article>
 
         <!-- 3. Live Music Archive -->
         <article class="col-card-3d">
-          <div>
-            <span class="col-badge">Concert Bootlegs &amp; Tapes</span>
-            <h3 class="col-title">Live Music Archive</h3>
-            <p class="col-desc">
-              Front-row audio recordings from Brixton Academy '98, Manchester Academy 2026, Reading Festival '99, and Amsterdam Paradiso soundboard tapes.
-            </p>
+          <div class="col-img-wrap">
+            <img src="./assets/images/paul-live-lespaul.jpg" alt="Live Music Archive">
           </div>
-          <a class="col-cta" href="./pages/mansun-mp3-vault.html">Browse Live Vault →</a>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">1984 — 2026 · Concert Captures</span>
+              <h3 class="col-title">Live Music Archive</h3>
+              <p class="col-desc">
+                Full concert captures and front-row recordings: The Smiths Rockpalast '84, Brixton Academy '98, Glastonbury sets, and Reading Festival '99.
+              </p>
+            </div>
+            <a class="col-cta" href="./youtube.html">View Archive →</a>
+          </div>
         </article>
 
         <!-- 4. Broadcast Archive -->
         <article class="col-card-3d">
-          <div>
-            <span class="col-badge">Radio &amp; Television</span>
-            <h3 class="col-title">Broadcast Archive</h3>
-            <p class="col-desc">
-              Restored BBC Radio 1 John Peel Sessions (7/10/1995), Evening Session tapes, Later with Jools Holland appearances, and TFI Friday broadcasts.
-            </p>
+          <div class="col-img-wrap">
+            <img src="./assets/images/rocksound2000.jpg" alt="Broadcast Archive">
           </div>
-          <a class="col-cta" href="./pages/media.html#peel-session">Listen To Broadcasts →</a>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">1970 — 2026 · Radio, TV &amp; Print</span>
+              <h3 class="col-title">Broadcast Archive</h3>
+              <p class="col-desc">
+                Restored television sessions, BBC Radio broadcasts, Later... with Jools Holland performances, and archived music press features.
+              </p>
+            </div>
+            <a class="col-cta" href="./pages/press-layout.html">View Archive →</a>
+          </div>
         </article>
 
         <!-- 5. Documentary Archive -->
         <article class="col-card-3d">
-          <div>
-            <span class="col-badge">Documentaries &amp; Features</span>
-            <h3 class="col-title">Documentary Archive</h3>
-            <p class="col-desc">
-              Full-length music films including Peter Green: A Hard Road (179,000+ views), The Smiths Rockpalast '84 restoration, and studio retrospectives.
-            </p>
+          <div class="col-img-wrap">
+            <img src="./assets/images/paul-vintage-mic.jpg" alt="Documentary Archive">
           </div>
-          <a class="col-cta" href="./youtube.html">Watch Documentaries →</a>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">Archive Signal · Film &amp; Docs</span>
+              <h3 class="col-title">Documentary Archive</h3>
+              <p class="col-desc">
+                Long-form music documentaries and cultural profiles including Peter Green: A Hard Road (179K+ views) and rare band retrospectives.
+              </p>
+            </div>
+            <a class="col-cta" href="./youtube.html">View Archive →</a>
+          </div>
         </article>
 
         <!-- 6. Community Stories -->
         <article class="col-card-3d">
-          <div>
-            <span class="col-badge">Human Continuity</span>
-            <h3 class="col-title">Community Stories</h3>
-            <p class="col-desc">
-              25 years of fan community memories, the original MansunMusicLovers Yahoo! Group logs (Dec 2001), and the Keep The Connection advocacy space.
-            </p>
+          <div class="col-img-wrap">
+            <img src="./assets/images/six-soundmasters-ref.jpg" alt="Community Stories">
           </div>
-          <a class="col-cta" href="./community.html">Explore Stories →</a>
+          <div class="col-body-wrap">
+            <div>
+              <span class="col-badge">2001 — 2026 · Listener Memory</span>
+              <h3 class="col-title">Community Stories</h3>
+              <p class="col-desc">
+                Fan-contributed concert memories, lost tape recoveries, collector histories, and independent community discussions across 25 years.
+              </p>
+            </div>
+            <a class="col-cta" href="./forum.html">View Stories →</a>
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- SECTION: LATEST ARCHIVE BULLETIN & SOLO DISCOGRAPHY -->
-    <section class="section-block" id="news">
-      <div class="vault-preview-card" style="margin-bottom: 2.5rem;">
-        <div class="section-header">
-          <span class="section-kicker">ARCHIVE NEWS &amp; DISPATCH BULLETIN</span>
-          <h2 class="section-title">Live Festival Announcement • May 2027</h2>
-        </div>
-
-        <div style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
-          <div style="flex: 1 1 420px;">
-            <div style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #404040; background: rgba(0,0,0,0.06); padding: 0.35rem 0.75rem; border-radius: 999px; margin-bottom: 1rem;">
-              BLACKPOOL WINTER GARDENS • SATURDAY 1 MAY 2027
-            </div>
-            <h3 style="font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 1rem; text-transform: uppercase;">
-              Paul Draper Scheduled For 'Indie By The Sea'
-            </h3>
-            <p style="font-size: 1.05rem; line-height: 1.65; color: #333333; margin-bottom: 1.25rem;">
-              <strong>Paul Draper</strong> is scheduled to perform at the <strong>Indie By The Sea</strong> festival at <a href="https://www.wintergardensblackpool.co.uk/events/indie-by-the-sea/" target="_blank" rel="noopener" style="text-decoration: underline; font-weight: 700;">Winter Gardens Blackpool</a> on <strong>Saturday, 1 May 2027</strong>. Doors open at 2:00 pm for the May Bank Holiday weekender.
-            </p>
-            <div style="background: rgba(0,0,0,0.03); border: 1px solid var(--card-border); border-radius: var(--radius-sm); padding: 1.25rem; font-size: 0.92rem; line-height: 1.6; color: #404040; margin-bottom: 1.5rem;">
-              <strong style="color: #000000; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.5rem;">Saturday, 1 May 2027 Lineup:</strong>
-              • <strong>Main Acts:</strong> Ocean Colour Scene, Embrace, <strong>Paul Draper</strong>, Space, Northside, The Boo Radleys, and Jesus Jones.<br>
-              • <strong>Solo Sets:</strong> Ben Ottewell (Gomez) and Ian Prowse (Pele and Amsterdam).<br>
-              • <strong>After-Show Party:</strong> Late-night DJ set hosted by broadcaster and journalist John Robb.<br><br>
-              <strong style="color: #000000; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.08em; display: block; margin-bottom: 0.25rem;">Sunday, 2 May 2027 Lineup:</strong>
-              The festival extends to Sunday with acts including Peter Hook &amp; The Light, Black Grape, and Sleeper.
-            </div>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a class="btn-3d btn-3d-primary" href="https://www.wintergardensblackpool.co.uk/events/indie-by-the-sea/" target="_blank" rel="noopener">Winter Gardens Blackpool ↗</a>
-              <a class="btn-3d btn-3d-secondary" href="https://www.ticketmaster.co.uk/blackpool-indie-by-the-sea-tickets/artist/5746239" target="_blank" rel="noopener">Ticketmaster UK ↗</a>
-              <a class="btn-3d btn-3d-secondary" href="./pages/draper-news.html">View News Archive (35) →</a>
-            </div>
-          </div>
-          <div style="flex: 0 0 300px; max-width: 100%; text-align: center;">
-            <img src="./assets/images/indie-by-the-sea-2027.jpg" alt="Indie By The Sea Blackpool 2027 Poster" style="width: 100%; max-width: 320px; border-radius: var(--radius-md); box-shadow: var(--shadow-3d); border: 1px solid var(--card-border);">
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #525252; margin-top: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;">
-              Indie By The Sea • 1–2 May 2027
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PAUL DRAPER SOLO DISCOGRAPHY SHOWCASE -->
+    <!-- SECTION 5: RJMEDIA ARCHIVE VAULT -->
+    <section class="section-block" id="vault">
       <div class="vault-preview-card">
-        <div class="section-header">
-          <span class="section-kicker">FEATURED CATALOGUE • 2016–PRESENT</span>
-          <h2 class="section-title">Paul Draper Solo Albums &amp; EPs</h2>
-        </div>
-        <p style="color: #404040; max-width: 760px; font-size: 1.05rem; margin-bottom: 2rem;">
-          From the August 2014 world premiere of <em>"Feeling My Heart Run Slow"</em> at the Chester Mansun Convention to two UK Top 25 studio albums on Kscope. Preserved with high-fidelity sleeve artwork:
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem;">
-          <div class="col-card-3d" style="min-height: auto; padding: 1rem; border-radius: var(--radius-sm);">
-            <img src="./assets/images/solo-mansun-retold.jpg" alt="Paul Draper - Mansun Retold" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h4 style="font-size: 0.95rem; font-weight: 900; margin: 0 0 0.25rem; text-transform: uppercase;">Mansun Retold</h4>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #525252;">Kscope • Reimagined</div>
+        <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <span class="section-kicker">STREAMING VAULT • 3,200+ SUBSCRIBERS • 1,001,987+ VIEWS</span>
+            <h2 class="section-title">RJMedia Archive Vault</h2>
           </div>
-
-          <div class="col-card-3d" style="min-height: auto; padding: 1rem; border-radius: var(--radius-sm);">
-            <img src="./assets/images/solo-grey-lantern-ritz.jpg" alt="Paul Draper - Attack of the Grey Lantern Live at the Ritz" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h4 style="font-size: 0.95rem; font-weight: 900; margin: 0 0 0.25rem; text-transform: uppercase;">Grey Lantern (Ritz)</h4>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #525252;">Live Concert LP</div>
-          </div>
-
-          <div class="col-card-3d" style="min-height: auto; padding: 1rem; border-radius: var(--radius-sm);">
-            <img src="./assets/images/solo-cult-leader-tactics.jpg" alt="Paul Draper - Cult Leader Tactics" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h4 style="font-size: 0.95rem; font-weight: 900; margin: 0 0 0.25rem; text-transform: uppercase;">Cult Leader Tactics</h4>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #525252;">2022 • UK #22</div>
-          </div>
-
-          <div class="col-card-3d" style="min-height: auto; padding: 1rem; border-radius: var(--radius-sm);">
-            <img src="./assets/images/solo-live-at-scala.jpg" alt="Paul Draper - Live at Scala" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h4 style="font-size: 0.95rem; font-weight: 900; margin: 0 0 0.25rem; text-transform: uppercase;">Live at Scala</h4>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #525252;">2018 • London Live</div>
-          </div>
-
-          <div class="col-card-3d" style="min-height: auto; padding: 1rem; border-radius: var(--radius-sm);">
-            <img src="./assets/images/solo-spooky-action.jpg" alt="Paul Draper - Spooky Action" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h4 style="font-size: 0.95rem; font-weight: 900; margin: 0 0 0.25rem; text-transform: uppercase;">Spooky Action</h4>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #525252;">2017 • UK #19</div>
-          </div>
-
-          <div class="col-card-3d" style="min-height: auto; padding: 1rem; border-radius: var(--radius-sm);">
-            <img src="./assets/images/solo-ep-two.jpg" alt="Paul Draper - EP TWO" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h4 style="font-size: 0.95rem; font-weight: 900; margin: 0 0 0.25rem; text-transform: uppercase;">EP TWO</h4>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #525252;">Nov 2016 • Kscope</div>
-          </div>
-
-          <div class="col-card-3d" style="min-height: auto; padding: 1rem; border-radius: var(--radius-sm);">
-            <img src="./assets/images/paul-draper-ep-one.jpg" alt="Paul Draper - EP ONE" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <h4 style="font-size: 0.95rem; font-weight: 900; margin: 0 0 0.25rem; text-transform: uppercase;">EP ONE</h4>
-            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #525252;">Jun 2016 • Kscope</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 800; background: #000000; color: #ffffff; padding: 0.45rem 0.9rem; border-radius: 999px;">
+            3,200+ Subscribers · @RJMedia
           </div>
         </div>
 
-        <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-          <a class="col-cta" href="./pages/mansun-albums.html">Explore Complete Albums &amp; Tracklists →</a>
-          <a class="col-cta" href="./pages/draper-gallery.html">Open Full Artwork Gallery →</a>
+        <div class="vault-layout">
+          <div>
+            <div class="video-stage-box">
+              <iframe src="https://www.youtube.com/embed/ubkpJnoXVeA?rel=0" title="Featured Broadcast: Peter Green A Hard Road" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+              <div>
+                <strong style="font-size: 1.05rem; text-transform: uppercase;">Peter Green : A Hard Road</strong>
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #525252;">Latest Featured Documentary · 179,000+ Views · 21,134+ Watch Hours</div>
+              </div>
+              <a class="btn-3d btn-3d-primary" href="./youtube.html">Open Full Video Vault →</a>
+            </div>
+          </div>
+
+          <div class="vault-list">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #525252; margin-bottom: 0.2rem;">
+              LATEST YOUTUBE UPLOADS &amp; RECENT ARCHIVE ADDITIONS
+            </div>
+            <div class="vault-item">
+              <div>
+                <div class="vault-item-title">Peter Green : A Hard Road</div>
+                <div class="vault-item-meta">Latest Upload · 179,000+ Views · 28:46 Documentary</div>
+              </div>
+              <a href="./youtube.html" class="col-cta">Watch</a>
+            </div>
+            <div class="vault-item">
+              <div>
+                <div class="vault-item-title">The Smiths — Live Rockpalast 1984 FHD</div>
+                <div class="vault-item-meta">Recent Addition · 14,000+ Views · 71:00 Full Show</div>
+              </div>
+              <a href="./youtube.html" class="col-cta">Watch</a>
+            </div>
+            <div class="vault-item">
+              <div>
+                <div class="vault-item-title">Paul Draper — Solo Discography &amp; 2027 Blackpool Date</div>
+                <div class="vault-item-meta">Recent Archive Addition · 7 Releases + Festival Poster</div>
+              </div>
+              <a href="./pages/draper-gallery.html" class="col-cta">Inspect</a>
+            </div>
+            <div class="vault-item">
+              <div>
+                <div class="vault-item-title">Editors — Glastonbury 2023 Restored Set</div>
+                <div class="vault-item-meta">Latest Video · Broadcast Archive · Full HD</div>
+              </div>
+              <a href="./youtube.html" class="col-cta">Watch</a>
+            </div>
+            <div class="vault-item">
+              <div>
+                <div class="vault-item-title">The Jesus and Mary Chain — Live Broadcast</div>
+                <div class="vault-item-meta">Recent Addition · Archive Signal Restoration</div>
+              </div>
+              <a href="./youtube.html" class="col-cta">Watch</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: HISTORICAL INTELLIGENCE PLATFORM — MEMORY TRAILS™ & CONSTELLATIONS™ -->
+    <!-- MEMORY TRAILS™ & MEMORY CONSTELLATIONS™ (HISTORICAL INTELLIGENCE) -->
     <section class="section-block" id="memory-trails">
       <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
         <div>
-          <span class="section-kicker">HISTORICAL INTELLIGENCE PLATFORM • JSON-DRIVEN DISCOVERY</span>
+          <span class="section-kicker">HISTORICAL INTELLIGENCE • JSON-DRIVEN DISCOVERY</span>
           <h2 class="section-title" style="margin-bottom:0.35rem;">Memory Trails™</h2>
           <p style="color:#404040; max-width:680px; margin:0; font-size:1.02rem;">
-            Instead of isolated search results, follow curated historical journeys loaded dynamically from <code>/assets/data/memory-trails.json</code>. Click any milestone node to jump directly into the archive.
+            Follow curated historical journeys loaded dynamically from <code>/assets/data/memory-trails.json</code>. Click any milestone node to explore.
           </p>
         </div>
-        <a class="btn-3d btn-3d-primary" href="./trail-builder.html">Launch Trail Builder AI →</a>
+        <a class="btn-3d btn-3d-primary" href="./trail-builder.html">Open Trail Builder AI &amp; Constellations →</a>
       </div>
 
-      <!-- JSON-Driven Trails Container -->
       <div id="memoryTrailContainer"></div>
     </section>
 
-    <!-- SECTION: MEMORY CONSTELLATIONS™ INTERACTIVE PROTOTYPE -->
     <section class="section-block" id="constellations">
       <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom:1.5rem;">
         <div>
-          <span class="section-kicker">SIGNATURE VISUAL NETWORK • ARCHIVE GRAPH™</span>
+          <span class="section-kicker">VISUAL RELATIONSHIP NETWORK • ARCHIVE GRAPH™</span>
           <h2 class="section-title" style="margin-bottom:0.35rem;">Memory Constellations™</h2>
           <p style="color:#404040; max-width:720px; margin:0; font-size:1.02rem;">
-            Visualising the relationships between artists, BBC sessions, magazine features, tours, venues, and 25 years of community preservation. Hover over any star node to inspect its connections or click to explore.
+            Hover over any star node to inspect its relationship edges across broadcasts, press, tours, and venues.
           </p>
         </div>
-        <a class="btn-3d btn-3d-secondary" href="./trail-builder.html#constellations">Full Intelligence Stack &amp; 90-Day Roadmap →</a>
+        <a class="btn-3d btn-3d-secondary" href="./trail-builder.html#constellations">Full Intelligence Stack →</a>
       </div>
 
       <div id="constellationCanvas">
@@ -1184,162 +1194,69 @@
           </a>
         </div>
       </div>
-
-      <!-- 5-LAYER INTELLIGENCE HIGHLIGHTS -->
-      <div class="intel-grid-3" style="margin-top: 1.75rem;">
-        <div class="intel-card">
-          <div>
-            <span class="risk-badge risk-critical">ECHOES™ • LAYER 2</span>
-            <h3 style="font-size:1.18rem; font-weight:900; margin:0.75rem 0 0.4rem; text-transform:uppercase;">Consequences Through Time</h3>
-            <p style="font-size:0.88rem; color:#404040; margin:0 0 1rem;">
-              Tracks how the 1998 BBC Interview &amp; 2014 Chester premiere echo through 2003 solo sessions, the 2006 fan Q&amp;A, Kscope albums, and Blackpool 2027.
-            </p>
-          </div>
-          <a class="col-cta" href="./trail-builder.html#echoes">Explore Echoes™ →</a>
-        </div>
-
-        <div class="intel-card">
-          <div>
-            <span class="risk-badge risk-critical">LEGACY ENGINE™ • LAYER 4</span>
-            <h3 style="font-size:1.18rem; font-weight:900; margin:0.75rem 0 0.4rem; text-transform:uppercase;">30 &amp; 28 Years Ago This Week</h3>
-            <p style="font-size:0.88rem; color:#404040; margin:0 0 1rem;">
-              Automatically surfaces historical anniversaries: Nov 1996 Stripper Vicar Melody Maker shoot (30 yrs) &amp; Nov 1998 Six UK Tour (28 yrs).
-            </p>
-          </div>
-          <a class="col-cta" href="./trail-builder.html#risk-engine">Open Legacy Engine™ →</a>
-        </div>
-
-        <div class="intel-card">
-          <div>
-            <span class="risk-badge risk-critical">RISK ENGINE™ • LAYER 5</span>
-            <h3 style="font-size:1.18rem; font-weight:900; margin:0.75rem 0 0.4rem; text-transform:uppercase;">Save This First Queue (98/100)</h3>
-            <p style="font-size:0.88rem; color:#404040; margin:0 0 1rem;">
-              Prioritises single-copy reference CDs (1998 Soundmasters Ref: 98/100) and retired web captures (2006 Q&amp;A: 96/100) before they disappear.
-            </p>
-          </div>
-          <a class="col-cta" href="./trail-builder.html#risk-engine">View Risk Queue →</a>
-        </div>
-      </div>
     </section>
 
-    <section class="section-block" id="vault">
-      <div class="vault-preview-card">
-        <div class="section-header">
-          <span class="section-kicker">STREAMING ARCHIVE • OVER 1M VIEWS</span>
-          <h2 class="section-title">RJMedia Archive Vault</h2>
-        </div>
-
-        <div class="vault-layout">
-          <div>
-            <div class="video-stage-box">
-              <iframe src="https://www.youtube.com/embed/ubkpJnoXVeA?rel=0" title="Featured Broadcast: Peter Green A Hard Road" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
-              <div>
-                <strong style="font-size: 1.05rem; text-transform: uppercase;">Peter Green : A Hard Road</strong>
-                <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #525252;">179,000+ Views · 21,134+ Watch Hours</div>
-              </div>
-              <a class="btn-3d btn-3d-primary" href="./youtube.html">Open Full Video Vault (12 Videos) →</a>
-            </div>
-          </div>
-
-          <div class="vault-list">
-            <div class="vault-item">
-              <div>
-                <div class="vault-item-title">Peter Green : A Hard Road</div>
-                <div class="vault-item-meta">179,000+ Views · 28:46 Broadcast</div>
-              </div>
-              <a href="./youtube.html" class="col-cta">Watch</a>
-            </div>
-            <div class="vault-item">
-              <div>
-                <div class="vault-item-title">The Smiths — Live Rockpalast 1984 FHD</div>
-                <div class="vault-item-meta">14,000+ Views · 71:00 Complete Show</div>
-              </div>
-              <a href="./youtube.html" class="col-cta">Watch</a>
-            </div>
-            <div class="vault-item">
-              <div>
-                <div class="vault-item-title">Paul Draper — Take It Easy Chicken (Live 2026)</div>
-                <div class="vault-item-meta">Manchester Academy · Filmed by RJMedia</div>
-              </div>
-              <a href="./youtube.html" class="col-cta">Watch</a>
-            </div>
-            <div class="vault-item">
-              <div>
-                <div class="vault-item-title">Paul Draper — 2014 Solo World Premiere</div>
-                <div class="vault-item-meta">Chester Convention · The Guardian Featured</div>
-              </div>
-              <a href="./youtube.html" class="col-cta">Watch</a>
-            </div>
-            <div class="vault-item">
-              <div>
-                <div class="vault-item-title">Mansun — She Makes My Wheels Turn (Brixton '98)</div>
-                <div class="vault-item-meta">Peak Six Tour Broadcast</div>
-              </div>
-              <a href="./youtube.html" class="col-cta">Watch</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: SUPPORT RJMEDIA & SPONSOR PROGRAMME -->
+    <!-- SECTION 6: SUPPORT RJMEDIA & SPONSORSHIP PROGRAMME -->
     <section class="section-block" id="support">
       <div class="support-card">
         <div class="section-header">
-          <span class="section-kicker">SUSTAINING INDEPENDENT PRESERVATION</span>
+          <span class="section-kicker">INDEPENDENTLY OPERATED &amp; COMMUNITY SUPPORTED</span>
           <h2 class="section-title">Support RJMedia &amp; Sponsor Programme</h2>
         </div>
-        <p style="color: #404040; max-width: 720px; font-size: 1.05rem; margin-bottom: 2rem;">
-          RJMedia is 100% free, publicly accessible, and independent. We rely on community patronage, institutional sponsorships, and equipment donations to fund server hosting, tape digitisation, and AI audio remastering.
+        <p style="color: #404040; max-width: 780px; font-size: 1.05rem; margin-bottom: 2rem;">
+          RJMedia Digital Archive is independently run and community supported. Donations, sponsorships, equipment grants, and partnerships fund tape transfers, restoration pipelines, and open public access.
         </p>
 
         <div class="sponsor-grid">
-          <!-- Tier 1: Archive Patron -->
+          <!-- Column 1: Ways To Support RJMedia -->
           <div class="sponsor-tier-box">
             <div>
-              <span class="col-badge">Community Support</span>
-              <h3 class="sponsor-tier-name">Archive Patron</h3>
-              <p style="font-size: 0.88rem; color: #525252;">Directly fund digital storage, bandwidth, and tape preservation.</p>
+              <span class="col-badge">Direct Support</span>
+              <h3 class="sponsor-tier-name">Support RJMedia</h3>
+              <p style="font-size: 0.88rem; color: #525252;">Five direct ways to sustain independent preservation:</p>
               <ul class="sponsor-perks">
-                <li>Homepage recognition in Patron Directory</li>
-                <li>Archive access &amp; request priority</li>
-                <li>Digital liner notes supporter badge</li>
+                <li><strong>Donate</strong> — fund daily archive operations</li>
+                <li><strong>Sponsor</strong> — underwrite specific collections</li>
+                <li><strong>Partner With RJMedia</strong> — collaborative cultural projects</li>
+                <li><strong>Equipment Support</strong> — VHS/DAT decks, NVMe storage &amp; GPUs</li>
+                <li><strong>Hosting Support</strong> — bandwidth and permanent redundancy</li>
               </ul>
             </div>
-            <a class="btn-3d btn-3d-secondary" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Archive%20Patron">Become a Patron →</a>
+            <a class="btn-3d btn-3d-secondary" href="mailto:richardmurray2022@gmail.com?subject=Support%20RJMedia%20Digital%20Archive">Support RJMedia →</a>
           </div>
 
-          <!-- Tier 2: Corporate & Media Sponsor -->
+          <!-- Column 2: Sponsor Programme Visibility -->
           <div class="sponsor-tier-box" style="border-color: #000000; background: #ffffff;">
             <div>
-              <span class="col-badge" style="color: #000000;">Institutional Sponsor</span>
-              <h3 class="sponsor-tier-name">Sponsor Programme</h3>
-              <p style="font-size: 0.88rem; color: #525252;">Partner with RJMedia to support major documentary releases.</p>
+              <span class="col-badge" style="color: #000000;">Sponsorship Programme</span>
+              <h3 class="sponsor-tier-name">Sponsor Benefits</h3>
+              <p style="font-size: 0.88rem; color: #525252;">Archive sponsors receive visible, institutional recognition across the platform:</p>
               <ul class="sponsor-perks">
-                <li>Prominent homepage sponsor placement</li>
-                <li>Video description sponsor acknowledgements (1M+ reach)</li>
-                <li>Featured editorial profile &amp; partnership article</li>
-                <li>Future media exposure &amp; broadcast credits</li>
+                <li>Homepage recognition</li>
+                <li>Sponsor directory listings</li>
+                <li>Archive acknowledgements</li>
+                <li>Featured articles</li>
+                <li>Community recognition</li>
+                <li>Future media exposure</li>
               </ul>
             </div>
-            <a class="btn-3d btn-3d-primary" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Sponsorship%20Programme">Partner With Us →</a>
+            <a class="btn-3d btn-3d-primary" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Sponsor%20Programme">Join Sponsor Programme →</a>
           </div>
 
-          <!-- Tier 3: Equipment & Hosting Support -->
+          <!-- Column 3: Institutional & Partner Visibility -->
           <div class="sponsor-tier-box">
             <div>
-              <span class="col-badge">Infrastructure &amp; Hardware</span>
-              <h3 class="sponsor-tier-name">Equipment Support</h3>
-              <p style="font-size: 0.88rem; color: #525252;">Support audio capture cards, NVMe storage, and GPU compute.</p>
+              <span class="col-badge">Partners &amp; Patrons</span>
+              <h3 class="sponsor-tier-name">Partner With RJMedia</h3>
+              <p style="font-size: 0.88rem; color: #525252;">Ideal for record labels, studios, audio hardware makers, and cultural foundations:</p>
               <ul class="sponsor-perks">
-                <li>Named equipment sponsor acknowledgement</li>
-                <li>Direct attribution on technical restoration notes</li>
-                <li>Tax-deductible partnership options</li>
+                <li>Sponsor Directory profile page</li>
+                <li>YouTube documentary end-card mentions (1M+ views)</li>
+                <li>Restored broadcast credit lines</li>
+                <li>Joint lost-media recovery campaigns</li>
               </ul>
             </div>
-            <a class="btn-3d btn-3d-secondary" href="mailto:richardmurray2022@gmail.com?subject=Equipment%20%26%20Hosting%20Support">Offer Support →</a>
+            <a class="btn-3d btn-3d-secondary" href="mailto:richardmurray2022@gmail.com?subject=Partner%20With%20RJMedia">Partner With RJMedia →</a>
           </div>
         </div>
       </div>
@@ -1349,63 +1266,63 @@
     <section class="section-block" id="forum">
       <div class="forum-card">
         <div class="section-header">
-          <span class="section-kicker">COMMUNITY DISCUSSIONS &amp; PRESERVATION NETWORK</span>
+          <span class="section-kicker">PUBLIC BOARDS • 9 DEDICATED ARCHIVE CATEGORIES</span>
           <h2 class="section-title">Community Forum</h2>
         </div>
-        <p style="color: #404040; max-width: 680px; font-size: 1.05rem;">
-          Connect with collectors, historians, and fans. Request rare recordings, report lost media, and join specialized discussions across 9 dedicated categories:
+        <p style="color: #404040; max-width: 740px; font-size: 1.05rem;">
+          Join archive discussions, submit broadcast requests, help track down lost recordings, and connect with listeners across nine dedicated boards:
         </p>
 
         <div class="forum-categories-grid">
-          <div class="forum-cat-item">
+          <a href="./forum.html#music-discussion" class="forum-cat-item">
             <span class="forum-cat-name">Music Discussion</span>
-            <span class="forum-cat-badge">Active</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 01</span>
+          </a>
+          <a href="./forum.html#archive-requests" class="forum-cat-item">
             <span class="forum-cat-name">Archive Requests</span>
-            <span class="forum-cat-badge">Requests</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 02</span>
+          </a>
+          <a href="./forum.html#lost-recordings" class="forum-cat-item">
             <span class="forum-cat-name">Lost Recordings</span>
-            <span class="forum-cat-badge">Bounties</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 03</span>
+          </a>
+          <a href="./forum.html#paul-draper-archive" class="forum-cat-item">
             <span class="forum-cat-name">Paul Draper Archive</span>
-            <span class="forum-cat-badge">Flagship</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 04</span>
+          </a>
+          <a href="./forum.html#live-music" class="forum-cat-item">
             <span class="forum-cat-name">Live Music</span>
-            <span class="forum-cat-badge">Concerts</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 05</span>
+          </a>
+          <a href="./forum.html#broadcast-history" class="forum-cat-item">
             <span class="forum-cat-name">Broadcast History</span>
-            <span class="forum-cat-badge">Radio/TV</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 06</span>
+          </a>
+          <a href="./forum.html#community-support" class="forum-cat-item">
             <span class="forum-cat-name">Community Support</span>
-            <span class="forum-cat-badge">Mutual Aid</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 07</span>
+          </a>
+          <a href="./forum.html#technology-discussion" class="forum-cat-item">
             <span class="forum-cat-name">Technology Discussion</span>
-            <span class="forum-cat-badge">AI / Audio</span>
-          </div>
-          <div class="forum-cat-item">
+            <span class="forum-cat-badge">Board 08</span>
+          </a>
+          <a href="./forum.html#announcements" class="forum-cat-item">
             <span class="forum-cat-name">Announcements</span>
-            <span class="forum-cat-badge">Official</span>
-          </div>
+            <span class="forum-cat-badge">Board 09</span>
+          </a>
         </div>
 
         <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-          <a class="btn-3d btn-3d-primary" href="./community.html#forum-discussion">Enter Forum Landing Page →</a>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #525252;">[ Forum Launching Online ]</span>
+          <a class="btn-3d btn-3d-primary" href="./forum.html">Open Community Forum Landing Page →</a>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #525252;">148+ Community Members · 25+ Years Connected</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 8: KEEP THE CONNECTION (BLACK THEME PROJECT SPACE) -->
+    <!-- SECTION 8: KEEP THE CONNECTION (OWN PROJECT SPACE — BLACK THEME) -->
     <section class="connection-section" id="connection">
       <div class="connection-card">
-        <span class="connection-kicker">COMMUNITY PROJECT SPACE • HUMAN CONTINUITY</span>
+        <span class="connection-kicker">DEDICATED PROJECT SPACE • BLACK THEME • COMMUNITY SUPPORT</span>
         <h2 class="connection-title">KEEP THE CONNECTION</h2>
         <div class="connection-quote">
           Hopefully I, and others,<br>
@@ -1416,31 +1333,31 @@
           Take It Easy.
         </div>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a class="btn-3d" style="background:#ffffff; color:#000000;" href="./community.html">ENTER COMMUNITY HUB →</a>
-          <a class="btn-3d" style="background:transparent; color:#ffffff; border:1px solid #ffffff;" href="./community.html#need-help">Get In Touch Directly →</a>
+          <a class="btn-3d" style="background:#ffffff; color:#000000;" href="./community.html">Visit Keep The Connection →</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 9: JUPITER ISLAND (DISCRETE FUTURE TECHNOLOGY DIVISION) -->
+    <!-- SECTION 9: JUPITER ISLAND (FUTURE TECHNOLOGY DIVISION) -->
     <section class="jupiter-section" id="jupiter-island">
       <div class="jupiter-card">
         <div>
-          <span class="jupiter-kicker">FUTURE TECHNOLOGY DIVISION</span>
+          <span class="jupiter-kicker">FUTURE TECHNOLOGY DIVISION • CREATED BY RJM</span>
           <h3 class="jupiter-title">JUPITER ISLAND</h3>
           <p class="jupiter-desc">
-            Independent research into local AI memory engines, real-time VRAM telemetry, inference scheduling, and open-source restoration pipelines.
+            Separate future AI and technology division exploring local memory routing, consumer GPU reality, and open-source preservation engineering.
           </p>
           <div class="jupiter-pills">
             <span class="j-pill">MemoryOS</span>
             <span class="j-pill">Jupiter One</span>
             <span class="j-pill">The Quiet Advisor</span>
-            <span class="j-pill">Archive Signal</span>
-            <span class="j-pill">Music Gateway</span>
+            <span class="j-pill">Research</span>
+            <span class="j-pill">GitHub</span>
+            <span class="j-pill">Open Source</span>
           </div>
         </div>
         <div>
-          <a class="btn-3d" style="background:#ffffff; color:#000000;" href="./jupiter-island.html">VISIT JUPITER ISLAND →</a>
+          <a class="btn-3d" style="background:#ffffff; color:#000000;" href="./jupiter-island.html">Visit Jupiter Island →</a>
         </div>
       </div>
     </section>
@@ -1456,50 +1373,50 @@
             <span class="logo-box" style="background:#ffffff; color:#000000;">RJ</span>
             <span class="logo-text" style="color:#ffffff;">MEDIA</span>
           </div>
-          <p style="color: #8c8c8c; line-height: 1.6; max-width: 300px; margin: 0 0 1rem; font-size: 0.85rem;">
-            RJMedia Digital Archive is an independent cultural preservation institution. Preserving British music history, rare broadcast master tapes, and community memories.
+          <p style="color: #8a8a8a; line-height: 1.6; max-width: 300px; margin: 0 0 1rem; font-size: 0.85rem;">
+            RJMedia Digital Archive preserves music history, live recordings, digital culture and independent archives.
           </p>
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #737373;">REMEMBER THE SOUND</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: #8a8a8a;">REMEMBER THE SOUND</span>
         </div>
 
         <div class="footer-col">
-          <h5>Archive Collections</h5>
+          <h5>Featured Collections</h5>
           <ul>
             <li><a href="./pages/index.html">Paul Draper Archive</a></li>
-            <li><a href="./pages/mansun-albums.html">Mansun Discography</a></li>
-            <li><a href="./pages/mansun-mp3-vault.html">Live Concert Vault</a></li>
-            <li><a href="./pages/media.html#peel-session">John Peel Session '95</a></li>
-            <li><a href="./youtube.html">Documentary Vault</a></li>
+            <li><a href="./pages/mansun-albums.html">Mansun Archive</a></li>
+            <li><a href="./youtube.html">Live Music Archive</a></li>
+            <li><a href="./pages/press-layout.html">Broadcast Archive</a></li>
+            <li><a href="./youtube.html">Documentary Archive</a></li>
+            <li><a href="./forum.html">Community Stories</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h5>Community &amp; Support</h5>
           <ul>
-            <li><a href="#forum">Community Forum</a></li>
+            <li><a href="./forum.html">Community Forum</a></li>
             <li><a href="#support">Sponsor Programme</a></li>
             <li><a href="#support">Donate &amp; Equipment</a></li>
             <li><a href="./community.html">Keep The Connection</a></li>
-            <li><a href="mailto:richardmurray2022@gmail.com">Contact Archivist</a></li>
+            <li><a href="mailto:richardmurray2022@gmail.com">Contact RJMedia</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Future Technology</h5>
+          <h5>Technology &amp; Intelligence</h5>
           <ul>
             <li><a href="./trail-builder.html">Memory Trails &amp; Constellations</a></li>
-            <li><a href="./jupiter-island.html">Jupiter Island</a></li>
+            <li><a href="./jupiter-island.html">Jupiter Island (RJM Tech)</a></li>
             <li><a href="https://github.com/JupiterIsland/memoryos" target="_blank" rel="noopener">MemoryOS</a></li>
             <li><a href="https://github.com/JupiterIsland/archive-signal" target="_blank" rel="noopener">Archive Signal</a></li>
             <li><a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">GitHub Repositories</a></li>
-            <li><a href="./llms.txt">llms.txt</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div>
-          © 2001 — 2026 RJMedia Digital Archive. All rights reserved.
+          © 2001 — 2026 RJMedia Digital Archive · Remember The Sound
         </div>
         <div class="footer-rjm">
           Created by RJM
