@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RJMedia Community — Keep The Connection | The Ecosystem</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0d0f12;
+      --ink: #ffffff;
+      --muted: #9ca3af;
+      --rule: #222222;
+      --max: 1120px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.6 'Inter', 'Segoe UI', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
+
+    /* Sticky Mid Navigation Bar matching Screenshot 1 */
+    .mid-nav {
+      border-bottom: 1px solid var(--rule);
+      background: rgba(5, 5, 5, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .mid-nav-inner {
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .diamond {
+      width: 8px;
+      height: 8px;
+      background: #ffffff;
+      transform: rotate(45deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .nav-links a.active-link { color: #ffffff; border-bottom: 2px solid #ffffff; padding-bottom: 3px; }
+
+    /* Hero Section matching Screenshot 1 */
+    .hero {
+      padding: 5rem 0 3.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .eyebrow {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    .title-block h1 {
+      margin: 0;
+      font-size: clamp(3.2rem, 7.5vw, 6.2rem);
+      font-weight: 1000;
+      letter-spacing: -0.05em;
+      line-height: 0.88;
+      text-transform: uppercase;
+    }
+    .title-block h1 span.highlight {
+      background: #ffffff;
+      color: #000000;
+      padding: 0 0.25em;
+    }
+    .hero-sub {
+      margin: 1.5rem 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      line-height: 1.6;
+    }
+
+    /* Stats Box matching Screenshot 1 top right */
+    .stats-cluster {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      min-width: 300px;
+    }
+    .stats-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .stat-card {
+      border: 1px solid var(--rule);
+      background: var(--panel);
+      padding: 1.15rem 1.25rem;
+    }
+    .stat-label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .stat-num {
+      font-size: 1.75rem;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+    .stat-caption {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #d1d5db;
+      padding-top: 0.25rem;
+    }
+
+    /* THE ECOSYSTEM Section matching Screenshot 1 */
+    .section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section h2 {
+      margin: 0 0 2rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 950;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+    }
+    .eco-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .eco-card {
+      border: 1px solid var(--rule);
+      background: var(--panel);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 310px;
+      transition: border-color 0.15s ease;
+    }
+    .eco-card:hover {
+      border-color: #555;
+    }
+    .eco-tag {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .eco-title {
+      margin: 0 0 1.25rem;
+      font-size: 1.4rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .eco-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+    .eco-list li {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .eco-cta {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* WHY KEEP THE CONNECTION Section matching Screenshot 1 */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.25rem;
+    }
+    .why-box {
+      border: 1px solid var(--rule);
+      background: var(--panel);
+      padding: 2.5rem;
+    }
+    .why-box p {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .why-box p:last-child { margin-bottom: 0; }
+    .why-manifesto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      padding: 2.5rem;
+    }
+    .why-manifesto h3 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+      font-weight: 950;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+    }
+
+    footer {
+      padding: 3rem 0 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      margin-top: 4rem;
+    }
+    @media (max-width: 960px) {
+      .hero-grid, .eco-grid, .why-grid { grid-template-columns: 1fr; }
+      .stats-cluster { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mid-nav">
+    <div class="wrap mid-nav-inner">
+      <a class="brand" href="./index.html"><span class="diamond"></span> RJMEDIA COMMUNITY</a>
+      <nav class="nav-links">
+        <a href="./index.html">ARCHIVE</a>
+        <a href="./community.html" class="active-link">COMMUNITY</a>
+        <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">JUPITER ISLAND</a>
+        <a href="./pages/draper-news.html">STORIES</a>
+        <a href="./pages/mansun-mp3-vault.html">VAULT</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">RJMEDIA COMMUNITY • PRESENT</p>
+      <div class="hero-grid">
+        <div class="title-block">
+          <h1>KEEP<br>THE<br>CONNECTI<span style="letter-spacing: -0.08em;">O</span>N</h1>
+          <p class="hero-sub">Community stories, practical resources and discussion spaces for people navigating change, connectivity, technology and life.</p>
+        </div>
+        <div class="stats-cluster">
+          <div class="stats-boxes">
+            <div class="stat-card">
+              <div class="stat-label">ARCHIVE VIEWS</div>
+              <div class="stat-num">1,000,883</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">WATCH HOURS</div>
+              <div class="stat-num">72,365</div>
+            </div>
+          </div>
+          <div class="stat-caption">APPROACHING ONE MILLION VIEWS</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">THREE CLEAR PURPOSES. ONE CONNECTED ECOSYSTEM.</p>
+      <h2>THE ECOSYSTEM</h2>
+      <div class="eco-grid">
+        <div class="eco-card">
+          <div>
+            <div class="eco-tag">PAST</div>
+            <h3 class="eco-title">RJMEDIA DIGITAL ARCHIVE</h3>
+            <ul class="eco-list">
+              <li>LIVE MUSIC ARCHIVE</li>
+              <li>HISTORICAL RESEARCH</li>
+              <li>DIGITAL RESTORATION</li>
+            </ul>
+          </div>
+          <a class="eco-cta" href="./index.html">REMEMBER THE SOUND →</a>
+        </div>
+
+        <div class="eco-card">
+          <div>
+            <div class="eco-tag">PRESENT</div>
+            <h3 class="eco-title">RJMEDIA COMMUNITY</h3>
+            <ul class="eco-list">
+              <li>STORIES</li>
+              <li>RESOURCES</li>
+              <li>DISCUSSION</li>
+            </ul>
+          </div>
+          <a class="eco-cta" href="./pages/draper-news.html">KEEP THE CONNECTION ↑</a>
+        </div>
+
+        <div class="eco-card">
+          <div>
+            <div class="eco-tag">FUTURE</div>
+            <h3 class="eco-title">JUPITER ISLAND</h3>
+            <ul class="eco-list">
+              <li>AI SYSTEMS</li>
+              <li>AUTOMATION</li>
+              <li>OPEN SOURCE</li>
+            </ul>
+          </div>
+          <a class="eco-cta" href="https://github.com/JupiterIsland" target="_blank" rel="noopener">BUILD WHAT'S NEXT →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">PEOPLE • CONNECTION • CONTINUITY</p>
+      <h2>WHY KEEP THE CONNECTION?</h2>
+      <div class="why-grid">
+        <div class="why-box">
+          <p>The archive preserves recordings.</p>
+          <p>The community preserves people.</p>
+          <p>Behind every performance, documentary, photograph and recording is a personal story.</p>
+          <p>The purpose of RJMedia Community is to create a space where people can share experiences, exchange ideas and help one another remain informed, organised and connected.</p>
+        </div>
+        <div class="why-manifesto">
+          <h3>TECHNOLOGY CHANGES.<br>PLATFORMS COME AND GO.<br>COMMUNITIES MATTER.</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div>◆ RJMEDIA COMMUNITY · KEEP THE CONNECTION</div>
+      <div>
+        <a href="./index.html">Remember The Sound</a> ·
+        <a href="./pages/draper-news.html">Paul Draper News</a> ·
+        <a href="./pages/mansun-mp3-vault.html">MP3 Vault</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

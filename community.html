@@ -7,11 +7,11 @@
   <style>
     :root {
       --bg: #050505;
-      --panel: #0a0a0a;
+      --panel: #0d0f12;
       --ink: #ffffff;
       --muted: #9ca3af;
       --rule: #222222;
-      --max: 1080px;
+      --max: 1120px;
     }
     *, *::before, *::after { box-sizing: border-box; }
     body {
@@ -24,53 +24,104 @@
     a { color: inherit; text-decoration: none; }
     .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
 
+    /* Sticky Mid Navigation Bar matching Screenshot 1 */
+    .mid-nav {
+      border-bottom: 1px solid var(--rule);
+      background: rgba(5, 5, 5, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .mid-nav-inner {
+      height: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .diamond {
+      width: 8px;
+      height: 8px;
+      background: #ffffff;
+      transform: rotate(45deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: #ffffff; }
+    .nav-links a.active-link { color: #ffffff; border-bottom: 2px solid #ffffff; padding-bottom: 3px; }
+
     /* Hero Section matching Screenshot 1 */
     .hero {
-      padding: 5.5rem 0 4rem;
+      padding: 5rem 0 3.5rem;
       border-bottom: 1px solid var(--rule);
-      position: relative;
     }
     .eyebrow {
       font-size: 0.65rem;
       font-weight: 800;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--muted);
-      margin: 0 0 1rem;
+      margin: 0 0 1.25rem;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: end;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
     }
-    h1 {
+    .title-block h1 {
       margin: 0;
-      font-size: clamp(3.4rem, 7.5vw, 5.8rem);
-      font-weight: 950;
-      letter-spacing: -0.04em;
-      line-height: 0.9;
+      font-size: clamp(3.2rem, 7.5vw, 6.2rem);
+      font-weight: 1000;
+      letter-spacing: -0.05em;
+      line-height: 0.88;
       text-transform: uppercase;
+    }
+    .title-block h1 span.highlight {
+      background: #ffffff;
+      color: #000000;
+      padding: 0 0.25em;
     }
     .hero-sub {
       margin: 1.5rem 0 0;
       color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 480px;
+      font-size: 1.05rem;
+      max-width: 520px;
+      line-height: 1.6;
     }
+
+    /* Stats Box matching Screenshot 1 top right */
     .stats-cluster {
-      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      min-width: 300px;
     }
     .stats-boxes {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.75rem;
-      margin-bottom: 0.6rem;
     }
     .stat-card {
       border: 1px solid var(--rule);
       background: var(--panel);
-      padding: 1.1rem 1.25rem;
+      padding: 1.15rem 1.25rem;
     }
     .stat-label {
       font-size: 0.6rem;
@@ -81,7 +132,7 @@
       margin-bottom: 0.35rem;
     }
     .stat-num {
-      font-size: 1.65rem;
+      font-size: 1.75rem;
       font-weight: 950;
       letter-spacing: -0.03em;
     }
@@ -91,55 +142,7 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: #d1d5db;
-    }
-
-    /* Sticky Mid Navigation Bar matching Screenshot 1 */
-    .mid-nav {
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      background: rgba(5, 5, 5, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .mid-nav-inner {
-      height: 54px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.7rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-    .diamond {
-      width: 7px;
-      height: 7px;
-      background: #ffffff;
-      transform: rotate(45deg);
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.4rem;
-      align-items: center;
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: #ffffff;
-    }
-    .nav-links a.pill-active {
-      border: 1px solid #444;
-      padding: 0.3rem 0.65rem;
-      color: #ffffff;
+      padding-top: 0.25rem;
     }
 
     /* THE ECOSYSTEM Section matching Screenshot 1 */
@@ -148,8 +151,8 @@
       border-bottom: 1px solid var(--rule);
     }
     .section h2 {
-      margin: 0 0 2.2rem;
-      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+      margin: 0 0 2rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
       font-weight: 950;
       letter-spacing: -0.03em;
       text-transform: uppercase;
@@ -162,11 +165,15 @@
     .eco-card {
       border: 1px solid var(--rule);
       background: var(--panel);
-      padding: 1.75rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 290px;
+      min-height: 310px;
+      transition: border-color 0.15s ease;
+    }
+    .eco-card:hover {
+      border-color: #555;
     }
     .eco-tag {
       font-size: 0.62rem;
@@ -174,12 +181,12 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
     }
     .eco-title {
       margin: 0 0 1.25rem;
-      font-size: 1.35rem;
-      font-weight: 900;
+      font-size: 1.4rem;
+      font-weight: 950;
       text-transform: uppercase;
       letter-spacing: -0.02em;
       line-height: 1.15;
@@ -191,16 +198,16 @@
       border-top: 1px solid var(--rule);
     }
     .eco-list li {
-      padding: 0.55rem 0;
+      padding: 0.65rem 0;
       border-bottom: 1px solid var(--rule);
-      font-size: 0.68rem;
-      font-weight: 700;
+      font-size: 0.7rem;
+      font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
     }
     .eco-cta {
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       font-weight: 900;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -211,35 +218,53 @@
     /* WHY KEEP THE CONNECTION Section matching Screenshot 1 */
     .why-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 1.25rem;
     }
     .why-box {
       border: 1px solid var(--rule);
       background: var(--panel);
-      padding: 2.2rem;
+      padding: 2.5rem;
     }
     .why-box p {
-      margin: 0 0 1rem;
+      margin: 0 0 1.2rem;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 1rem;
+      line-height: 1.7;
     }
     .why-box p:last-child { margin-bottom: 0; }
     .why-manifesto {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      padding: 2.5rem;
     }
     .why-manifesto h3 {
       margin: 0;
-      font-size: 1.35rem;
+      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
       font-weight: 950;
-      line-height: 1.45;
+      line-height: 1.4;
       text-transform: uppercase;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
     }
-    @media (max-width: 860px) {
+
+    footer {
+      padding: 3rem 0 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      margin-top: 4rem;
+    }
+    @media (max-width: 960px) {
       .hero-grid, .eco-grid, .why-grid { grid-template-columns: 1fr; }
+      .stats-cluster { width: 100%; }
     }
   </style>
 </head>
@@ -249,7 +274,7 @@
       <a class="brand" href="./index.html"><span class="diamond"></span> RJMEDIA COMMUNITY</a>
       <nav class="nav-links">
         <a href="./index.html">ARCHIVE</a>
-        <a href="./community.html" class="pill-active">COMMUNITY</a>
+        <a href="./community.html" class="active-link">COMMUNITY</a>
         <a href="https://github.com/JupiterIsland" target="_blank" rel="noopener">JUPITER ISLAND</a>
         <a href="./pages/draper-news.html">STORIES</a>
         <a href="./pages/mansun-mp3-vault.html">VAULT</a>
@@ -261,8 +286,8 @@
     <section class="hero">
       <p class="eyebrow">RJMEDIA COMMUNITY • PRESENT</p>
       <div class="hero-grid">
-        <div>
-          <h1>KEEP<br>THE<br>CONNECTION</h1>
+        <div class="title-block">
+          <h1>KEEP<br>THE<br>CONNECTI<span style="letter-spacing: -0.08em;">O</span>N</h1>
           <p class="hero-sub">Community stories, practical resources and discussion spaces for people navigating change, connectivity, technology and life.</p>
         </div>
         <div class="stats-cluster">
@@ -276,7 +301,7 @@
               <div class="stat-num">72,365</div>
             </div>
           </div>
-          <div class="stat-caption">OVER ONE MILLION LIFETIME ARCHIVE VIEWS</div>
+          <div class="stat-caption">APPROACHING ONE MILLION VIEWS</div>
         </div>
       </div>
     </section>
@@ -336,11 +361,22 @@
           <p>Behind every performance, documentary, photograph and recording is a personal story.</p>
           <p>The purpose of RJMedia Community is to create a space where people can share experiences, exchange ideas and help one another remain informed, organised and connected.</p>
         </div>
-        <div class="why-box why-manifesto">
+        <div class="why-manifesto">
           <h3>TECHNOLOGY CHANGES.<br>PLATFORMS COME AND GO.<br>COMMUNITIES MATTER.</h3>
         </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="wrap" style="width:100%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <div>◆ RJMEDIA COMMUNITY · KEEP THE CONNECTION</div>
+      <div>
+        <a href="./index.html">Remember The Sound</a> ·
+        <a href="./pages/draper-news.html">Paul Draper News</a> ·
+        <a href="./pages/mansun-mp3-vault.html">MP3 Vault</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

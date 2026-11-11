@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RJMedia — Remember The Sound | Digital Liner Notes &amp; Live Music Preservation</title>
+  <style>
+    :root {
+      --bg: #eef2f5;
+      --card: #f6f8fa;
+      --ink: #0f1419;
+      --muted: #4b5563;
+      --rule: rgba(15, 20, 25, 0.16);
+      --max: 1120px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.6 'Inter', 'Segoe UI', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 3rem)); margin-inline: auto; }
+    
+    /* Top Masthead matching Screenshot 2 */
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav {
+      height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .diamond {
+      width: 9px;
+      height: 9px;
+      background: var(--ink);
+      transform: rotate(45deg);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* Hero Section matching Screenshot 2 */
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3rem;
+      align-items: end;
+    }
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(3.4rem, 7.8vw, 6.4rem);
+      font-weight: 950;
+      letter-spacing: -0.05em;
+      line-height: 0.88;
+      text-transform: uppercase;
+    }
+    .lead {
+      margin: 1.6rem 0 2.2rem;
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.65;
+    }
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.4rem;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--ink);
+      transition: all 0.15s ease;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn-secondary:hover {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    /* Right Spec Box in Hero matching Screenshot 2 */
+    .spec-box {
+      border: 1px solid var(--ink);
+      background: rgba(255, 255, 255, 0.35);
+      padding: 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 1.25rem;
+    }
+    .spec-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .spec-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    /* VAULT Section (5-Column Grid 01 - 05) matching Screenshot 2 */
+    .vault-section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 480px;
+    }
+    .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.1rem;
+    }
+    .vault-card {
+      border: 1px solid var(--ink);
+      background: rgba(255, 255, 255, 0.4);
+      padding: 1.5rem 1.25rem;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .vault-card:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+    .vault-num {
+      font-family: monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+      display: block;
+    }
+    .vault-title {
+      margin: 0 0 0.75rem;
+      font-size: 1.05rem;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+    .vault-desc {
+      margin: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .vault-link {
+      margin-top: 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 2.5rem 0 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    @media (max-width: 960px) {
+      .hero, .section-head { grid-template-columns: 1fr; }
+      .vault-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .vault-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap nav">
+      <a class="brand" href="./index.html"><span class="diamond"></span> RJMEDIA</a>
+      <nav class="nav-links">
+        <a href="#vault">VAULT</a>
+        <a href="./pages/draper-articles.html">NOTES</a>
+        <a href="./pages/draper-news.html">ARCHIVE</a>
+        <a href="./community.html">COMMUNITY</a>
+        <a href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">YOUTUBE</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DIGITAL LINER NOTES / LIVE MUSIC PRESERVATION</p>
+        <h1>REMEMBER<br>THE SOUND.</h1>
+        <p class="lead">RJMedia archives rare performances, remasters and band documentaries with a no-fuss, collector-style approach — preserving what matters and keeping the story alive.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">WATCH THE CHANNEL</a>
+          <a class="btn btn-secondary" href="./pages/draper-news.html">ENTER PAUL DRAPER ARCHIVE</a>
+          <a class="btn btn-secondary" href="./community.html">RJMEDIA COMMUNITY (DARK HUB)</a>
+        </div>
+      </div>
+
+      <div class="spec-box">
+        <div>
+          <div class="spec-label">ARCHIVE</div>
+          <div class="spec-val">Live / Rare /<br>Remastered</div>
+        </div>
+        <div>
+          <div class="spec-label">FORMAT</div>
+          <div class="spec-val">Documentary &amp;<br>rehearsal footage</div>
+        </div>
+        <div>
+          <div class="spec-label">FOCUS</div>
+          <div class="spec-val">Bands / performances<br>/ stories</div>
+        </div>
+        <div>
+          <div class="spec-label">ACCESS</div>
+          <div class="spec-val">Open to watch</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vault-section" id="vault">
+      <div class="section-head">
+        <h2>VAULT</h2>
+        <p>A curated set of live performance collections, remasters and documentary moments kept in the archive.</p>
+      </div>
+
+      <div class="vault-grid">
+        <a class="vault-card" href="./pages/mansun-mp3-vault.html">
+          <div>
+            <span class="vault-num">01</span>
+            <h3 class="vault-title">LIVE<br>SESSIONS</h3>
+            <p class="vault-desc">Front-row concert recordings, broadcast sessions, and the 52-track Mansun &amp; Paul Draper stream vault.</p>
+          </div>
+          <span class="vault-link">Open Stream Vault →</span>
+        </a>
+
+        <a class="vault-card" href="./pages/draper-news.html">
+          <div>
+            <span class="vault-num">02</span>
+            <h3 class="vault-title">BAND<br>STORIES</h3>
+            <p class="vault-desc">Chronological dispatches, Draposound studio logs, and direct collaborator updates (2006–2012).</p>
+          </div>
+          <span class="vault-link">Read News Archive →</span>
+        </a>
+
+        <a class="vault-card" href="./pages/mansun-mp3-vault.html#grind-era">
+          <div>
+            <span class="vault-num">03</span>
+            <h3 class="vault-title">RARE<br>FOOTAGE</h3>
+            <p class="vault-desc">Pre-Mansun Grind rehearsal tapes, Amsterdam Paradiso '98, and unreleased archive demos.</p>
+          </div>
+          <span class="vault-link">Explore Rarities →</span>
+        </a>
+
+        <a class="vault-card" href="https://www.youtube.com/@RJMedia" target="_blank" rel="noopener">
+          <div>
+            <span class="vault-num">04</span>
+            <h3 class="vault-title">REMASTERS</h3>
+            <p class="vault-desc">Restored 1980s and 1990s broadcast appearances, Top of the Pops, and full documentary films.</p>
+          </div>
+          <span class="vault-link">Watch Remasters ↗</span>
+        </a>
+
+        <a class="vault-card" href="./pages/press-layout.html">
+          <div>
+            <span class="vault-num">05</span>
+            <h3 class="vault-title">COLLECTOR<br>NOTES</h3>
+            <p class="vault-desc">High-resolution magazine spreads from Melody Maker, Select, Rock Sound, and Uncut.</p>
+          </div>
+          <span class="vault-link">Open Press Spreads →</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div>◆ RJMEDIA DIGITAL ARCHIVE · REMEMBER THE SOUND</div>
+      <div>
+        <a href="./community.html">Keep The Connection (Community Hub)</a> ·
+        <a href="./pages/draper-news.html">Paul Draper News</a> ·
+        <a href="./pages/press-layout.html">Press Spreads</a> ·
+        <a href="./pages/mansun-mp3-vault.html">MP3 Vault</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
