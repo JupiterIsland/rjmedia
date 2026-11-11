@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paul Draper & Mansun • Brutalist Text Archive</title>
+  <style>
+    :root {
+      --paper: #f5f3ee;
+      --paper-strong: #ece7df;
+      --ink: #0b0b0b;
+      --ink-soft: #3b3b3b;
+      --line: rgba(11,11,11,.9);
+      --line-soft: rgba(11,11,11,.18);
+      --width: 1100px;
+    }
+    
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font: 16px/1.6 "Segoe UI", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .wrap { width: min(var(--width), calc(100% - 2rem)); margin-inline: auto; }
+    
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(245,243,238,.9); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 70px; flex-wrap: wrap; }
+    .brand { font-weight: 900; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: .7rem; }
+    .brand-mark { width: 10px; height: 10px; background: var(--ink); display: inline-block; transform: rotate(45deg); }
+    .nav-links a { font-size: .8rem; text-transform: uppercase; letter-spacing: .14em; text-decoration: none; color: var(--ink-soft); margin-left: 1.5rem; font-weight: 700; }
+    .nav-links a:hover { color: var(--ink); text-decoration: underline; }
+
+    .hero { padding: 5rem 0 3rem; border-bottom: 1px solid var(--line-soft); }
+    h1 { margin: 0; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: .9; letter-spacing: -.06em; font-weight: 1000; text-transform: uppercase; }
+    .hero-copy { max-width: 680px; margin-top: 1.5rem; font-size: 1.15rem; color: var(--ink-soft); }
+
+    .section { padding: 4rem 0; border-bottom: 1px solid var(--line-soft); }
+    .section-title { font-size: 2.2rem; line-height: 1; letter-spacing: -.05em; text-transform: uppercase; margin: 0 0 2.5rem; }
+
+    .prose { max-width: 760px; }
+    .prose p { margin-bottom: 1.5rem; color: var(--ink-soft); font-size: 1.05rem; }
+    .prose .dropcap { float: left; font-size: 4rem; line-height: 0.8; font-weight: 900; margin: 0.1em 0.1em 0 0; color: var(--ink); }
+
+    .qa-item { border: 1px solid var(--line); background: var(--paper-strong); padding: 1.5rem; margin-bottom: 1.5rem; transition: transform 0.15s ease; }
+    .qa-item:hover { transform: translateY(-2px); box-shadow: 4px 4px 0px var(--line-soft); }
+    .qa-q { font-weight: 700; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dotted var(--line-soft); font-size: 1.1rem; line-height: 1.4; }
+    .qa-a { color: var(--ink-soft); margin: 0; }
+    .qa-meta { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink); font-weight: 900; margin-bottom: 0.5rem; display: inline-block; background: var(--line-soft); padding: 0.2rem 0.5rem; }
+
+    .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    
+    .disc-card { border: 1px solid var(--line); background: rgba(255,255,255,.2); padding: 1.5rem; display: flex; flex-direction: column; }
+    .disc-title { font-size: 1.4rem; font-weight: 900; text-transform: uppercase; letter-spacing: -.03em; margin: 0 0 0.5rem 0; }
+    .disc-meta { font-family: monospace; font-size: 0.85rem; color: var(--ink-soft); border-bottom: 1px solid var(--line-soft); padding-bottom: 0.5rem; margin-bottom: 0.8rem; }
+    .disc-tracks { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.4; }
+
+    .link-list { list-style: none; padding: 0; margin: 0; }
+    .link-list li { margin-bottom: 0.8rem; border-bottom: 1px dotted var(--line-soft); padding-bottom: 0.4rem; }
+    .link-list a { font-weight: 700; color: var(--ink); }
+    .link-list span { font-family: monospace; font-size: 0.8rem; color: var(--ink-soft); float: right; }
+
+    footer { padding: 2rem 0; font-size: 0.8rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.1em; border-top: 1px solid var(--line-soft); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark"></span> RJMedia Archive</a>
+      <nav class="nav-links">
+        <a href="#live-news" style="color: #000000; text-decoration: underline;">2027 Festival</a>
+        <a href="#solo-discography">Solo Discography</a>
+        <a href="#biography">Biography</a>
+        <a href="#discography">Mansun LPs</a>
+        <a href="#production">Production</a>
+        <a href="#scans">Scans</a>
+        <a href="#qna">2007 Q&A</a>
+        <a href="index.html">Back to RJMedia ➔</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>The Paul Draper<br>Archive &amp; Discography.</h1>
+        <p class="hero-copy">Recovered interviews, fan Q&As, production notes, studio albums, and discography from the original <strong>pauldraper-music.co.uk</strong> domain and subsequent solo career on Kscope.</p>
+      </div>
+    </section>
+
+    <!-- 2027 LIVE FESTIVAL ANNOUNCEMENT -->
+    <section id="live-news" class="section" style="background: rgba(0,0,0,0.03); border-bottom: 2px solid var(--ink);">
+      <div class="wrap">
+        <div style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1 1 360px;">
+            <div style="font-family: monospace; font-size: 0.8rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: #525252; margin-bottom: 0.5rem;">
+              LIVE FESTIVAL ANNOUNCEMENT • SATURDAY 1 MAY 2027
+            </div>
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1; letter-spacing: -0.04em; text-transform: uppercase; margin: 0 0 1rem;">
+              Paul Draper At Indie By The Sea • Blackpool Winter Gardens
+            </h2>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 1.25rem;">
+              <strong>Paul Draper</strong> is scheduled to perform at the <strong>Indie By The Sea</strong> festival at <a href="https://www.wintergardensblackpool.co.uk/events/indie-by-the-sea/" target="_blank" rel="noopener">Winter Gardens Blackpool</a> on <strong>Saturday, 1 May 2027</strong>. Doors open at 2:00 pm for the May Bank Holiday weekender.
+            </p>
+            <div style="font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 1.5rem;">
+              <strong>Saturday 1 May 2027 Lineup:</strong><br>
+              • <strong>Main Acts:</strong> Ocean Colour Scene, Embrace, <strong>Paul Draper</strong>, Space, Northside, The Boo Radleys, and Jesus Jones.<br>
+              • <strong>Solo Sets:</strong> Ben Ottewell (Gomez) and Ian Prowse (Pele and Amsterdam).<br>
+              • <strong>After-Show Party:</strong> A late-night DJ set hosted by broadcaster and journalist John Robb (founder of <em>Louder Than War</em>).<br><br>
+              <strong>Sunday 2 May 2027:</strong> Peter Hook &amp; The Light, Black Grape, Sleeper.
+            </div>
+            <div>
+              <a href="https://www.wintergardensblackpool.co.uk/events/indie-by-the-sea/" target="_blank" rel="noopener" style="display: inline-block; background: var(--ink); color: #ffffff; padding: 0.65rem 1.25rem; font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.08em;">Winter Gardens Blackpool ↗</a>
+              <a href="https://www.ticketmaster.co.uk/blackpool-indie-by-the-sea-tickets/artist/5746239" target="_blank" rel="noopener" style="display: inline-block; background: transparent; color: var(--ink); border: 1px solid var(--ink); padding: 0.65rem 1.25rem; font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.08em; margin-left: 0.5rem;">Ticketmaster UK ↗</a>
+            </div>
+          </div>
+          <div style="flex: 0 0 280px; max-width: 100%;">
+            <img src="./assets/images/indie-by-the-sea-2027.jpg" alt="Indie By The Sea Blackpool 2027 Festival Poster" style="width: 100%; height: auto; border: 1px solid var(--ink); box-shadow: 6px 6px 0 var(--line);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIOGRAPHY SECTION -->
+    <section id="biography" class="section">
+      <div class="wrap prose">
+        <h2 class="section-title">Mansun: The Outsider Thing</h2>
+        <p><span class="dropcap">I</span>t was an "outsider thing". The kind of "outsider thing" that has lured lost souls into the dark labyrinths of obsession throughout the decades... Even alongside rock's lengthy parade of eccentrics and non-conformists, Mansun stood out a mile.</p>
+        <p>They hailed from Chester, scorned the length of L1 as being the breeding nests of Plastic Scousers - yet even here they were rock kid cast-outs. In 1996, as Blur went Benny Hill and Oasis glammed for supremacy in the Britpop Wars, these enigmatic mis-shapes slunk out of the looking glass bearing numbered EPs of seditious and shimmering 80s flecked pop music.</p>
+        <p>They made a video for "Taxlo$$" by simply flinging the entire video budget into Liverpool Street station during rush hour and filming the commuters scrambling for the notes. This was a band living by their own rules and conventions, with sonic ambitions far beyond sharing an "acoustic segment" with Paul Weller.</p>
+        <p>"It was weird," says Paul Draper today, "because it was never, ever a mainstream band, but we were always dipping into that world. It wasn't for me, really. I don't even know how it got that big. Going from making your own piece of 7 inch vinyl to that seemed amazing."</p>
+        <p>Without fanfare or fuss, Mansun passed away in its sleep in April 2003. Paul disappeared to America, living the Kerouac dream for a few months. Dominic Chad turned to charity. Andie Rathbone started drumming in a new band in Chester. Stove King "left the music business". And there, for any ordinary band, our story would end...</p>
+      </div>
+    </section>
+
+    <!-- DISCOGRAPHY SECTION -->
+    <section id="discography" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Essential Discography</h2>
+        <div class="grid-2col">
+          
+          <div class="disc-card">
+            <h3 class="disc-title">Attack Of The Grey Lantern</h3>
+            <div class="disc-meta">Released: 17-02-1997 | Parlophone | Peak: #1</div>
+            <div class="disc-tracks">
+              1. The Chad Who Loved Me<br>
+              2. Mansun's Only Love Song<br>
+              3. Taxlo$$<br>
+              4. You, Who Do You Hate?<br>
+              5. Wide Open Space<br>
+              6. Stripper Vicar<br>
+              7. Disgusting<br>
+              8. She Makes My Nose Bleed<br>
+              9. Naked Twister<br>
+              10. Egg Shaped Fred<br>
+              11. Dark Mavis<br>
+              12. An Open Letter To The Lyrical Trainspotter
+            </div>
+          </div>
+
+          <div class="disc-card">
+            <h3 class="disc-title">Six</h3>
+            <div class="disc-meta">Released: 07-09-1998 | Parlophone | Peak: #6</div>
+            <div class="disc-tracks">
+              1. Six<br>
+              2. Negative<br>
+              3. Shotgun<br>
+              4. Inverse Midas<br>
+              5. Anti Everything<br>
+              6. Fall Out<br>
+              7. Serotonin<br>
+              8. Cancer<br>
+              9. Witness To A Murder (Part Two)<br>
+              10. Television<br>
+              11. Special Blown It (Delete As Appropriate)<br>
+              12. Legacy<br>
+              13. Being A Girl (Parts 1 & 2)
+            </div>
+          </div>
+
+          <div class="disc-card">
+            <h3 class="disc-title">Little Kix</h3>
+            <div class="disc-meta">Released: 14-08-2000 | Parlophone | Peak: #12</div>
+            <div class="disc-tracks">
+              1. Butterfly (A New Beginning)<br>
+              2. I Can Only Disappoint U<br>
+              3. Comes As No Surprise<br>
+              4. Electric Man<br>
+              5. Love Is...<br>
+              6. Soundtrack 4 2 Lovers<br>
+              7. Forgive Me<br>
+              8. Until The Next Life<br>
+              9. Fool<br>
+              10. We Are The Boys<br>
+              11. Goodbye
+            </div>
+          </div>
+
+          <div class="disc-card">
+            <h3 class="disc-title">Kleptomania</h3>
+            <div class="disc-meta">Released: 27-09-2004 | Parlophone | Peak: #135</div>
+            <div class="disc-tracks">
+              <em>Disc 1: The 4th Album Sessions</em><br>
+              Getting Your Way, Slipping Away, Keep Telling Myself, Harris, Love Remains, Cry 2 My Face, No Signal/No Complaints, Home, Fragile, Wanted So Much, Good Intentions Heal The Soul.<br><br>
+              <em>(Also features Disc 2: Non-album singles/B-sides & Disc 3: Rarities/Demos)</em>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAUL DRAPER SOLO DISCOGRAPHY (2016 - PRESENT) -->
+    <section id="solo-discography" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Paul Draper Solo Discography (2016–Present)</h2>
+        <p style="max-width: 760px; color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 2rem;">
+          Following the 2014 world premiere of <em>"Feeling My Heart Run Slow"</em> at the Mansun Convention in Chester (filmed by Richard Murray), Paul Draper released two UK Top 25 studio albums, acclaimed live concert albums, and numbered EPs on Kscope:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+          
+          <div class="disc-card">
+            <img src="./assets/images/solo-mansun-retold.jpg" alt="Paul Draper - Mansun Retold" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 1rem;">
+            <h3 class="disc-title">Mansun Retold</h3>
+            <div class="disc-meta">Kscope | Reimagined Mansun Works</div>
+            <div class="disc-tracks">Acoustic and orchestral reinterpretations of classic Mansun catalogue highlights.</div>
+          </div>
+
+          <div class="disc-card">
+            <img src="./assets/images/solo-grey-lantern-ritz.jpg" alt="Paul Draper - Attack of the Grey Lantern Live at the Ritz" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 1rem;">
+            <h3 class="disc-title">Attack of the Grey Lantern (Live at The Ritz)</h3>
+            <div class="disc-meta">Kscope | Live Concert LP</div>
+            <div class="disc-tracks">Full live album performance of Mansun's 1997 UK #1 debut album from the Manchester Ritz.</div>
+          </div>
+
+          <div class="disc-card">
+            <img src="./assets/images/solo-cult-leader-tactics.jpg" alt="Paul Draper - Cult Leader Tactics" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 1rem;">
+            <h3 class="disc-title">Cult Leader Tactics</h3>
+            <div class="disc-meta">Released: 28-01-2022 | Kscope | UK Official Albums Chart #22</div>
+            <div class="disc-tracks">
+              1. Cult Leader Tactics<br>
+              2. International Leaguer<br>
+              3. Dirty Trix<br>
+              4. Cult Leader Tactics in E-Flat Minor<br>
+              5. You've Got No Life Skills, Baby!<br>
+              6. U Killed My Fish<br>
+              7. Everyone Becomes a Cult Leader with Time<br>
+              8. Annie<br>
+              9. Talkin' Behind My Back<br>
+              10. Omega Man (feat. Steven Wilson)<br>
+              11. Lyin' 'Bout Who U Sleep With
+            </div>
+          </div>
+
+          <div class="disc-card">
+            <img src="./assets/images/solo-live-at-scala.jpg" alt="Paul Draper - Live at Scala" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 1rem;">
+            <h3 class="disc-title">Live at Scala</h3>
+            <div class="disc-meta">Released: 16-02-2018 | Kscope | Recorded Sept 2017</div>
+            <div class="disc-tracks">Complete headline performance from London Scala covering solo tracks and classic Mansun epics.</div>
+          </div>
+
+          <div class="disc-card">
+            <img src="./assets/images/solo-spooky-action.jpg" alt="Paul Draper - Spooky Action" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 1rem;">
+            <h3 class="disc-title">Spooky Action</h3>
+            <div class="disc-meta">Released: 11-08-2017 | Kscope | UK Official Albums Chart #19</div>
+            <div class="disc-tracks">
+              1. Don't Poke the Bear<br>
+              2. Grey House<br>
+              3. Things People Want<br>
+              4. Who's Wearing the Trousers<br>
+              5. Jealousy Is a Powerful Emotion<br>
+              6. Friends Make the Worst Enemies<br>
+              7. Feeling My Heart Run Slow<br>
+              8. You Don't Really Want Me, Do You?<br>
+              9. Can't Get Fairer Than That<br>
+              10. The Silence of Animals<br>
+              11. Losing Myself
+            </div>
+          </div>
+
+          <div class="disc-card">
+            <img src="./assets/images/solo-ep-two.jpg" alt="Paul Draper - EP TWO" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 1rem;">
+            <h3 class="disc-title">EP TWO</h3>
+            <div class="disc-meta">Released: 25-11-2016 | Kscope (KSCOPE901)</div>
+            <div class="disc-tracks">Friends Make the Worst Enemies, Some Things Are Better Left Unsaid, Don't Poke the Bear, Friends Make the Worst Enemies (Acoustic).</div>
+          </div>
+
+          <div class="disc-card">
+            <img src="./assets/images/paul-draper-ep-one.jpg" alt="Paul Draper - EP ONE" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--line); margin-bottom: 1rem;">
+            <h3 class="disc-title">EP ONE</h3>
+            <div class="disc-meta">Released: 10-06-2016 | Kscope (KSCOPE896)</div>
+            <div class="disc-tracks">Feeling My Heart Run Slow, No Ideas (feat. Steven Wilson), The Silence of Animals, F.M.H.R.S. (The Twilight Sad Mix).</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTION & COLLABORATIONS -->
+    <section id="production" class="section">
+      <div class="wrap prose">
+        <h2 class="section-title">Production: Komakino</h2>
+        <div class="qa-item" style="background: rgba(255,255,255,0.4);">
+          <p><em>Archive Note by Ryan (Singer, Komakino) regarding Paul Draper's 2006 production sessions:</em></p>
+          <p>"At the moment we have recorded two songs with Paul as producer - 'Every Day Is Like a Friday Night' and 'Kommunikate'. We met up with Paul in Chester after Steve Lamacq told him that we were looking for a producer... it was fucking weird when we got the email from Paul as we'd been joking about asking him to record us, because being Mansun fans we knew that he'd produced 'Grey Lantern' and 'Six'.</p>
+          <p>Paul came up to Derby for a couple of days and we bashed through the songs loads of times to try out different structures/rhythmic changes/tempos... he's very much a perfectionist when it comes to that stuff and is really fucking knowledgeable about it all. After that we went up to Liverpool Parr Street Studio for 4 days and did all the instrumental recording."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCANS & REVIEWS INDEX -->
+    <section id="scans" class="section">
+      <div class="wrap">
+        <h2 class="section-title">Archived Scans & Press Links</h2>
+        <div class="grid-2col">
+          <div>
+            <h3 style="margin-top:0;">Magazine Scans</h3>
+            <ul class="link-list">
+              <li><a href="#">NME</a> <span>June 22, 1996</span></li>
+              <li><a href="#">NME</a> <span>Sept 28, 1996</span></li>
+              <li><a href="#">Loaded</a> <span>1996</span></li>
+              <li><a href="#">Select Magazine</a> <span>Dec 2000</span></li>
+              <li><a href="#">Melody Maker (Chad Psychobabble)</a> <span>Oct 18, 2000</span></li>
+              <li><a href="#">Melody Maker (Paul Psychobabble)</a> <span>May 26, 2000</span></li>
+              <li><a href="#">Rock Sound</a> <span>Sept 2000</span></li>
+              <li><a href="#">Uncut</a> <span>Oct 1998</span></li>
+              <li><a href="#">Q Magazine</a> <span>April 1997</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin-top:0;">Gig Reviews (2002 Tour)</h3>
+            <ul class="link-list">
+              <li><a href="#">Fuse FM</a> <span>Manchester (04/05/02)</span></li>
+              <li><a href="#">Rock Review</a> <span>Leeds (08/05/02)</span></li>
+              <li><a href="#">Trust No One</a> <span>Portsmouth (16/05/02)</span></li>
+              <li><a href="#">Gigwise</a> <span>Liverpool (21/05/02)</span></li>
+              <li><a href="#">RockFeedBack</a> <span>Oxford Zodiac (22/05/02)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2007 Q&A -->
+    <section id="qna" class="section" style="border-bottom: none;">
+      <div class="wrap">
+        <h2 class="section-title">Archived Fan Q&A (2007)</h2>
+        <div class="prose">
+          
+          <div class="qa-item">
+            <div class="qa-meta">Question by Eclectic Man</div>
+            <div class="qa-q">Are you looking to form another band or just go out as a solo artist? And what is the hardest part of the songwriting process?</div>
+            <div class="qa-a">I'm going to blog the album as I'm making it so everyone can get an inside picture. At the moment I'm starting this project with a blank canvas, using my own name... In terms of the songwriting process itself, I find every aspect of it incredibly difficult, only because I've written hundreds of songs and I have a style, so my main objective is to not repeat myself. Sometimes I can wait for days and nothing will come.</div>
+          </div>
+
+          <div class="qa-item">
+            <div class="qa-meta">Question by NativeMoon</div>
+            <div class="qa-q">Hindsight is always 20/20 - But given the chance, if there was one thing about the path you have taken that you would change - what would that be and why?</div>
+            <div class="qa-a">I think you have no control over your destiny, otherwise you could make decisions on the flip of a coin. I've been very loyal to people I shouldn't have over the years, but what goes around comes around and you'll always end up on the path you were meant to be on. My path is writing songs, so no matter what shit gets thrown, that can be regurgitated into a song as far as I'm concerned.</div>
+          </div>
+
+          <div class="qa-item">
+            <div class="qa-meta">Question by El Diablo</div>
+            <div class="qa-q">Will the new material be self-produced by you at your home studio? Have you any plans for any more collaborations?</div>
+            <div class="qa-a">I'll be producing all my music from now on in a combination of places!! I'm a control freak unfortunately, and I know that alienated the people I've worked with, some for good reasons, some because they couldn't cut it, but there was nobody else to take the lead in getting things sounding great.</div>
+          </div>
+
+          <div class="qa-item">
+            <div class="qa-meta">Question by MrMavis</div>
+            <div class="qa-q">What were your favourite and worst venues that you played?</div>
+            <div class="qa-a">I loved Brixton Academy, Glasgow Barrowlands and venues in other countries that I cant even remember the name of! (Worst venue: Glastonbury).</div>
+          </div>
+
+          <div class="qa-item">
+            <div class="qa-meta">Question by Candy</div>
+            <div class="qa-q">What do you think about isolation? What is the longest time you have spent on your own without meeting anyone?</div>
+            <div class="qa-a">I've spent weeks or possibly months on my own many times, but I love my own company and I can focus on writing when I'm on my own. I'm quite a solitary person, sometimes hermit like, but then I'll go thru a phase of going out every night for ages until my body can't take the hammering any more, and I'll go away and write about my experiences.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <footer>
+    <div class="wrap">
+      RJMedia Archive • Preserved 2026
+    </div>
+  </footer>
+</body>
+</html>
