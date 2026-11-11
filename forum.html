@@ -1,414 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Community Forum — RJMedia Digital Archive | Remember The Sound</title>
-  <meta name="description" content="Official RJMedia Digital Archive Community Forum — Discuss music history, submit archive requests, track lost recordings, and connect with listeners across 9 dedicated boards.">
-  <meta name="theme-color" content="#bdbdbd">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #bdbdbd;
-      --bg-gradient: linear-gradient(180deg, #c7c7c7 0%, #b8b8b8 100%);
-      --surface: #ffffff;
-      --surface-glass: rgba(255, 255, 255, 0.9);
-      --ink: #0a0a0a;
-      --muted: #525252;
-      --rule: rgba(0, 0, 0, 0.14);
-      --max: 1180px;
-      --shadow-3d: 0 18px 40px -10px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      background-image: var(--bg-gradient);
-      color: var(--ink);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum — RJMedia Digital Archive | Remember The Sound</title>
+    <style>
+        /* Base Obsidian Theme */
+        :root {
+            --bg-deep: #070709;
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --accent: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
 
-    /* Masthead */
-    .masthead {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--rule);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .masthead-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
-      gap: 1.5rem;
-    }
-    .brand-logo { display: flex; flex-direction: column; align-items: flex-start; }
-    .logo-mark { display: inline-flex; align-items: center; line-height: 1; }
-    .logo-box {
-      background: #000000;
-      color: #ffffff;
-      padding: 0.22rem 0.5rem;
-      font-size: 0.98rem;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      border-radius: 3px;
-    }
-    .logo-text {
-      font-size: 1.25rem;
-      font-weight: 950;
-      letter-spacing: 0.12em;
-      margin-left: 0.4rem;
-      color: #000000;
-    }
-    .logo-tagline {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      font-weight: 800;
-      letter-spacing: 0.22em;
-      color: #404040;
-      text-transform: uppercase;
-      margin-top: 0.28rem;
-    }
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #404040;
-    }
-    .main-nav a:hover { color: #000000; }
-    .nav-btn {
-      padding: 0.6rem 1.15rem;
-      background: #000000;
-      color: #ffffff !important;
-      border-radius: 8px;
-      font-weight: 800;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg-deep);
+            background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04), transparent 70%);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    /* Hero */
-    .hero-section { padding: 4rem 0 2.5rem; }
-    .hero-card {
-      background: var(--surface-glass);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.65);
-      border-radius: 18px;
-      padding: clamp(2rem, 4.5vw, 3.5rem);
-      box-shadow: var(--shadow-3d);
-    }
-    .kicker {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #525252;
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 950;
-      letter-spacing: -0.04em;
-      line-height: 0.98;
-      text-transform: uppercase;
-      margin: 0 0 1rem;
-    }
-    .lead {
-      font-size: 1.08rem;
-      color: #262626;
-      max-width: 720px;
-      margin: 0 0 1.75rem;
-    }
+        /* Frosted Glass Masthead */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(7, 7, 9, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Forum Grid */
-    .boards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin: 2rem 0 4rem;
-    }
-    .board-card {
-      background: linear-gradient(145deg, #f5f5f5, #e5e5e5);
-      border: 1px solid rgba(255,255,255,0.75);
-      border-radius: 18px;
-      padding: 1.75rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.85);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-    }
-    .board-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.22);
-      background: #ffffff;
-    }
-    .board-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 800;
-      color: #525252;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    .board-title {
-      font-size: 1.35rem;
-      font-weight: 950;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.65rem;
-    }
-    .board-desc {
-      font-size: 0.9rem;
-      color: #404040;
-      margin: 0 0 1.35rem;
-      line-height: 1.55;
-    }
-    .board-meta {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding-top: 0.85rem;
-      border-top: 1px solid rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .brand-logo {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    /* Request Box */
-    .request-box {
-      background: #ffffff;
-      border: 1px solid rgba(255,255,255,0.7);
-      border-radius: 18px;
-      padding: 2.5rem;
-      box-shadow: var(--shadow-3d);
-      margin-bottom: 4.5rem;
-    }
-    .btn-3d {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.9rem 1.6rem;
-      background: #000000;
-      color: #ffffff;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .btn-outline {
-      background: #ffffff;
-      color: #000000;
-      border: 1px solid rgba(0,0,0,0.2);
-    }
+        .brand-logo span {
+            background: var(--accent);
+            color: var(--bg-deep);
+            padding: 2px 6px;
+            border-radius: 2px;
+        }
 
-    footer {
-      background: #000000;
-      color: #8a8a8a;
-      padding: 3rem 0;
-      font-size: 0.8rem;
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    @media (max-width: 960px) {
-      .boards-grid { grid-template-columns: repeat(2, 1fr); }
-      .main-nav { display: none; }
-    }
-    @media (max-width: 640px) {
-      .boards-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-left: 2rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+
+        .yt-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: all 0.2s;
+        }
+
+        .yt-badge:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+        }
+
+        .yt-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 4px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* Forum Header */
+        .forum-header {
+            text-align: center;
+            padding: 6rem 2rem 3rem;
+        }
+
+        .forum-header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            margin: 0 0 0.5rem 0;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .forum-stats {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-glass {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* 3x3 Archive Grid */
+        .forum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto 5rem auto;
+            padding: 0 2rem;
+            flex-grow: 1;
+        }
+
+        /* Indexed Drawer Cards */
+        .board-card {
+            position: relative;
+            background: linear-gradient(145deg, #121215, #08080a);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-decoration: none;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 160px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .board-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.15);
+            background: linear-gradient(145deg, #18181c, #0a0a0d);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        /* Background Index Number */
+        .board-index {
+            position: absolute;
+            top: -15px;
+            right: 15px;
+            font-size: 7rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
+            line-height: 1;
+            pointer-events: none;
+            transition: color 0.3s ease;
+        }
+
+        .board-card:hover .board-index {
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        .board-content h3 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            margin: 0 0 0.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .board-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+        }
+
+        /* Topic Drawer Modal */
+        .board-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+        .board-modal.open {
+            display: flex;
+        }
+        .modal-box {
+            background: linear-gradient(145deg, #16171b, #0c0d10);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 580px;
+            width: 100%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .modal-close:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.75rem;
+            }
+            nav a, .yt-badge {
+                margin: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header class="masthead">
-    <div class="wrap masthead-inner">
-      <a class="brand-logo" href="./index.html">
-        <div class="logo-mark">
-          <span class="logo-box">RJ</span><span class="logo-text">MEDIA</span>
+    <!-- Frosted Glass Masthead -->
+    <header>
+        <a href="./index.html" class="brand-logo"><span>RJ</span>MEDIA</a>
+        <nav>
+            <a href="./index.html#vault">VAULT</a>
+            <a href="./index.html#collections">COLLECTIONS</a>
+            <a href="./index.html#documentaries">DOCUMENTARIES</a>
+            <a href="./index.html#memory-trails">MEMORY TRAILS</a>
+            <a href="./forum.html" class="active">COMMUNITY</a>
+            <a href="./index.html#support">SUPPORT</a>
+            <a href="https://www.youtube.com/@RJMmedia-uk" target="_blank" rel="noopener" class="yt-badge">YOUTUBE ↗</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="forum-header">
+        <h1>Keep The Connection</h1>
+        <p class="forum-stats">148+ Community Members &middot; 25+ Years Connected</p>
+        <a href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Community%20Forum%20Thread%20Submission" class="btn-glass">Open Community Forum &rarr;</a>
+    </section>
+
+    <!-- 3x3 Archive Grid -->
+    <section class="forum-grid">
+        
+        <div class="board-card" onclick="openBoard('Board 01 // The Archives', 'General music history, alternative rock discussion, and 90s retrospectives.', 'Discuss classic albums, Britpop era history, unreleased live recordings, and music retrospectives with fellow listeners.')">
+            <div class="board-index">01</div>
+            <div class="board-content">
+                <h3>The Archives</h3>
+                <p>General music history, alternative rock discussion, and 90s retrospectives.</p>
+            </div>
         </div>
-        <span class="logo-tagline">REMEMBER THE SOUND</span>
-      </a>
 
-      <nav class="main-nav" aria-label="Primary Navigation">
-        <a href="./index.html">ARCHIVE HOME</a>
-        <a href="./forum.html" style="color:#000000;">FORUM</a>
-        <a href="./youtube.html">YOUTUBE VAULT</a>
-        <a href="./pages/index.html">PAUL DRAPER ARCHIVE</a>
-        <a class="nav-btn" href="./trail-builder.html">TRAIL BUILDER</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="hero-section">
-      <div class="hero-card">
-        <span class="kicker">PUBLIC COMMUNITY HUB • 148+ FOUNDING MEMBERS</span>
-        <h1>RJMEDIA COMMUNITY FORUM</h1>
-        <p class="lead">
-          Exchange concert memories, submit broadcast restoration requests, help locate lost tapes and missing press clippings, and join ongoing discussions across nine dedicated archive boards.
-        </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a class="btn-3d" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Forum%20Submission%20or%20Request">Submit Archive Topic / Request →</a>
-          <a class="btn-3d btn-outline" href="./community.html">Visit Keep The Connection →</a>
+        <div class="board-card" onclick="openBoard('Board 02 // Lost Recordings', 'The request line. Help track down missing physical media, bootlegs, and lost B-sides.', 'Post missing concert bootlegs, untracked B-sides, or unreleased radio broadcasts you are searching for.')">
+            <div class="board-index">02</div>
+            <div class="board-content">
+                <h3>Lost Recordings</h3>
+                <p>The request line. Help track down missing physical media, bootlegs, and lost B-sides.</p>
+            </div>
         </div>
-      </div>
+
+        <div class="board-card" onclick="openBoard('Board 03 // Live Music & Gigs', 'Setlists, front-row memories, and soundboard recording discussions.', 'Share your concert memories, venue ticket stubs, soundboard tapes, and setlists from 1980s to present day.')">
+            <div class="board-index">03</div>
+            <div class="board-content">
+                <h3>Live Music &amp; Gigs</h3>
+                <p>Setlists, front-row memories, and soundboard recording discussions.</p>
+            </div>
+        </div>
+
+        <div class="board-card" onclick="openBoard('Board 04 // Broadcast History', 'Television appearances, radio sessions, and historic interviews.', 'Documenting BBC John Peel sessions, Channel 4 The Word, MTV Europe, and historic music broadcast recordings.')">
+            <div class="board-index">04</div>
+            <div class="board-content">
+                <h3>Broadcast History</h3>
+                <p>Television appearances, radio sessions, and historic interviews.</p>
+            </div>
+        </div>
+
+        <div class="board-card" onclick="openBoard('Board 05 // Community Support', 'Keep The Connection. Peer support, check-ins, and a space for mental health.', 'A calm, dedicated sanctuary for peer support, checking in with long-time archive members, and looking out for one another.')">
+            <div class="board-index">05</div>
+            <div class="board-content">
+                <h3>Community Support</h3>
+                <p>Keep The Connection. Peer support, check-ins, and a space for mental health.</p>
+            </div>
+        </div>
+
+        <div class="board-card" onclick="openBoard('Board 06 // Technology Discussion', 'Hardware, Docker, vLLM, local inference, and AI ecosystem builds.', 'Technical discussions around MemoryOS, consumer GPU inference, vLLM, local checkpoints, and open preservation tools.')">
+            <div class="board-index">06</div>
+            <div class="board-content">
+                <h3>Technology Discussion</h3>
+                <p>Hardware, Docker, vLLM, local inference, and AI ecosystem builds.</p>
+            </div>
+        </div>
+
+        <div class="board-card" onclick="openBoard('Board 07 // Announcements', 'Site updates, new archive additions, and RJMedia news.', 'Official news dispatches, newly restored tape additions to the YouTube channel, and ecosystem upgrades.')">
+            <div class="board-index">07</div>
+            <div class="board-content">
+                <h3>Announcements</h3>
+                <p>Site updates, new archive additions, and RJMedia news.</p>
+            </div>
+        </div>
+
+        <div class="board-card" onclick="openBoard('Board 08 // Tape Restorations', 'Workflows for Topaz Video AI, VHS digitization, and audio mastering.', 'Techniques for Betacam SP capture, analog audio de-noising, 60fps de-interlacing, and archival preservation standards.')">
+            <div class="board-index">08</div>
+            <div class="board-content">
+                <h3>Tape Restorations</h3>
+                <p>Workflows for Topaz Video AI, VHS digitization, and audio mastering.</p>
+            </div>
+        </div>
+
+        <div class="board-card" onclick="openBoard('Board 09 // Open Community', 'General off-topic conversation and connecting with long-time members.', 'General casual discussion, gear chat, recommendations, and connecting with the 25-year RJMedia community.')">
+            <div class="board-index">09</div>
+            <div class="board-content">
+                <h3>Open Community</h3>
+                <p>General off-topic conversation and connecting with long-time members.</p>
+            </div>
+        </div>
+
     </section>
 
-    <section aria-label="Forum Categories">
-      <div class="boards-grid">
-        <article class="board-card" id="music-discussion">
-          <div>
-            <span class="board-num">Board 01 // General</span>
-            <h2 class="board-title">Music Discussion</h2>
-            <p class="board-desc">Open conversations on records, songwriting, studio production, UK independent bands, and essential listening recommendations.</p>
-          </div>
-          <div class="board-meta">
-            <span>Public Discussions</span>
-            <a href="mailto:richardmurray2022@gmail.com?subject=Forum%20Post:%20Music%20Discussion">Start Thread →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="archive-requests">
-          <div>
-            <span class="board-num">Board 02 // Preservation Queue</span>
-            <h2 class="board-title">Archive Requests</h2>
-            <p class="board-desc">Request specific broadcasts, vintage interviews, live concert videos, or cassette transfers to be prioritised in the RJMedia Archive Vault.</p>
-          </div>
-          <div class="board-meta">
-            <span>Digitisation Queue</span>
-            <a href="mailto:richardmurray2022@gmail.com?subject=Archive%20Request">Request Item →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="lost-recordings">
-          <div>
-            <span class="board-num">Board 03 // Lost Media Search</span>
-            <h2 class="board-title">Lost Recordings</h2>
-            <p class="board-desc">Collaborative tracking board for missing BBC sessions, regional television appearances, bootleg tapes, and uncirculated demo acetates.</p>
-          </div>
-          <div class="board-meta">
-            <span>Help Locate</span>
-            <a href="mailto:richardmurray2022@gmail.com?subject=Lost%20Recording%20Lead">Report Lead →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="paul-draper-archive">
-          <div>
-            <span class="board-num">Board 04 // Featured Collection</span>
-            <h2 class="board-title">Paul Draper Archive</h2>
-            <p class="board-desc">Dedicated fan board continuing 25 years of Paul-Draper.net &amp; MansunMusicLovers discussions, tour dates, and 2027 festival updates.</p>
-          </div>
-          <div class="board-meta">
-            <span>Collection Board</span>
-            <a href="./pages/index.html">Enter Collection →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="live-music">
-          <div>
-            <span class="board-num">Board 05 // Concerts &amp; Tours</span>
-            <h2 class="board-title">Live Music</h2>
-            <p class="board-desc">Venue memories, ticket stub scans, setlists, and concert reports spanning club gigs, academies, and festival headlines.</p>
-          </div>
-          <div class="board-meta">
-            <span>Live Memories</span>
-            <a href="./youtube.html">Watch Live Vault →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="broadcast-history">
-          <div>
-            <span class="board-num">Board 06 // TV &amp; Radio</span>
-            <h2 class="board-title">Broadcast History</h2>
-            <p class="board-desc">Documenting classic UK &amp; European music television — Rockpalast, Top of the Pops, Later..., John Peel sessions, and documentary specials.</p>
-          </div>
-          <div class="board-meta">
-            <span>Broadcast Logs</span>
-            <a href="./trail-builder.html">Explore Trails →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="community-support">
-          <div>
-            <span class="board-num">Board 07 // Mutual Connection</span>
-            <h2 class="board-title">Community Support</h2>
-            <p class="board-desc">Honest listener check-ins, shared experiences, practical support, and mutual encouragement linked with Keep The Connection.</p>
-          </div>
-          <div class="board-meta">
-            <span>Keep Connected</span>
-            <a href="./community.html">Open Hub →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="technology-discussion">
-          <div>
-            <span class="board-num">Board 08 // Engineering &amp; AI</span>
-            <h2 class="board-title">Technology Discussion</h2>
-            <p class="board-desc">Conversations around VHS/DAT capture workflows, open-source archival scripting, local AI memory systems, and hardware preservation.</p>
-          </div>
-          <div class="board-meta">
-            <span>Jupiter Island</span>
-            <a href="./jupiter-island.html">Tech Division →</a>
-          </div>
-        </article>
-
-        <article class="board-card" id="announcements">
-          <div>
-            <span class="board-num">Board 09 // Official Logs</span>
-            <h2 class="board-title">Announcements</h2>
-            <p class="board-desc">Platform milestones, newly digitised master tapes, sponsor directory updates, and major YouTube Vault premieres.</p>
-          </div>
-          <div class="board-meta">
-            <span>Site Bulletins</span>
-            <a href="./index.html#vault">Latest Additions →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="request-box">
-      <span class="kicker">PRESERVATION SUBMISSIONS • CONTRIBUTE TO THE ARCHIVE</span>
-      <h2 style="font-size: 1.85rem; font-weight: 950; text-transform: uppercase; margin: 0 0 0.75rem;">Have a Rare Tape, Broadcast Recording, or Story?</h2>
-      <p style="color: #404040; max-width: 720px; margin: 0 0 1.5rem;">
-        RJMedia preserves community-contributed live tapes, television VHS transfers, press scans, and concert photographs with full contributor credit.
-      </p>
-      <a class="btn-3d" href="mailto:richardmurray2022@gmail.com?subject=RJMedia%20Archive%20Contribution">Contribute To RJMedia Archive →</a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <div>◆ RJMEDIA DIGITAL ARCHIVE · REMEMBER THE SOUND · CREATED BY RJM</div>
-      <div>
-        <a href="./index.html">Archive Home</a> ·
-        <a href="./pages/index.html">Paul Draper Archive</a> ·
-        <a href="./community.html">Keep The Connection</a> ·
-        <a href="./jupiter-island.html">Jupiter Island</a>
-      </div>
+    <!-- Modal Thread Drawer -->
+    <div class="board-modal" id="boardModal" onclick="closeBoardModal(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeBoardModal(event, true)">Close [ESC]</button>
+            <h2 id="modalTitle" style="margin: 0 0 0.5rem 0; font-size: 1.4rem; color: #ffffff; text-transform: uppercase;"></h2>
+            <p id="modalSub" style="color: #888888; font-size: 0.9rem; margin-bottom: 1.5rem;"></p>
+            <div id="modalDesc" style="color: #e0e0e0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem;"></div>
+            <a id="modalMailBtn" href="" class="btn-glass" style="display: inline-block;">Post New Topic in Board &rarr;</a>
+        </div>
     </div>
-  </footer>
+
+    <footer>
+        Created by RJM &middot; RJMedia Digital Archive
+    </footer>
+
+    <script>
+        function openBoard(title, sub, desc) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalSub').textContent = sub;
+            document.getElementById('modalDesc').textContent = desc;
+            document.getElementById('modalMailBtn').href = 'mailto:richardmurray2022@gmail.com?subject=' + encodeURIComponent('RJMedia Forum: ' + title);
+            document.getElementById('boardModal').classList.add('open');
+        }
+        function closeBoardModal(e, force) {
+            if (force || e.target.id === 'boardModal') {
+                document.getElementById('boardModal').classList.remove('open');
+            }
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeBoardModal(null, true);
+        });
+    </script>
+
 </body>
 </html>
