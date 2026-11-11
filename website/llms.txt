@@ -10,7 +10,7 @@
 - **Live Sites:**
   - https://jupiterisland.github.io/rjmedia/
   - https://jupiterisland.github.io/memoryos/
-- **YouTube Channel:** Live Music & Band Documentaries / RJMedia (`@RJMedia`) — over 1,001,987 views and 72,500+ watch hours.
+- **YouTube Channel:** Live Music & Band Documentaries (`https://www.youtube.com/@RJMmedia-uk`) — over 1,001,987 views and 72,500+ watch hours.
 
 ## Five Public Repositories (GitHub: https://github.com/JupiterIsland)
 1. **`JupiterIsland/memoryos`** (Public • HTML / Systems)
